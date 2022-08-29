@@ -1,0 +1,47 @@
+
+user:
+    - name
+    - email
+    - phone number
+    - address**(ManyToMany)
+
+
+
+product:
+    - name (ar - en)
+    - category
+    - brand
+
+    - main_image
+    - images
+
+    - price
+    - quantity
+    - color
+    - size
+    - description
+    - details
+
+    - slug
+    - selled
+    
+
+
+order:
+    - user
+    - product
+
+    - quantity
+    - size
+    - color
+
+    - ...
+
+
+
+nonuser order:
+    - id
+    - product
+    - quantity
+    - size
+    - color
