@@ -4,27 +4,41 @@ user:
     - email
     - phone number
     - address**(ManyToMany)
+    - sex
+    - birth date
 
 
 
 product:
+    - user (seller)
     - name (ar - en)
     - category
     - brand
 
+    - sex (man / woman / dual)
+
     - main_image
     - images
 
-    - price
-    - quantity
-    - color
-    - size
+    - product_info
+        - price
+        - quantity
+        - color
+        - size
+
     - description
     - details
+    - comments
+    - rate
 
     - slug
     - selled
+
+    = get_total_quantity()
+    = get_quantity(color, size)
+    = get_price(color, size)
     
+
 
 
 order:
@@ -34,7 +48,6 @@ order:
     - quantity
     - size
     - color
-
     - ...
 
 
