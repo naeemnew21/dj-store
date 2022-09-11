@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ProductImage, ProductInfo, Product, Comment
+from .models import ProductImage, Product, Comment
 
 
 
@@ -7,7 +7,7 @@ from .models import ProductImage, ProductInfo, Product, Comment
 class ProductAdmin(admin.ModelAdmin):
     model = Product
     list_display = [ 'name', 'category', 'brand', 'suitable']
-    readonly_fields=('created_by', 'created_at', 'slug', 'selled')
+    readonly_fields=('created_by', 'created_at', 'slug', 'selled', 'id')
     
     def save_model(self, request, obj, form, change):
         if obj.created_by == None:
@@ -30,5 +30,4 @@ class CommentAdmin(admin.ModelAdmin):
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductImage)
-admin.site.register(ProductInfo)
 admin.site.register(Comment, CommentAdmin)
