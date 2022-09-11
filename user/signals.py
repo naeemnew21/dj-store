@@ -22,7 +22,9 @@ def generate_random_username(length=16, chars=ascii_lowercase+digits, split=4, d
 
 @receiver(pre_save, sender=MyUser)
 def my_callback(sender, instance, *args, **kwargs):
-    if not(instance.is_superuser):
-        instance.username = generate_random_username()
+    if instance.pk is None:
+        "execute these orders only when first save - created"
+        if not(instance.is_superuser):
+            instance.username = generate_random_username()
 
 

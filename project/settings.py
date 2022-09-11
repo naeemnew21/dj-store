@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     #my apps
     'user.apps.UserConfig',
     'product.apps.ProductConfig',
+    'cart.apps.CartConfig',
     
     'rest_framework',
     'jazzmin',

@@ -34,5 +34,7 @@ def unique_slug_generator(instance, new_slug = None):
 
 @receiver(pre_save, sender=Product)
 def pre_save_receiver(sender, instance, *args, **kwargs):
-   if not instance.slug:
+   if instance.pk is None:
+       "execute these orders only when first save - created"
        instance.slug = unique_slug_generator(instance)
+       

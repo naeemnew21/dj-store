@@ -22,12 +22,14 @@ from django.contrib import messages
 
 
 
+def test(request):
+    return render(request, 'index.html')
 
 
 class Registeration(CreateView):
     form_class = SignUpForm
-    template_name = 'sign-up.html'
-    success_url = reverse_lazy('store:home')
+    template_name = 'register.html'
+    success_url = reverse_lazy('product:index')
     
     def form_valid(self, form):
         # first save form
@@ -53,7 +55,7 @@ def login_view(request):
     context = {'error':''}
     
     if request.user.is_authenticated: 
-        return redirect("store:home")
+        return redirect("product:index")
     
     
     if request.POST:
@@ -65,7 +67,7 @@ def login_view(request):
         user = authenticate(username=username, password=password)
         if user :
             login(request, user)
-            return redirect("store:home")
+            return redirect("product:index")
         else :
             context['error'] = "Invalid Login" 
     return render(request, 'login.html' , context)
@@ -75,7 +77,7 @@ def login_view(request):
     
 def logout_view(request):
     logout(request)
-    return redirect('store:home')
+    return redirect('product:index')
 
 
 
