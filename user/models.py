@@ -70,6 +70,7 @@ class MyUser(AbstractUser):
                                         max_length=255, blank=False, null=False,
                                         default=AUTH_PROVIDERS.get('email'))
 
+    seller        = models.BooleanField(default=False)
 
     REQUIRED_FIELDS = ['email', 'first_name']
 

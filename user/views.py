@@ -22,8 +22,30 @@ from django.contrib import messages
 
 
 
-def test(request):
+def cart(request):
+    return render(request, 'cart.html')
+
+def checkout(request):
+    return render(request, 'checkout.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
+def detail(request):
+    return render(request, 'detail.html')
+
+def index(request):
     return render(request, 'index.html')
+
+def logintest(request):
+    return render(request, 'login.html')
+
+def register(request):
+    return render(request, 'register.html')
+
+def shop(request):
+    return render(request, 'shop.html')
+    
 
 
 class Registeration(CreateView):

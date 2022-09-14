@@ -8,7 +8,7 @@ admin.site.site_header = 'E-Commerce'
 
 class CustomUserAdmin(UserAdmin):
     model = MyUser
-    list_display = [ 'email', 'is_verified', 'is_superuser', 'auth_provider']
+    list_display = [ 'email', 'is_verified', 'seller', 'is_staff', 'is_superuser', 'auth_provider']
     list_display_links = ['email']
     
     search_fields   = ('email', 'phone',)
@@ -20,7 +20,7 @@ class CustomUserAdmin(UserAdmin):
             {'fields': ('first_name', 'last_name','username', 'auth_provider', 'email', 'password', 'phone', 'avatar', 'avatar_url', 'address')}
         ),
         ('Permissions',
-            {'fields': ('is_active', 'is_superuser', 'is_verified')}
+            {'fields': ('is_active', 'is_staff', 'is_superuser', 'is_verified', 'seller')}
          ),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )

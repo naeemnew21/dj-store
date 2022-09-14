@@ -1,3 +1,4 @@
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -6,8 +7,8 @@
     <meta charset="utf-8" />
     <title>EShopper - Bootstrap Shop Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="Free HTML Templates" name="keywords" />
-    <meta content="Free HTML Templates" name="description" />
+    <meta content="HTML Templates" name="keywords" />
+    <meta content="HTML Templates" name="description" />
 
     <!-- Favicon -->
     <link href="{%static 'img/favicon.ico'%}" rel="icon" />
@@ -98,7 +99,7 @@
           </a>
           <a href="" class="btn border">
             <i class="fas fa-shopping-cart text-primary"></i>
-            <span class="badge">{{my_cart}}</span>
+            <span class="badge">0</span>
           </a>
         </div>
       </div>
@@ -119,25 +120,24 @@
             <i class="fa fa-angle-down text-dark"></i>
           </a>
 
-
+          
           {% block navbar %}
           
 
           {% endblock navbar %}
 
-          
+
             <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
               <div class="nav-item dropdown">
                 <a href="#" class="nav-link" data-toggle="dropdown"
-                  >Dresses <i class="fa fa-angle-down float-right mt-1"></i
-                ></a>
-                <div
+                  >Dresses</a>
+                <!-- <div
                   class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0"
                 >
                   <a href="" class="dropdown-item">Men's Dresses</a>
                   <a href="" class="dropdown-item">Women's Dresses</a>
                   <a href="" class="dropdown-item">Baby's Dresses</a>
-                </div>
+                </div> -->
               </div>
               <a href="" class="nav-item nav-link">Shirts</a>
               <a href="" class="nav-item nav-link">Jeans</a>
@@ -175,16 +175,17 @@
               id="navbarCollapse"
             >
               <div class="navbar-nav mr-auto py-0">
-
+                
+                
                 {% block titles %}
                 
                 
                 {% endblock titles %}
 
-              </div>
+
               <div class="navbar-nav ml-auto py-0">
-                <a href="" class="nav-item nav-link">Login</a>
-                <a href="" class="nav-item nav-link">Register</a>
+                <a href="./login/index.html" class="nav-item nav-link">Login</a>
+                <a href="./resgiter/index.html" class="nav-item nav-link">Register</a>
               </div>
             </div>
           </nav>
@@ -210,19 +211,18 @@
             </h1>
           </a>
           <p>
-            Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no
-            sit erat lorem et magna ipsum dolore amet erat.
+            Youth who choose casually, rejecting stereotypes and wanting to feel comfortable in their clothes..Our SHop satisfies this needs.
           </p>
-          <p class="mb-2">
+          <!-- <p class="mb-2">
             <i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street,
             New York, USA
-          </p>
+          </p> -->
           <p class="mb-2">
             <i class="fa fa-envelope text-primary mr-3"></i
             >mohamed.ibraahiim4321@gmail.com
           </p>
           <p class="mb-0">
-            <i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890
+            <i class="fa fa-phone-alt text-primary mr-3"></i>+012 764 23252
           </p>
         </div>
         <div class="col-lg-8 col-md-12">
@@ -312,14 +312,14 @@
             <a class="text-dark font-weight-semi-bold" href="#"
               >Your Site Name</a
             >. All Rights Reserved. Designed by
-            <a class="text-dark font-weight-semi-bold" href="#"
+            <a class="text-dark font-weight-semi-bold" href=""
               >Mohamed Ibrahim</a
             >
           </p>
         </div>
-        <div class="col-md-6 px-xl-0 text-center text-md-right">
-          <img class="img-fluid" src="{%static 'img/payments.png'%}" alt="" />
-        </div>
+        <!-- <div class="col-md-6 px-xl-0 text-center text-md-right">
+          <img class="img-fluid" src="img/payments.png" alt="" />
+        </div> -->
       </div>
     </div>
     <!-- Footer End -->
