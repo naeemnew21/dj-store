@@ -9,11 +9,10 @@ from .models import Product, Comment
 
 def index(request):
     
-    mobile   = Product.objects.filter(category = 'mobile')
-    computer = Product.objects.filter(category = 'computer')
-    electric = Product.objects.filter(category = 'electric equipment')
+    just_arrived   = Product.objects.order_by('created_at')[:10]
+    trendy = Product.objects.order_by('created_at')[10:20]
     # high rates - recommended
-    context = {'mobile':mobile, 'computer':computer, 'electric':electric}
+    context = {'just_arrived':just_arrived, 'trendy':trendy}
     return render(request, 'index.html', context=context)
 
 
@@ -25,13 +24,11 @@ class CategoryView(ListView):
     template_name = '/your/template.html'
     
     def get_queryset(self):
-        # name = self.kwargs.get('name', '')
-        # #query = self.request.GET.get('q')
-        # object_list = self.model.objects.all()
-        # if name:
-        #     object_list = object_list.filter(name__icontains=name)
-        # return object_list
-        return EmptyQuerySet
+        category = self.kwargs.get('Category', '')
+        object_list = self.model.objects.all()
+        if category:
+            object_list = object_list.filter(category=category)
+        return object_list
     
 
 
@@ -42,4 +39,7 @@ class ProductDetailView(DetailView):
     pk    = 'slug'
     template_name = '/your/template.html'
     
-    # override get_context to get comments and rate
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['comments'] = Comment.objects.filter(product = self.get_object())
+        return context

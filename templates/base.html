@@ -94,12 +94,8 @@
         </div>
         <div class="col-lg-3 col-6 text-right">
           <a href="" class="btn border">
-            <i class="fas fa-heart text-primary"></i>
-            <span class="badge">0</span>
-          </a>
-          <a href="" class="btn border">
             <i class="fas fa-shopping-cart text-primary"></i>
-            <span class="badge">0</span>
+            <span class="badge">{{my_cart}}</span>
           </a>
         </div>
       </div>
@@ -131,13 +127,6 @@
               <div class="nav-item dropdown">
                 <a href="#" class="nav-link" data-toggle="dropdown"
                   >Dresses</a>
-                <!-- <div
-                  class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0"
-                >
-                  <a href="" class="dropdown-item">Men's Dresses</a>
-                  <a href="" class="dropdown-item">Women's Dresses</a>
-                  <a href="" class="dropdown-item">Baby's Dresses</a>
-                </div> -->
               </div>
               <a href="" class="nav-item nav-link">Shirts</a>
               <a href="" class="nav-item nav-link">Jeans</a>
@@ -184,8 +173,13 @@
 
 
               <div class="navbar-nav ml-auto py-0">
-                <a href="./login/index.html" class="nav-item nav-link">Login</a>
-                <a href="./resgiter/index.html" class="nav-item nav-link">Register</a>
+                {% if request.user.is_authenticated %}
+                      <a href="./login/index.html" class="nav-item nav-link">profile</a>
+                {% else %}
+                      <a href="./login/index.html" class="nav-item nav-link">Login</a>
+                      <a href="./resgiter/index.html" class="nav-item nav-link">Register</a>
+                {% endif %}
+                
               </div>
             </div>
           </nav>
@@ -213,10 +207,6 @@
           <p>
             Youth who choose casually, rejecting stereotypes and wanting to feel comfortable in their clothes..Our SHop satisfies this needs.
           </p>
-          <!-- <p class="mb-2">
-            <i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street,
-            New York, USA
-          </p> -->
           <p class="mb-2">
             <i class="fa fa-envelope text-primary mr-3"></i
             >mohamed.ibraahiim4321@gmail.com
@@ -254,22 +244,21 @@
               <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
               <div class="d-flex flex-column justify-content-start">
                 <a class="text-dark mb-2" href="index.html"
-                  ><i class="fa fa-angle-right mr-2"></i>Home</a
+                  ><i class="fa fa-angle-right mr-2"></i>FAQs</a
                 >
                 <a class="text-dark mb-2" href="shop.html"
-                  ><i class="fa fa-angle-right mr-2"></i>Our Shop</a
+                  ><i class="fa fa-angle-right mr-2"></i>Trem</a
                 >
                 <a class="text-dark mb-2" href="detail.html"
-                  ><i class="fa fa-angle-right mr-2"></i>Shop Detail</a
+                  ><i class="fa fa-angle-right mr-2"></i>Help</a
                 >
                 <a class="text-dark mb-2" href="cart.html"
-                  ><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a
-                >
+                  ><i class="fa fa-angle-right mr-2"></i>Support</a>
                 <a class="text-dark mb-2" href="checkout.html"
-                  ><i class="fa fa-angle-right mr-2"></i>Checkout</a
+                  ><i class="fa fa-angle-right mr-2"></i>Pricing</a
                 >
                 <a class="text-dark" href="contact.html"
-                  ><i class="fa fa-angle-right mr-2"></i>Contact Us</a
+                  ><i class="fa fa-angle-right mr-2"></i>Privacy</a
                 >
               </div>
             </div>
@@ -317,9 +306,6 @@
             >
           </p>
         </div>
-        <!-- <div class="col-md-6 px-xl-0 text-center text-md-right">
-          <img class="img-fluid" src="img/payments.png" alt="" />
-        </div> -->
       </div>
     </div>
     <!-- Footer End -->
