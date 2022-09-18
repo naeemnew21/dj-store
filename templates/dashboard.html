@@ -1,0 +1,1305 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="loading" lang="en">
+  <!-- BEGIN : Head-->
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <meta
+      name="description"
+      content="Apex admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities."
+    />
+    <meta
+      name="keywords"
+      content="admin template, Apex admin template, dashboard template, flat admin template, responsive admin template, web app"
+    />
+    <meta name="author" content="PIXINVENT" />
+    <title>Dashboard1 - Apex responsive bootstrap 4 admin template</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{% static 'app-assets/img/ico/favicon.ico' %}"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'app-assets/img/ico/favicon-32.png' %}"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link
+      href="{% static 'https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900' %}"
+      rel="stylesheet"
+    />
+    <!-- BEGIN VENDOR CSS-->
+    <!-- font icons-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/fonts/feather/style.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/fonts/simple-line-icons/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/fonts/font-awesome/css/font-awesome.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/vendors/css/perfect-scrollbar.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/vendors/css/prism.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/vendors/css/switchery.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/vendors/css/chartist.min.css' %}"
+    />
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN APEX CSS-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/css/bootstrap.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/css/bootstrap-extended.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/css/colors.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/css/components.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/css/themes/layout-dark.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'app-assets/css/plugins/switchery.css' %}"
+    />
+    <!-- END APEX CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/css/core/menu/horizontal-menu.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'app-assets/css/pages/dashboard1.css' %}"
+    />
+    <!-- END Page Level CSS-->
+    <!-- BEGIN: Custom CSS-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'assets/css/style.css' %}"
+    />
+    <!-- END: Custom CSS-->
+  </head>
+  <!-- END : Head-->
+
+  <!-- BEGIN : Body-->
+
+  <body
+    class="horizontal-layout horizontal-menu horizontal-menu-padding 2-columns navbar-sticky layout-dark"
+    data-open="hover"
+    data-menu="horizontal-menu"
+    data-col="2-columns"
+  >
+    <nav
+      class="navbar navbar-expand-lg navbar-light header-navbar navbar-fixed"
+    >
+      <div class="container-fluid navbar-wrapper">
+        <div class="navbar-header d-flex">
+          <div
+            class="navbar-toggle menu-toggle d-xl-none d-block float-left align-items-center justify-content-center"
+            data-toggle="collapse"
+          >
+            <i class="ft-menu font-medium-3"></i>
+          </div>
+          <ul class="navbar-nav">
+            <li class="nav-item mr-2 d-none d-lg-block">
+              <a
+                class="nav-link apptogglefullscreen"
+                id="navbar-fullscreen"
+                href="{% static 'javascript:;' %}"
+                ><i class="ft-maximize font-medium-3"></i
+              ></a>
+            </li>
+            <li class="nav-item nav-search">
+              <a class="nav-link nav-link-search" href="{% static 'javascript:' %}"
+                ><i class="ft-search font-medium-3"></i
+              ></a>
+              <div class="search-input">
+                <div class="search-input-icon">
+                  <i class="ft-search font-medium-3"></i>
+                </div>
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Explore Apex..."
+                  tabindex="0"
+                  data-search="template-search"
+                />
+                <div class="search-input-close">
+                  <i class="ft-x font-medium-3"></i>
+                </div>
+                <ul class="search-list"></ul>
+              </div>
+            </li>
+          </ul>
+          <div class="navbar-brand-center">
+            <div class="navbar-header">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <div class="logo">
+                    <a class="logo-text" href="{% static 'index.html' %}">
+                      <div class="logo-img">
+                        <img
+                          class="logo-img"
+                          alt="Apex logo"
+                          src="{% static 'app-assets/img/logo.png'%}"
+                        />
+                      </div>
+                      <span class="text">APEX</span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-container">
+          <div
+            class="collapse navbar-collapse d-block"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav">
+              <li class="dropdown nav-item mr-1">
+                <a
+                  class="nav-link dropdown-toggle user-dropdown d-flex align-items-end"
+                  id="dropdownBasic2"
+                  href="{% static 'javascript:;' %}"
+                  data-toggle="dropdown"
+                >
+                  <div class="user d-md-flex d-none mr-2">
+                    <span class="text-right">John Doe</span
+                    ><span class="text-right text-muted font-small-3"
+                      >Available</span
+                    >
+                  </div>
+                  <img
+                    class="avatar"
+                    src="{% static 'app-assets/img/portrait/small/avatar-s-1.png'%}"
+                    alt="avatar"
+                    height="35"
+                    width="35"
+                  />
+                </a>
+                <div
+                  class="dropdown-menu text-left dropdown-menu-right m-0 pb-0"
+                  aria-labelledby="dropdownBasic2"
+                >
+                  <a class="dropdown-item" href="{% static 'page-user-profile.html' %}">
+                    <div class="d-flex align-items-center">
+                      <i class="ft-edit mr-2"></i><span>Edit Profile</span>
+                    </div> </a
+                  ><a class="dropdown-item" href="{% static 'app-email.html' %}">
+                    <div class="d-flex align-items-center">
+                      <i class="ft-mail mr-2"></i><span>My Inbox</span>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% static 'auth-login.html' %}">
+                    <div class="d-flex align-items-center">
+                      <i class="ft-power mr-2"></i><span>Logout</span>
+                    </div>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar (Header) Ends-->
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <div class="wrapper">
+      <div
+        class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-fixed navbar-dark navbar-shadow menu-border navbar-brand-center"
+        role="navigation"
+        data-menu="menu-wrapper"
+      >
+        <!-- Horizontal menu content-->
+        <div
+          class="navbar-container main-menu-content center-layout"
+          data-menu="menu-container"
+        >
+          <!-- include includes/mixins-->
+        </div>
+      </div>
+
+      <div class="main-panel">
+        <!-- BEGIN : Main Content-->
+        <div class="main-content">
+          <div class="content-overlay"></div>
+          <div class="content-wrapper">
+            <!--Statistics cards Starts-->
+            <div class="row">
+              <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                <div class="card gradient-purple-love">
+                  <div class="card-content">
+                    <div class="card-body py-0">
+                      <div class="media pb-1">
+                        <div class="media-body white text-left">
+                          <h3 class="font-large-1 white mb-0">$2,156</h3>
+                          <span>Total Tax</span>
+                        </div>
+                        <div class="media-right white text-right">
+                          <i class="ft-activity font-large-1"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      id="Widget-line-chart"
+                      class="height-75 WidgetlineChart WidgetlineChartshadow mb-2"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                <div class="card gradient-ibiza-sunset">
+                  <div class="card-content">
+                    <div class="card-body py-0">
+                      <div class="media pb-1">
+                        <div class="media-body white text-left">
+                          <h3 class="font-large-1 white mb-0">$15,678</h3>
+                          <span>Total Cost</span>
+                        </div>
+                        <div class="media-right white text-right">
+                          <i class="ft-percent font-large-1"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      id="Widget-line-chart1"
+                      class="height-75 WidgetlineChart WidgetlineChartshadow mb-2"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                <div class="card gradient-mint">
+                  <div class="card-content">
+                    <div class="card-body py-0">
+                      <div class="media pb-1">
+                        <div class="media-body white text-left">
+                          <h3 class="font-large-1 white mb-0">$45,668</h3>
+                          <span>Total Sales</span>
+                        </div>
+                        <div class="media-right white text-right">
+                          <i class="ft-trending-up font-large-1"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      id="Widget-line-chart2"
+                      class="height-75 WidgetlineChart WidgetlineChartshadow mb-2"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                <div class="card gradient-king-yna">
+                  <div class="card-content">
+                    <div class="card-body py-0">
+                      <div class="media pb-1">
+                        <div class="media-body white text-left">
+                          <h3 class="font-large-1 white mb-0">$32,454</h3>
+                          <span>Total Earning</span>
+                        </div>
+                        <div class="media-right white text-right">
+                          <i class="ft-credit-card font-large-1"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      id="Widget-line-chart3"
+                      class="height-75 WidgetlineChart WidgetlineChartshadow mb-2"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Statistics cards Ends-->
+
+            <!--Line with Area Chart 1 Starts-->
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">PRODUCTS SALES</h4>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-body">
+                      <div class="chart-info mb-3 ml-3">
+                        <span
+                          class="gradient-purple-bliss d-inline-block rounded-circle mr-1"
+                          style="width: 15px; height: 15px"
+                        ></span>
+                        Sales
+                        <span
+                          class="gradient-mint d-inline-block rounded-circle mr-1 ml-2"
+                          style="width: 15px; height: 15px"
+                        ></span>
+                        Visits
+                      </div>
+                      <div id="line-area" class="height-350 lineArea"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Line with Area Chart 1 Ends-->
+
+            <div class="row match-height">
+              <div class="col-xl-4 col-lg-12 col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Statistics</h4>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-body">
+                      <p class="font-medium-2 text-center my-2">
+                        Last 6 Months Sales
+                      </p>
+                      <div
+                        id="Stack-bar-chart"
+                        class="height-300 Stackbarchart mb-2"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-8 col-lg-12 col-12">
+                <div class="card shopping-cart">
+                  <div class="card-header pb-2">
+                    <h4 class="card-title mb-1">Shopping Cart</h4>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-body p-0">
+                      <div class="table-responsive">
+                        <table class="table text-center m-0">
+                          <thead>
+                            <tr>
+                              <th>Image</th>
+                              <th>Product</th>
+                              <th>Count</th>
+                              <th>Status</th>
+                              <th>Price</th>
+                              <th>Delete</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <img
+                                  class="height-50"
+                                  src="{% static 'app-assets/img/elements/01.png'%}"
+                                  alt="Generic placeholder image"
+                                />
+                              </td>
+                              <td>Espresso</td>
+                              <td>1</td>
+                              <td>
+                                <span
+                                  class="badge badge-pill bg-light-primary cursor-pointer"
+                                  >Active</span
+                                >
+                              </td>
+                              <td>$19.94</td>
+                              <td>
+                                <i class="ft-trash-2"></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <img
+                                  class="height-50"
+                                  src="{% static 'app-assets/img/elements/15.png' %}"
+                                  alt="Generic placeholder image"
+                                />
+                              </td>
+                              <td>iPhone</td>
+                              <td>2</td>
+                              <td>
+                                <span
+                                  class="badge badge-pill bg-light-danger cursor-pointer"
+                                  >Disabled</span
+                                >
+                              </td>
+                              <td>$99.00</td>
+                              <td>
+                                <i class="ft-trash-2"></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <img
+                                  class="height-50"
+                                  src="{% static 'app-assets/img/elements/11.png'%}"
+                                  alt="Generic placeholder image"
+                                />
+                              </td>
+                              <td>iMac</td>
+                              <td>1</td>
+                              <td>
+                                <span
+                                  class="badge badge-pill bg-light-info cursor-pointer"
+                                  >Paused</span
+                                >
+                              </td>
+                              <td>$299.00</td>
+                              <td>
+                                <i class="ft-trash-2"></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <img
+                                  class="height-50"
+                                  src="{% static 'app-assets/img/elements/14.png'%}"
+                                  alt="Generic placeholder image"
+                                />
+                              </td>
+                              <td>iWatch</td>
+                              <td>2</td>
+                              <td>
+                                <span
+                                  class="badge badge-pill bg-light-success cursor-pointer"
+                                  >Active</span
+                                >
+                              </td>
+                              <td>$24.51</td>
+                              <td>
+                                <i class="ft-trash-2"></i>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-8" style="margin: 0 auto">
+            <form name="sentMessage" id="contactForm" novalidate="novalidate" enctype="multipart/form-data">
+              <div class="control-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="product_name"
+                  placeholder="Product Name"
+                  required="required"
+                  data-validation-required-message="Please enter the Product Name"
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="row">
+                <div class="control-group col-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="price"
+                    placeholder="Product price"
+                    required="required"
+                    data-validation-required-message="Please enter product price"
+                  />
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="control-group col-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="count"
+                    placeholder="Product count"
+                    required="required"
+                    data-validation-required-message="Please enter product count"
+                  />
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <div
+                    class="custom-control custom-checkbox custom-control-inline"
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="size1"
+                    />
+                    <label class="custom-control-label" for="size1">XS</label>
+                  </div>
+                  <div
+                    class="custom-control custom-checkbox custom-control-inline"
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="size2"
+                    />
+                    <label class="custom-control-label" for="size2">S</label>
+                  </div>
+                  <div
+                    class="custom-control custom-checkbox custom-control-inline"
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="size3"
+                    />
+                    <label class="custom-control-label" for="size3">M</label>
+                  </div>
+                  <div
+                    class="custom-control custom-checkbox custom-control-inline"
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="size4"
+                    />
+                    <label class="custom-control-label" for="size4">L</label>
+                  </div>
+                  <div
+                    class="custom-control custom-checkbox custom-control-inline"
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="size5"
+                    />
+                    <label class="custom-control-label" for="size5">XL</label>
+                  </div>
+                  <div
+                    class="custom-control custom-checkbox custom-control-inline"
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="size6"
+                    />
+                    <label class="custom-control-label" for="size6">XXL</label>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <div
+                    class="custom-control custom-checkbox custom-control-inline"
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="color1"
+                    />
+                    <label class="custom-control-label" for="color1"
+                      >Black</label
+                    >
+                  </div>
+                  <div
+                    class="custom-control custom-checkbox custom-control-inline"
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="color2"
+                    />
+                    <label class="custom-control-label" for="color2"
+                      >White</label
+                    >
+                  </div>
+                  <div
+                    class="custom-control custom-checkbox custom-control-inline"
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="color3"
+                    />
+                    <label class="custom-control-label" for="color3">Red</label>
+                  </div>
+                  <div
+                    class="custom-control custom-checkbox custom-control-inline"
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="color4"
+                    />
+                    <label class="custom-control-label" for="color4"
+                      >Blue</label
+                    >
+                  </div>
+                  <div
+                    class="custom-control custom-checkbox custom-control-inline"
+                  >
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="color5"
+                    />
+                    <label class="custom-control-label" for="color5"
+                      >Green</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="control-group">
+                <input
+                  type="file" 
+                  multiple 
+                  class=""
+                  id="file-uploader"
+                  placeholder="file-uploader"
+                  required="required"
+                  data-validation-required-message="Please upload photo"
+                />
+                <img
+                  id="preview"
+                  class="img img-thumbnail d-none"
+                  src=""
+                  alt=""
+                  width="300"
+                  height="300"
+                  srcset=""
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="control-group">
+                <textarea
+                  class="form-control"
+                  rows="6"
+                  id="description"
+                  placeholder="Description..."
+                  required="required"
+                  data-validation-required-message="Please enter description"
+                ></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+              <div>
+                <button
+                  class="btn btn-primary py-2 px-4"
+                  type="button"
+                  id="send-data"
+                  onclick="add_product()"
+                >
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- END : End Main Content-->
+        <!-- BEGIN : Footer-->
+        <footer class="footer undefined undefined">
+          <p class="clearfix text-muted m-0">
+            <span>Copyright &copy; 2022 &nbsp;</span
+            ><a
+              href=""
+              id="pixinventLink"
+              target="_blank"
+              >Mohamed Ibrahim</a
+            ><span class="d-none d-sm-inline-block"
+              >, All rights reserved.</span
+            >
+          </p>
+        </footer>
+        <!-- End : Footer-->
+        <!-- Scroll to top button -->
+        <button class="btn btn-primary scroll-top" type="button">
+          <i class="ft-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <!-- START Notification Sidebar-->
+    <aside
+      class="notification-sidebar d-none d-sm-none d-md-block"
+      id="notification-sidebar"
+    >
+      <a class="notification-sidebar-close"
+        ><i class="ft-x font-medium-3 grey darken-1"></i
+      ></a>
+      <div class="side-nav notification-sidebar-content">
+        <div class="row">
+          <div class="col-12 notification-nav-tabs">
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  id="base-tab1"
+                  data-toggle="tab"
+                  aria-controls="activity-tab"
+                  href="{% static '#activity-tab' %}"
+                  aria-expanded="true"
+                  >Activity</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="base-tab2"
+                  data-toggle="tab"
+                  aria-controls="settings-tab"
+                  href="{% static '#settings-tab' %}"
+                  aria-expanded="false"
+                  >Settings</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 notification-tab-content">
+            <div class="tab-content">
+              <div
+                class="row tab-pane active"
+                id="activity-tab"
+                role="tabpanel"
+                aria-expanded="true"
+                aria-labelledby="base-tab1"
+              >
+                <div class="col-12" id="activity">
+                  <h5 class="my-2 text-bold-500">System Logs</h5>
+                  <div
+                    class="timeline-left timeline-wrapper mb-3"
+                    id="timeline-1"
+                  >
+                    <ul class="timeline">
+                      <li class="timeline-line mt-4"></li>
+                      <li class="timeline-item">
+                        <div class="timeline-badge">
+                          <span
+                            class="bg-primary bg-lighten-4"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Portfolio project work"
+                            ><i class="ft-download primary"></i
+                          ></span>
+                        </div>
+                        <div class="activity-list-text">
+                          <h6 class="mb-1">
+                            <span>New Update Available</span
+                            ><span
+                              class="float-right grey font-italic font-small-2"
+                              >1 min ago</span
+                            >
+                          </h6>
+                          <p class="mt-0 mb-2 font-small-3">
+                            Android Pie 9.0.0_r52v availabe (658MB).
+                          </p>
+                          <div class="notification-note">
+                            <div class="p-1 pl-2">
+                              <span class="text-bold-500">Download Now!</span>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="timeline-item">
+                        <div class="timeline-badge">
+                          <span
+                            class="bg-primary bg-lighten-4"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Portfolio project work"
+                            ><img
+                              class="avatar"
+                              src="{% static 'app-assets/img/portrait/small/avatar-s-15.png'%}"
+                              alt="avatar"
+                              width="40"
+                          /></span>
+                        </div>
+                        <div class="activity-list-text">
+                          <h6 class="mb-1">
+                            <span>Reminder!</span
+                            ><span
+                              class="float-right grey font-italic font-small-2"
+                              >52 min ago</span
+                            >
+                          </h6>
+                          <p class="mt-0 mb-2 font-small-3">
+                            Your meeting is scheduled with Mr. Derrick Walters
+                            at 16:00.
+                          </p>
+                          <div class="notification-note">
+                            <div class="p-1 pl-2">
+                              <span class="text-bold-500">Snooze</span>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="timeline-item">
+                        <div class="timeline-badge">
+                          <span
+                            class="bg-primary bg-lighten-4"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Portfolio project work"
+                            ><img
+                              class="avatar"
+                              src="{% static 'app-assets/img/portrait/small/avatar-s-16.png'%}"
+                              alt="avatar"
+                              width="40"
+                          /></span>
+                        </div>
+                        <div class="activity-list-text">
+                          <h6 class="mb-1">
+                            <span>Recieved a File</span
+                            ><span
+                              class="float-right grey font-italic font-small-2"
+                              >4 hours ago</span
+                            >
+                          </h6>
+                          <p class="mt-0 mb-2 font-small-3">
+                            Christina Rogers sent you a file for the next
+                            conference.
+                          </p>
+                          <div class="notification-note">
+                            <div class="p-1 pl-2">
+                              <img
+                                src="{% static 'app-assets/img/icons/sketch-mac-icon.png'%}"
+                                alt="icon"
+                                width="20"
+                              /><span class="text-bold-500 ml-2"
+                                >Diamond.sketch</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="timeline-item">
+                        <div class="timeline-badge">
+                          <span
+                            class="bg-primary bg-lighten-4"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Portfolio project work"
+                            ><i class="ft-mic primary"></i
+                          ></span>
+                        </div>
+                        <div class="activity-list-text">
+                          <h6 class="mb-1">
+                            <span>Voice Message</span
+                            ><span
+                              class="float-right grey font-italic font-small-2"
+                              >10 hours ago</span
+                            >
+                          </h6>
+                          <p class="mt-0 mb-2 font-small-3">
+                            Natalya Parker sent you a voice message.
+                          </p>
+                          <div class="notification-note">
+                            <div class="p-1 pl-2">
+                              <span class="text-bold-500">Listen</span>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="timeline-item">
+                        <div class="timeline-badge">
+                          <span
+                            class="bg-primary bg-lighten-4"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Portfolio project work"
+                            ><i class="ft-cloud-drizzle primary"></i
+                          ></span>
+                        </div>
+                        <div class="activity-list-text">
+                          <h6 class="mb-1">
+                            <span>Weather Update</span
+                            ><span
+                              class="float-right grey font-italic font-small-2"
+                              >Yesterday</span
+                            >
+                          </h6>
+                          <p class="mt-0 mb-2 font-small-3">
+                            Hi John! It is a rainy day with 16&deg;C.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <h5 class="my-2 text-bold-500">Applications Logs</h5>
+                  <div class="timeline-left timeline-wrapper" id="timeline-2">
+                    <ul class="timeline">
+                      <li class="timeline-line mt-4"></li>
+                      <li class="timeline-item">
+                        <div class="timeline-badge">
+                          <span
+                            class="bg-primary bg-lighten-4"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Portfolio project work"
+                            ><img
+                              class="avatar"
+                              src="{% static 'app-assets/img/portrait/small/avatar-s-26.png'%}"
+                              alt="avatar"
+                              width="40"
+                          /></span>
+                        </div>
+                        <div class="activity-list-text">
+                          <h6 class="mb-1">
+                            <span>Gmail</span
+                            ><span
+                              class="float-right grey font-italic font-small-2"
+                              >Just now</span
+                            >
+                          </h6>
+                          <p class="mt-0 mb-2 font-small-3">
+                            Victoria Hampton sent you a mail and has a file
+                            attachment with it.
+                          </p>
+                          <div class="notification-note">
+                            <div class="p-1 pl-2">
+                              <img
+                                src="{% static 'app-assets/img/icons/pdf.png'%}"
+                                alt="pdf icon"
+                                width="20"
+                              /><span class="text-bold-500 ml-2"
+                                >Register.pdf</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="timeline-item">
+                        <div class="timeline-badge">
+                          <span
+                            class="bg-primary bg-lighten-4"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Portfolio project work"
+                            ><i class="ft-droplet primary"></i
+                          ></span>
+                        </div>
+                        <div class="activity-list-text">
+                          <h6 class="mb-1">
+                            <span>MakeMyTrip</span
+                            ><span
+                              class="float-right grey font-italic font-small-2"
+                              >7 hours ago</span
+                            >
+                          </h6>
+                          <p class="mt-0 mb-2 font-small-3">
+                            Your next flight for San Francisco will be on 24th
+                            March.
+                          </p>
+                          <div class="notification-note">
+                            <div class="p-1 pl-2">
+                              <span class="text-bold-500">Important</span>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="timeline-item">
+                        <div class="timeline-badge">
+                          <span
+                            class="bg-primary bg-lighten-4"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Portfolio project work"
+                            ><img
+                              class="avatar"
+                              src="{% static 'app-assets/img/portrait/small/avatar-s-23.png'%}"
+                              alt="avatar"
+                              width="40"
+                          /></span>
+                        </div>
+                        <div class="activity-list-text">
+                          <h6 class="mb-1">
+                            <span>CNN</span
+                            ><span
+                              class="float-right grey font-italic font-small-2"
+                              >16 hours ago</span
+                            >
+                          </h6>
+                          <p class="mt-0 mb-2 font-small-3">
+                            U.S. investigating report says email account linked
+                            to CIA Director was hacked.
+                          </p>
+                          <div class="notification-note">
+                            <div class="p-1 pl-2">
+                              <span class="text-bold-500"
+                                >Read full article</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="timeline-item">
+                        <div class="timeline-badge">
+                          <span
+                            class="bg-primary bg-lighten-4"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Portfolio project work"
+                            ><i class="ft-map primary"></i
+                          ></span>
+                        </div>
+                        <div class="activity-list-text">
+                          <h6 class="mb-1">
+                            <span>Maps</span
+                            ><span
+                              class="float-right grey font-italic font-small-2"
+                              >Yesterday</span
+                            >
+                          </h6>
+                          <p class="mt-0 mb-2 font-small-3">
+                            You visited Walmart Supercenter in Chicago.
+                          </p>
+                          <div class="notification-note">
+                            <div class="p-1 pl-2">
+                              <span class="text-bold-500">Write a Review!</span>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="timeline-item">
+                        <div class="timeline-badge">
+                          <span
+                            class="bg-primary bg-lighten-4"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Portfolio project work"
+                            ><i class="ft-package primary"></i
+                          ></span>
+                        </div>
+                        <div class="activity-list-text">
+                          <h6 class="mb-1">
+                            <span>Updates Available</span
+                            ><span
+                              class="float-right grey font-italic font-small-2"
+                              >2 days ago</span
+                            >
+                          </h6>
+                          <p class="mt-0 mb-2 font-small-3">
+                            19 app updates found.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="row tab-pane"
+                id="settings-tab"
+                aria-labelledby="base-tab2"
+              >
+                <div class="col-12" id="settings">
+                  <h5 class="mt-2 mb-3">General Settings</h5>
+                  <ul class="list-unstyled mb-0 mx-2">
+                    <li class="mb-3">
+                      <div class="mb-1">
+                        <span class="text-bold-500">Notifications</span>
+                        <div class="float-right">
+                          <div class="custom-switch">
+                            <input
+                              class="custom-control-input"
+                              id="noti-s-switch-1"
+                              type="checkbox"
+                            />
+                            <label
+                              class="custom-control-label"
+                              for="noti-s-switch-1"
+                            ></label>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="font-small-3 m-0">
+                        Use switches when looking for yes or no answers.
+                      </p>
+                    </li>
+                    <li class="mb-3">
+                      <div class="mb-1">
+                        <span class="text-bold-500">Show recent activity</span>
+                        <div class="float-right">
+                          <div class="checkbox">
+                            <input
+                              id="noti-s-checkbox-1"
+                              type="checkbox"
+                              checked
+                            />
+                            <label for="noti-s-checkbox-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="font-small-3 m-0">
+                        The "for" attribute is necessary to bind checkbox with
+                        the input.
+                      </p>
+                    </li>
+                    <li class="mb-3">
+                      <div class="mb-1">
+                        <span class="text-bold-500">Product Update</span>
+                        <div class="float-right">
+                          <div class="custom-switch">
+                            <input
+                              class="custom-control-input"
+                              id="noti-s-switch-4"
+                              type="checkbox"
+                              checked
+                            />
+                            <label
+                              class="custom-control-label"
+                              for="noti-s-switch-4"
+                            ></label>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="font-small-3 m-0">
+                        Message and mail me on weekly product updates.
+                      </p>
+                    </li>
+                    <li class="mb-3">
+                      <div class="mb-1">
+                        <span class="text-bold-500">Email on Follow</span>
+                        <div class="float-right">
+                          <div class="custom-switch">
+                            <input
+                              class="custom-control-input"
+                              id="noti-s-switch-3"
+                              type="checkbox"
+                            />
+                            <label
+                              class="custom-control-label"
+                              for="noti-s-switch-3"
+                            ></label>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="font-small-3 m-0">
+                        Mail me when someone follows me.
+                      </p>
+                    </li>
+                    <li class="mb-3">
+                      <div class="mb-1">
+                        <span class="text-bold-500">Announcements</span>
+                        <div class="float-right">
+                          <div class="checkbox">
+                            <input
+                              id="noti-s-checkbox-2"
+                              type="checkbox"
+                              checked
+                            />
+                            <label for="noti-s-checkbox-2"></label>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="font-small-3 m-0">
+                        Receive all the news and announcements from my clients.
+                      </p>
+                    </li>
+                    <li class="mb-3">
+                      <div class="mb-1">
+                        <span class="text-bold-500">Date and Time</span>
+                        <div class="float-right">
+                          <div class="checkbox">
+                            <input id="noti-s-checkbox-3" type="checkbox" />
+                            <label for="noti-s-checkbox-3"></label>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="font-small-3 m-0">
+                        Show date and time on top of every page.
+                      </p>
+                    </li>
+                    <li>
+                      <div class="mb-1">
+                        <span class="text-bold-500">Email on Comments</span>
+                        <div class="float-right">
+                          <div class="custom-switch">
+                            <input
+                              class="custom-control-input"
+                              id="noti-s-switch-2"
+                              type="checkbox"
+                              checked
+                            />
+                            <label
+                              class="custom-control-label"
+                              for="noti-s-switch-2"
+                            ></label>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="font-small-3 m-0">
+                        Mail me when someone comments on my article.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!-- END Notification Sidebar-->
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    <!-- BEGIN VENDOR JS-->
+    <script src="{% static 'app-assets/vendors/js/vendors.min.js'%}"></script>
+    <script src="{% static 'app-assets/vendors/js/switchery.min.js'%}"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="{% static 'app-assets/vendors/js/chartist.min.js'%}"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN APEX JS-->
+    <script src="{% static 'app-assets/js/core/app-menu.js'%}"></script>
+    <script src="{% static 'app-assets/js/core/app.js'%}"></script>
+    <script src="{% static 'app-assets/js/notification-sidebar.js'%}"></script>
+    <script src="{% static 'app-assets/js/customizer.js'%}"></script>
+    <script src="{% static 'app-assets/js/scroll-top.js'%}"></script>
+    <!-- END APEX JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <script src="{% static 'app-assets/js/dashboard1.js'%}"></script>
+    <!-- END PAGE LEVEL JS-->
+    <!-- BEGIN: Custom CSS-->
+    <script src="{% static 'assets/js/scripts.js'%}"></script>
+    <!-- END: Custom CSS-->
+  </body>
+  <!-- END : Body-->
+</html>

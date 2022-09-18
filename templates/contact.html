@@ -16,8 +16,8 @@
 
 {% block titles %}
                 <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="shop.html" class="nav-item nav-link">Shop</a>
-                <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
+                <a href="{% url 'product:shop' %}" class="nav-item nav-link">Shop</a>
+                <a href="{%url 'product:detail' product.slug%}" class="nav-item nav-link">Shop Detail</a>
                 <div class="nav-item dropdown">
                   <a
                     href="#"
@@ -26,11 +26,11 @@
                     >Pages</a
                   >
                   <div class="dropdown-menu rounded-0 m-0">
-                    <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                    <a href="checkout.html" class="dropdown-item">Checkout</a>
+                    <a href="{% url 'cart:cart' %}" class="dropdown-item">Shopping Cart</a>
+                    <a href="{% url 'cart:checkout' %}" class="dropdown-item">Checkout</a>
                   </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link active"
+                <a href="{% url 'cart:contact' %}" class="nav-item nav-link active"
                   >Contact</a
                 >
 {% endblock titles %}

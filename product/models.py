@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.files.images import get_image_dimensions
 from user.models import MyUser, image_upload, OverwriteStorage
 from django.utils import timezone
 from django.core.exceptions import ValidationError
@@ -9,7 +10,8 @@ from django.core.exceptions import ValidationError
 
 
 def validate_dimension(image):
-    if image.width != 500 or image.height !=  500:
+    width, height = get_image_dimensions(image)
+    if width != 500 or height !=  500:
         raise ValidationError(
             [f'Size should be  500*500 pixels.']
             )
@@ -60,12 +62,12 @@ class Product(models.Model):
     name         = models.CharField(max_length=100)
     suitable     = models.CharField(choices=SEX, max_length= 5, blank=False, null=False)
     
-    color1       = models.CharField(max_length= 50, blank=False, null=False)
+    color1       = models.CharField(max_length= 50, blank=True, null=True)
     color2       = models.CharField(max_length= 50, blank=True, null=True)
     color3       = models.CharField(max_length= 50, blank=True, null=True)
     color4       = models.CharField(max_length= 50, blank=True, null=True)
     color5       = models.CharField(max_length= 50, blank=True, null=True)
-    size1        = models.CharField(max_length= 50, blank=False, null=False)
+    size1        = models.CharField(max_length= 50, blank=True, null=True)
     size2        = models.CharField(max_length= 50, blank=True, null=True)
     size3        = models.CharField(max_length= 50, blank=True, null=True)
     size4        = models.CharField(max_length= 50, blank=True, null=True)
@@ -74,6 +76,7 @@ class Product(models.Model):
     
     quantity     = models.PositiveIntegerField(default=0)
     price        = models.DecimalField(max_digits=7, decimal_places=2, validators = [MinValueValidator(0.0)])
+    price_dis    = models.DecimalField(max_digits=7, decimal_places=2, validators = [MinValueValidator(0.0)])
     
     main_image   = models.ImageField(upload_to=image_upload,
                                      default = 'product/product.png',

@@ -18,6 +18,7 @@ class ProductSerializer(serializers.ModelSerializer):
                   'size1','size2','size3','size4','size5','size6',
                   'quantity', 
                   'price',
+                  'price_dis',
                   'main_image',
                   'details',
                    ]

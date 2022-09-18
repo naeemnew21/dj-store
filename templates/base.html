@@ -77,7 +77,7 @@
           </a>
         </div>
         <div class="col-lg-6 col-6 text-left">
-          <form action="">
+          <form action="" method="GET" link="{% url 'product:shop' %}?Search=">
             <div class="input-group">
               <input
                 type="text"
@@ -93,7 +93,7 @@
           </form>
         </div>
         <div class="col-lg-3 col-6 text-right">
-          <a href="" class="btn border">
+          <a href="{%url 'cart:cart'%}" class="btn border">
             <i class="fas fa-shopping-cart text-primary"></i>
             <span class="badge">{{my_cart}}</span>
           </a>
@@ -125,18 +125,18 @@
 
             <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
               <div class="nav-item dropdown">
-                <a href="#" class="nav-link" data-toggle="dropdown"
+                <a href="{% url 'product:shop' %}?Category=Dresses" class="nav-link" data-toggle="dropdown"
                   >Dresses</a>
               </div>
-              <a href="" class="nav-item nav-link">Shirts</a>
-              <a href="" class="nav-item nav-link">Jeans</a>
-              <a href="" class="nav-item nav-link">Swimwear</a>
-              <a href="" class="nav-item nav-link">Sleepwear</a>
-              <a href="" class="nav-item nav-link">Sportswear</a>
-              <a href="" class="nav-item nav-link">Jumpsuits</a>
-              <a href="" class="nav-item nav-link">Blazers</a>
-              <a href="" class="nav-item nav-link">Jackets</a>
-              <a href="" class="nav-item nav-link">Shoes</a>
+              <a href="{% url 'product:shop' %}?Category=Shirts" class="nav-item nav-link">Shirts</a>
+              <a href="{% url 'product:shop' %}?Category=Jeans" class="nav-item nav-link">Jeans</a>
+              <a href="{% url 'product:shop' %}?Category=Swimwear" class="nav-item nav-link">Swimwear</a>
+              <a href="{% url 'product:shop' %}?Category=Sleepwear" class="nav-item nav-link">Sleepwear</a>
+              <a href="{% url 'product:shop' %}?Category=Sportswear" class="nav-item nav-link">Sportswear</a>
+              <a href="{% url 'product:shop' %}?Category=Jumpsuits" class="nav-item nav-link">Jumpsuits</a>
+              <a href="{% url 'product:shop' %}?Category=Blazers" class="nav-item nav-link">Blazers</a>
+              <a href="{% url 'product:shop' %}?Category=Jackets" class="nav-item nav-link">Jackets</a>
+              <a href="{% url 'product:shop' %}?Category=Shoes" class="nav-item nav-link">Shoes</a>
             </div>
           </nav>
         </div>
@@ -175,9 +175,10 @@
               <div class="navbar-nav ml-auto py-0">
                 {% if request.user.is_authenticated %}
                       <a href="./login/index.html" class="nav-item nav-link">profile</a>
+                      <a href="{% url 'user:logout'%}" class="nav-item nav-link">Logout</a>
                 {% else %}
-                      <a href="./login/index.html" class="nav-item nav-link">Login</a>
-                      <a href="./resgiter/index.html" class="nav-item nav-link">Register</a>
+                      <a href="{%url 'user:login'%}" class="nav-item nav-link">Login</a>
+                      <a href="{%url 'user:sign-up'%}" class="nav-item nav-link">Register</a>
                 {% endif %}
                 
               </div>
@@ -243,8 +244,9 @@
             <div class="col-md-4 mb-5">
               <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
               <div class="d-flex flex-column justify-content-start">
-                <a class="text-dark mb-2" href="index.html"
-                  ><i class="fa fa-angle-right mr-2"></i>FAQs</a
+                <a class="text-dark mb-2" href=""
+                  ><i class="fa fa-angle-right mr-2"></i>FAQs
+                  </a
                 >
                 <a class="text-dark mb-2" href="shop.html"
                   ><i class="fa fa-angle-right mr-2"></i>Trem</a

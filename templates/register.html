@@ -32,7 +32,7 @@
             </div>
             <div class="user-box">
                 <input type="text" onkeyup="validateInput(this)"
-                aria-describedby="inputGroupPrepend2 validationServerLastNameFeedback" name="last_name" id="last_name"  autocomplete="off">
+                aria-describedby="inputGroupPrepend2 validationServerLastNameFeedback" name="last_name" id="last_name" required  autocomplete="off">
                 <label>Last name</label>
                 <div id="validationServerLastNameFeedback" class="invalid-feedback">
                     {{form.last_name.errors}}
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="user-box">
-                <input type="text" id="mobile" name="phone" autocomplete="off"  aria-describedby="validationServer05Feedback"
+                <input type="text" id="mobile" name="phone" autocomplete="off" required  aria-describedby="validationServer05Feedback"
                 onkeyup="validateInput(this)">
                 <label>Mobile</label>
                 <div id="validationServer05Feedback" class="invalid-feedback">
