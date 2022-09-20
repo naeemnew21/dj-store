@@ -77,12 +77,13 @@
           </a>
         </div>
         <div class="col-lg-6 col-6 text-left">
-          <form action="" method="GET" link="{% url 'product:shop' %}?Search=">
+          <form action="{% url 'product:shop' %}" method="GET">
             <div class="input-group">
               <input
                 type="text"
                 class="form-control"
                 placeholder="Search for products"
+                name = "Search"
               />
               <div class="input-group-append">
                 <span class="input-group-text bg-transparent text-primary">
@@ -128,7 +129,7 @@
                 <a href="{% url 'product:shop' %}?Category=Dresses" class="nav-link" data-toggle="dropdown"
                   >Dresses</a>
               </div>
-              <a href="{% url 'product:shop' %}?Category=Shirts" class="nav-item nav-link">Shirts</a>
+              <a href="{% url 'product:shop' %}?Category=T-Shirt" class="nav-item nav-link">Shirts</a>
               <a href="{% url 'product:shop' %}?Category=Jeans" class="nav-item nav-link">Jeans</a>
               <a href="{% url 'product:shop' %}?Category=Swimwear" class="nav-item nav-link">Swimwear</a>
               <a href="{% url 'product:shop' %}?Category=Sleepwear" class="nav-item nav-link">Sleepwear</a>

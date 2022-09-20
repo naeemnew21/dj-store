@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.db.models.query import EmptyQuerySet
+from django.db.models import Q
 from .models import Product, Comment
-from .filter import ProductFilter
-
+from .utils import clean_url, page_clean_url, sort_clean_url
 
 
 
@@ -23,21 +23,47 @@ def index(request):
 class CategoryView(ListView):
     model = Product
     template_name = 'shop.html'
+    paginate_by = 2
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        url = self.request.build_absolute_uri()
+        context['page_url'] = page_clean_url(url)
+        context['sort_url'] = sort_clean_url(url)
+        return context
     
+    def get_ordering(self):
+        sort_by = self.request.GET.get('sort_by', '')
+        if sort_by == 'date':
+            return '-created_at'
+        elif sort_by == 'pricelow':
+            return 'price'
+        elif sort_by == 'pricehigh':
+            return '-price'
+        else:
+            return self.ordering
+        
+
     def get_queryset(self):
         object_list = self.model.objects.all()
- 
-        search = self.request.GET.get('Search', '')
-        category = self.request.GET.get('Category','')
 
-        price = self.request.GET.get('Price', '')
-        color = self.request.GET.get('Color', '')
-        size = self.request.GET.get('Size', '')
+        if self.get_ordering():
+            object_list = object_list.order_by(self.get_ordering())
+ 
+        search         = self.request.GET.get('Search', '')
+        search_by_name = self.request.GET.get('Search_name', '')
+        category       = self.request.GET.get('Category','')
+
+        price  = self.request.GET.get('Price', '')
+        color  = self.request.GET.get('Color', '')
+        size   = self.request.GET.get('Size', '')
         gender = self.request.GET.get('Gender', '')
 
-        if search:
-            myfilter = ProductFilter(self.request.GET, queryset=object_list)
-            object_list = myfilter.qs
+        if search_by_name:
+            object_list = object_list.filter(name__contains = search_by_name)
+        elif search:
+            object_list = object_list.filter(Q(name__contains = search) | Q(brand = search) | Q(details__contains = search) | Q(description__contains = search))
 
         elif category:
             object_list = object_list.filter(category=category)
@@ -78,4 +104,4 @@ class ProductDetailView(DetailView):
 
 
 def dashboard(request):
-    return render(request, 'dashboard.html',)
+    return render(request, 'dashboard.html')

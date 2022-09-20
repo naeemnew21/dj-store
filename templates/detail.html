@@ -111,10 +111,10 @@
                 <input
                   type="radio"
                   class="custom-control-input"
-                  id="size-1"
+                  id="size-{{size}}"
                   name="size"
                 />
-                <label class="custom-control-label" for="size-1">{{size}}</label>
+                <label class="custom-control-label" for="size-{{size}}">{{size}}</label>
               </div>
               {% endfor %}
             </form>
@@ -128,10 +128,10 @@
                 <input
                   type="radio"
                   class="custom-control-input"
-                  id="color-1"
+                  id="color-{{color}}"
                   name="color"
                 />
-                <label class="custom-control-label" for="color-1">{{color}}</label>
+                <label class="custom-control-label" for="color-{{color}}">{{color}}</label>
               </div>
               {% endfor %}
             </form>
@@ -336,8 +336,9 @@
       </div>
       <div class="row px-xl-5">
         <div class="col">
-          {% for item in popular %}
           <div class="owl-carousel related-carousel">
+            
+          {% for item in popular %}
             <div class="card product-item border-0">
               <div
                 class="card-header product-img position-relative overflow-hidden bg-transparent border p-0"
@@ -365,9 +366,9 @@
                 >
               </div>
             </div>
-            
-          </div>
           {% endfor %}
+
+          </div>
         </div>
       </div>
     </div>
