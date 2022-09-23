@@ -10,9 +10,10 @@ class CustomUserAdmin(UserAdmin):
     model = MyUser
     list_display = [ 'email', 'is_verified', 'seller', 'is_staff', 'is_superuser', 'auth_provider']
     list_display_links = ['email']
+    list_editable = ('is_staff', )
     
     search_fields   = ('email', 'phone',)
-    list_filter     = ('is_superuser', 'date_joined')
+    list_filter     = ('is_superuser', 'date_joined', 'seller', 'is_staff')
     readonly_fields =('date_joined', 'last_login', 'username', 'auth_provider')
      
     fieldsets = (

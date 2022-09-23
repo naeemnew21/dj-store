@@ -35,7 +35,7 @@
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <link
-      href="{% static 'https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900' %}"
+      href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900"
       rel="stylesheet"
     />
     <!-- BEGIN VENDOR CSS-->
@@ -153,14 +153,14 @@
               <a
                 class="nav-link apptogglefullscreen"
                 id="navbar-fullscreen"
-                href="{% static 'javascript:;' %}"
+                href="javascript:;"
                 ><i class="ft-maximize font-medium-3"></i
               ></a>
             </li>
             <li class="nav-item nav-search">
-              <a class="nav-link nav-link-search" href="{% static 'javascript:' %}"
-                ><i class="ft-search font-medium-3"></i
-              ></a>
+              <a class="nav-link nav-link-search" href="javascript:">
+                <i class="ft-search font-medium-3"></i>
+              </a>
               <div class="search-input">
                 <div class="search-input-icon">
                   <i class="ft-search font-medium-3"></i>
@@ -184,7 +184,7 @@
               <ul class="navbar-nav">
                 <li class="nav-item">
                   <div class="logo">
-                    <a class="logo-text" href="{% static 'index.html' %}">
+                    <a class="logo-text" href="">
                       <div class="logo-img">
                         <img
                           class="logo-img"
@@ -214,7 +214,7 @@
                   data-toggle="dropdown"
                 >
                   <div class="user d-md-flex d-none mr-2">
-                    <span class="text-right">John Doe</span
+                    <span class="text-right">{{request.user.get_name}}</span
                     ><span class="text-right text-muted font-small-3"
                       >Available</span
                     >
@@ -231,17 +231,18 @@
                   class="dropdown-menu text-left dropdown-menu-right m-0 pb-0"
                   aria-labelledby="dropdownBasic2"
                 >
-                  <a class="dropdown-item" href="{% static 'page-user-profile.html' %}">
+                  <a class="dropdown-item" href="">
                     <div class="d-flex align-items-center">
                       <i class="ft-edit mr-2"></i><span>Edit Profile</span>
-                    </div> </a
-                  ><a class="dropdown-item" href="{% static 'app-email.html' %}">
+                    </div> 
+                  </a>
+                  <a class="dropdown-item" href="">
                     <div class="d-flex align-items-center">
                       <i class="ft-mail mr-2"></i><span>My Inbox</span>
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="{% static 'auth-login.html' %}">
+                  <a class="dropdown-item" href="{% url 'user:logout' %}">
                     <div class="d-flex align-items-center">
                       <i class="ft-power mr-2"></i><span>Logout</span>
                     </div>
@@ -298,6 +299,7 @@
                   </div>
                 </div>
               </div>
+              
               <div class="col-xl-3 col-lg-6 col-md-6 col-12">
                 <div class="card gradient-ibiza-sunset">
                   <div class="card-content">
@@ -432,90 +434,42 @@
                             </tr>
                           </thead>
                           <tbody>
+                            {% for product in products %}
+
                             <tr>
                               <td>
                                 <img
                                   class="height-50"
-                                  src="{% static 'app-assets/img/elements/01.png'%}"
+                                  src="{{product.main_image.url}}"
                                   alt="Generic placeholder image"
                                 />
                               </td>
-                              <td>Espresso</td>
-                              <td>1</td>
+                              <td>{{product.name}}</td>
+                              <td>{{product.quantity}}</td>
                               <td>
-                                <span
-                                  class="badge badge-pill bg-light-primary cursor-pointer"
-                                  >Active</span
-                                >
+                                {% if product.approved %}
+                                    <span
+                                    class="badge badge-pill bg-light-success cursor-pointer"
+                                    >Approved</span>
+                                {% else %}
+                                   <span
+                                    class="badge badge-pill bg-light-danger cursor-pointer"
+                                    >Pending</span>
+                                {% endif %}
                               </td>
-                              <td>$19.94</td>
+                              <td>{{product.price}}</td>
                               <td>
-                                <i class="ft-trash-2"></i>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <img
-                                  class="height-50"
-                                  src="{% static 'app-assets/img/elements/15.png' %}"
-                                  alt="Generic placeholder image"
-                                />
-                              </td>
-                              <td>iPhone</td>
-                              <td>2</td>
-                              <td>
-                                <span
-                                  class="badge badge-pill bg-light-danger cursor-pointer"
-                                  >Disabled</span
-                                >
-                              </td>
-                              <td>$99.00</td>
-                              <td>
-                                <i class="ft-trash-2"></i>
+                                <form method="POST" action="{% url 'product:delete-product' product.slug%}">
+                                  {% csrf_token %}
+                                  <button class="btn btn-primary py-2 px-4" type="submit" id="send-data" >
+                                  <i class="ft-trash-2"></i>
+                                </button>
+                                </form>
                               </td>
                             </tr>
-                            <tr>
-                              <td>
-                                <img
-                                  class="height-50"
-                                  src="{% static 'app-assets/img/elements/11.png'%}"
-                                  alt="Generic placeholder image"
-                                />
-                              </td>
-                              <td>iMac</td>
-                              <td>1</td>
-                              <td>
-                                <span
-                                  class="badge badge-pill bg-light-info cursor-pointer"
-                                  >Paused</span
-                                >
-                              </td>
-                              <td>$299.00</td>
-                              <td>
-                                <i class="ft-trash-2"></i>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <img
-                                  class="height-50"
-                                  src="{% static 'app-assets/img/elements/14.png'%}"
-                                  alt="Generic placeholder image"
-                                />
-                              </td>
-                              <td>iWatch</td>
-                              <td>2</td>
-                              <td>
-                                <span
-                                  class="badge badge-pill bg-light-success cursor-pointer"
-                                  >Active</span
-                                >
-                              </td>
-                              <td>$24.51</td>
-                              <td>
-                                <i class="ft-trash-2"></i>
-                              </td>
-                            </tr>
+
+                            {% endfor %}
+                            
                           </tbody>
                         </table>
                       </div>
@@ -527,9 +481,13 @@
           </div>
 
           <div class="col-8" style="margin: 0 auto">
-            <form name="sentMessage" id="contactForm" novalidate="novalidate" enctype="multipart/form-data">
+            <form method="POST" action="" name="sentMessage" id="contactForm" novalidate="novalidate" enctype="multipart/form-data">
+
+              {% csrf_token %}
+
               <div class="control-group">
                 <input
+                  name="name"
                   type="text"
                   class="form-control"
                   id="product_name"
@@ -537,11 +495,25 @@
                   required="required"
                   data-validation-required-message="Please enter the Product Name"
                 />
-                <p class="help-block text-danger"></p>
+                <p class="help-block text-danger">{{form.name.errors}}</p>
+                
+              </div>
+              <div class="control-group">
+                <input
+                  name="brand"
+                  type="text"
+                  class="form-control"
+                  id="brand_name"
+                  placeholder="Brand Name"
+                  required="required"
+                  data-validation-required-message="Please enter the Product Name"
+                />
+                <p class="help-block text-danger">{{form.brand.errors}}</p>
               </div>
               <div class="row">
                 <div class="control-group col-6">
                   <input
+                    name="price"
                     type="number"
                     class="form-control"
                     id="price"
@@ -549,10 +521,23 @@
                     required="required"
                     data-validation-required-message="Please enter product price"
                   />
-                  <p class="help-block text-danger"></p>
+                  <p class="help-block text-danger">{{form.price.errors}}</p>
                 </div>
                 <div class="control-group col-6">
                   <input
+                    name="price_dis"
+                    type="number"
+                    class="form-control"
+                    id="price_dis"
+                    placeholder="Old Product price"
+                    required="required"
+                    data-validation-required-message="Please enter Old product price"
+                  />
+                  <p class="help-block text-danger">{{form.price_dis.errors}}</p>
+                </div>
+                <div class="control-group col-6">
+                  <input
+                    name="quantity"
                     type="number"
                     class="form-control"
                     id="count"
@@ -560,66 +545,101 @@
                     required="required"
                     data-validation-required-message="Please enter product count"
                   />
-                  <p class="help-block text-danger"></p>
+                  <p class="help-block text-danger">{{form.quantity.errors}}</p>
                 </div>
               </div>
 
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="gender">Gender</label>
+                </div>
+                <select class="custom-select" id="gender" name="suitable">
+                  <option value="All-Gender" selected>All</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Baby">Baby</option>
+                </select>
+                <p class="help-block text-danger">{{form.suitable.errors}}</p>
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="category">Category</label>
+                </div>
+                <select class="custom-select" id="category" name="category">
+                  <option value="Shirts" selected>Shirts</option>
+                  <option value="Jeans">Jeans</option>
+                  <option value="Swimwear">Swimwear</option>
+                  <option value="Sleepwear">Sleepwear</option>
+                  <option value="Sportswear">Sportswear</option>
+                  <option value="Jumpsuits">Jumpsuits</option>
+                  <option value="Blazers">Blazers</option>
+                  <option value="Jackets">Jackets</option>
+                  <option value="Shoes">Shoes</option>
+                </select>
+                <p class="help-block text-danger">{{form.category.errors}}</p>
+              </div>
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <div
-                    class="custom-control custom-checkbox custom-control-inline"
-                  >
+
+                  <div class="custom-control custom-checkbox custom-control-inline" >
                     <input
+                      name="size1"
+                      value="XS"
                       type="checkbox"
                       class="custom-control-input"
                       id="size1"
                     />
                     <label class="custom-control-label" for="size1">XS</label>
                   </div>
-                  <div
-                    class="custom-control custom-checkbox custom-control-inline"
-                  >
+
+                  <div class="custom-control custom-checkbox custom-control-inline" >
                     <input
+                      name="size2"
+                      value="S"
                       type="checkbox"
                       class="custom-control-input"
                       id="size2"
                     />
                     <label class="custom-control-label" for="size2">S</label>
                   </div>
-                  <div
-                    class="custom-control custom-checkbox custom-control-inline"
-                  >
+
+                  <div class="custom-control custom-checkbox custom-control-inline" >
                     <input
+                      name="size3"
+                      value="M"
                       type="checkbox"
                       class="custom-control-input"
                       id="size3"
                     />
                     <label class="custom-control-label" for="size3">M</label>
                   </div>
-                  <div
-                    class="custom-control custom-checkbox custom-control-inline"
-                  >
+
+                  <div class="custom-control custom-checkbox custom-control-inline" >
                     <input
+                      name="size4"
+                      value="L"
                       type="checkbox"
                       class="custom-control-input"
                       id="size4"
                     />
                     <label class="custom-control-label" for="size4">L</label>
                   </div>
-                  <div
-                    class="custom-control custom-checkbox custom-control-inline"
-                  >
+
+                  <div class="custom-control custom-checkbox custom-control-inline" >
                     <input
+                      name="size5"
+                      value="XL"
                       type="checkbox"
                       class="custom-control-input"
                       id="size5"
                     />
                     <label class="custom-control-label" for="size5">XL</label>
                   </div>
-                  <div
-                    class="custom-control custom-checkbox custom-control-inline"
-                  >
+
+                  <div class="custom-control custom-checkbox custom-control-inline" >
                     <input
+                      name="size6"
+                      value="XXL"
                       type="checkbox"
                       class="custom-control-input"
                       id="size6"
@@ -627,77 +647,76 @@
                     <label class="custom-control-label" for="size6">XXL</label>
                   </div>
                 </div>
+
                 <div class="col-md-6 form-group">
-                  <div
-                    class="custom-control custom-checkbox custom-control-inline"
-                  >
+
+                  <div class="custom-control custom-checkbox custom-control-inline" >
                     <input
+                      name="color1"
+                      value="Black"
                       type="checkbox"
                       class="custom-control-input"
                       id="color1"
                     />
-                    <label class="custom-control-label" for="color1"
-                      >Black</label
-                    >
+                    <label class="custom-control-label" for="color1">Black</label>
                   </div>
-                  <div
-                    class="custom-control custom-checkbox custom-control-inline"
-                  >
+
+                  <div class="custom-control custom-checkbox custom-control-inline" >
                     <input
+                      name="color2"
+                      value="White"
                       type="checkbox"
                       class="custom-control-input"
                       id="color2"
                     />
-                    <label class="custom-control-label" for="color2"
-                      >White</label
-                    >
+                    <label class="custom-control-label" for="color2">White</label>
                   </div>
-                  <div
-                    class="custom-control custom-checkbox custom-control-inline"
-                  >
+
+                  <div class="custom-control custom-checkbox custom-control-inline" >
                     <input
+                      name="color3"
+                      value="Red"
                       type="checkbox"
                       class="custom-control-input"
                       id="color3"
                     />
                     <label class="custom-control-label" for="color3">Red</label>
                   </div>
-                  <div
-                    class="custom-control custom-checkbox custom-control-inline"
-                  >
+
+                  <div class="custom-control custom-checkbox custom-control-inline" >
                     <input
+                      name="color4"
+                      value="Blue"
                       type="checkbox"
                       class="custom-control-input"
                       id="color4"
                     />
-                    <label class="custom-control-label" for="color4"
-                      >Blue</label
-                    >
+                    <label class="custom-control-label" for="color4">Blue</label>
                   </div>
-                  <div
-                    class="custom-control custom-checkbox custom-control-inline"
-                  >
+
+                  <div class="custom-control custom-checkbox custom-control-inline" >
                     <input
+                      name="color5"
+                      value="Green"
                       type="checkbox"
                       class="custom-control-input"
                       id="color5"
                     />
-                    <label class="custom-control-label" for="color5"
-                      >Green</label
-                    >
+                    <label class="custom-control-label" for="color5">Green</label>
                   </div>
                 </div>
               </div>
               <div class="control-group">
                 <input
-                  type="file" 
-                  multiple 
+                  name="main_image"
+                  type="file"
                   class=""
                   id="file-uploader"
                   placeholder="file-uploader"
                   required="required"
                   data-validation-required-message="Please upload photo"
                 />
+                <p class="help-block text-danger">{{form.main_image.errors}}</p>
                 <img
                   id="preview"
                   class="img img-thumbnail d-none"
@@ -711,6 +730,7 @@
               </div>
               <div class="control-group">
                 <textarea
+                  name="details"
                   class="form-control"
                   rows="6"
                   id="description"
@@ -723,9 +743,8 @@
               <div>
                 <button
                   class="btn btn-primary py-2 px-4"
-                  type="button"
+                  type="submit"
                   id="send-data"
-                  onclick="add_product()"
                 >
                   Send
                 </button>
@@ -756,528 +775,6 @@
       </div>
     </div>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
-    <!-- START Notification Sidebar-->
-    <aside
-      class="notification-sidebar d-none d-sm-none d-md-block"
-      id="notification-sidebar"
-    >
-      <a class="notification-sidebar-close"
-        ><i class="ft-x font-medium-3 grey darken-1"></i
-      ></a>
-      <div class="side-nav notification-sidebar-content">
-        <div class="row">
-          <div class="col-12 notification-nav-tabs">
-            <ul class="nav nav-tabs">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  id="base-tab1"
-                  data-toggle="tab"
-                  aria-controls="activity-tab"
-                  href="{% static '#activity-tab' %}"
-                  aria-expanded="true"
-                  >Activity</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  id="base-tab2"
-                  data-toggle="tab"
-                  aria-controls="settings-tab"
-                  href="{% static '#settings-tab' %}"
-                  aria-expanded="false"
-                  >Settings</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 notification-tab-content">
-            <div class="tab-content">
-              <div
-                class="row tab-pane active"
-                id="activity-tab"
-                role="tabpanel"
-                aria-expanded="true"
-                aria-labelledby="base-tab1"
-              >
-                <div class="col-12" id="activity">
-                  <h5 class="my-2 text-bold-500">System Logs</h5>
-                  <div
-                    class="timeline-left timeline-wrapper mb-3"
-                    id="timeline-1"
-                  >
-                    <ul class="timeline">
-                      <li class="timeline-line mt-4"></li>
-                      <li class="timeline-item">
-                        <div class="timeline-badge">
-                          <span
-                            class="bg-primary bg-lighten-4"
-                            data-toggle="tooltip"
-                            data-placement="right"
-                            title="Portfolio project work"
-                            ><i class="ft-download primary"></i
-                          ></span>
-                        </div>
-                        <div class="activity-list-text">
-                          <h6 class="mb-1">
-                            <span>New Update Available</span
-                            ><span
-                              class="float-right grey font-italic font-small-2"
-                              >1 min ago</span
-                            >
-                          </h6>
-                          <p class="mt-0 mb-2 font-small-3">
-                            Android Pie 9.0.0_r52v availabe (658MB).
-                          </p>
-                          <div class="notification-note">
-                            <div class="p-1 pl-2">
-                              <span class="text-bold-500">Download Now!</span>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="timeline-item">
-                        <div class="timeline-badge">
-                          <span
-                            class="bg-primary bg-lighten-4"
-                            data-toggle="tooltip"
-                            data-placement="right"
-                            title="Portfolio project work"
-                            ><img
-                              class="avatar"
-                              src="{% static 'app-assets/img/portrait/small/avatar-s-15.png'%}"
-                              alt="avatar"
-                              width="40"
-                          /></span>
-                        </div>
-                        <div class="activity-list-text">
-                          <h6 class="mb-1">
-                            <span>Reminder!</span
-                            ><span
-                              class="float-right grey font-italic font-small-2"
-                              >52 min ago</span
-                            >
-                          </h6>
-                          <p class="mt-0 mb-2 font-small-3">
-                            Your meeting is scheduled with Mr. Derrick Walters
-                            at 16:00.
-                          </p>
-                          <div class="notification-note">
-                            <div class="p-1 pl-2">
-                              <span class="text-bold-500">Snooze</span>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="timeline-item">
-                        <div class="timeline-badge">
-                          <span
-                            class="bg-primary bg-lighten-4"
-                            data-toggle="tooltip"
-                            data-placement="right"
-                            title="Portfolio project work"
-                            ><img
-                              class="avatar"
-                              src="{% static 'app-assets/img/portrait/small/avatar-s-16.png'%}"
-                              alt="avatar"
-                              width="40"
-                          /></span>
-                        </div>
-                        <div class="activity-list-text">
-                          <h6 class="mb-1">
-                            <span>Recieved a File</span
-                            ><span
-                              class="float-right grey font-italic font-small-2"
-                              >4 hours ago</span
-                            >
-                          </h6>
-                          <p class="mt-0 mb-2 font-small-3">
-                            Christina Rogers sent you a file for the next
-                            conference.
-                          </p>
-                          <div class="notification-note">
-                            <div class="p-1 pl-2">
-                              <img
-                                src="{% static 'app-assets/img/icons/sketch-mac-icon.png'%}"
-                                alt="icon"
-                                width="20"
-                              /><span class="text-bold-500 ml-2"
-                                >Diamond.sketch</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="timeline-item">
-                        <div class="timeline-badge">
-                          <span
-                            class="bg-primary bg-lighten-4"
-                            data-toggle="tooltip"
-                            data-placement="right"
-                            title="Portfolio project work"
-                            ><i class="ft-mic primary"></i
-                          ></span>
-                        </div>
-                        <div class="activity-list-text">
-                          <h6 class="mb-1">
-                            <span>Voice Message</span
-                            ><span
-                              class="float-right grey font-italic font-small-2"
-                              >10 hours ago</span
-                            >
-                          </h6>
-                          <p class="mt-0 mb-2 font-small-3">
-                            Natalya Parker sent you a voice message.
-                          </p>
-                          <div class="notification-note">
-                            <div class="p-1 pl-2">
-                              <span class="text-bold-500">Listen</span>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="timeline-item">
-                        <div class="timeline-badge">
-                          <span
-                            class="bg-primary bg-lighten-4"
-                            data-toggle="tooltip"
-                            data-placement="right"
-                            title="Portfolio project work"
-                            ><i class="ft-cloud-drizzle primary"></i
-                          ></span>
-                        </div>
-                        <div class="activity-list-text">
-                          <h6 class="mb-1">
-                            <span>Weather Update</span
-                            ><span
-                              class="float-right grey font-italic font-small-2"
-                              >Yesterday</span
-                            >
-                          </h6>
-                          <p class="mt-0 mb-2 font-small-3">
-                            Hi John! It is a rainy day with 16&deg;C.
-                          </p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <h5 class="my-2 text-bold-500">Applications Logs</h5>
-                  <div class="timeline-left timeline-wrapper" id="timeline-2">
-                    <ul class="timeline">
-                      <li class="timeline-line mt-4"></li>
-                      <li class="timeline-item">
-                        <div class="timeline-badge">
-                          <span
-                            class="bg-primary bg-lighten-4"
-                            data-toggle="tooltip"
-                            data-placement="right"
-                            title="Portfolio project work"
-                            ><img
-                              class="avatar"
-                              src="{% static 'app-assets/img/portrait/small/avatar-s-26.png'%}"
-                              alt="avatar"
-                              width="40"
-                          /></span>
-                        </div>
-                        <div class="activity-list-text">
-                          <h6 class="mb-1">
-                            <span>Gmail</span
-                            ><span
-                              class="float-right grey font-italic font-small-2"
-                              >Just now</span
-                            >
-                          </h6>
-                          <p class="mt-0 mb-2 font-small-3">
-                            Victoria Hampton sent you a mail and has a file
-                            attachment with it.
-                          </p>
-                          <div class="notification-note">
-                            <div class="p-1 pl-2">
-                              <img
-                                src="{% static 'app-assets/img/icons/pdf.png'%}"
-                                alt="pdf icon"
-                                width="20"
-                              /><span class="text-bold-500 ml-2"
-                                >Register.pdf</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="timeline-item">
-                        <div class="timeline-badge">
-                          <span
-                            class="bg-primary bg-lighten-4"
-                            data-toggle="tooltip"
-                            data-placement="right"
-                            title="Portfolio project work"
-                            ><i class="ft-droplet primary"></i
-                          ></span>
-                        </div>
-                        <div class="activity-list-text">
-                          <h6 class="mb-1">
-                            <span>MakeMyTrip</span
-                            ><span
-                              class="float-right grey font-italic font-small-2"
-                              >7 hours ago</span
-                            >
-                          </h6>
-                          <p class="mt-0 mb-2 font-small-3">
-                            Your next flight for San Francisco will be on 24th
-                            March.
-                          </p>
-                          <div class="notification-note">
-                            <div class="p-1 pl-2">
-                              <span class="text-bold-500">Important</span>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="timeline-item">
-                        <div class="timeline-badge">
-                          <span
-                            class="bg-primary bg-lighten-4"
-                            data-toggle="tooltip"
-                            data-placement="right"
-                            title="Portfolio project work"
-                            ><img
-                              class="avatar"
-                              src="{% static 'app-assets/img/portrait/small/avatar-s-23.png'%}"
-                              alt="avatar"
-                              width="40"
-                          /></span>
-                        </div>
-                        <div class="activity-list-text">
-                          <h6 class="mb-1">
-                            <span>CNN</span
-                            ><span
-                              class="float-right grey font-italic font-small-2"
-                              >16 hours ago</span
-                            >
-                          </h6>
-                          <p class="mt-0 mb-2 font-small-3">
-                            U.S. investigating report says email account linked
-                            to CIA Director was hacked.
-                          </p>
-                          <div class="notification-note">
-                            <div class="p-1 pl-2">
-                              <span class="text-bold-500"
-                                >Read full article</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="timeline-item">
-                        <div class="timeline-badge">
-                          <span
-                            class="bg-primary bg-lighten-4"
-                            data-toggle="tooltip"
-                            data-placement="right"
-                            title="Portfolio project work"
-                            ><i class="ft-map primary"></i
-                          ></span>
-                        </div>
-                        <div class="activity-list-text">
-                          <h6 class="mb-1">
-                            <span>Maps</span
-                            ><span
-                              class="float-right grey font-italic font-small-2"
-                              >Yesterday</span
-                            >
-                          </h6>
-                          <p class="mt-0 mb-2 font-small-3">
-                            You visited Walmart Supercenter in Chicago.
-                          </p>
-                          <div class="notification-note">
-                            <div class="p-1 pl-2">
-                              <span class="text-bold-500">Write a Review!</span>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="timeline-item">
-                        <div class="timeline-badge">
-                          <span
-                            class="bg-primary bg-lighten-4"
-                            data-toggle="tooltip"
-                            data-placement="right"
-                            title="Portfolio project work"
-                            ><i class="ft-package primary"></i
-                          ></span>
-                        </div>
-                        <div class="activity-list-text">
-                          <h6 class="mb-1">
-                            <span>Updates Available</span
-                            ><span
-                              class="float-right grey font-italic font-small-2"
-                              >2 days ago</span
-                            >
-                          </h6>
-                          <p class="mt-0 mb-2 font-small-3">
-                            19 app updates found.
-                          </p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="row tab-pane"
-                id="settings-tab"
-                aria-labelledby="base-tab2"
-              >
-                <div class="col-12" id="settings">
-                  <h5 class="mt-2 mb-3">General Settings</h5>
-                  <ul class="list-unstyled mb-0 mx-2">
-                    <li class="mb-3">
-                      <div class="mb-1">
-                        <span class="text-bold-500">Notifications</span>
-                        <div class="float-right">
-                          <div class="custom-switch">
-                            <input
-                              class="custom-control-input"
-                              id="noti-s-switch-1"
-                              type="checkbox"
-                            />
-                            <label
-                              class="custom-control-label"
-                              for="noti-s-switch-1"
-                            ></label>
-                          </div>
-                        </div>
-                      </div>
-                      <p class="font-small-3 m-0">
-                        Use switches when looking for yes or no answers.
-                      </p>
-                    </li>
-                    <li class="mb-3">
-                      <div class="mb-1">
-                        <span class="text-bold-500">Show recent activity</span>
-                        <div class="float-right">
-                          <div class="checkbox">
-                            <input
-                              id="noti-s-checkbox-1"
-                              type="checkbox"
-                              checked
-                            />
-                            <label for="noti-s-checkbox-1"></label>
-                          </div>
-                        </div>
-                      </div>
-                      <p class="font-small-3 m-0">
-                        The "for" attribute is necessary to bind checkbox with
-                        the input.
-                      </p>
-                    </li>
-                    <li class="mb-3">
-                      <div class="mb-1">
-                        <span class="text-bold-500">Product Update</span>
-                        <div class="float-right">
-                          <div class="custom-switch">
-                            <input
-                              class="custom-control-input"
-                              id="noti-s-switch-4"
-                              type="checkbox"
-                              checked
-                            />
-                            <label
-                              class="custom-control-label"
-                              for="noti-s-switch-4"
-                            ></label>
-                          </div>
-                        </div>
-                      </div>
-                      <p class="font-small-3 m-0">
-                        Message and mail me on weekly product updates.
-                      </p>
-                    </li>
-                    <li class="mb-3">
-                      <div class="mb-1">
-                        <span class="text-bold-500">Email on Follow</span>
-                        <div class="float-right">
-                          <div class="custom-switch">
-                            <input
-                              class="custom-control-input"
-                              id="noti-s-switch-3"
-                              type="checkbox"
-                            />
-                            <label
-                              class="custom-control-label"
-                              for="noti-s-switch-3"
-                            ></label>
-                          </div>
-                        </div>
-                      </div>
-                      <p class="font-small-3 m-0">
-                        Mail me when someone follows me.
-                      </p>
-                    </li>
-                    <li class="mb-3">
-                      <div class="mb-1">
-                        <span class="text-bold-500">Announcements</span>
-                        <div class="float-right">
-                          <div class="checkbox">
-                            <input
-                              id="noti-s-checkbox-2"
-                              type="checkbox"
-                              checked
-                            />
-                            <label for="noti-s-checkbox-2"></label>
-                          </div>
-                        </div>
-                      </div>
-                      <p class="font-small-3 m-0">
-                        Receive all the news and announcements from my clients.
-                      </p>
-                    </li>
-                    <li class="mb-3">
-                      <div class="mb-1">
-                        <span class="text-bold-500">Date and Time</span>
-                        <div class="float-right">
-                          <div class="checkbox">
-                            <input id="noti-s-checkbox-3" type="checkbox" />
-                            <label for="noti-s-checkbox-3"></label>
-                          </div>
-                        </div>
-                      </div>
-                      <p class="font-small-3 m-0">
-                        Show date and time on top of every page.
-                      </p>
-                    </li>
-                    <li>
-                      <div class="mb-1">
-                        <span class="text-bold-500">Email on Comments</span>
-                        <div class="float-right">
-                          <div class="custom-switch">
-                            <input
-                              class="custom-control-input"
-                              id="noti-s-switch-2"
-                              type="checkbox"
-                              checked
-                            />
-                            <label
-                              class="custom-control-label"
-                              for="noti-s-switch-2"
-                            ></label>
-                          </div>
-                        </div>
-                      </div>
-                      <p class="font-small-3 m-0">
-                        Mail me when someone comments on my article.
-                      </p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </aside>
-    <!-- END Notification Sidebar-->
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
     <!-- BEGIN VENDOR JS-->

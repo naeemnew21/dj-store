@@ -13,11 +13,8 @@
 
 
 {% block titles %}
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="shop.html" class="nav-item nav-link">Shop</a>
-                <a href="detail.html" class="nav-item nav-link active"
-                  >Shop Detail</a
-                >
+                <a href="{% url 'product:index' %}" class="nav-item nav-link">Home</a>
+                <a href="{% url 'product:shop' %}" class="nav-item nav-link">Shop</a>
                 <div class="nav-item dropdown">
                   <a
                     href="#"
@@ -30,7 +27,7 @@
                     <a href="{% url 'cart:checkout' %}" class="dropdown-item">Checkout</a>
                   </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="{% url 'cart:contact' %}" class="nav-item nav-link">Contact</a>
 
 {% endblock titles %}
 
@@ -47,7 +44,7 @@
       >
         <h1 class="font-weight-semi-bold text-uppercase mb-3">Shop Detail</h1>
         <div class="d-inline-flex">
-          <p class="m-0"><a href="./index.html">Home</a></p>
+          <p class="m-0"><a href="{% url 'product:index' %}">Home</a></p>
           <p class="m-0 px-2">-</p>
           <p class="m-0">Shop Detail</p>
         </div>

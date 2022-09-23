@@ -96,7 +96,7 @@
         <div class="col-lg-3 col-6 text-right">
           <a href="{%url 'cart:cart'%}" class="btn border">
             <i class="fas fa-shopping-cart text-primary"></i>
-            <span class="badge">{{my_cart}}</span>
+            <span class="badge" id="my_cart">{{my_cart}}</span>
           </a>
         </div>
       </div>
@@ -175,7 +175,7 @@
 
               <div class="navbar-nav ml-auto py-0">
                 {% if request.user.is_authenticated %}
-                      <a href="./login/index.html" class="nav-item nav-link">profile</a>
+                      <a href="" class="nav-item nav-link">profile</a>
                       <a href="{% url 'user:logout'%}" class="nav-item nav-link">Logout</a>
                 {% else %}
                       <a href="{%url 'user:login'%}" class="nav-item nav-link">Login</a>
@@ -330,5 +330,6 @@
 
     <!-- Template Javascript -->
     <script src="{%static 'js/main.js'%}"></script>
+    <script src="{%static 'js/cart.js'%}"></script>
   </body>
 </html>

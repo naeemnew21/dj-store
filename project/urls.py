@@ -30,3 +30,8 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 
+
+handler404 = 'user.views.handle_404'  #page_not_found
+handler500 = 'user.views.handle_500'  #internal_server_error
+handler403 = 'user.views.handle_403'  #permission_denied
+handler400 = 'user.views.handle_400'  #Bad Request response

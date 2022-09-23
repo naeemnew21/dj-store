@@ -17,25 +17,42 @@ def validate_dimension(image):
             )
 
 
+CAT = [
+    ('Shirts','Shirts'),
+    ('Jeans','Jeans'),
+    ('Swimwear','Swimwear'),
+    ('Sleepwear','Sleepwear'),
+    ('Sportswear','Sportswear'),
+    ('Jumpsuits','Jumpsuits'),
+    ('Blazers','Blazers'),
+    ('Jackets','Jackets'),
+    ('Shoes','Shoes')
+    ]
 
 COLOR =[
-    ('red','red'),
-    ('blue','blue'),
-    ('black','black')
+    ('Black','Black'),
+    ('White','White'),
+    ('Red','Red'),
+    ('Blue','Blue'),
+    ('Green','Green')
     ]
 
 
 SIZE =[
-    ('s','s'),
-    ('m','m'),
-    ('l','l')
+    ('XS','XS'),
+    ('S','S'),
+    ('M','M'),
+    ('L','L'),
+    ('XL','XL'),
+    ('XXL','XXL')
     ]
 
 
 SEX =[
-    ('men','men'),
-    ('women','women'),
-    ('all','all')
+    ('All-Gender','All-Gender'),
+    ('Male','Male'),
+    ('Female','Female'),
+    ('Baby','Baby')
     ]
 
 
@@ -57,22 +74,22 @@ class ProductImage(models.Model):
 class Product(models.Model):
     created_by   = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     created_at   = models.DateTimeField(default=timezone.now)
-    category     = models.CharField(max_length=50)
+    category     = models.CharField(choices=CAT, max_length=50)
     brand        = models.CharField(max_length=50)
     name         = models.CharField(max_length=100)
-    suitable     = models.CharField(choices=SEX, max_length= 5, blank=False, null=False)
+    suitable     = models.CharField(choices=SEX, max_length= 20, blank=False, null=False)
     
-    color1       = models.CharField(max_length= 50, blank=True, null=True)
-    color2       = models.CharField(max_length= 50, blank=True, null=True)
-    color3       = models.CharField(max_length= 50, blank=True, null=True)
-    color4       = models.CharField(max_length= 50, blank=True, null=True)
-    color5       = models.CharField(max_length= 50, blank=True, null=True)
-    size1        = models.CharField(max_length= 50, blank=True, null=True)
-    size2        = models.CharField(max_length= 50, blank=True, null=True)
-    size3        = models.CharField(max_length= 50, blank=True, null=True)
-    size4        = models.CharField(max_length= 50, blank=True, null=True)
-    size5        = models.CharField(max_length= 50, blank=True, null=True)
-    size6        = models.CharField(max_length= 50, blank=True, null=True)
+    color1       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True)
+    color2       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True)
+    color3       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True)
+    color4       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True)
+    color5       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True)
+    size1        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True)
+    size2        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True)
+    size3        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True)
+    size4        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True)
+    size5        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True)
+    size6        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True)
     
     quantity     = models.PositiveIntegerField(default=0)
     price        = models.DecimalField(max_digits=7, decimal_places=2, validators = [MinValueValidator(0.0)])
@@ -91,6 +108,7 @@ class Product(models.Model):
     
     '''number of selled products at all time'''
     selled     = models.PositiveIntegerField(default=0)
+    approved   = models.BooleanField(default = False)
     
     def __str__(self):
         return self.name

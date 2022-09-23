@@ -57,9 +57,9 @@ AUTH_PROVIDERS = {'google': 'google', 'email': 'email'}
 class MyUser(AbstractUser):
     email         = models.EmailField(verbose_name="email address", unique=True, blank=False, null=False)
     phone_regex   = RegexValidator(regex="[0][1][0125][0-9][ ]?\d{3}[ ]?\d{4}", message="Phone number must be entered in the format: '01xx xxx xxxx'. Up to 11 digits allowed.")
-    phone         = models.CharField(validators=[phone_regex], max_length=11, blank=True, null=True) # validators should be a list
+    phone         = models.CharField(validators=[phone_regex], max_length=11, blank=False, null=False) # validators should be a list
     first_name    = models.CharField(verbose_name="first name", validators=[validate_name], max_length=30, blank=False, null=False)
-    last_name     = models.CharField(verbose_name="last name", max_length=30, blank=True, null=True)
+    last_name     = models.CharField(verbose_name="last name", validators=[validate_name], max_length=30, blank=False, null=False)
     
     avatar        = models.ImageField(upload_to=image_upload, default = 'user/avatar.png', storage = OverwriteStorage() )
     avatar_url    = models.URLField(blank=True, null=True) # incase of provider = google
@@ -84,4 +84,11 @@ class MyUser(AbstractUser):
             'refresh': str(refresh),
             'access': str(refresh.access_token)
         }
+
     
+    @property
+    def get_name(self):
+        name = self.first_name
+        if self.last_name:
+            name += ' ' + self.last_name
+        return name

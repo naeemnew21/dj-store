@@ -32,7 +32,7 @@
             </div>
             <div class="user-box">
                 <input type="text" onkeyup="validateInput(this)"
-                aria-describedby="inputGroupPrepend2 validationServerLastNameFeedback" name="last_name" id="last_name" required  autocomplete="off">
+                aria-describedby="inputGroupPrepend2 validationServerLastNameFeedback" required name="last_name" id="last_name"  autocomplete="off">
                 <label>Last name</label>
                 <div id="validationServerLastNameFeedback" class="invalid-feedback">
                     {{form.last_name.errors}}
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="user-box">
-                <input type="text" id="mobile" name="phone" autocomplete="off" required  aria-describedby="validationServer05Feedback"
+                <input type="text" id="mobile" name="phone" autocomplete="off"  required aria-describedby="validationServer05Feedback"
                 onkeyup="validateInput(this)">
                 <label>Mobile</label>
                 <div id="validationServer05Feedback" class="invalid-feedback">
@@ -75,8 +75,8 @@
             <div >
                 <label for="seller" style="color:#ffffff;">Choose account:</label>
                 <select name="seller" id="seller" name="seller">
-                    <option value=1>User</option>
-                    <option value=0>Seller</option>
+                    <option value="">User</option>
+                    <option value="1">Seller</option>
                 </select>
                 <div id="validationServer05Feedback" class="invalid-feedback">
                     {{form.seller.errors}}
@@ -94,6 +94,19 @@
                     Submit
                 </button>
             </div>
+
+            <div class="col-12">
+                <a href="{% url 'user:login'%}">
+                    <button type="button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        login
+                    </button>
+                </a>
+            </div>
+
         </form>
     </div>
 

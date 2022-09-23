@@ -5,7 +5,7 @@ from rest_framework import status
 from .models import Order, NonUserOrder
 from product.models import Product
 from .serializers import OrderSerializer, OrderDelSerializer
-
+from .views import cart_context
 
 
 
@@ -46,9 +46,14 @@ class CartApi(GenericAPIView):
                 order.quantity -= quantity
             order.save()
             if order.quantity <= 0 :
-                order.delete()   
-                return Response(status=status.HTTP_204_NO_CONTENT)
-            return Response(status=status.HTTP_201_CREATED)
+                order.delete()  
+                context = cart_context(self.request)
+                return Response(context, status=status.HTTP_204_NO_CONTENT)
+            context = cart_context(self.request)
+            context['order_id'] = order.id
+            context['order_quantity'] = order.quantity
+            context['price'] = order.get_price
+            return Response(context, status=status.HTTP_201_CREATED)
         
         if user_cart_id == None:
             return Response(status=status.HTTP_400_BAD_REQUEST)
@@ -64,8 +69,10 @@ class CartApi(GenericAPIView):
         order.save()
         if order.quantity <= 0 :
             order.delete()   
-            return Response(status=status.HTTP_204_NO_CONTENT)
-        return Response(status=status.HTTP_201_CREATED)
+            context = cart_context(self.request)
+            return Response(context, status=status.HTTP_204_NO_CONTENT)
+        context = cart_context(self.request)
+        return Response(context, status=status.HTTP_201_CREATED)
     
     
     

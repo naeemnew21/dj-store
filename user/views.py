@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt, csrf_protect, requires_csr
 from .utils import get_username
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import user_passes_test
 from .forms import SignUpForm
 from .models import MyUser
 
@@ -20,32 +21,18 @@ from django.http import HttpResponse
 from django.contrib import messages
 
 
-
-
-def cart(request):
-    return render(request, 'cart.html')
-
-def checkout(request):
-    return render(request, 'checkout.html')
-
-def contact(request):
-    return render(request, 'contact.html')
-
-def detail(request):
-    return render(request, 'detail.html')
-
-def index(request):
-    return render(request, 'index.html')
-
-def logintest(request):
-    return render(request, 'login.html')
-
-def register(request):
-    return render(request, 'register.html')
-
-def shop(request):
-    return render(request, 'shop.html')
     
+
+def pend_staff(user):
+    return user.is_authenticated and user.seller
+     
+
+
+@user_passes_test(pend_staff, login_url='/login' )
+def pending(request):
+    if request.user.is_staff:
+        return redirect('product:dashboard')
+    return render(request, 'pending.html')
 
 
 class Registeration(CreateView):
@@ -64,6 +51,9 @@ class Registeration(CreateView):
         user = authenticate(username = username, password = password)
         login(self.request, user)
         
+        if user.seller:
+            return redirect('user:pending')
+        
         return HttpResponseRedirect(self.get_success_url())
     
     
@@ -75,8 +65,10 @@ class Registeration(CreateView):
 @csrf_protect
 def login_view(request):
     context = {'error':''}
-    
-    if request.user.is_authenticated: 
+
+    if request.user.is_authenticated:
+        if user.seller:
+            return redirect('user:pending') 
         return redirect("product:index")
     
     
@@ -89,6 +81,8 @@ def login_view(request):
         user = authenticate(username=username, password=password)
         if user :
             login(request, user)
+            if user.seller:
+                return redirect('user:pending')
             return redirect("product:index")
         else :
             context['error'] = "Invalid Login" 

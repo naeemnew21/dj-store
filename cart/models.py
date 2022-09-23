@@ -12,7 +12,7 @@ class Order(models.Model):
     '''three comming fields are must to create order'''
     user      = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     product   = models.ForeignKey(Product, on_delete=models.CASCADE)
-    quantity  = models.PositiveIntegerField(default=1, validators = [MinValueValidator(1)])
+    quantity  = models.PositiveIntegerField(default=0, validators = [MinValueValidator(0)])
     # color     = models.CharField(max_length= 50, blank=False, null=False)
     # size      = models.CharField(max_length= 50, blank=False, null=False)
      
