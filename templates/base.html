@@ -172,11 +172,40 @@
                 
                 {% endblock titles %}
 
+              </div>
 
               <div class="navbar-nav ml-auto py-0">
                 {% if request.user.is_authenticated %}
-                      <a href="" class="nav-item nav-link">profile</a>
-                      <a href="{% url 'user:logout'%}" class="nav-item nav-link">Logout</a>
+                      <a
+                        class="nav-link dropdown-toggle user-dropdown d-flex align-items-end"
+                        id="dropdownBasic2"
+                        href="{% static 'javascript:;' %}"
+                        data-toggle="dropdown"
+                      >
+                        <img
+                          class="rounded-circle me-2"
+                          src="{{request.user.avatar.url}}"
+                          alt=""
+                          height="35"
+                          width="35"
+                        />
+                      </a>
+                      <div
+                        class="dropdown-menu text-left dropdown-menu-right m-0 pb-0"
+                        aria-labelledby="dropdownBasic2"
+                      >
+                        <a class="dropdown-item" href="{% url 'user:profile'%}">
+                          <div class="d-flex align-items-center">
+                            <i class="ft-edit mr-2"></i><span>Edit Profile</span>
+                          </div> 
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'user:logout' %}">
+                          <div class="d-flex align-items-center">
+                            <i class="ft-power mr-2"></i><span>Logout</span>
+                          </div>
+                        </a>
+                      </div>
                 {% else %}
                       <a href="{%url 'user:login'%}" class="nav-item nav-link">Login</a>
                       <a href="{%url 'user:sign-up'%}" class="nav-item nav-link">Register</a>
@@ -299,6 +328,7 @@
       </div>
       <div class="row border-top border-light mx-xl-5 py-4">
         <div class="col-md-6 px-xl-0">
+
           <p class="mb-md-0 text-center text-md-left text-dark">
             &copy;
             <a class="text-dark font-weight-semi-bold" href="#"
@@ -308,6 +338,7 @@
               >Mohamed Ibrahim</a
             >
           </p>
+
         </div>
       </div>
     </div>
@@ -331,5 +362,6 @@
     <!-- Template Javascript -->
     <script src="{%static 'js/main.js'%}"></script>
     <script src="{%static 'js/cart.js'%}"></script>
+
   </body>
 </html>

@@ -9,7 +9,8 @@ from project import settings
 from django.core.files.storage import FileSystemStorage
 from random import choice
 from string import ascii_lowercase, digits
-from datetime import datetime
+import datetime
+from django.core.cache import cache 
 
 
 
@@ -27,7 +28,7 @@ def generate_name(length=4, chars = ascii_lowercase+digits):
         2. current data and time
     '''
     random_name = ''.join([choice(chars) for i in range(length)])
-    dt = datetime.now()
+    dt = datetime.datetime.now()
     dt_str = dt.strftime("%Y%m%d%H%M%S")
     return "%s-%s"%(random_name, dt_str)
 
@@ -92,3 +93,17 @@ class MyUser(AbstractUser):
         if self.last_name:
             name += ' ' + self.last_name
         return name
+
+    @property
+    def last_seen(self):
+        return cache.get('seen_%s' % self.username)
+
+    @property
+    def online(self):
+        if self.last_seen:
+            now = datetime.datetime.now()
+            if now > self.last_seen + datetime.timedelta(
+                        seconds=settings.USER_ONLINE_TIMEOUT):
+                return False
+            return True
+        return False 

@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
-from django.views.generic.edit import CreateView
+from django.views.generic import CreateView, UpdateView
 from django.contrib.auth import login, logout, authenticate
 from django.views.decorators.csrf import csrf_exempt, csrf_protect, requires_csrf_token
 from .utils import get_username
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import user_passes_test
-from .forms import SignUpForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import SignUpForm, UserForm
 from .models import MyUser
 
 from django.contrib.auth.forms import PasswordResetForm
@@ -21,7 +22,9 @@ from django.http import HttpResponse
 from django.contrib import messages
 
 
-    
+
+
+
 
 def pend_staff(user):
     return user.is_authenticated and user.seller
@@ -57,7 +60,18 @@ class Registeration(CreateView):
         return HttpResponseRedirect(self.get_success_url())
     
     
+
+class EditProfileView(LoginRequiredMixin, UpdateView):
+    model = MyUser
+    form_class = UserForm
+    template_name = 'edit_profile.html'
+    success_url = reverse_lazy('user:profile')
+    login_url = reverse_lazy('user:login')
     
+    def get_object(self, queryset=None):
+        return self.request.user   
+    
+
     
     
 @requires_csrf_token
@@ -67,7 +81,7 @@ def login_view(request):
     context = {'error':''}
 
     if request.user.is_authenticated:
-        if user.seller:
+        if request.user.seller:
             return redirect('user:pending') 
         return redirect("product:index")
     

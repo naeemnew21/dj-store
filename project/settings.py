@@ -62,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'cart.middleware.SetCartSessionKeyMiddleware',
+    'user.middleware.ActiveUserMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -156,6 +157,21 @@ AUTH_USER_MODEL = 'user.MyUser'
 CORS_ORIGIN_ALLOW_ALL=True
 
 CART_SESSION_ID_KEY = 'user_cart_id'
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'active_users',              
+    }
+}
+
+# Number of seconds of inactivity before a user is marked offline
+USER_ONLINE_TIMEOUT = 20
+
+# Number of seconds that we will keep track of inactive users for before 
+# their last seen is removed from the cache
+USER_LASTSEEN_TIMEOUT = 60 * 60 * 24 * 7
 
 
 
