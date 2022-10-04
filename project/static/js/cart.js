@@ -11,7 +11,7 @@ function add_to_cart(element)
     
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "cart/cart-api", true);
+    xhttp.open("POST", "/cart/cart-api", true);
     const csrftoken = getCookie('csrftoken');
     xhttp.setRequestHeader('x-csrftoken', csrftoken)
     xhttp.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
@@ -28,7 +28,6 @@ function add_to_cart(element)
     
     xhttp.send(JSON.stringify(data));   
 }
-
 
 
 function add_to_cart_cart_page(element)
@@ -40,7 +39,41 @@ function add_to_cart_cart_page(element)
     
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "cart/cart-api", true);
+    xhttp.open("POST", "/cart/cart-api", true);
+    const csrftoken = getCookie('csrftoken');
+    xhttp.setRequestHeader('x-csrftoken', csrftoken)
+    xhttp.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
+    xhttp.setRequestHeader('Accept', 'application/json')
+
+    xhttp.onreadystatechange = function()
+    {
+      if (this.readyState == 4 && this.status == 201)
+      {
+        response = JSON.parse(this.responseText)
+        pk = response.order_id;
+        document.getElementById("my_cart").innerHTML = response.my_cart;
+        document.getElementById("price-"+ pk).innerHTML = response.order_price;
+        document.getElementById("total_before").innerHTML = response.total;
+        document.getElementById("total_after").innerHTML = response.totch;
+      }
+    }
+    
+    xhttp.send(JSON.stringify(data));   
+}
+
+
+
+
+function add_quant_to_cart(element)
+{
+    let data = {};
+    data['product']  = element.id;
+    data['action']   = element.name;
+    data['quantity'] = document.getElementById("product_quantity_cart").value
+    
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/cart/cart-api", true);
     const csrftoken = getCookie('csrftoken');
     xhttp.setRequestHeader('x-csrftoken', csrftoken)
     xhttp.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
@@ -58,16 +91,14 @@ function add_to_cart_cart_page(element)
     xhttp.send(JSON.stringify(data));   
 }
 
-function add_quant_to_cart(element)
+
+
+function del_order(element)
 {
-    let data = {};
-    data['product']  = element.id;
-    data['action']   = element.name;
-    data['quantity'] = document.getElementById("").value
-    
+    pk = element.id;
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "cart/cart-api", true);
+    xhttp.open("DELETE", "/cart/del-order/"+pk, true);
     const csrftoken = getCookie('csrftoken');
     xhttp.setRequestHeader('x-csrftoken', csrftoken)
     xhttp.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
@@ -75,15 +106,13 @@ function add_quant_to_cart(element)
 
     xhttp.onreadystatechange = function()
     {
-      if (this.readyState == 4 && this.status == 201)
+      if (this.status == 204)
       {
-        response = JSON.parse(this.responseText)
-        console.log(response.count)
-        // document.getElementById("my_cart").innerHTML = response.my_cart;
+        location.reload()
       }
     }
     
-    xhttp.send(JSON.stringify(data));   
+    xhttp.send();   
 }
 
 

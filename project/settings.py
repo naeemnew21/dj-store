@@ -62,7 +62,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'cart.middleware.SetCartSessionKeyMiddleware',
-    'user.middleware.ActiveUserMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -85,6 +84,7 @@ TEMPLATES = [
         },
     },
 ]
+TEMPLATE_STRING_IF_INVALID = 'Invalid variable'
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
@@ -124,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Cairo'
 
 USE_I18N = True
 
@@ -159,20 +159,10 @@ CORS_ORIGIN_ALLOW_ALL=True
 CART_SESSION_ID_KEY = 'user_cart_id'
 
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-        'LOCATION': 'active_users',              
-    }
-}
 
-# Number of seconds of inactivity before a user is marked offline
-USER_ONLINE_TIMEOUT = 20
-
-# Number of seconds that we will keep track of inactive users for before 
-# their last seen is removed from the cache
-USER_LASTSEEN_TIMEOUT = 60 * 60 * 24 * 7
-
+LOGIN_URL= '/login'
+LOGIN_REDIRECT_URL  = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

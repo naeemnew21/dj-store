@@ -27,15 +27,15 @@ class ProductAdmin(admin.ModelAdmin):
     
 class CommentAdmin(admin.ModelAdmin):
     model = Comment
-    #readonly_fields=('created_by', 'created_at', 'slug', 'selled')
+    
     def has_add_permission(self, request, obj=None):
         return False
     
     def has_change_permission(self, request, obj=None):
         return False
     
-    def has_delete_permission(self, request, obj=None):
-        return False
+    # def has_delete_permission(self, request, obj=None):
+    #     return False
         
 
 admin.site.register(Product, ProductAdmin)

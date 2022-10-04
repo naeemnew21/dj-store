@@ -5,7 +5,7 @@ from django.db.models.query import EmptyQuerySet
 from django.db.models import Q
 from .models import Product, Comment
 from .forms import ProductCreateForm
-from django.http import HttpResponseRedirect, JsonResponse
+from django.http import HttpResponseRedirect, JsonResponse, HttpResponseBadRequest
 from django.contrib.auth.decorators import user_passes_test
 from django.urls import reverse_lazy
 from .utils import page_clean_url, sort_clean_url, recreate_url, get_search, get_back_filter_params, get_front_filter_params 
@@ -137,9 +137,33 @@ class ProductDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['comments'] = Comment.objects.filter(product = self.get_object())
-        context['popular'] = Product.objects.order_by('created_at')[:8]
+        context['comments']     = Comment.objects.filter(product = self.get_object())
+        context['comments_num'] = len(context['comments'])
+        context['popular']      = Product.objects.order_by('created_at')[:8]
+        
         return context
+
+
+    def post(self, request, *args, **kwargs):
+        if not(request.user.is_authenticated):
+            return redirect("user:login")
+
+        rate = request.POST.get('rate', 0)
+        comment = request.POST.get('comment','')
+        
+        user = request.user
+        product = self.get_object()
+
+        try:
+            review, created = Comment.objects.get_or_create(user=user, product=product)
+        except:
+            return redirect("product:detail", slug=product.slug)
+
+        review.rate = rate
+        review.comment = comment
+        review.save()
+
+        return redirect("product:detail", slug=product.slug)
 
 
 

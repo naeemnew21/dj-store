@@ -10,7 +10,6 @@ from django.core.files.storage import FileSystemStorage
 from random import choice
 from string import ascii_lowercase, digits
 import datetime
-from django.core.cache import cache 
 
 
 
@@ -37,7 +36,7 @@ def generate_name(length=4, chars = ascii_lowercase+digits):
 def image_upload(instance, filename):
     imgname, *exten = filename.split(".")
     new_name = generate_name() 
-    return "product/%s.%s"%(new_name, exten[-1])
+    return "user/%s.%s"%(new_name, exten[-1])
 
 
 
@@ -93,17 +92,5 @@ class MyUser(AbstractUser):
         if self.last_name:
             name += ' ' + self.last_name
         return name
-
-    @property
-    def last_seen(self):
-        return cache.get('seen_%s' % self.username)
-
-    @property
-    def online(self):
-        if self.last_seen:
-            now = datetime.datetime.now()
-            if now > self.last_seen + datetime.timedelta(
-                        seconds=settings.USER_ONLINE_TIMEOUT):
-                return False
-            return True
-        return False 
+        
+    

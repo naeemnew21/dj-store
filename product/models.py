@@ -1,3 +1,4 @@
+from enum import unique
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.core.files.images import get_image_dimensions
@@ -104,7 +105,7 @@ class Product(models.Model):
     description  = models.CharField(max_length=255, default="", blank=True, null=True)
     details      = models.TextField(blank=True, null=True) 
     
-    slug         = models.SlugField(max_length = 255, null = False, blank = False)
+    slug         = models.SlugField(max_length = 255, null = False, blank = False, unique=True)
     
     '''number of selled products at all time'''
     selled     = models.PositiveIntegerField(default=0)
@@ -133,7 +134,7 @@ class Product(models.Model):
     
     @property
     def get_rate(self):
-        qs = self.comment__set.objects.all()
+        qs = Comment.objects.filter(product = self)
         if not(qs.exists()):
             return 0
         rate = 0
@@ -148,10 +149,11 @@ class Product(models.Model):
 
 
 class Comment(models.Model):
-    user    = models.ForeignKey(MyUser, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    comment = models.CharField(max_length= 255, blank=True, null=True)
-    rate    = models.DecimalField(max_digits=2, decimal_places=1, default=0, validators = [MinValueValidator(0.0),MaxValueValidator(5.0)])
-    
+    user       = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    product    = models.ForeignKey(Product, on_delete=models.CASCADE)
+    comment    = models.CharField(max_length= 255, blank=True, null=True)
+    rate       = models.DecimalField(max_digits=2, decimal_places=1, default=0, validators = [MinValueValidator(0.0),MaxValueValidator(5.0)])
+    created_at = models.DateTimeField(default=timezone.now)
+
     def __str__(self):
         return str(self.id)

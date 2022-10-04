@@ -5,9 +5,47 @@ from rest_framework import status
 from .models import Order, NonUserOrder
 from product.models import Product
 from .serializers import OrderSerializer, OrderDelSerializer
-from .views import cart_context
+from project.settings import CART_SESSION_ID_KEY
 
 
+
+
+
+def cart_items(request):
+    user = request.user
+    user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
+    charge = 60
+    if user.is_authenticated:
+        orders = Order.objects.filter(user = user, confirmed = False)
+        total = sum([order.get_price for order in orders])
+        context = {'orders':orders, 'total': total, 'totch':total+charge}
+  
+    if user_cart_id == None:
+        context = {'orders':EmptyQuerySet, 'total':0, 'totch':0}
+    
+    orders = NonUserOrder.objects.filter(user_cart_id = user_cart_id)
+    total = sum([order.get_price for order in orders])
+    context = {'orders':orders, 'total': total, 'totch':total+charge}
+
+
+
+def cart_context(request):
+    user = request.user
+    user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
+    charge = 60
+    if user.is_authenticated:
+        orders = Order.objects.filter(user = user, confirmed = False)
+        total = sum([item.quantity for item in orders])
+        total_price = sum([item.get_price for item in orders])
+        return {'my_cart':total, 'total':total_price, 'totch':total_price+charge}
+    
+    if user_cart_id == None:
+        return {'my_cart':0, 'total':0, 'totch':0}
+    
+    orders = NonUserOrder.objects.filter(user_cart_id = user_cart_id)
+    total = sum([item.quantity for item in orders])
+    total_price = sum([item.get_price for item in orders])
+    return {'my_cart':total, 'total':total_price, 'totch':total_price+charge}
 
 
 
@@ -47,12 +85,10 @@ class CartApi(GenericAPIView):
             order.save()
             if order.quantity <= 0 :
                 order.delete()  
-                context = cart_context(self.request)
-                return Response(context, status=status.HTTP_204_NO_CONTENT)
+                return Response(status=status.HTTP_204_NO_CONTENT)
             context = cart_context(self.request)
+            context['order_price'] = order.get_price
             context['order_id'] = order.id
-            context['order_quantity'] = order.quantity
-            context['price'] = order.get_price
             return Response(context, status=status.HTTP_201_CREATED)
         
         if user_cart_id == None:
@@ -69,9 +105,10 @@ class CartApi(GenericAPIView):
         order.save()
         if order.quantity <= 0 :
             order.delete()   
-            context = cart_context(self.request)
-            return Response(context, status=status.HTTP_204_NO_CONTENT)
+            return Response(status=status.HTTP_204_NO_CONTENT)
         context = cart_context(self.request)
+        context['order_price'] = order.get_price
+        context['order_id'] = order.id
         return Response(context, status=status.HTTP_201_CREATED)
     
     

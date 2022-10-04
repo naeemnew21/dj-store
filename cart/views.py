@@ -1,49 +1,71 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from project.settings import CART_SESSION_ID_KEY
 from django.db.models.query import EmptyQuerySet
+from django.contrib.auth.decorators import login_required
 from .models import Order, NonUserOrder
+from .forms import CheckOutCreateForm
+
 
 
 
 def cart_items(request):
     user = request.user
     user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
+    charge = 60
     if user.is_authenticated:
         orders = Order.objects.filter(user = user, confirmed = False)
+        confirmed = Order.objects.filter(user = user, confirmed = True)
         total = sum([order.get_price for order in orders])
-        context = {'orders':orders, 'total': total}
+        context = {'confirmed':confirmed, 'orders':orders, 'total': total, 'totch':total+charge}
         return render(request, 'cart.html' , context)
     
     if user_cart_id == None:
-        context = {'orders':EmptyQuerySet, 'total':0}
+        context = {'orders':EmptyQuerySet, 'total':0, 'totch':0}
         return render(request, 'cart.html' , context)
     
     orders = NonUserOrder.objects.filter(user_cart_id = user_cart_id)
     total = sum([order.get_price for order in orders])
-    context = {'orders':orders, 'total': total}
+    context = {'orders':orders, 'total': total, 'totch':total+charge}
     return render(request, 'cart.html' , context)
 
 
 
 
 
+@login_required
 def checkout(request):
+    context = {}
     user = request.user
-    user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
-    if user.is_authenticated:
+
+    if request.POST:
+        
         orders = Order.objects.filter(user = user, confirmed = False)
-        total = sum([order.get_price for order in orders])
-        context = {'orders':orders, 'total': total}
-        return render(request, 'checkout.html' , context)
-    
-    if user_cart_id == None:
-        context = {'orders':EmptyQuerySet, 'total':0}
-        return render(request, 'checkout.html' , context)
-    
-    orders = NonUserOrder.objects.filter(user_cart_id = user_cart_id)
+        if not(orders.exists()):
+            return redirect('cart:cart') 
+
+        form = CheckOutCreateForm(request.POST)
+        if form.is_valid():
+            checkout = form.save(commit=False)
+            checkout.user = user
+            checkout.save()
+
+            for i in orders:
+                checkout.orders.add(i)
+                i.confirmed = True
+                i.save()
+            return redirect('cart:cart') 
+        else:
+            context['form'] = form
+    else: # GET request
+        form = CheckOutCreateForm()
+        context['form'] = form
+
+    charge = 60
+    orders = Order.objects.filter(user = user, confirmed = False)
     total = sum([order.get_price for order in orders])
-    context = {'orders':orders, 'total': total}
+    context.update({'orderscount':len(orders), 'orders':orders, 'total': total, 'totch':total+charge})
     return render(request, 'checkout.html' , context)
+    
 
 
 

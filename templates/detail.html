@@ -1,7 +1,7 @@
 
 {% extends 'base.html' %}
 {% load static %}
-
+{% load custom_tags %}
 
 {% block navbar %}
           <nav
@@ -86,13 +86,20 @@
           <h3 class="font-weight-semi-bold">{{product.name}}</h3>
           <div class="d-flex mb-3">
             <div class="text-primary mr-2">
-              <small class="fas fa-star"></small>
-              <small class="fas fa-star"></small>
-              <small class="fas fa-star"></small>
-              <small class="fas fa-star-half-alt"></small>
-              <small class="far fa-star"></small>
+
+              {% for i in product.get_rate|get_list %}
+                {% if i == 1 %}
+                    <small class="fas fa-star"></small>
+                {% elif i == 0.5%}
+                    <small class="fas fa-star-half-alt"></small>
+                {% else %}
+                    <small class="far fa-star"></small>
+                {% endif %}
+                
+              {% endfor %}
+
             </div>
-            <small class="pt-1">(50 Reviews)</small>
+            <small class="pt-1">({{comments_num}} Reviews)</small>
           </div>
           <h3 class="font-weight-semi-bold mb-4">${{product.price}}</h3>
           <p class="mb-4">
@@ -142,7 +149,8 @@
               </div>
               <input
                 type="text"
-                class="form-control bg-secondary text-center"
+                class="form-control bg-secondary text-center" 
+                id="product_quantity_cart" 
                 value="1"
               />
               <div class="input-group-btn">
@@ -151,7 +159,11 @@
                 </button>
               </div>
             </div>
-            <button class="btn btn-primary px-3">
+            <button class="btn btn-primary px-3"
+                  onclick="add_quant_to_cart(this)" 
+                  id="{{product.id}}"
+                  name="add" 
+            >
               <i class="fa fa-shopping-cart mr-1"></i> Add To Cart
             </button>
           </div>
@@ -189,124 +201,147 @@
               >Information</a
             >
             <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-3"
-              >Reviews (0)</a
+              >Reviews ({{comments_num}})</a
             >
           </div>
           <div class="tab-content">
             <div class="tab-pane fade show active" id="tab-pane-1">
               <h4 class="mb-3">Product Description</h4>
               <p>
-                {{product.description}}
+                {{product.description|safe}}
               </p>
             </div>
             <div class="tab-pane fade" id="tab-pane-2">
               <h4 class="mb-3">Additional Information</h4>
               <p>
-                {{product.details}}
+                {{product.details|safe}}
               </p>
-              <div class="row">
-                <div class="col-md-6">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item px-0">
-                      Sit erat duo lorem duo ea consetetur, et eirmod takimata.
-                    </li>
-                    <li class="list-group-item px-0">
-                      Amet kasd gubergren sit sanctus et lorem eos sadipscing
-                      at.
-                    </li>
-                    <li class="list-group-item px-0">
-                      Duo amet accusam eirmod nonumy stet et et stet eirmod.
-                    </li>
-                    <li class="list-group-item px-0">
-                      Takimata ea clita labore amet ipsum erat justo voluptua.
-                      Nonumy.
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md-6">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item px-0">
-                      Sit erat duo lorem duo ea consetetur, et eirmod takimata.
-                    </li>
-                    <li class="list-group-item px-0">
-                      Amet kasd gubergren sit sanctus et lorem eos sadipscing
-                      at.
-                    </li>
-                    <li class="list-group-item px-0">
-                      Duo amet accusam eirmod nonumy stet et et stet eirmod.
-                    </li>
-                    <li class="list-group-item px-0">
-                      Takimata ea clita labore amet ipsum erat justo voluptua.
-                      Nonumy.
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
             <div class="tab-pane fade" id="tab-pane-3">
               <div class="row">
+                
                 <div class="col-md-6">
-                  <h4 class="mb-4">1 review for "Colorful Stylish Shirt"</h4>
-                  <div class="media mb-4">
-                    <img
-                      src="img/user.jpg"
-                      alt="Image"
-                      class="img-fluid mr-3 mt-1"
-                      style="width: 45px"
-                    />
-                    <div class="media-body">
-                      <h6>
-                        John Doe<small> - <i>01 Jan 2045</i></small>
-                      </h6>
-                      <div class="text-primary mb-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
+                  <h4 class="mb-4">{{comments_num}} review for "{{product.name}}"</h4>
+
+                  {% for comment in comments %}
+                    <div class="media mb-4">
+                      <img
+                        src="{{comment.user.avatar.url}}"
+                        alt="Image"
+                        class="img-fluid mr-3 mt-1"
+                        style="width: 45px"
+                      />
+                      <div class="media-body">
+                        <h6>
+                          {{comment.user.name}}<small> - <i>{{comment.created_at|date:'d N Y'}}</i></small>
+                        </h6>
+                        <div class="text-primary mb-2">
+                    
+
+                          {% for i in comment.rate|get_list %}
+                            {% if i == 1 %}
+                                 <i class="fas fa-star"></i>
+                            {% elif i == 0.5%}
+                                <i class="fas fa-star-half-alt"></i> 
+                            {% else %}
+                                <i class="far fa-star"></i>
+                            {% endif %}
+                            
+                          {% endfor %}
+
+                        </div>
+                        <p>
+                          {{comment.comment}}
+                        </p>
                       </div>
-                      <p>
-                        Diam amet duo labore stet elitr ea clita ipsum, tempor
-                        labore accusam ipsum et no at. Kasd diam tempor rebum
-                        magna dolores sed sed eirmod ipsum.
-                      </p>
                     </div>
-                  </div>
+                  {% endfor %}
+                  
+
                 </div>
+
+
+                <style>
+                  .rating {
+                      float:left;
+                  }
+                  
+                  
+                  .rating:not(:checked) > input {
+                      position:absolute;
+                      clip:rect(0,0,0,0);
+                  }
+                  
+                  .rating:not(:checked) > label {
+                      float:right;
+                      width:1em;
+                      padding:0 .1em;
+                      overflow:hidden;
+                      white-space:nowrap;
+                      cursor:pointer;
+                      font-size:200%;
+                      line-height:1.2;
+                      color:#ddd;
+                      text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+                  }
+                  
+                  .rating:not(:checked) > label:before {
+                      content: '★ ';
+                  }
+                  
+                  .rating > input:checked ~ label {
+                      color: #f70;
+                      text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+                  }
+                  
+                  .rating:not(:checked) > label:hover,
+                  .rating:not(:checked) > label:hover ~ label {
+                      color: gold;
+                      text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+                  }
+                  
+                  .rating > input:checked + label:hover,
+                  .rating > input:checked + label:hover ~ label,
+                  .rating > input:checked ~ label:hover,
+                  .rating > input:checked ~ label:hover ~ label,
+                  .rating > label:hover ~ input:checked ~ label {
+                      color: #ea0;
+                      text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+                  }
+
+                  /* end of Lea's code */
+                  
+                </style>
+
                 <div class="col-md-6">
                   <h4 class="mb-4">Leave a review</h4>
-                  <small
-                    >Your email address will not be published. Required fields
-                    are marked *</small
-                  >
-                  <div class="d-flex my-3">
+                  
+                  <form method="POST">
+                    {% csrf_token %}
+                    
+                    <div class="d-flex my-3">
                     <p class="mb-0 mr-2">Your Rating * :</p>
-                    <div class="text-primary">
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
+                      <fieldset class="rating">
+                          <input type="radio" id="star5" name="rate" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+                          <input type="radio" id="star4" name="rate" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+                          <input type="radio" id="star3" name="rate" value="3" /><label for="star3" title="Meh">3 stars</label>
+                          <input type="radio" id="star2" name="rate" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                          <input type="radio" id="star1" name="rate" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                        </fieldset>
                     </div>
-                  </div>
-                  <form>
+
+
                     <div class="form-group">
                       <label for="message">Your Review *</label>
                       <textarea
+                        name="comment" 
                         id="message"
                         cols="30"
                         rows="5"
                         class="form-control"
                       ></textarea>
                     </div>
-                    <div class="form-group">
-                      <label for="name">Your Name *</label>
-                      <input type="text" class="form-control" id="name" />
-                    </div>
-                    <div class="form-group">
-                      <label for="email">Your Email *</label>
-                      <input type="email" class="form-control" id="email" />
-                    </div>
+
                     <div class="form-group mb-0">
                       <input
                         type="submit"
@@ -315,6 +350,7 @@
                       />
                     </div>
                   </form>
+
                 </div>
               </div>
             </div>
@@ -357,8 +393,12 @@
                 <a href="{% url 'product:detail' item.slug %}" class="btn btn-sm text-dark p-0"
                   ><i class="fas fa-eye text-primary mr-1"></i>View Detail</a
                 >
-                <a href="" class="btn btn-sm text-dark p-0"
-                  ><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To
+                <a class="btn btn-sm text-dark p-0" 
+                 onclick="add_to_cart(this)" 
+                 id="{{product.id}}"
+                 name="add"
+                >
+                  <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To
                   Cart</a
                 >
               </div>

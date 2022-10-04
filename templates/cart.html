@@ -65,6 +65,11 @@
           <table class="table table-bordered text-center mb-0">
             <thead class="bg-secondary text-dark">
               <tr>
+                <th>My Cart</th>
+              </tr>
+            </thead>
+            <thead class="bg-secondary text-dark">
+              <tr>
                 <th>Products</th>
                 <th>Price</th>
                 <th>Quantity</th>
@@ -87,7 +92,7 @@
                   >
                     <div class="input-group-btn">
                       <button class="btn btn-sm btn-primary btn-minus"
-                        onclick="add_to_cart_cart_page(this)"
+                        onclick="add_to_cart_cart_page(this)" 
                         id="{{order.product.id}}" 
                         name="remove"
                       >
@@ -102,7 +107,7 @@
                     />
                     <div class="input-group-btn">
                       <button class="btn btn-sm btn-primary btn-plus"
-                        onclick="add_to_cart_cart_page(this)"
+                        onclick="add_to_cart_cart_page(this)" 
                         id="{{order.product.id}}" 
                         name="add"
                       >
@@ -111,17 +116,62 @@
                     </div>
                   </div>
                 </td>
-                <td class="align-middle">{{order.get_price}}</td>
+                <td class="align-middle" id="price-{{order.id}}" >{{order.get_price}}</td>
+
                 <td class="align-middle">
-                  <button class="btn btn-sm btn-primary">
+                  <button class="btn btn-sm btn-primary" 
+                    onclick="del_order(this)" 
+                    id="{{order.id}}" 
+                  >
                     <i class="fa fa-times"></i>
                   </button>
                 </td>
+
               </tr>
               {% endfor %}
             </tbody>
           </table>
         </div>
+
+
+        
+        <div class="col-lg-8 table-responsive mb-5">
+          <table class="table table-bordered text-center mb-0">
+            <thead class="bg-secondary text-dark">
+              <tr>
+                <th>Confirmed</th>
+              </tr>
+            </thead>
+            <thead class="bg-secondary text-dark">
+              <tr>
+                <th>Products</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Track</th>
+              </tr>
+            </thead>
+            <tbody class="align-middle">
+              {% for order in confirmed %}
+              <tr>
+                <td class="align-middle">
+                  <img src="{{order.product.main_image.url}}" alt="" style="width: 50px" />
+                  {{order.product.name}}
+                </td>
+                <td class="align-middle">{{order.product.price}}</td>
+                <td class="align-middle">{{order.quantity}}</td>
+                
+                <td class="align-middle">{{order.get_price}}</td>
+
+                <td class="align-middle">{{order.track}}</td>
+
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+
         <div class="col-lg-4">
           <form class="mb-5" action="">
             <div class="input-group">
@@ -142,21 +192,29 @@
             <div class="card-body">
               <div class="d-flex justify-content-between mb-3 pt-1">
                 <h6 class="font-weight-medium">Subtotal</h6>
-                <h6 class="font-weight-medium">{{total}}</h6>
+                <h6 class="font-weight-medium" id="total_before">{{total}}</h6>
               </div>
               <div class="d-flex justify-content-between">
                 <h6 class="font-weight-medium">Shipping</h6>
-                <h6 class="font-weight-medium">0</h6>
+                <h6 class="font-weight-medium">60</h6>
               </div>
             </div>
             <div class="card-footer border-secondary bg-transparent">
               <div class="d-flex justify-content-between mt-2">
                 <h5 class="font-weight-bold">Total</h5>
-                <h5 class="font-weight-bold">{{total}}</h5>
+
+                {% if total == 0 %}
+                    <h5 class="font-weight-bold" id="total_after">0</h5>
+                {% else %}
+                    <h5 class="font-weight-bold" id="total_after">{{totch}}</h5>
+                {% endif %}
+
               </div>
-              <button class="btn btn-block btn-primary my-3 py-3">
-                Proceed To Checkout
-              </button>
+              <a href="{%url 'cart:checkout'%}">
+                <button class="btn btn-block btn-primary my-3 py-3">
+                  Proceed To Checkout
+                </button>
+              </a>
             </div>
           </div>
         </div>
