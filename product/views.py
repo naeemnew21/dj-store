@@ -1,12 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, DeleteView
-from django.db.models.query import EmptyQuerySet
 from django.db.models import Q
 from .models import Product, Comment
 from .forms import ProductCreateForm
-from django.http import HttpResponseRedirect, JsonResponse, HttpResponseBadRequest
-from django.contrib.auth.decorators import user_passes_test
 from django.urls import reverse_lazy
 from .utils import page_clean_url, sort_clean_url, recreate_url, get_search, get_back_filter_params, get_front_filter_params 
 

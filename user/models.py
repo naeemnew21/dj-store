@@ -13,7 +13,6 @@ import datetime
 
 
 
-
 def validate_name(name):
     if not(name) or name.isspace():
          raise ValidationError(_('empty name is not valid name'))   

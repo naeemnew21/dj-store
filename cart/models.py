@@ -1,5 +1,3 @@
-from enum import unique
-from turtle import color
 from django.db import models
 from django.utils import timezone
 from django.core.validators import MinValueValidator, RegexValidator

@@ -1,6 +1,5 @@
 
 from rest_framework.generics import CreateAPIView, DestroyAPIView
-from rest_framework.permissions import IsAuthenticated 
 from rest_framework.permissions import BasePermission
 from .serializers import ProductSerializer
 from .models import Product

@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Order, NonUserOrder
 from product.models import Product
-from .serializers import OrderSerializer, OrderDelSerializer
+from .serializers import OrderSerializer
 from project.settings import CART_SESSION_ID_KEY
 
 
