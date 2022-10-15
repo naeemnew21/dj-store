@@ -193,10 +193,10 @@ LOGOUT_REDIRECT_URL = '/'
 # EMAIL_PORT = 587
 
 
-JAZZMIN_SETTINGS = {
+# JAZZMIN_SETTINGS = {
     
-    "site_title": "E-Commerce",
-}
+#     "site_title": "E-Commerce",
+# }
 
 
 
