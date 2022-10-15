@@ -1,5 +1,7 @@
 
 {% load static %}
+{% load i18n %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,11 +45,29 @@
             <span class="text-muted px-2">|</span>
             <a class="text-dark" href="">Help</a>
             <span class="text-muted px-2">|</span>
-            <a class="text-dark" href="">Support</a>
+            <a class="text-dark" href="">{% trans 'Support'%}</a>
           </div>
         </div>
         <div class="col-lg-6 text-center text-lg-right">
           <div class="d-inline-flex align-items-center">
+
+            <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <select name="language">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Go">
+            </form>
+
+
             <a class="text-dark px-2" href="">
               <i class="fab fa-facebook-f"></i>
             </a>
@@ -279,7 +299,7 @@
                   ><i class="fa fa-angle-right mr-2"></i>Help</a
                 >
                 <a class="text-dark mb-2" href=""
-                  ><i class="fa fa-angle-right mr-2"></i>Support</a>
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Support'%}</a>
                 <a class="text-dark mb-2" href=""
                   ><i class="fa fa-angle-right mr-2"></i>Pricing</a
                 >

@@ -54,22 +54,23 @@ AUTH_PROVIDERS = {'google': 'google', 'email': 'email'}
     
 
 class MyUser(AbstractUser):
-    email         = models.EmailField(verbose_name="email address", unique=True, blank=False, null=False)
+    email         = models.EmailField(unique=True, blank=False, null=False, verbose_name=_('email address'))
     phone_regex   = RegexValidator(regex="[0][1][0125][0-9][ ]?\d{3}[ ]?\d{4}", message="Phone number must be entered in the format: '01xx xxx xxxx'. Up to 11 digits allowed.")
-    phone         = models.CharField(validators=[phone_regex], max_length=11, blank=False, null=False) # validators should be a list
-    first_name    = models.CharField(verbose_name="first name", validators=[validate_name], max_length=30, blank=False, null=False)
-    last_name     = models.CharField(verbose_name="last name", validators=[validate_name], max_length=30, blank=False, null=False)
+    phone         = models.CharField(validators=[phone_regex], max_length=11, blank=False, null=False, verbose_name=_('phone')) # validators should be a list
+    first_name    = models.CharField(validators=[validate_name], max_length=30, blank=False, null=False, verbose_name=_('first name'))
+    last_name     = models.CharField(validators=[validate_name], max_length=30, blank=False, null=False, verbose_name=_('last name'))
     
-    avatar        = models.ImageField(upload_to=image_upload, default = 'user/avatar.png', storage = OverwriteStorage() )
-    avatar_url    = models.URLField(blank=True, null=True) # incase of provider = google
-    address       = models.CharField(max_length=150, blank=True, null=True )
+    avatar        = models.ImageField(upload_to=image_upload, default = 'user/avatar.png', storage = OverwriteStorage() , verbose_name=_('avatar'))
+    avatar_url    = models.URLField(blank=True, null=True, verbose_name=_('avatar url')) # incase of provider = google
+    address       = models.CharField(max_length=150, blank=True, null=True , verbose_name=_('address'))
     
-    is_verified   = models.BooleanField(default=False)
+    is_verified   = models.BooleanField(default=False, verbose_name=_('is verified'))
     auth_provider = models.CharField(
                                         max_length=255, blank=False, null=False,
-                                        default=AUTH_PROVIDERS.get('email'))
+                                        default=AUTH_PROVIDERS.get('email'), 
+                                        verbose_name=_('auth provider'))
 
-    seller        = models.BooleanField(default=False)
+    seller        = models.BooleanField(default=False, verbose_name=_('seller'))
 
     REQUIRED_FIELDS = ['email', 'first_name']
 

@@ -1,9 +1,11 @@
+from tabnanny import verbose
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.core.files.images import get_image_dimensions
 from user.models import MyUser, image_upload, OverwriteStorage
 from django.utils import timezone
 from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 
 
 
@@ -62,58 +64,68 @@ class ProductImage(models.Model):
     img = models.ImageField(upload_to=image_upload, 
                             default = 'product/product.png',
                             validators=[validate_dimension],
-                            storage = OverwriteStorage() 
+                            storage = OverwriteStorage() , 
+                            verbose_name=_('image')
                             )
 
     def __str__(self):
         return self.img.name.split('/')[1]
 
+    class Meta:
+        verbose_name= _("product image")
+        verbose_name_plural = _('product images')
 
 
 
 class Product(models.Model):
-    created_by   = models.ForeignKey(MyUser, on_delete=models.CASCADE)
-    created_at   = models.DateTimeField(default=timezone.now)
-    category     = models.CharField(choices=CAT, max_length=50)
-    brand        = models.CharField(max_length=50)
-    name         = models.CharField(max_length=100)
-    suitable     = models.CharField(choices=SEX, max_length= 20, blank=False, null=False)
+    created_by   = models.ForeignKey(MyUser, on_delete=models.CASCADE, verbose_name=_('created by'))
+    created_at   = models.DateTimeField(default=timezone.now, verbose_name=_('created at'))
+    category     = models.CharField(choices=CAT, max_length=50, verbose_name=_('category'))
+    brand        = models.CharField(max_length=50, verbose_name=_('brand'))
+    name         = models.CharField(max_length=100, verbose_name=_('name'))
+    suitable     = models.CharField(choices=SEX, max_length= 20, blank=False, null=False, verbose_name=_('suitable'))
     
-    color1       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True)
-    color2       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True)
-    color3       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True)
-    color4       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True)
-    color5       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True)
-    size1        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True)
-    size2        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True)
-    size3        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True)
-    size4        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True)
-    size5        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True)
-    size6        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True)
+    color1       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True, verbose_name=_('color 1'))
+    color2       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True, verbose_name=_('color 2'))
+    color3       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True, verbose_name=_('color 3'))
+    color4       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True, verbose_name=_('color 4'))
+    color5       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True, verbose_name=_('color 5'))
+    size1        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True, verbose_name=_('size 1'))
+    size2        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True, verbose_name=_('size 2'))
+    size3        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True, verbose_name=_('size 3'))
+    size4        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True, verbose_name=_('size 4'))
+    size5        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True, verbose_name=_('size 5'))
+    size6        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True, verbose_name=_('size 6'))
     
-    quantity     = models.PositiveIntegerField(default=0)
-    price        = models.DecimalField(max_digits=7, decimal_places=2, validators = [MinValueValidator(0.0)])
-    price_dis    = models.DecimalField(max_digits=7, decimal_places=2, validators = [MinValueValidator(0.0)])
+    quantity     = models.PositiveIntegerField(default=0, verbose_name=_('quantity'))
+    price        = models.DecimalField(max_digits=7, decimal_places=2, validators = [MinValueValidator(0.0)], verbose_name=_('price'))
+    price_dis    = models.DecimalField(max_digits=7, decimal_places=2, validators = [MinValueValidator(0.0)], verbose_name=_('price before discount'))
     
     main_image   = models.ImageField(upload_to=image_upload,
                                      default = 'product/product.png',
                                      validators=[validate_dimension],
-                                     storage = OverwriteStorage() 
+                                     storage = OverwriteStorage(), 
+                                     verbose_name=_('main image')
                                      )
-    image        = models.ManyToManyField(ProductImage, blank=True)
-    description  = models.CharField(max_length=255, default="", blank=True, null=True)
-    details      = models.TextField(blank=True, null=True) 
+    image        = models.ManyToManyField(ProductImage, blank=True, verbose_name=_('image'))
+    description  = models.CharField(max_length=255, default="", blank=True, null=True, verbose_name=_('description'))
+    details      = models.TextField(blank=True, null=True, verbose_name=_('details')) 
     
-    slug         = models.SlugField(max_length = 255, null = False, blank = False, unique=True)
+    slug         = models.SlugField(max_length = 255, null = False, blank = False, unique=True, verbose_name=_('slug'))
     
     '''number of selled products at all time'''
-    selled     = models.PositiveIntegerField(default=0)
-    approved   = models.BooleanField(default = False)
+    selled     = models.PositiveIntegerField(default=0, verbose_name=_('selled'))
+    approved   = models.BooleanField(default = False, verbose_name=_('approved'))
     
+
+    class Meta:
+        verbose_name = _('Product')
+        verbose_name_plural = _('Products')
+
+
     def __str__(self):
         return self.name
     
- 
 
     @property
     def get_colors(self):
@@ -148,11 +160,13 @@ class Product(models.Model):
 
 
 class Comment(models.Model):
-    user       = models.ForeignKey(MyUser, on_delete=models.CASCADE)
-    product    = models.ForeignKey(Product, on_delete=models.CASCADE)
-    comment    = models.CharField(max_length= 255, blank=True, null=True)
-    rate       = models.DecimalField(max_digits=2, decimal_places=1, default=0, validators = [MinValueValidator(0.0),MaxValueValidator(5.0)])
-    created_at = models.DateTimeField(default=timezone.now)
+    user       = models.ForeignKey(MyUser, on_delete=models.CASCADE, verbose_name=_('user'))
+    product    = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name=_('product'))
+    comment    = models.CharField(max_length= 255, blank=True, null=True, verbose_name=_('comment'))
+    rate       = models.DecimalField(max_digits=2, decimal_places=1, default=0, 
+                                     validators = [MinValueValidator(0.0),MaxValueValidator(5.0)],
+                                     verbose_name=_('rate'))
+    created_at = models.DateTimeField(default=timezone.now, verbose_name=_('created at'))
 
     def __str__(self):
         return str(self.id)

@@ -1,6 +1,7 @@
 
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 
             
@@ -15,7 +16,7 @@
 
 
 {% block titles %}
-                <a href="{% url 'product:index' %}" class="nav-item nav-link active">Home</a>
+                <a href="{% url 'product:index' %}" class="nav-item nav-link active">{% trans 'Home'%}</a>
                 <a href="{%url 'product:shop'%}" class="nav-item nav-link">Shop</a>
                 <div class="nav-item dropdown">
                   <a

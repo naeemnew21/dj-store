@@ -39,10 +39,11 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     
     'rest_framework',
-    'jazzmin',
+    #'jazzmin',
     'corsheaders',
     'crispy_forms',
-    
+    'modeltranslation',
+
     #django apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -57,12 +58,13 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware', # translation
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware', 
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'cart.middleware.SetCartSessionKeyMiddleware',
+    'cart.middleware.SetCartSessionKeyMiddleware', # cart for unregistered users
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -79,6 +81,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.i18n', # translation
                 'django.contrib.messages.context_processors.messages',
                 'cart.views.cart_context',
             ],
@@ -122,14 +125,30 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
+# django-admin makemessages -l ar
+# django-admin compilemessages -l ar
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'Africa/Cairo'
 
 USE_I18N = True
 
 USE_TZ = True
+
+LANGUAGES = [
+    ('ar', ('Arabic')),
+    ('en', ('English')),
+]
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
+
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+
+MODELTRANSLATION_LANGUAGES = ('en', 'ar')
 
 
 # Static files (CSS, JavaScript, Images)
