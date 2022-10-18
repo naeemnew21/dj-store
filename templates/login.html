@@ -1,5 +1,4 @@
 {% load static %}
-{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,19 +17,15 @@
 <body>
     <div class="login-box">
         <h3>Login</h3>
-
         <form  method="POST">
-
             {% csrf_token %}
             
             <p class="help-block text-danger">{{error}}</p>
-
             <div class="user-box">
                 <div class="input-group has-validation">
                     <input type="email" id="email" name="username" autocomplete="off" required onkeyup="validateInput(this)"
                     aria-describedby="inputGroupPrepend3 validationServerEmailFeedback">
                     <label>Email</label>
-
                     <div id="validationServerEmailFeedback" class="invalid-feedback">
                         Please choose a email.
                     </div>
@@ -53,8 +48,7 @@
                     Submit
                 </button>
             </div>
-            
-            <div class="row">
+            <div class="col">
                 <a href="{% url 'user:sign-up' %}">
                     <button type="button">
                         <span></span>
@@ -65,9 +59,7 @@
                     </button>
                 </a>
             </div>
-
         </form>
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

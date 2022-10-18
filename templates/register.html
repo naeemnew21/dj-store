@@ -1,5 +1,4 @@
 {% load static %}
-{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -74,8 +73,8 @@
                 </div>
             </div>
             <div >
-                <label for="seller" style="color:#ffffff;">Choose account:</label>
-                <select name="seller" id="seller" name="seller">
+                <label class="sell" for="seller">Choose account:</label>
+                <select name="seller" class="seller" id="seller" name="seller">
                     <option value="">User</option>
                     <option value="1">Seller</option>
                 </select>
@@ -95,8 +94,7 @@
                     Submit
                 </button>
             </div>
-
-            <div class="col-12">
+            {% comment %} <div class="col-12">
                 <a href="{% url 'user:login'%}">
                     <button type="button">
                         <span></span>
@@ -106,7 +104,7 @@
                         login
                     </button>
                 </a>
-            </div>
+            </div> {% endcomment %}
 
         </form>
     </div>

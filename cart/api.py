@@ -19,7 +19,7 @@ def cart_items(request):
         orders = Order.objects.filter(user = user, confirmed = False)
         total = sum([order.get_price for order in orders])
         context = {'orders':orders, 'total': total, 'totch':total+charge}
-  
+
     if user_cart_id == None:
         context = {'orders':EmptyQuerySet, 'total':0, 'totch':0}
     
@@ -62,7 +62,6 @@ class CartApi(GenericAPIView):
             return EmptyQuerySet
         return NonUserOrder.objects.filter(user_cart_id = user_cart_id)
     
- 
         
     def post(self, request, *args, **kwargs):
         user = request.user

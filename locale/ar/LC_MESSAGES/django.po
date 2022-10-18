@@ -21,7 +21,7 @@ msgstr ""
 
 #: .\cart\models.py:21 .\cart\models.py:71 .\product\models.py:163
 msgid "user"
-msgstr ""
+msgstr "مستخدم"
 
 #: .\cart\models.py:22 .\cart\models.py:54 .\product\models.py:164
 msgid "product"
@@ -29,56 +29,56 @@ msgstr "منتج"
 
 #: .\cart\models.py:23 .\cart\models.py:55 .\product\models.py:100
 msgid "quantity"
-msgstr ""
+msgstr "العدد"
 
 #: .\cart\models.py:25
 msgid "confirmed"
-msgstr ""
+msgstr "تم تأكيد"
 
 #: .\cart\models.py:26
 msgid "confirmed at"
-msgstr ""
+msgstr "أكد في"
 
 #: .\cart\models.py:27 .\cart\models.py:83 .\product\models.py:82
 #: .\product\models.py:169
 msgid "created at"
-msgstr ""
+msgstr "أنشئت في"
 
 #: .\cart\models.py:29
 msgid "track"
-msgstr ""
+msgstr "مسار"
 
 #: .\cart\models.py:53
 msgid "user cart id"
-msgstr ""
+msgstr "معرف عربة المستخدم"
 
 #: .\cart\models.py:72
 msgid "orders"
-msgstr ""
+msgstr "الطلبات"
 
 #: .\cart\models.py:75 .\user\models.py:59
 msgid "phone"
-msgstr ""
+msgstr "التلفون"
 
 #: .\cart\models.py:77
 msgid "country"
-msgstr ""
+msgstr "البلد"
 
 #: .\cart\models.py:78
 msgid "city"
-msgstr ""
+msgstr "المدينه"
 
 #: .\cart\models.py:79
 msgid "address 1"
-msgstr ""
+msgstr "عنوان 1"
 
 #: .\cart\models.py:80
 msgid "address 2"
-msgstr ""
+msgstr "عنوان 2"
 
 #: .\cart\models.py:82
 msgid "active"
-msgstr ""
+msgstr "متاح"
 
 #: .\product\models.py:68 .\product\models.py:110
 msgid "image"
@@ -94,99 +94,99 @@ msgstr "صور منتجات"
 
 #: .\product\models.py:81
 msgid "created by"
-msgstr ""
+msgstr "انشأ من قبل"
 
 #: .\product\models.py:83
 msgid "category"
-msgstr ""
+msgstr "الفئة"
 
 #: .\product\models.py:84
 msgid "brand"
-msgstr ""
+msgstr "ماركة"
 
 #: .\product\models.py:85
 msgid "name"
-msgstr ""
+msgstr "الاسم"
 
 #: .\product\models.py:86
 msgid "suitable"
-msgstr ""
+msgstr "متكافئ"
 
 #: .\product\models.py:88
 msgid "color 1"
-msgstr ""
+msgstr "اللون 1"
 
 #: .\product\models.py:89
 msgid "color 2"
-msgstr ""
+msgstr "اللون 2"
 
 #: .\product\models.py:90
 msgid "color 3"
-msgstr ""
+msgstr "اللون 3"
 
 #: .\product\models.py:91
 msgid "color 4"
-msgstr ""
+msgstr "اللون 4"
 
 #: .\product\models.py:92
 msgid "color 5"
-msgstr ""
+msgstr "اللون 5"
 
 #: .\product\models.py:93
 msgid "size 1"
-msgstr ""
+msgstr "مقاس 1"
 
 #: .\product\models.py:94
 msgid "size 2"
-msgstr ""
+msgstr "مقاس 2"
 
 #: .\product\models.py:95
 msgid "size 3"
-msgstr ""
+msgstr "مقاس 3"
 
 #: .\product\models.py:96
 msgid "size 4"
-msgstr ""
+msgstr "مقاس 4"
 
 #: .\product\models.py:97
 msgid "size 5"
-msgstr ""
+msgstr "مقاس 5"
 
 #: .\product\models.py:98
 msgid "size 6"
-msgstr ""
+msgstr "مقاس 6"
 
 #: .\product\models.py:101
 msgid "price"
-msgstr ""
+msgstr "السعر"
 
 #: .\product\models.py:102
 msgid "price before discount"
-msgstr ""
+msgstr "السعر قبل الخصم"
 
 #: .\product\models.py:108
 msgid "main image"
-msgstr ""
+msgstr "الصوره الرئيسه"
 
 #: .\product\models.py:111
 msgid "description"
-msgstr ""
+msgstr "الوصف"
 
 #: .\product\models.py:112
 msgid "details"
-msgstr ""
+msgstr "التفاصيل"
 
 #: .\product\models.py:114
 msgid "slug"
-msgstr ""
+msgstr "سلج"
 
 #: .\product\models.py:117
 msgid "selled"
-msgstr ""
+msgstr "بيعت"
 
 #: .\product\models.py:118
 msgid "approved"
-msgstr ""
+msgstr "وافق"
 
 #: .\product\models.py:122
 msgid "Product"
@@ -198,11 +198,11 @@ msgstr "منتجات"
 
 #: .\product\models.py:165
 msgid "comment"
-msgstr ""
+msgstr "كومنت"
 
 #: .\product\models.py:168
 msgid "rate"
-msgstr ""
+msgstr "معدل"
 
 #: .\templates\base.html:48 .\templates\base.html:302
 msgid "Support"
@@ -210,40 +210,40 @@ msgstr "الدعم"
 
 #: .\user\models.py:18
 msgid "empty name is not valid name"
-msgstr ""
+msgstr "الاسم الفارغ ليس اسمًا صالحًا"
 
 #: .\user\models.py:57
 msgid "email address"
-msgstr ""
+msgstr "البريد الاكتروني"
 
 #: .\user\models.py:60
 msgid "first name"
-msgstr ""
+msgstr "الاسم الاول"
 
 #: .\user\models.py:61
 msgid "last name"
-msgstr ""
+msgstr "الاسم الاخير"
 
 #: .\user\models.py:63
 msgid "avatar"
-msgstr ""
+msgstr "الصوره"
 
 #: .\user\models.py:64
 msgid "avatar url"
-msgstr ""
+msgstr "عنوان الصوره"
 
 #: .\user\models.py:65
 msgid "address"
-msgstr ""
+msgstr "العنوان"
 
 #: .\user\models.py:67
 msgid "is verified"
-msgstr ""
+msgstr "تم التحقق منه"
 
 #: .\user\models.py:71
 msgid "auth provider"
-msgstr ""
+msgstr "مزود المصادقة"
 
 #: .\user\models.py:73
 msgid "seller"
-msgstr ""
+msgstr "بائع"
