@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-19 10:12+0200\n"
+"POT-Creation-Date: 2022-10-19 11:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -193,6 +193,7 @@ msgid "Product"
 msgstr "منتج"
 
 #: .\product\models.py:123 .\templates\cart.html:73 .\templates\cart.html:143
+#: .\templates\checkout.html:129
 msgid "Products"
 msgstr "منتجات"
 
@@ -262,19 +263,19 @@ msgstr ""
 msgid "Shoes"
 msgstr ""
 
-#: .\templates\base.html:211
+#: .\templates\base.html:211 .\templates\edit_profile.html:15
 msgid "Edit Profile"
 msgstr ""
 
-#: .\templates\base.html:217
+#: .\templates\base.html:217 .\templates\pending.html:29
 msgid "Logout"
 msgstr ""
 
-#: .\templates\base.html:222
+#: .\templates\base.html:222 .\templates\login.html:19
 msgid "Login"
 msgstr ""
 
-#: .\templates\base.html:223
+#: .\templates\base.html:223 .\templates\register.html:19
 msgid "Register"
 msgstr ""
 
@@ -283,25 +284,33 @@ msgid "Quick Links"
 msgstr ""
 
 #: .\templates\base.html:265 .\templates\cart.html:19 .\templates\cart.html:53
-#: .\templates\index.html:19
+#: .\templates\checkout.html:16 .\templates\checkout.html:48
+#: .\templates\contact.html:19 .\templates\contact.html:52
+#: .\templates\detail.html:17 .\templates\detail.html:48
+#: .\templates\index.html:19 .\templates\shop.html:15 .\templates\shop.html:38
 msgid "Home"
 msgstr ""
 
-#: .\templates\base.html:268
+#: .\templates\base.html:268 .\templates\shop.html:36
 msgid "Our Shop"
 msgstr ""
 
 #: .\templates\base.html:271 .\templates\cart.html:29 .\templates\cart.html:51
-#: .\templates\cart.html:55 .\templates\index.html:29
+#: .\templates\cart.html:55 .\templates\checkout.html:26
+#: .\templates\contact.html:29 .\templates\detail.html:27
+#: .\templates\index.html:29 .\templates\shop.html:20
 msgid "Shopping Cart"
 msgstr ""
 
 #: .\templates\base.html:274 .\templates\cart.html:30
-#: .\templates\index.html:30
+#: .\templates\checkout.html:27 .\templates\checkout.html:46
+#: .\templates\checkout.html:50 .\templates\contact.html:30
+#: .\templates\detail.html:28 .\templates\index.html:30
+#: .\templates\shop.html:21
 msgid "Checkout"
 msgstr ""
 
-#: .\templates\base.html:277
+#: .\templates\base.html:277 .\templates\contact.html:50
 msgid "Contact Us"
 msgstr ""
 
@@ -333,15 +342,22 @@ msgstr ""
 msgid "All Rights Reserved. Designed by"
 msgstr ""
 
-#: .\templates\cart.html:20 .\templates\index.html:20
+#: .\templates\cart.html:20 .\templates\checkout.html:17
+#: .\templates\contact.html:20 .\templates\detail.html:18
+#: .\templates\index.html:20 .\templates\shop.html:16 .\templates\shop.html:40
 msgid "Shop"
 msgstr ""
 
-#: .\templates\cart.html:26 .\templates\index.html:26
+#: .\templates\cart.html:26 .\templates\checkout.html:23
+#: .\templates\contact.html:26 .\templates\detail.html:24
+#: .\templates\index.html:26 .\templates\shop.html:18
 msgid "Pages"
 msgstr ""
 
-#: .\templates\cart.html:33 .\templates\index.html:33
+#: .\templates\cart.html:33 .\templates\checkout.html:30
+#: .\templates\contact.html:34 .\templates\contact.html:54
+#: .\templates\detail.html:31 .\templates\index.html:33
+#: .\templates\shop.html:24
 msgid "Contact"
 msgstr ""
 
@@ -361,8 +377,8 @@ msgstr "السعر"
 msgid "Quantity"
 msgstr "العدد"
 
-#: .\templates\cart.html:76 .\templates\cart.html:146
-#: .\templates\cart.html:196
+#: .\templates\cart.html:76 .\templates\cart.html:146 .\templates\cart.html:196
+#: .\templates\checkout.html:148
 msgid "Total"
 msgstr ""
 
@@ -390,11 +406,12 @@ msgstr ""
 msgid "Cart Summary"
 msgstr ""
 
-#: .\templates\cart.html:186
+#: .\templates\cart.html:186 .\templates\checkout.html:138
 msgid "Subtotal"
 msgstr ""
 
-#: .\templates\cart.html:190 .\templates\index.html:119
+#: .\templates\cart.html:190 .\templates\checkout.html:142
+#: .\templates\index.html:119
 msgid "Shipping"
 msgstr ""
 
@@ -404,6 +421,197 @@ msgstr ""
 
 #: .\templates\cart.html:207
 msgid "Proceed To Checkout"
+msgstr ""
+
+#: .\templates\checkout.html:60
+msgid "Shipping  Address"
+msgstr ""
+
+#: .\templates\checkout.html:67
+msgid "Mobile No"
+msgstr ""
+
+#: .\templates\checkout.html:78
+#, fuzzy
+#| msgid "address 1"
+msgid "Address Line 1"
+msgstr "عنوان 1"
+
+#: .\templates\checkout.html:89
+#, fuzzy
+#| msgid "address 2"
+msgid "Address Line 2"
+msgstr "عنوان 2"
+
+#: .\templates\checkout.html:100
+#, fuzzy
+#| msgid "country"
+msgid "Country"
+msgstr "البلد"
+
+#: .\templates\checkout.html:112
+msgid "Cario"
+msgstr ""
+
+#: .\templates\checkout.html:113
+msgid "Alex"
+msgstr ""
+
+#: .\templates\checkout.html:114
+msgid "Giza"
+msgstr ""
+
+#: .\templates\checkout.html:115
+msgid "Behira"
+msgstr ""
+
+#: .\templates\checkout.html:126
+msgid "Order Total"
+msgstr ""
+
+#: .\templates\checkout.html:155
+msgid "Payment"
+msgstr ""
+
+#: .\templates\checkout.html:168
+msgid "Pay on Delivery"
+msgstr ""
+
+#: .\templates\checkout.html:179
+msgid "Place Order"
+msgstr ""
+
+#: .\templates\contact.html:63
+msgid "Contact For Any Queries"
+msgstr ""
+
+#: .\templates\contact.html:125
+msgid "Send Message"
+msgstr ""
+
+#: .\templates\contact.html:132
+msgid "Get In Touch"
+msgstr ""
+
+#: .\templates\contact.html:139
+msgid "Store"
+msgstr ""
+
+#: .\templates\detail.html:46 .\templates\detail.html:50
+msgid "Shop Detail"
+msgstr ""
+
+#: .\templates\detail.html:100 .\templates\detail.html:202
+msgid "Reviews"
+msgstr ""
+
+#: .\templates\detail.html:107
+msgid "Sizes:"
+msgstr ""
+
+#: .\templates\detail.html:125
+msgid "Colors:"
+msgstr ""
+
+#: .\templates\detail.html:165 .\templates\index.html:299
+#: .\templates\index.html:379 .\templates\shop.html:269
+msgid "Add To Cart"
+msgstr ""
+
+#: .\templates\detail.html:169
+msgid "Share on:"
+msgstr ""
+
+#: .\templates\detail.html:196
+#, fuzzy
+#| msgid "description"
+msgid "Description"
+msgstr "الوصف"
+
+#: .\templates\detail.html:199
+msgid "Information"
+msgstr ""
+
+#: .\templates\detail.html:207
+#, fuzzy
+#| msgid "description"
+msgid "Product Description"
+msgstr "الوصف"
+
+#: .\templates\detail.html:213
+msgid "Additional Information"
+msgstr ""
+
+#: .\templates\detail.html:307
+msgid "Leave a review"
+msgstr ""
+
+#: .\templates\detail.html:315
+msgid "5 stars"
+msgstr ""
+
+#: .\templates\detail.html:316
+msgid "4 stars"
+msgstr ""
+
+#: .\templates\detail.html:317
+msgid "3 stars"
+msgstr ""
+
+#: .\templates\detail.html:318
+msgid "2 stars"
+msgstr ""
+
+#: .\templates\detail.html:319
+msgid "1 star"
+msgstr ""
+
+#: .\templates\detail.html:323
+msgid "Your Review *"
+msgstr ""
+
+#: .\templates\detail.html:352
+msgid "You May Also Like"
+msgstr ""
+
+#: .\templates\detail.html:379 .\templates\index.html:292
+#: .\templates\index.html:372
+msgid "View Detail"
+msgstr ""
+
+#: .\templates\edit_profile.html:24
+msgid "Upload a different photo"
+msgstr ""
+
+#: .\templates\edit_profile.html:33
+msgid "Personal info"
+msgstr ""
+
+#: .\templates\edit_profile.html:35 .\templates\register.html:26
+#, fuzzy
+#| msgid "first name"
+msgid "First name"
+msgstr "الاسم الاول"
+
+#: .\templates\edit_profile.html:42 .\templates\register.html:34
+#, fuzzy
+#| msgid "last name"
+msgid "Last name"
+msgstr "الاسم الاخير"
+
+#: .\templates\edit_profile.html:49
+#, fuzzy
+#| msgid "phone"
+msgid "Phone"
+msgstr "التلفون"
+
+#: .\templates\edit_profile.html:56 .\templates\login.html:28
+#: .\templates\register.html:43
+msgid "Email"
+msgstr ""
+
+#: .\templates\edit_profile.html:66
+msgid "Update"
 msgstr ""
 
 #: .\templates\index.html:50 .\templates\index.html:68
@@ -441,16 +649,18 @@ msgid "24/7 Support"
 msgstr "الدعم"
 
 #: .\templates\index.html:155
-msgid "Men"
+msgid "Men dresses"
 msgstr ""
 
 #: .\templates\index.html:167
-msgid "Women"
+msgid "Women dresses"
 msgstr ""
 
 #: .\templates\index.html:179
-msgid "Baby"
-msgstr ""
+#, fuzzy
+#| msgid "address"
+msgid "Baby dresses"
+msgstr "العنوان"
 
 #: .\templates\index.html:191
 msgid "Accerssories"
@@ -479,14 +689,6 @@ msgstr ""
 msgid "Trandy Products"
 msgstr "منتجات"
 
-#: .\templates\index.html:292 .\templates\index.html:372
-msgid "View Detail"
-msgstr ""
-
-#: .\templates\index.html:299 .\templates\index.html:379
-msgid "Add To Cart"
-msgstr ""
-
 #: .\templates\index.html:316
 msgid "Stay Updated"
 msgstr ""
@@ -497,6 +699,138 @@ msgstr ""
 
 #: .\templates\index.html:344
 msgid "Just Arrived"
+msgstr ""
+
+#: .\templates\login.html:30
+msgid "Please choose a email"
+msgstr ""
+
+#: .\templates\login.html:39
+msgid "Please provide a valid Password"
+msgstr ""
+
+#: .\templates\login.html:48 .\templates\register.html:92
+msgid "Submit"
+msgstr ""
+
+#: .\templates\login.html:58
+msgid "register new"
+msgstr ""
+
+#: .\templates\pending.html:20
+msgid "Pending"
+msgstr ""
+
+#: .\templates\register.html:60
+msgid "Confrim Password"
+msgstr ""
+
+#: .\templates\register.html:68
+msgid "Mobile"
+msgstr ""
+
+#: .\templates\register.html:74
+msgid "Choose account"
+msgstr ""
+
+#: .\templates\register.html:76
+msgid "User"
+msgstr ""
+
+#: .\templates\register.html:77
+#, fuzzy
+#| msgid "seller"
+msgid "Seller"
+msgstr "بائع"
+
+#: .\templates\shop.html:51
+msgid "Filter by price"
+msgstr ""
+
+#: .\templates\shop.html:58
+#, fuzzy
+#| msgid "price"
+msgid "All Price"
+msgstr "السعر"
+
+#: .\templates\shop.html:99
+msgid "Filter by color"
+msgstr ""
+
+#: .\templates\shop.html:103
+msgid "All Color"
+msgstr ""
+
+#: .\templates\shop.html:109
+msgid "Black"
+msgstr ""
+
+#: .\templates\shop.html:115
+msgid "White"
+msgstr ""
+
+#: .\templates\shop.html:121
+msgid "Red"
+msgstr ""
+
+#: .\templates\shop.html:127
+msgid "Blue"
+msgstr ""
+
+#: .\templates\shop.html:133
+msgid "Green"
+msgstr ""
+
+#: .\templates\shop.html:142
+msgid "All Size"
+msgstr ""
+
+#: .\templates\shop.html:187
+msgid "All Gender"
+msgstr ""
+
+#: .\templates\shop.html:193
+msgid "Male"
+msgstr ""
+
+#: .\templates\shop.html:199
+msgid "Female"
+msgstr ""
+
+#: .\templates\shop.html:205
+msgid "Baby"
+msgstr ""
+
+#: .\templates\shop.html:213
+msgid "Apply Filters"
+msgstr ""
+
+#: .\templates\shop.html:239
+msgid "Sort by"
+msgstr ""
+
+#: .\templates\shop.html:242
+msgid "Latest"
+msgstr ""
+
+#: .\templates\shop.html:243
+#, fuzzy
+#| msgid "price"
+msgid "Price Low"
+msgstr "السعر"
+
+#: .\templates\shop.html:244
+#, fuzzy
+#| msgid "price"
+msgid "Price High"
+msgstr "السعر"
+
+#: .\templates\shop.html:282
+msgid "Previous"
+msgstr ""
+
+#: .\templates\shop.html:302 .\templates\shop.html:309
+msgid "Next"
 msgstr ""
 
 #: .\user\models.py:18
