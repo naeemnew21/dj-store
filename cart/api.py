@@ -51,7 +51,6 @@ def cart_context(request):
 
 class CartApi(GenericAPIView):
     serializer_class   = OrderSerializer
-
     
     def get_queryset(self):
         user  = self.request.user
@@ -109,9 +108,6 @@ class CartApi(GenericAPIView):
         context['order_price'] = order.get_price
         context['order_id'] = order.id
         return Response(context, status=status.HTTP_201_CREATED)
-    
-    
-    
 
 
 class OrderDeleteApi(DestroyAPIView):
@@ -125,5 +121,3 @@ class OrderDeleteApi(DestroyAPIView):
         if user_cart_id == None:
             return EmptyQuerySet
         return NonUserOrder.objects.filter(user_cart_id = user_cart_id)
-    
- 

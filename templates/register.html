@@ -16,16 +16,14 @@
 
 <body>
     <div class="login-box">
-        <h3>Register</h3>
+        <h3>{% trans 'Register'%}</h3>
         <form   method="POST">
-
             {% csrf_token %}
-
             <div class="user-box">
                 <input type="text"
                 aria-describedby="inputGroupPrepend1 validationServerFirstNameFeedback" onkeyup="validateInput(this)"
                 id="first_name" required name="first_name" autocomplete="off">
-                <label>First name</label>
+                <label>{% trans 'First name'%}</label>
                 <div id="validationServerFirstNameFeedback" class="invalid-feedback">
                     {{form.first_name.errors}}
                 </div>
@@ -33,7 +31,7 @@
             <div class="user-box">
                 <input type="text" onkeyup="validateInput(this)"
                 aria-describedby="inputGroupPrepend2 validationServerLastNameFeedback" required name="last_name" id="last_name"  autocomplete="off">
-                <label>Last name</label>
+                <label>{% trans 'Last name'%}</label>
                 <div id="validationServerLastNameFeedback" class="invalid-feedback">
                     {{form.last_name.errors}}
                 </div>
@@ -42,7 +40,7 @@
                 <div class="input-group has-validation">
                     <input type="email" name="email" id="email" autocomplete="off" required onkeyup="validateInput(this)"
                     aria-describedby="inputGroupPrepend3 validationServerEmailFeedback">
-                    <label>Email</label>
+                    <label>{% trans 'Email'%}</label>
                     <div id="validationServerEmailFeedback" class="invalid-feedback">
                         {{form.email.errors}}
                     </div>
@@ -59,7 +57,7 @@
             <div class="user-box">
                 <input type="password" name="password2" id="confirm_password" required autocomplete="off"
                 onkeyup="validateInput(this);confrimPasswordValidation()" aria-describedby="validationServer04Feedback">
-                <label>Confrim Password</label>
+                <label>{% trans 'Confrim Password'%}</label>
                 <div id="validationServer04Feedback" class="invalid-feedback">
                     {{form.password2.errors}}
                 </div>
@@ -67,16 +65,16 @@
             <div class="user-box">
                 <input type="text" id="mobile" name="phone" autocomplete="off"  required aria-describedby="validationServer05Feedback"
                 onkeyup="validateInput(this)">
-                <label>Mobile</label>
+                <label>{% trans 'Mobile'%}</label>
                 <div id="validationServer05Feedback" class="invalid-feedback">
                     {{form.phone.errors}}
                 </div>
             </div>
             <div >
-                <label class="sell" for="seller">Choose account:</label>
+                <label class="sell" for="seller">{% trans 'Choose account'%}:</label>
                 <select name="seller" class="seller" id="seller" name="seller">
-                    <option value="">User</option>
-                    <option value="1">Seller</option>
+                    <option value="">{% trans 'User'%}</option>
+                    <option value="1">{% trans 'Seller'%}</option>
                 </select>
                 <div id="validationServer05Feedback" class="invalid-feedback">
                     {{form.seller.errors}}
@@ -91,7 +89,7 @@
                     <span></span>
                     <span></span>
                     <span></span>
-                    Submit
+                    {% trans 'Submit'%}
                 </button>
             </div>
             {% comment %} <div class="col-12">
@@ -105,10 +103,8 @@
                     </button>
                 </a>
             </div> {% endcomment %}
-
         </form>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

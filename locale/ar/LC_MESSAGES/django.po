@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-15 23:11+0200\n"
+"POT-Creation-Date: 2022-10-19 10:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,7 +56,7 @@ msgstr "معرف عربة المستخدم"
 msgid "orders"
 msgstr "الطلبات"
 
-#: .\cart\models.py:75 .\user\models.py:59
+#: .\cart\models.py:75 .\user\models.py:58
 msgid "phone"
 msgstr "التلفون"
 
@@ -192,7 +192,7 @@ msgstr "وافق"
 msgid "Product"
 msgstr "منتج"
 
-#: .\product\models.py:123
+#: .\product\models.py:123 .\templates\cart.html:73 .\templates\cart.html:143
 msgid "Products"
 msgstr "منتجات"
 
@@ -204,46 +204,337 @@ msgstr "كومنت"
 msgid "rate"
 msgstr "معدل"
 
-#: .\templates\base.html:48 .\templates\base.html:302
+#: .\templates\base.html:44 .\templates\base.html:285
+msgid "FAQs"
+msgstr ""
+
+#: .\templates\base.html:46 .\templates\base.html:292
+msgid "Help"
+msgstr ""
+
+#: .\templates\base.html:48 .\templates\base.html:295
 msgid "Support"
 msgstr "الدعم"
+
+#: .\templates\base.html:136
+#, fuzzy
+#| msgid "category"
+msgid "Categories"
+msgstr "الفئة"
+
+#: .\templates\base.html:145
+msgid "Dresses"
+msgstr ""
+
+#: .\templates\base.html:146
+msgid "Shirts"
+msgstr ""
+
+#: .\templates\base.html:147
+msgid "Jeans"
+msgstr ""
+
+#: .\templates\base.html:148
+msgid "Swimwear"
+msgstr ""
+
+#: .\templates\base.html:149
+msgid "Sleepwear"
+msgstr ""
+
+#: .\templates\base.html:150
+msgid "Sportswear"
+msgstr ""
+
+#: .\templates\base.html:151
+msgid "Jumpsuits"
+msgstr ""
+
+#: .\templates\base.html:152
+msgid "Blazers"
+msgstr ""
+
+#: .\templates\base.html:153
+msgid "Jackets"
+msgstr ""
+
+#: .\templates\base.html:154 .\templates\index.html:215
+msgid "Shoes"
+msgstr ""
+
+#: .\templates\base.html:211
+msgid "Edit Profile"
+msgstr ""
+
+#: .\templates\base.html:217
+msgid "Logout"
+msgstr ""
+
+#: .\templates\base.html:222
+msgid "Login"
+msgstr ""
+
+#: .\templates\base.html:223
+msgid "Register"
+msgstr ""
+
+#: .\templates\base.html:262 .\templates\base.html:282
+msgid "Quick Links"
+msgstr ""
+
+#: .\templates\base.html:265 .\templates\cart.html:19 .\templates\cart.html:53
+#: .\templates\index.html:19
+msgid "Home"
+msgstr ""
+
+#: .\templates\base.html:268
+msgid "Our Shop"
+msgstr ""
+
+#: .\templates\base.html:271 .\templates\cart.html:29 .\templates\cart.html:51
+#: .\templates\cart.html:55 .\templates\index.html:29
+msgid "Shopping Cart"
+msgstr ""
+
+#: .\templates\base.html:274 .\templates\cart.html:30
+#: .\templates\index.html:30
+msgid "Checkout"
+msgstr ""
+
+#: .\templates\base.html:277
+msgid "Contact Us"
+msgstr ""
+
+#: .\templates\base.html:289
+msgid "Trem"
+msgstr ""
+
+#: .\templates\base.html:297
+msgid "Pricing"
+msgstr ""
+
+#: .\templates\base.html:300
+msgid "Privacy"
+msgstr ""
+
+#: .\templates\base.html:305
+msgid "Newsletter"
+msgstr ""
+
+#: .\templates\base.html:328
+msgid "Subscribe Now"
+msgstr ""
+
+#: .\templates\base.html:342
+msgid "Your Site Name"
+msgstr ""
+
+#: .\templates\base.html:343
+msgid "All Rights Reserved. Designed by"
+msgstr ""
+
+#: .\templates\cart.html:20 .\templates\index.html:20
+msgid "Shop"
+msgstr ""
+
+#: .\templates\cart.html:26 .\templates\index.html:26
+msgid "Pages"
+msgstr ""
+
+#: .\templates\cart.html:33 .\templates\index.html:33
+msgid "Contact"
+msgstr ""
+
+#: .\templates\cart.html:68
+msgid "My Cart"
+msgstr ""
+
+#: .\templates\cart.html:74 .\templates\cart.html:144
+#, fuzzy
+#| msgid "price"
+msgid "Price"
+msgstr "السعر"
+
+#: .\templates\cart.html:75 .\templates\cart.html:145
+#, fuzzy
+#| msgid "quantity"
+msgid "Quantity"
+msgstr "العدد"
+
+#: .\templates\cart.html:76 .\templates\cart.html:146
+#: .\templates\cart.html:196
+msgid "Total"
+msgstr ""
+
+#: .\templates\cart.html:77
+msgid "Remove"
+msgstr ""
+
+#: .\templates\cart.html:138
+#, fuzzy
+#| msgid "confirmed"
+msgid "Confirmed"
+msgstr "تم تأكيد"
+
+#: .\templates\cart.html:147
+#, fuzzy
+#| msgid "track"
+msgid "Track"
+msgstr "مسار"
+
+#: .\templates\cart.html:176
+msgid "Apply Coupon"
+msgstr ""
+
+#: .\templates\cart.html:182
+msgid "Cart Summary"
+msgstr ""
+
+#: .\templates\cart.html:186
+msgid "Subtotal"
+msgstr ""
+
+#: .\templates\cart.html:190 .\templates\index.html:119
+msgid "Shipping"
+msgstr ""
+
+#: .\templates\cart.html:191
+msgid "60"
+msgstr ""
+
+#: .\templates\cart.html:207
+msgid "Proceed To Checkout"
+msgstr ""
+
+#: .\templates\index.html:50 .\templates\index.html:68
+#, python-format
+msgid "10%% Off Your First Order"
+msgstr ""
+
+#: .\templates\index.html:53
+msgid "Fashionable Dress"
+msgstr ""
+
+#: .\templates\index.html:55 .\templates\index.html:73
+#: .\templates\index.html:236 .\templates\index.html:252
+msgid "Shop Now"
+msgstr ""
+
+#: .\templates\index.html:71
+msgid "Reasonable Price"
+msgstr ""
+
+#: .\templates\index.html:110
+#, fuzzy
+#| msgid "Product"
+msgid "Quality Product"
+msgstr "منتج"
+
+#: .\templates\index.html:128
+msgid "14-Day Return"
+msgstr ""
+
+#: .\templates\index.html:137
+#, fuzzy
+#| msgid "Support"
+msgid "24/7 Support"
+msgstr "الدعم"
+
+#: .\templates\index.html:155
+msgid "Men"
+msgstr ""
+
+#: .\templates\index.html:167
+msgid "Women"
+msgstr ""
+
+#: .\templates\index.html:179
+msgid "Baby"
+msgstr ""
+
+#: .\templates\index.html:191
+msgid "Accerssories"
+msgstr ""
+
+#: .\templates\index.html:203
+msgid "Bags"
+msgstr ""
+
+#: .\templates\index.html:232 .\templates\index.html:248
+#, python-format
+msgid "20%% off the all order"
+msgstr ""
+
+#: .\templates\index.html:234
+msgid "Spring Collection"
+msgstr ""
+
+#: .\templates\index.html:250
+msgid "Winter Collection"
+msgstr ""
+
+#: .\templates\index.html:265
+#, fuzzy
+#| msgid "Products"
+msgid "Trandy Products"
+msgstr "منتجات"
+
+#: .\templates\index.html:292 .\templates\index.html:372
+msgid "View Detail"
+msgstr ""
+
+#: .\templates\index.html:299 .\templates\index.html:379
+msgid "Add To Cart"
+msgstr ""
+
+#: .\templates\index.html:316
+msgid "Stay Updated"
+msgstr ""
+
+#: .\templates\index.html:331
+msgid "Subscribe"
+msgstr ""
+
+#: .\templates\index.html:344
+msgid "Just Arrived"
+msgstr ""
 
 #: .\user\models.py:18
 msgid "empty name is not valid name"
 msgstr "الاسم الفارغ ليس اسمًا صالحًا"
 
-#: .\user\models.py:57
+#: .\user\models.py:56
 msgid "email address"
 msgstr "البريد الاكتروني"
 
-#: .\user\models.py:60
+#: .\user\models.py:59
 msgid "first name"
 msgstr "الاسم الاول"
 
-#: .\user\models.py:61
+#: .\user\models.py:60
 msgid "last name"
 msgstr "الاسم الاخير"
 
-#: .\user\models.py:63
+#: .\user\models.py:62
 msgid "avatar"
 msgstr "الصوره"
 
-#: .\user\models.py:64
+#: .\user\models.py:63
 msgid "avatar url"
 msgstr "عنوان الصوره"
 
-#: .\user\models.py:65
+#: .\user\models.py:64
 msgid "address"
 msgstr "العنوان"
 
-#: .\user\models.py:67
+#: .\user\models.py:66
 msgid "is verified"
 msgstr "تم التحقق منه"
 
-#: .\user\models.py:71
+#: .\user\models.py:70
 msgid "auth provider"
 msgstr "مزود المصادقة"
 
-#: .\user\models.py:73
+#: .\user\models.py:72
 msgid "seller"
 msgstr "بائع"

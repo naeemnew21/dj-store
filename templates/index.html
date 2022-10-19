@@ -17,20 +17,20 @@
 
 {% block titles %}
                 <a href="{% url 'product:index' %}" class="nav-item nav-link active">{% trans 'Home'%}</a>
-                <a href="{%url 'product:shop'%}" class="nav-item nav-link">Shop</a>
+                <a href="{%url 'product:shop'%}" class="nav-item nav-link">{% trans 'Shop'%}</a>
                 <div class="nav-item dropdown">
                   <a
                     href="#"
                     class="nav-link dropdown-toggle"
                     data-toggle="dropdown"
-                    >Pages</a
+                    >{% trans 'Pages'%}</a
                   >
                   <div class="dropdown-menu rounded-0 m-0">
-                    <a href="{%url 'cart:cart'%}" class="dropdown-item">Shopping Cart</a>
-                    <a href="{%url 'cart:checkout'%}" class="dropdown-item">Checkout</a>
+                    <a href="{%url 'cart:cart'%}" class="dropdown-item">{% trans 'Shopping Cart'%}</a>
+                    <a href="{%url 'cart:checkout'%}" class="dropdown-item">{% trans 'Checkout'%}</a>
                   </div>
                 </div>
-                <a href="{% url 'cart:contact' %}" class="nav-item nav-link">Contact</a>
+                <a href="{% url 'cart:contact' %}" class="nav-item nav-link">{% trans 'Contact'%}</a>
 
 {% endblock titles %}
 
@@ -47,12 +47,12 @@
                     <h4
                       class="text-light text-uppercase font-weight-medium mb-3"
                     >
-                      10% Off Your First Order
+                    {% trans '10% Off Your First Order'%}
                     </h4>
                     <h3 class="display-4 text-white font-weight-semi-bold mb-4">
-                      Fashionable Dress
+                      {% trans 'Fashionable Dress'%}
                     </h3>
-                    <a href="{%url 'product:shop'%}" class="btn btn-light py-2 px-3">Shop Now</a>
+                    <a href="{%url 'product:shop'%}" class="btn btn-light py-2 px-3">{% trans 'Shop Now'%}</a>
                   </div>
                 </div>
               </div>
@@ -65,12 +65,12 @@
                     <h4
                       class="text-light text-uppercase font-weight-medium mb-3"
                     >
-                      10% Off Your First Order
+                    {% trans '10% Off Your First Order'%}
                     </h4>
                     <h3 class="display-4 text-white font-weight-semi-bold mb-4">
-                      Reasonable Price
+                      {% trans 'Reasonable Price'%}
                     </h3>
-                    <a href="{%url 'product:shop'%}" class="btn btn-light py-2 px-3">Shop Now</a>
+                    <a href="{%url 'product:shop'%}" class="btn btn-light py-2 px-3">{% trans 'Shop Now'%}</a>
                   </div>
                 </div>
               </div>
@@ -107,7 +107,7 @@
             style="padding: 30px"
           >
             <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
-            <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
+            <h5 class="font-weight-semi-bold m-0">{% trans 'Quality Product'%}</h5>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
@@ -116,7 +116,7 @@
             style="padding: 30px"
           >
             <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
-            <h5 class="font-weight-semi-bold m-0">Shipping</h5>
+            <h5 class="font-weight-semi-bold m-0">{% trans 'Shipping'%}</h5>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
@@ -125,7 +125,7 @@
             style="padding: 30px"
           >
             <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
-            <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
+            <h5 class="font-weight-semi-bold m-0">{% trans '14-Day Return'%}</h5>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
@@ -134,7 +134,7 @@
             style="padding: 30px"
           >
             <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
-            <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
+            <h5 class="font-weight-semi-bold m-0">{% trans '24/7 Support'%}</h5>
           </div>
         </div>
       </div>
@@ -152,7 +152,7 @@
             <a href="{%url 'product:shop'%}?Male=on" class="cat-img position-relative overflow-hidden mb-3">
               <img class="img-fluid" src="{%static '/img/cat-1.jpg'%}" alt="" />
             </a>
-            <h5 class="font-weight-semi-bold m-0">Men's dresses</h5>
+            <h5 class="font-weight-semi-bold m-0">{% trans 'Men's 'dresses'%}</h5>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 pb-1">
@@ -164,7 +164,7 @@
             <a href="{%url 'product:shop'%}?Female=on" class="cat-img position-relative overflow-hidden mb-3">
               <img class="img-fluid" src="{%static 'img/cat-2.jpg'%}" alt="" />
             </a>
-            <h5 class="font-weight-semi-bold m-0">Women's dresses</h5>
+            <h5 class="font-weight-semi-bold m-0">{% trans 'Women's 'dresses'%}</h5>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 pb-1">
@@ -176,7 +176,7 @@
             <a href="{%url 'product:shop'%}?Baby=on" class="cat-img position-relative overflow-hidden mb-3">
               <img class="img-fluid" src="{%static 'img/cat-3.jpg'%}" alt="" />
             </a>
-            <h5 class="font-weight-semi-bold m-0">Baby's dresses</h5>
+            <h5 class="font-weight-semi-bold m-0">{% trans 'Baby's 'dresses'%}</h5>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 pb-1">
@@ -188,7 +188,7 @@
             <a href="{%url 'product:shop'%}?Search=Accerssories" class="cat-img position-relative overflow-hidden mb-3">
               <img class="img-fluid" src="{%static 'img/cat-4.jpg'%}" alt="" />
             </a>
-            <h5 class="font-weight-semi-bold m-0">Accerssories</h5>
+            <h5 class="font-weight-semi-bold m-0">{% trans 'Accerssories'%}</h5>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 pb-1">
@@ -200,7 +200,7 @@
             <a href="{%url 'product:shop'%}?Search=Bags" class="cat-img position-relative overflow-hidden mb-3">
               <img class="img-fluid" src="{%static 'img/cat-5.jpg'%}" alt="" />
             </a>
-            <h5 class="font-weight-semi-bold m-0">Bags</h5>
+            <h5 class="font-weight-semi-bold m-0">{% trans 'Bags'%}</h5>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 pb-1">
@@ -212,7 +212,7 @@
             <a href="{%url 'product:shop'%}?Category=Shoes" class="cat-img position-relative overflow-hidden mb-3">
               <img class="img-fluid" src="{%static 'img/cat-6.jpg'%}" alt="" />
             </a>
-            <h5 class="font-weight-semi-bold m-0">Shoes</h5>
+            <h5 class="font-weight-semi-bold m-0">{% trans 'Shoes'%}</h5>
           </div>
         </div>
       </div>
@@ -229,11 +229,11 @@
             <img src="{%static 'img/offer-1.png'%}" alt="" />
             <div class="position-relative" style="z-index: 1">
               <h5 class="text-uppercase text-primary mb-3">
-                20% off the all order
+                {% trans '20% off the all order'%}
               </h5>
-              <h1 class="mb-4 font-weight-semi-bold">Spring Collection</h1>
+              <h1 class="mb-4 font-weight-semi-bold">{% trans 'Spring Collection'%}</h1>
               <a href="{%url 'product:shop'%}" class="btn btn-outline-primary py-md-2 px-md-3"
-                >Shop Now</a
+                >{% trans 'Shop Now'%}</a
               >
             </div>
           </div>
@@ -245,11 +245,11 @@
             <img src="{%static 'img/offer-2.png'%}" alt="" />
             <div class="position-relative" style="z-index: 1">
               <h5 class="text-uppercase text-primary mb-3">
-                20% off the all order
+                {% trans '20% off the all order'%}
               </h5>
-              <h1 class="mb-4 font-weight-semi-bold">Winter Collection</h1>
+              <h1 class="mb-4 font-weight-semi-bold">{% trans 'Winter Collection'%}</h1>
               <a href="{%url 'product:shop'%}" class="btn btn-outline-primary py-md-2 px-md-3"
-                >Shop Now</a
+                >{% trans 'Shop Now'%}</a
               >
             </div>
           </div>
@@ -262,7 +262,7 @@
     <div class="container-fluid pt-5">
       <div class="text-center mb-4">
         <h2 class="section-title px-5">
-          <span class="px-2">Trandy Products</span>
+          <span class="px-2">{% trans 'Trandy Products'%}</span>
         </h2>
       </div>
       <div class="row px-xl-5 pb-3">
@@ -289,22 +289,20 @@
               class="card-footer d-flex justify-content-between bg-light border"
             >
               <a href="" class="btn btn-sm text-dark p-0"
-                ><i class="fas fa-eye text-primary mr-1"></i>View Detail</a
+                ><i class="fas fa-eye text-primary mr-1"></i>{% trans 'View Detail'%}</a
               >
               <a class="btn btn-sm text-dark p-0" 
                  onclick="add_to_cart(this)" 
                  id="{{product.id}}"
                  name="add"
                 >
-                <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart
+                <i class="fas fa-shopping-cart text-primary mr-1"></i>{% trans 'Add To Cart'%}
               </a>
               
             </div>
           </div>
         </div>
-
         {% endfor %}
-
       </div>
     </div>
     <!-- Products End -->
@@ -315,7 +313,7 @@
         <div class="col-md-6 col-12 py-5">
           <div class="text-center mb-2 pb-2">
             <h2 class="section-title px-5 mb-3">
-              <span class="bg-secondary px-2">Stay Updated</span>
+              <span class="bg-secondary px-2">{% trans 'Stay Updated'%}</span>
             </h2>
             <p>
               Amet lorem at rebum amet dolores. Elitr lorem dolor sed amet diam
@@ -330,7 +328,7 @@
                 placeholder="Email Goes Here"
               />
               <div class="input-group-append">
-                <button class="btn btn-primary px-4">Subscribe</button>
+                <button class="btn btn-primary px-4">{% trans 'Subscribe'%}</button>
               </div>
             </div>
           </form>
@@ -343,7 +341,7 @@
     <div class="container-fluid pt-5">
       <div class="text-center mb-4">
         <h2 class="section-title px-5">
-          <span class="px-2">Just Arrived</span>
+          <span class="px-2">{% trans 'Just Arrived'%}</span>
         </h2>
       </div>
 
@@ -371,14 +369,14 @@
               class="card-footer d-flex justify-content-between bg-light border"
             >
               <a href="{% url 'product:detail' product.slug%}" class="btn btn-sm text-dark p-0"
-                ><i class="fas fa-eye text-primary mr-1"></i>View Detail</a
+                ><i class="fas fa-eye text-primary mr-1"></i>{% trans 'View Detail'%}</a
               >
               <a class="btn btn-sm text-dark p-0" 
                  onclick="add_to_cart(this)" 
                  id="{{product.id}}"
                  name="add"
                 >
-                <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart
+                <i class="fas fa-shopping-cart text-primary mr-1"></i>{% trans 'Add To Cart'%}
               </a>
             </div>
           </div>

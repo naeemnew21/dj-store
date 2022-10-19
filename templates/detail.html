@@ -14,21 +14,21 @@
 
 
 {% block titles %}
-                <a href="{% url 'product:index' %}" class="nav-item nav-link">Home</a>
-                <a href="{% url 'product:shop' %}" class="nav-item nav-link">Shop</a>
+                <a href="{% url 'product:index' %}" class="nav-item nav-link">{% trans 'Home'%}</a>
+                <a href="{% url 'product:shop' %}" class="nav-item nav-link">{% trans 'Shop'%}</a>
                 <div class="nav-item dropdown">
                   <a
                     href="#"
                     class="nav-link dropdown-toggle"
                     data-toggle="dropdown"
-                    >Pages</a
+                    >{% trans 'Pages'%}</a
                   >
                   <div class="dropdown-menu rounded-0 m-0">
-                    <a href="{%url 'cart:cart'%}" class="dropdown-item">Shopping Cart</a>
-                    <a href="{% url 'cart:checkout' %}" class="dropdown-item">Checkout</a>
+                    <a href="{%url 'cart:cart'%}" class="dropdown-item">{% trans 'Shopping Cart'%}</a>
+                    <a href="{% url 'cart:checkout' %}" class="dropdown-item">{% trans 'Checkout'%}</a>
                   </div>
                 </div>
-                <a href="{% url 'cart:contact' %}" class="nav-item nav-link">Contact</a>
+                <a href="{% url 'cart:contact' %}" class="nav-item nav-link">{% trans 'Contact'%}</a>
 
 {% endblock titles %}
 
@@ -43,16 +43,15 @@
         class="d-flex flex-column align-items-center justify-content-center"
         style="min-height: 300px"
       >
-        <h1 class="font-weight-semi-bold text-uppercase mb-3">Shop Detail</h1>
+        <h1 class="font-weight-semi-bold text-uppercase mb-3">{% trans 'Shop Detail'%}</h1>
         <div class="d-inline-flex">
-          <p class="m-0"><a href="{% url 'product:index' %}">Home</a></p>
+          <p class="m-0"><a href="{% url 'product:index' %}">{% trans 'Home'%}</a></p>
           <p class="m-0 px-2">-</p>
-          <p class="m-0">Shop Detail</p>
+          <p class="m-0">{% trans 'Shop Detail'%}</p>
         </div>
       </div>
     </div>
     <!-- Page Header End -->
-
     <!-- Shop Detail Start -->
     <div class="container-fluid py-5">
       <div class="row px-xl-5">
@@ -87,7 +86,6 @@
           <h3 class="font-weight-semi-bold">{{product.name}}</h3>
           <div class="d-flex mb-3">
             <div class="text-primary mr-2">
-
               {% for i in product.get_rate|get_list %}
                 {% if i == 1 %}
                     <small class="fas fa-star"></small>
@@ -98,16 +96,15 @@
                 {% endif %}
                 
               {% endfor %}
-
             </div>
-            <small class="pt-1">({{comments_num}} Reviews)</small>
+            <small class="pt-1">({{comments_num}} {% trans 'Reviews'%})</small>
           </div>
           <h3 class="font-weight-semi-bold mb-4">${{product.price}}</h3>
           <p class="mb-4">
             {{product.description}}
           </p>
           <div class="d-flex mb-3">
-            <p class="text-dark font-weight-medium mb-0 mr-3">Sizes:</p>
+            <p class="text-dark font-weight-medium mb-0 mr-3">{% trans 'Sizes:'%}</p>
             <form>
               {% for size in product.get_sizes %}
               
@@ -125,7 +122,7 @@
             </form>
           </div>
           <div class="d-flex mb-4">
-            <p class="text-dark font-weight-medium mb-0 mr-3">Colors:</p>
+            <p class="text-dark font-weight-medium mb-0 mr-3">{% trans 'Colors:'%}</p>
             <form>
               {% for color in product.get_colors %}
               
@@ -165,11 +162,11 @@
                   id="{{product.id}}"
                   name="add" 
             >
-              <i class="fa fa-shopping-cart mr-1"></i> Add To Cart
+              <i class="fa fa-shopping-cart mr-1"></i> {% trans 'Add To Cart'%}
             </button>
           </div>
           <div class="d-flex pt-2">
-            <p class="text-dark font-weight-medium mb-0 mr-2">Share on:</p>
+            <p class="text-dark font-weight-medium mb-0 mr-2">{% trans 'Share on:'%}</p>
             <div class="d-inline-flex">
               <a class="text-dark px-2" href="">
                 <i class="fab fa-facebook-f"></i>
@@ -196,24 +193,24 @@
               class="nav-item nav-link active"
               data-toggle="tab"
               href="#tab-pane-1"
-              >Description</a
+              >{% trans 'Description'%}</a
             >
             <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-2"
-              >Information</a
+              >{% trans 'Information'%}</a
             >
             <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-3"
-              >Reviews ({{comments_num}})</a
+              >{% trans 'Reviews'%} ({{comments_num}})</a
             >
           </div>
           <div class="tab-content">
             <div class="tab-pane fade show active" id="tab-pane-1">
-              <h4 class="mb-3">Product Description</h4>
+              <h4 class="mb-3">{% trans 'Product Description'%}</h4>
               <p>
                 {{product.description|safe}}
               </p>
             </div>
             <div class="tab-pane fade" id="tab-pane-2">
-              <h4 class="mb-3">Additional Information</h4>
+              <h4 class="mb-3">{% trans 'Additional Information'%}</h4>
               <p>
                 {{product.details|safe}}
               </p>
@@ -223,7 +220,6 @@
                 
                 <div class="col-md-6">
                   <h4 class="mb-4">{{comments_num}} review for "{{product.name}}"</h4>
-
                   {% for comment in comments %}
                     <div class="media mb-4">
                       <img
@@ -237,11 +233,10 @@
                           {{comment.user.name}}<small> - <i>{{comment.created_at|date:'d N Y'}}</i></small>
                         </h6>
                         <div class="text-primary mb-2">
-                    
-
+                          
                           {% for i in comment.rate|get_list %}
                             {% if i == 1 %}
-                                 <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             {% elif i == 0.5%}
                                 <i class="fas fa-star-half-alt"></i> 
                             {% else %}
@@ -249,7 +244,6 @@
                             {% endif %}
                             
                           {% endfor %}
-
                         </div>
                         <p>
                           {{comment.comment}}
@@ -258,10 +252,7 @@
                     </div>
                   {% endfor %}
                   
-
                 </div>
-
-
                 <style>
                   .rating {
                       float:left;
@@ -309,13 +300,11 @@
                       color: #ea0;
                       text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
                   }
-
                   /* end of Lea's code */
                   
                 </style>
-
                 <div class="col-md-6">
-                  <h4 class="mb-4">Leave a review</h4>
+                  <h4 class="mb-4">{% trans 'Leave a review'%}</h4>
                   
                   <form method="POST">
                     {% csrf_token %}
@@ -323,17 +312,15 @@
                     <div class="d-flex my-3">
                     <p class="mb-0 mr-2">Your Rating * :</p>
                       <fieldset class="rating">
-                          <input type="radio" id="star5" name="rate" value="5" /><label for="star5" title="Rocks!">5 stars</label>
-                          <input type="radio" id="star4" name="rate" value="4" /><label for="star4" title="Pretty good">4 stars</label>
-                          <input type="radio" id="star3" name="rate" value="3" /><label for="star3" title="Meh">3 stars</label>
-                          <input type="radio" id="star2" name="rate" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
-                          <input type="radio" id="star1" name="rate" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                          <input type="radio" id="star5" name="rate" value="5" /><label for="star5" title="Rocks!">{% trans '5 stars'%}</label>
+                          <input type="radio" id="star4" name="rate" value="4" /><label for="star4" title="Pretty good">{% trans '4 stars'%}</label>
+                          <input type="radio" id="star3" name="rate" value="3" /><label for="star3" title="Meh">{% trans '3 stars'%}</label>
+                          <input type="radio" id="star2" name="rate" value="2" /><label for="star2" title="Kinda bad">{% trans '2 stars'%}</label>
+                          <input type="radio" id="star1" name="rate" value="1" /><label for="star1" title="Sucks big time">{% trans '1 star'%}</label>
                         </fieldset>
                     </div>
-
-
                     <div class="form-group">
-                      <label for="message">Your Review *</label>
+                      <label for="message">{% trans 'Your Review *'%}</label>
                       <textarea
                         name="comment" 
                         id="message"
@@ -342,7 +329,6 @@
                         class="form-control"
                       ></textarea>
                     </div>
-
                     <div class="form-group mb-0">
                       <input
                         type="submit"
@@ -351,7 +337,6 @@
                       />
                     </div>
                   </form>
-
                 </div>
               </div>
             </div>
@@ -360,12 +345,11 @@
       </div>
     </div>
     <!-- Shop Detail End -->
-
     <!-- Products Start -->
     <div class="container-fluid py-5">
       <div class="text-center mb-4">
         <h2 class="section-title px-5">
-          <span class="px-2">You May Also Like</span>
+          <span class="px-2">{% trans 'You May Also Like'%}</span>
         </h2>
       </div>
       <div class="row px-xl-5">
@@ -392,24 +376,22 @@
                 class="card-footer d-flex justify-content-between bg-light border"
               >
                 <a href="{% url 'product:detail' item.slug %}" class="btn btn-sm text-dark p-0"
-                  ><i class="fas fa-eye text-primary mr-1"></i>View Detail</a
+                  ><i class="fas fa-eye text-primary mr-1"></i>{% trans 'View Detail'%}</a
                 >
                 <a class="btn btn-sm text-dark p-0" 
-                 onclick="add_to_cart(this)" 
-                 id="{{product.id}}"
-                 name="add"
+                  onclick="add_to_cart(this)" 
+                  id="{{product.id}}"
+                  name="add"
                 >
-                  <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To
-                  Cart</a
+                  <i class="fas fa-shopping-cart text-primary mr-1"></i>{% trans 'Add To
+                  Cart'%}</a
                 >
               </div>
             </div>
           {% endfor %}
-
           </div>
         </div>
       </div>
     </div>
     <!-- Products End -->
-
 {% endblock content %}

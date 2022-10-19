@@ -41,9 +41,9 @@
       <div class="row bg-secondary py-2 px-xl-5">
         <div class="col-lg-6 d-none d-lg-block">
           <div class="d-inline-flex align-items-center">
-            <a class="text-dark" href="">FAQs</a>
+            <a class="text-dark" href="">{% trans 'FAQs'%}</a>
             <span class="text-muted px-2">|</span>
-            <a class="text-dark" href="">Help</a>
+            <a class="text-dark" href="">{% trans 'Help'%}</a>
             <span class="text-muted px-2">|</span>
             <a class="text-dark" href="">{% trans 'Support'%}</a>
           </div>
@@ -133,28 +133,25 @@
             href="#navbar-vertical"
             style="height: 65px; margin-top: -1px; padding: 0 30px"
           >
-            <h6 class="m-0">Categories</h6>
+            <h6 class="m-0">{% trans 'Categories'%}</h6>
             <i class="fa fa-angle-down text-dark"></i>
           </a>
-
           
           {% block navbar %}
           
 
           {% endblock navbar %}
-
-
             <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-              <a href="{% url 'product:shop' %}?Category=Dresses" class="nav-item nav-link">Dresses</a>
-              <a href="{% url 'product:shop' %}?Category=T-Shirt" class="nav-item nav-link">Shirts</a>
-              <a href="{% url 'product:shop' %}?Category=Jeans" class="nav-item nav-link">Jeans</a>
-              <a href="{% url 'product:shop' %}?Category=Swimwear" class="nav-item nav-link">Swimwear</a>
-              <a href="{% url 'product:shop' %}?Category=Sleepwear" class="nav-item nav-link">Sleepwear</a>
-              <a href="{% url 'product:shop' %}?Category=Sportswear" class="nav-item nav-link">Sportswear</a>
-              <a href="{% url 'product:shop' %}?Category=Jumpsuits" class="nav-item nav-link">Jumpsuits</a>
-              <a href="{% url 'product:shop' %}?Category=Blazers" class="nav-item nav-link">Blazers</a>
-              <a href="{% url 'product:shop' %}?Category=Jackets" class="nav-item nav-link">Jackets</a>
-              <a href="{% url 'product:shop' %}?Category=Shoes" class="nav-item nav-link">Shoes</a>
+              <a href="{% url 'product:shop' %}?Category=Dresses" class="nav-item nav-link">{% trans 'Dresses'%}</a>
+              <a href="{% url 'product:shop' %}?Category=T-Shirt" class="nav-item nav-link">{% trans 'Shirts'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Jeans" class="nav-item nav-link">{% trans 'Jeans'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Swimwear" class="nav-item nav-link">{% trans 'Swimwear'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Sleepwear" class="nav-item nav-link">{% trans 'Sleepwear'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Sportswear" class="nav-item nav-link">{% trans 'Sportswear'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Jumpsuits" class="nav-item nav-link">{% trans 'Jumpsuits'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Blazers" class="nav-item nav-link">{% trans 'Blazers'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Jackets" class="nav-item nav-link">{% trans 'Jackets'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Shoes" class="nav-item nav-link">{% trans 'Shoes'%}</a>
             </div>
           </nav>
         </div>
@@ -188,9 +185,7 @@
                 
                 
                 {% endblock titles %}
-
               </div>
-
               <div class="navbar-nav ml-auto py-0">
                 {% if request.user.is_authenticated %}
                       <a
@@ -213,33 +208,31 @@
                       >
                         <a class="dropdown-item" href="{% url 'user:profile'%}">
                           <div class="d-flex align-items-center">
-                            <i class="ft-edit mr-2"></i><span>Edit Profile</span>
+                            <i class="ft-edit mr-2"></i><span>{% trans 'Edit Profile'%}</span>
                           </div> 
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'user:logout' %}">
                           <div class="d-flex align-items-center">
-                            <i class="ft-power mr-2"></i><span>Logout</span>
+                            <i class="ft-power mr-2"></i><span>{% trans 'Logout'%}</span>
                           </div>
                         </a>
                       </div>
                 {% else %}
-                      <a href="{%url 'user:login'%}" class="nav-item nav-link">Login</a>
-                      <a href="{%url 'user:sign-up'%}" class="nav-item nav-link">Register</a>
+                      <a href="{%url 'user:login'%}" class="nav-item nav-link">{% trans 'Login'%}</a>
+                      <a href="{%url 'user:sign-up'%}" class="nav-item nav-link">{% trans 'Register'%}</a>
                 {% endif %}
                 
               </div>
             </div>
           </nav>
     <!-- Navbar End -->
-
     {% block content %}
     
 
 
 
     {% endblock content %}
-
     <!-- Footer Start -->
     <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
       <div class="row px-xl-5 pt-5">
@@ -266,50 +259,50 @@
         <div class="col-lg-8 col-md-12">
           <div class="row">
             <div class="col-md-4 mb-5">
-              <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
+              <h5 class="font-weight-bold text-dark mb-4">{% trans 'Quick Links'%}</h5>
               <div class="d-flex flex-column justify-content-start">
                 <a class="text-dark mb-2" href="{%url 'product:index'%}"
-                  ><i class="fa fa-angle-right mr-2"></i>Home</a
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Home'%}</a
                 >
                 <a class="text-dark mb-2" href="{%url 'product:shop'%}"
-                  ><i class="fa fa-angle-right mr-2"></i>Our Shop</a
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Our Shop'%}</a
                 >
                 <a class="text-dark mb-2" href="{%url 'cart:cart'%}"
-                  ><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Shopping Cart'%}</a
                 >
                 <a class="text-dark mb-2" href="{%url 'cart:checkout'%}"
-                  ><i class="fa fa-angle-right mr-2"></i>Checkout</a
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Checkout'%}</a
                 >
                 <a class="text-dark" href="{%url 'cart:contact'%}"
-                  ><i class="fa fa-angle-right mr-2"></i>Contact Us</a
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Contact Us'%}</a
                 >
               </div>
             </div>
             <div class="col-md-4 mb-5">
-              <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
+              <h5 class="font-weight-bold text-dark mb-4">{% trans 'Quick Links'%}</h5>
               <div class="d-flex flex-column justify-content-start">
                 <a class="text-dark mb-2" href=""
-                  ><i class="fa fa-angle-right mr-2"></i>FAQs
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'FAQs'%}
                   </a
                 >
                 <a class="text-dark mb-2" href=""
-                  ><i class="fa fa-angle-right mr-2"></i>Trem</a
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Trem'%}</a
                 >
                 <a class="text-dark mb-2" href=""
-                  ><i class="fa fa-angle-right mr-2"></i>Help</a
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Help'%}</a
                 >
                 <a class="text-dark mb-2" href=""
                   ><i class="fa fa-angle-right mr-2"></i>{% trans 'Support'%}</a>
                 <a class="text-dark mb-2" href=""
-                  ><i class="fa fa-angle-right mr-2"></i>Pricing</a
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Pricing'%}</a
                 >
                 <a class="text-dark" href=""
-                  ><i class="fa fa-angle-right mr-2"></i>Privacy</a
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Privacy'%}</a
                 >
               </div>
             </div>
             <div class="col-md-4 mb-5">
-              <h5 class="font-weight-bold text-dark mb-4">Newsletter</h5>
+              <h5 class="font-weight-bold text-dark mb-4">{% trans 'Newsletter'%}</h5>
               <form action="">
                 <div class="form-group">
                   <input
@@ -332,7 +325,7 @@
                     class="btn btn-primary btn-block border-0 py-3"
                     type="submit"
                   >
-                    Subscribe Now
+                  {% trans 'Subscribe Now'%}
                   </button>
                 </div>
               </form>
@@ -346,8 +339,8 @@
           <p class="mb-md-0 text-center text-md-left text-dark">
             &copy;
             <a class="text-dark font-weight-semi-bold" href="#"
-              >Your Site Name</a
-            >. All Rights Reserved. Designed by
+              >{% trans 'Your Site Name'%}</a
+            >. {% trans 'All Rights Reserved. Designed by'%}
             <a class="text-dark font-weight-semi-bold" href=""
               >Mohamed Ibrahim</a
             >

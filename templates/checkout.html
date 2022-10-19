@@ -13,21 +13,21 @@
 
 
 {% block titles %}
-                <a href="{%url 'product:index'%}" class="nav-item nav-link">Home</a>
-                <a href="{%url 'product:shop'%}" class="nav-item nav-link">Shop</a>
+                <a href="{%url 'product:index'%}" class="nav-item nav-link">{% trans 'Home'%}</a>
+                <a href="{%url 'product:shop'%}" class="nav-item nav-link">{% trans 'Shop'%}</a>
                 <div class="nav-item dropdown">
                   <a
                     href="#"
                     class="nav-link dropdown-toggle active"
                     data-toggle="dropdown"
-                    >Pages</a
+                    >{% trans 'Pages'%}</a
                   >
                   <div class="dropdown-menu rounded-0 m-0">
-                    <a href="{%url 'cart:cart'%}" class="dropdown-item">Shopping Cart</a>
-                    <a href="{%url 'cart:checkout'%}" class="dropdown-item">Checkout</a>
+                    <a href="{%url 'cart:cart'%}" class="dropdown-item">{% trans 'Shopping Cart'%}</a>
+                    <a href="{%url 'cart:checkout'%}" class="dropdown-item">{% trans 'Checkout'%}</a>
                   </div>
                 </div>
-                <a href="{% url 'cart:contact' %}" class="nav-item nav-link">Contact</a>
+                <a href="{% url 'cart:contact' %}" class="nav-item nav-link">{% trans 'Contact'%}</a>
 {% endblock titles %}
 
 
@@ -37,36 +37,34 @@
 </div>
 </div>
 </div>
-
     <!-- Page Header Start -->
     <div class="container-fluid bg-secondary mb-5">
       <div
         class="d-flex flex-column align-items-center justify-content-center"
         style="min-height: 300px"
       >
-        <h1 class="font-weight-semi-bold text-uppercase mb-3">Checkout</h1>
+        <h1 class="font-weight-semi-bold text-uppercase mb-3">{% trans 'Checkout'%}</h1>
         <div class="d-inline-flex">
-          <p class="m-0"><a href="{% url 'product:index' %}">Home</a></p>
+          <p class="m-0"><a href="{% url 'product:index' %}">{% trans 'Home'%}</a></p>
           <p class="m-0 px-2">-</p>
-          <p class="m-0">Checkout</p>
+          <p class="m-0">{% trans 'Checkout'%}</p>
         </div>
       </div>
     </div>
     <!-- Page Header End -->
-
     <!-- Checkout Start -->
     <div class="container-fluid pt-5">
       <div class="row px-xl-5">
         <div class="col-lg-8">
           <div class="mb-4">
-            <h4 class="font-weight-semi-bold mb-4">Shipping  Address</h4>
+            <h4 class="font-weight-semi-bold mb-4">{% trans 'Shipping  Address'%}</h4>
 
             <form method="POST"  id="checkoutform">
               {% csrf_token %}
               <div class="row">
 
                 <div class="col-md-6 form-group">
-                  <label>Mobile No</label>
+                  <label>{% trans 'Mobile No'%}</label>
                   <input
                     name="phone" 
                     class="form-control"
@@ -77,7 +75,7 @@
                 </div>
 
                 <div class="col-md-6 form-group">
-                  <label>Address Line 1</label>
+                  <label>{% trans 'Address Line 1'%}</label>
                   <input
                     name="add1" 
                     class="form-control"
@@ -88,7 +86,7 @@
                 </div>
 
                 <div class="col-md-6 form-group">
-                  <label>Address Line 2</label>
+                  <label>{% trans 'Address Line 2'%}</label>
                   <input
                     name="add2" 
                     class="form-control"
@@ -99,7 +97,7 @@
                 </div>
 
                 <div class="col-md-6 form-group">
-                  <label>Country</label>
+                  <label>{% trans 'Country'%}</label>
                   <input
                     name="country" 
                     class="form-control"
@@ -108,31 +106,27 @@
                   />
                   <p class="help-block text-danger">{{form.country.errors}}</p>
                 </div>
-
                 <div class="col-md-6 form-group">
                   <label>City</label>
                   <select class="custom-select"  name="city">
-                    <option value="Cario" selected>Cario</option>
-                    <option value="Alex">Alex</option>
-                    <option value="Giza">Giza</option>
-                    <option value="Behira">Behira</option>
+                    <option value="Cario" selected>{% trans 'Cario'%}</option>
+                    <option value="Alex">{% trans 'Alex'%}</option>
+                    <option value="Giza">{% trans 'Giza'%}</option>
+                    <option value="Behira">{% trans 'Behira'%}</option>
                   </select>
                   <p class="help-block text-danger">{{form.city.errors}}</p>
                 </div>
               </div>
-
             </form>
-
           </div>
-
         </div>
         <div class="col-lg-4">
           <div class="card border-secondary mb-5">
             <div class="card-header bg-secondary border-0">
-              <h4 class="font-weight-semi-bold m-0">Order Total</h4>
+              <h4 class="font-weight-semi-bold m-0">{% trans 'Order Total'%}</h4>
             </div>
             <div class="card-body">
-              <h5 class="font-weight-medium mb-3">Products</h5>
+              <h5 class="font-weight-medium mb-3">{% trans 'Products'%}</h5>
               {% for check in orders %}
               <div class="d-flex justify-content-between">
                 <p>{{check.product.name}}</p>
@@ -141,24 +135,24 @@
               {% endfor %}
               <hr class="mt-0" />
               <div class="d-flex justify-content-between mb-3 pt-1">
-                <h6 class="font-weight-medium">Subtotal</h6>
+                <h6 class="font-weight-medium">{% trans 'Subtotal'%}</h6>
                 <h6 class="font-weight-medium">{{total}}</h6>
               </div>
               <div class="d-flex justify-content-between">
-                <h6 class="font-weight-medium">Shipping</h6>
+                <h6 class="font-weight-medium">{% trans 'Shipping'%}</h6>
                 <h6 class="font-weight-medium">60</h6>
               </div>
             </div>
             <div class="card-footer border-secondary bg-transparent">
               <div class="d-flex justify-content-between mt-2">
-                <h5 class="font-weight-bold">Total</h5>
+                <h5 class="font-weight-bold">{% trans 'Total'%}</h5>
                 <h5 class="font-weight-bold">{{totch}}</h5>
               </div>
             </div>
           </div>
           <div class="card border-secondary mb-5">
             <div class="card-header bg-secondary border-0">
-              <h4 class="font-weight-semi-bold m-0">Payment</h4>
+              <h4 class="font-weight-semi-bold m-0">{% trans 'Payment'%}</h4>
             </div>
             <div class="card-body">
               <div class="form-group">
@@ -171,7 +165,7 @@
                     checked
                   />
                   <label class="custom-control-label" for="paypal"
-                    >Pay on Delivery</label
+                    >{% trans 'Pay on Delivery'%}</label
                   >
                 </div>
               </div>
@@ -182,17 +176,15 @@
                   class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3"
                   type="submit" form="checkoutform" value="Submit"
                 >
-                  Place Order
+                {% trans 'Place Order'%}
                 </button>
               </div>
             {% endif %}
             
-
           </div>
         </div>
       </div>
     </div>
     <!-- Checkout End -->
-
     
     {% endblock content %}

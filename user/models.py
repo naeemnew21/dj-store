@@ -15,9 +15,9 @@ import datetime
 
 def validate_name(name):
     if not(name) or name.isspace():
-         raise ValidationError(_('empty name is not valid name'))   
+        raise ValidationError(_('empty name is not valid name'))   
 
-         
+
 
 
 def generate_name(length=4, chars = ascii_lowercase+digits):
@@ -50,8 +50,7 @@ class OverwriteStorage(FileSystemStorage):
 
 AUTH_PROVIDERS = {'google': 'google', 'email': 'email'}
 
-    
-    
+
 
 class MyUser(AbstractUser):
     email         = models.EmailField(unique=True, blank=False, null=False, verbose_name=_('email address'))
