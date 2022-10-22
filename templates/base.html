@@ -62,6 +62,19 @@
                         <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
                             {{ language.name_local }} ({{ language.code }})
                         </option>
+                        {% comment %} <a
+                  class="nav-link d-flex align-items-center dropdown-toggle dropdown-language"
+                  id="dropdown-flag"
+                  href="javascript:;"
+                  data-toggle="dropdown"
+                  ><img
+                    class="langimg selected-flag"
+                    src="../../../app-assets/img/flags/us.png"
+                    alt="flag"
+                  /><span class="selected-language d-md-flex d-none"
+                    >English</span
+                  ></a
+                > {% endcomment %}
                     {% endfor %}
                 </select>
                 <input type="submit" value="Go">
@@ -246,7 +259,7 @@
             </h1>
           </a>
           <p>
-            Youth who choose casually, rejecting stereotypes and wanting to feel comfortable in their clothes..Our SHop satisfies this needs.
+            {% trans "Youth who choose casually, rejecting stereotypes and wanting to feel comfortable in their clothes..Our SHop satisfies this needs."%}
           </p>
           <p class="mb-2">
             <i class="fa fa-envelope text-primary mr-3"></i

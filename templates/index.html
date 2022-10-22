@@ -35,29 +35,11 @@
 {% endblock titles %}
 
 {% block content %}
-
           <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active" style="height: 410px">
-                <img class="img-fluid" src="{%static 'img/carousel-1.jpg'%}" alt="Image" />
-                <div
-                  class="carousel-caption d-flex flex-column align-items-center justify-content-center"
-                >
-                  <div class="p-3" style="max-width: 700px">
-                    <h4
-                      class="text-light text-uppercase font-weight-medium mb-3"
-                    >
-                    {% trans '10% Off Your First Order'%}
-                    </h4>
-                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">
-                      {% trans 'Fashionable Dress'%}
-                    </h3>
-                    <a href="{%url 'product:shop'%}" class="btn btn-light py-2 px-3">{% trans 'Shop Now'%}</a>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item" style="height: 410px">
-                <img class="img-fluid" src="{% static 'img/carousel-2.jpg'%}" alt="Image" />
+                
+                <img class="img-fluid" src="{%static 'img/b3.jpg'%}" alt="Image" />
                 <div
                   class="carousel-caption d-flex flex-column align-items-center justify-content-center"
                 >
@@ -69,6 +51,24 @@
                     </h4>
                     <h3 class="display-4 text-white font-weight-semi-bold mb-4">
                       {% trans 'Reasonable Price'%}
+                    </h3>
+                    <a href="{%url 'product:shop'%}" class="btn btn-light py-2 px-3">{% trans 'Shop Now'%}</a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item" style="height: 410px">
+                <img class="img-fluid" src="{% static 'img/b1.jpg'%}" alt="Image" />
+                <div
+                  class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+                >
+                  <div class="p-3" style="max-width: 700px">
+                    <h4
+                      class="text-light text-uppercase font-weight-medium mb-3"
+                    >
+                    {% trans '10% Off Your First Order'%}
+                    </h4>
+                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">
+                      {% trans 'Fashionable Dress'%}
                     </h3>
                     <a href="{%url 'product:shop'%}" class="btn btn-light py-2 px-3">{% trans 'Shop Now'%}</a>
                   </div>
@@ -242,7 +242,7 @@
           <div
             class="position-relative bg-secondary text-center text-md-left text-white mb-2 py-5 px-5"
           >
-            <img src="{%static 'img/offer-2.png'%}" alt="" />
+            <img src="{%static 'img/v16.png'%}" alt="" />
             <div class="position-relative" style="z-index: 1">
               <h5 class="text-uppercase text-primary mb-3">
                 {% trans '20% off the all order'%}
@@ -385,41 +385,38 @@
       </div>
     </div>
     <!-- Products End -->
-
     <!-- Vendor Start -->
     <div class="container-fluid py-5">
       <div class="row px-xl-5">
         <div class="col">
           <div class="owl-carousel vendor-carousel">
             <div class="vendor-item border p-4">
-              <img src="{% static 'img/vendor-1.jpg' %}" alt="" />
+              <img src="{% static 'img/v10.jpg' %}" alt="" />
             </div>
             <div class="vendor-item border p-4">
-              <img src="{% static 'img/vendor-2.jpg' %}" alt="" />
+              <img src="{% static 'img/v2.jpg' %}" alt="" />
             </div>
             <div class="vendor-item border p-4">
-              <img src="{% static 'img/vendor-3.jpg' %}" alt="" />
+              <img src="{% static 'img/v3.jpg' %}" alt="" />
             </div>
             <div class="vendor-item border p-4">
-              <img src="{% static 'img/vendor-4.jpg' %}" alt="" />
+              <img src="{% static 'img/v4.jpg' %}" alt="" />
             </div>
             <div class="vendor-item border p-4">
-              <img src="{% static 'img/vendor-5.jpg' %}" alt="" />
+              <img src="{% static 'img/v5.jpg' %}" alt="" />
             </div>
             <div class="vendor-item border p-4">
-              <img src="{% static 'img/vendor-6.jpg' %}" alt="" />
+              <img src="{% static 'img/v6.jpg' %}" alt="" />
             </div>
             <div class="vendor-item border p-4">
-              <img src="{% static 'img/vendor-7.jpg' %}" alt="" />
+              <img src="{% static 'img/v7.jpg' %}" alt="" />
             </div>
             <div class="vendor-item border p-4">
-              <img src="{% static 'img/vendor-8.jpg' %}" alt="" />
+              <img src="{% static 'img/v8.jpg' %}" alt="" />
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Vendor End -->
-
-
 {% endblock content %}

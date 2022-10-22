@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-21 15:47+0200\n"
+"POT-Creation-Date: 2022-10-21 16:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -278,6 +278,13 @@ msgstr "تسجيل الدخول"
 #: .\templates\base.html:223 .\templates\register.html:19
 msgid "Register"
 msgstr "يسجل"
+
+#: .\templates\base.html:249
+msgid ""
+"Youth who choose casually, rejecting stereotypes and wanting to feel "
+"comfortable in their clothes..Our SHop satisfies this needs."
+msgstr "الشباب الذين يختارون عرضا ، ويرفضون الصور النمطية ويريدون الشعور "
+"مريحة في ملابسهم .. متجرنا يلبي هذه الاحتياجات"
 
 #: .\templates\base.html:262 .\templates\base.html:282
 msgid "Quick Links"
