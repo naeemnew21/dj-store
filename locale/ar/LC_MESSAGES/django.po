@@ -218,7 +218,6 @@ msgid "Support"
 msgstr "الدعم"
 
 #: .\templates\base.html:150
-#, fuzzy
 #| msgid "category"
 msgid "Categories"
 msgstr "الفئة"
@@ -374,13 +373,11 @@ msgid "My Cart"
 msgstr "عربة التسوق الخاصة بي"
 
 #: .\templates\cart.html:74 .\templates\cart.html:144
-#, fuzzy
 #| msgid "price"
 msgid "Price"
 msgstr "السعر"
 
 #: .\templates\cart.html:75 .\templates\cart.html:145
-#, fuzzy
 #| msgid "quantity"
 msgid "Quantity"
 msgstr "العدد"
@@ -395,13 +392,11 @@ msgid "Remove"
 msgstr "حذف"
 
 #: .\templates\cart.html:138
-#, fuzzy
 #| msgid "confirmed"
 msgid "Confirmed"
 msgstr "تم تأكيد"
 
 #: .\templates\cart.html:147
-#, fuzzy
 #| msgid "track"
 msgid "Track"
 msgstr "مسار"
@@ -440,19 +435,16 @@ msgid "Mobile No"
 msgstr "رقم الموبايل"
 
 #: .\templates\checkout.html:78
-#, fuzzy
 #| msgid "address 1"
 msgid "Address Line 1"
 msgstr "عنوان 1"
 
 #: .\templates\checkout.html:89
-#, fuzzy
 #| msgid "address 2"
 msgid "Address Line 2"
 msgstr "عنوان 2"
 
 #: .\templates\checkout.html:100
-#, fuzzy
 #| msgid "country"
 msgid "Country"
 msgstr "البلد"
@@ -531,7 +523,6 @@ msgid "Share on:"
 msgstr "شارك عبر"
 
 #: .\templates\detail.html:196
-#, fuzzy
 #| msgid "description"
 msgid "Description"
 msgstr "الوصف"
@@ -541,7 +532,6 @@ msgid "Information"
 msgstr "معلومة"
 
 #: .\templates\detail.html:207
-#, fuzzy
 #| msgid "description"
 msgid "Product Description"
 msgstr "الوصف"
@@ -596,19 +586,16 @@ msgid "Personal info"
 msgstr "معلومات شخصية"
 
 #: .\templates\edit_profile.html:35 .\templates\register.html:26
-#, fuzzy
 #| msgid "first name"
 msgid "First name"
 msgstr "الاسم الاول"
 
 #: .\templates\edit_profile.html:42 .\templates\register.html:34
-#, fuzzy
 #| msgid "last name"
 msgid "Last name"
 msgstr "الاسم الاخير"
 
 #: .\templates\edit_profile.html:49
-#, fuzzy
 #| msgid "phone"
 msgid "Phone"
 msgstr "التلفون"
@@ -623,9 +610,8 @@ msgid "Update"
 msgstr "تعديل"
 
 #: .\templates\index.html:50 .\templates\index.html:68
-#, python-format
 msgid "10%% Off Your First Order"
-msgstr "10% خصم علي اول طلب"
+msgstr " 10% خصم علي اول طلب"
 
 #: .\templates\index.html:53
 msgid "Reasonable Price"
@@ -641,7 +627,6 @@ msgid "Fashionable Dress"
 msgstr "فستان عصري"
 
 #: .\templates\index.html:110
-#, fuzzy
 #| msgid "Product"
 msgid "Quality Product"
 msgstr "منتج"
@@ -651,7 +636,6 @@ msgid "14-Day Return"
 msgstr "14 يوم العودة"
 
 #: .\templates\index.html:137
-#, fuzzy
 #| msgid "Support"
 msgid "24/7 Support"
 msgstr "الدعم"
@@ -665,7 +649,6 @@ msgid "Women dresses"
 msgstr "فساتين النساء"
 
 #: .\templates\index.html:179
-#, fuzzy
 #| msgid "address"
 msgid "Baby dresses"
 msgstr "فستان الاطفال"
@@ -692,7 +675,6 @@ msgid "Winter Collection"
 msgstr "مجموعة الشتاء"
 
 #: .\templates\index.html:265
-#, fuzzy
 #| msgid "Products"
 msgid "Trandy Products"
 msgstr "المنتجات العصرية"
@@ -746,7 +728,6 @@ msgid "User"
 msgstr "مستخدم"
 
 #: .\templates\register.html:77
-#, fuzzy
 #| msgid "seller"
 msgid "Seller"
 msgstr "بائع"
@@ -756,7 +737,6 @@ msgid "Filter by price"
 msgstr "تصفية حسب السعر"
 
 #: .\templates\shop.html:58
-#, fuzzy
 #| msgid "price"
 msgid "All Price"
 msgstr "السعر"
@@ -790,7 +770,6 @@ msgid "Green"
 msgstr "اخضر"
 
 #: .\templates\shop.html:139
-#, fuzzy
 #| msgid "Filter by price"
 msgid "Filter by size"
 msgstr "تصفية حسب السعر"
@@ -800,7 +779,6 @@ msgid "All Size"
 msgstr "كل المقاسات"
 
 #: .\templates\shop.html:185
-#, fuzzy
 #| msgid "Filter by price"
 msgid "Filter by gender"
 msgstr "تصفية حسب السعر"
@@ -834,13 +812,11 @@ msgid "Latest"
 msgstr "الاخير"
 
 #: .\templates\shop.html:245
-#, fuzzy
 #| msgid "price"
 msgid "Price Low"
 msgstr "السعر المنخفض"
 
 #: .\templates\shop.html:246
-#, fuzzy
 #| msgid "price"
 msgid "Price High"
 msgstr "السعر المرتفع"
