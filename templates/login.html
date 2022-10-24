@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +35,7 @@
             <div class="user-box">
                 <input type="password"  id="password" name="password" autocomplete="off" required aria-describedby="validationServer03Feedback"
                 onkeyup="validateInput(this)">
-                <label>Password</label>
+                <label>{% trans 'Password'%}</label>
                 <div id="validationServer03Feedback" class="invalid-feedback">
                     {% trans 'Please provide a valid Password'%}.
                 </div>

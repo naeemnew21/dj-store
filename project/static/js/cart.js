@@ -1,7 +1,3 @@
-
-
-
-
 function add_to_cart(element)
 {
     let data = {};
@@ -11,7 +7,7 @@ function add_to_cart(element)
     
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "/cart/cart-api", true);
+    xhttp.open("POST", "/en/cart/cart-api", true);
     const csrftoken = getCookie('csrftoken');
     xhttp.setRequestHeader('x-csrftoken', csrftoken)
     xhttp.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
@@ -39,7 +35,7 @@ function add_to_cart_cart_page(element)
     
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "/cart/cart-api", true);
+    xhttp.open("POST", "/en/cart/cart-api", true);
     const csrftoken = getCookie('csrftoken');
     xhttp.setRequestHeader('x-csrftoken', csrftoken)
     xhttp.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
@@ -73,7 +69,7 @@ function add_quant_to_cart(element)
     
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "/cart/cart-api", true);
+    xhttp.open("POST", "/en/cart/cart-api", true);
     const csrftoken = getCookie('csrftoken');
     xhttp.setRequestHeader('x-csrftoken', csrftoken)
     xhttp.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
@@ -98,7 +94,7 @@ function del_order(element)
     pk = element.id;
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("DELETE", "/cart/del-order/"+pk, true);
+    xhttp.open("DELETE", "/en/cart/del-order/"+pk, true);
     const csrftoken = getCookie('csrftoken');
     xhttp.setRequestHeader('x-csrftoken', csrftoken)
     xhttp.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')

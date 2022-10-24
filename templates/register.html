@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,7 @@
 
 <body>
     <div class="login-box">
-        <h3>{% trans 'Register'%}</h3>
+        <h3>{%trans 'Register'%}</h3>
         <form   method="POST">
             {% csrf_token %}
             <div class="user-box">
@@ -49,7 +50,7 @@
             <div class="user-box">
                 <input type="password"  name="password1" id="password" autocomplete="off" required aria-describedby="validationServer03Feedback"
                 onkeyup="validateInput(this)">
-                <label>Password</label>
+                <label>{% trans 'Password' %}</label>
                 <div id="validationServer03Feedback" class="invalid-feedback">
                     {{form.password1.errors}}
                 </div>
