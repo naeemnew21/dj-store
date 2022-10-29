@@ -1,5 +1,6 @@
 function add_to_cart(element)
 {
+  let added = document.getElementById(`added-${element.id}`)
     let data = {};
     data['product']  = element.id;
     data['action']   = element.name;
@@ -23,6 +24,8 @@ function add_to_cart(element)
     }
     
     xhttp.send(JSON.stringify(data));   
+    element.classList.add('d-none')
+    added.classList.add('d-block')
 }
 
 

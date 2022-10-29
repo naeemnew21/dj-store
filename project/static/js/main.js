@@ -97,6 +97,10 @@
     }
     button.parent().parent().find('input').val(newVal);
   });
+
+  $('.switcher button').on('click', function(){
+    let path = $(this).data('path');
+    $('#color-switch').attr('href', path);
+  });
+
 })(jQuery);
-
-
