@@ -1873,7 +1873,7 @@ pre code {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--gray-dark);
+  color: var(--secondary);
   background-color: var(--dark);
   background-clip: padding-box;
   border: 1px solid #ffffff75;
@@ -9549,7 +9549,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .product-item .btn:hover {
-  color: #0092d3 !important;
+  color: var(--pink) !important;
 }
 
 .contact-form .help-block ul {
