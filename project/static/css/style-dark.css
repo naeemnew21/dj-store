@@ -2364,8 +2364,8 @@ fieldset:disabled a.btn {
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #21b9ff;
-  border-color: #03a9f4;
+  background-color: var(--pink);
+  border-color: #fe4774;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -3426,7 +3426,7 @@ input[type="button"].btn-block {
   text-align: center;
   white-space: nowrap;
   background-color: #e9ecef;
-  border: 1px solid #EDF1FF;
+  border: 1px solid #edf1ff70;
 }
 
 .input-group-text input[type="radio"],
@@ -9317,7 +9317,7 @@ a.text-light:hover, a.text-light:focus {
 }
 
 a.text-dark:hover, a.text-dark:focus {
-  color: black !important;
+  color: var(--pink) !important;
 }
 
 .text-body {
