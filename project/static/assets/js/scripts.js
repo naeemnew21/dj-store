@@ -1,4 +1,3 @@
-
 (function (window, undefined) {
   'use strict';
   let fileUpload = document.getElementById('file-uploader');
@@ -9,7 +8,6 @@
     previewImg.src = URL.createObjectURL(e.target.files[0]);
   });
   console.log(button)
-
- })(window);
+})(window);
 
 

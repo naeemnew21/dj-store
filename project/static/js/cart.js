@@ -6,8 +6,7 @@ function add_to_cart(element)
     data['action']   = element.name;
     data['quantity'] = 1
     
-
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.open("POST", "/en/cart/cart-api", true);
     const csrftoken = getCookie('csrftoken');
     xhttp.setRequestHeader('x-csrftoken', csrftoken)
@@ -22,8 +21,7 @@ function add_to_cart(element)
         document.getElementById("my_cart").innerHTML = response.my_cart;
       }
     }
-    
-    xhttp.send(JSON.stringify(data));   
+    xhttp.send(JSON.stringify(data));
     element.classList.add('d-none')
     added.classList.add('d-block')
 }
@@ -35,9 +33,7 @@ function add_to_cart_cart_page(element)
     data['product']  = element.id;
     data['action']   = element.name;
     data['quantity'] = 1
-    
-
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.open("POST", "/en/cart/cart-api", true);
     const csrftoken = getCookie('csrftoken');
     xhttp.setRequestHeader('x-csrftoken', csrftoken)
@@ -61,8 +57,6 @@ function add_to_cart_cart_page(element)
 }
 
 
-
-
 function add_quant_to_cart(element)
 {
     let data = {};
@@ -70,8 +64,7 @@ function add_quant_to_cart(element)
     data['action']   = element.name;
     data['quantity'] = document.getElementById("product_quantity_cart").value
     
-
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.open("POST", "/en/cart/cart-api", true);
     const csrftoken = getCookie('csrftoken');
     xhttp.setRequestHeader('x-csrftoken', csrftoken)
@@ -90,13 +83,10 @@ function add_quant_to_cart(element)
     xhttp.send(JSON.stringify(data));   
 }
 
-
-
 function del_order(element)
 {
     pk = element.id;
-
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.open("DELETE", "/en/cart/del-order/"+pk, true);
     const csrftoken = getCookie('csrftoken');
     xhttp.setRequestHeader('x-csrftoken', csrftoken)
@@ -110,11 +100,8 @@ function del_order(element)
         location.reload()
       }
     }
-    
     xhttp.send();   
 }
-
-
 
 
 function getCookie(name) {

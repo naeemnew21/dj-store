@@ -1,4 +1,3 @@
-
 {% load static %}
 {% load i18n %}
 
@@ -7,7 +6,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>EShopper - Bootstrap Shop Template</title>
+    <title>i Pay</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="HTML Templates" name="keywords" />
     <meta content="HTML Templates" name="description" />
@@ -50,7 +49,6 @@
         </div>
         <div class="col-lg-6 text-center text-lg-right">
           <div class="d-inline-flex align-items-center">
-
             <form action="{% url 'set_language' %}" method="post">
                 {% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}">
