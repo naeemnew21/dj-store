@@ -12,7 +12,6 @@ function add_to_cart(element)
     xhttp.setRequestHeader('x-csrftoken', csrftoken)
     xhttp.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
     xhttp.setRequestHeader('Accept', 'application/json')
-
     xhttp.onreadystatechange = function()
     {
       if (this.readyState == 4 && this.status == 201)
@@ -23,8 +22,7 @@ function add_to_cart(element)
     }
     xhttp.send(JSON.stringify(data));
     element.classList.add('d-none')
-    added.classList.add('d-block')
-  
+    added.classList.add('d-block added-color')
 }
 
 

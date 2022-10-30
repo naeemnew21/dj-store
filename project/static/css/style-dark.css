@@ -20,6 +20,7 @@
   --danger: #dc3545;
   --light: #FFFFFF;
   --dark: #1C1C1C;
+  --border: #edf1ff0f;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -1876,7 +1877,7 @@ pre code {
   color: var(--secondary);
   background-color: var(--dark);
   background-clip: padding-box;
-  border: 1px solid #ffffff75;
+  border: 1px solid var(--border);
   border-radius: 0;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -2420,10 +2421,11 @@ fieldset:disabled a.btn {
 
 .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-secondary.dropdown-toggle {
-  color: #212529;
-  background-color: #bac9ff;
-  border-color: #adbfff;
+  color: var(--gray-dark);
+  background-color: var(--secondary);
+  border-color: var(--primary);
 }
+
 
 .btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-secondary.dropdown-toggle:focus {
@@ -3426,7 +3428,7 @@ input[type="button"].btn-block {
   text-align: center;
   white-space: nowrap;
   background-color: #e9ecef;
-  border: 1px solid #edf1ff70;
+  border: 1px solid #edf1ff1a;
 }
 
 .input-group-text input[type="radio"],
@@ -6175,23 +6177,23 @@ button.bg-dark:focus {
 }
 
 .border {
-  border: 1px solid #edf1ff5c !important;
+  border: 1px solid var(--border) !important
 }
 
 .border-top {
-  border-top: 1px solid #edf1ff59 !important;
+  border-top: 1px solid var(--border) !important
 }
 
 .border-right {
-  border-top: 1px solid #edf1ff59 !important;
+  border-top: 1px solid var(--border) !important
 }
 
 .border-bottom {
-  border-top: 1px solid #edf1ff59 !important;
+  border-top: 1px solid var(--border) !important
 }
 
 .border-left {
-  border-top: 1px solid #edf1ff59 !important;
+  border-top: 1px solid var(--border) !important
 }
 
 .border-0 {
@@ -6215,11 +6217,11 @@ button.bg-dark:focus {
 }
 
 .border-primary {
-  border-color: #0092d3 !important;
+  border-color: var(--border) !important;
 }
 
 .border-secondary {
-  border-color: #EDF1FF !important;
+  border-color: var(--border) !important;
 }
 
 .border-success {
@@ -9574,4 +9576,20 @@ a.text-dark:hover, a.text-dark:focus {
   100% {
     transform: translateY(-15px);
   }
+}
+.colors {
+  color: var(--secondary);
+}
+.suns {
+  position: relative;
+  left: -7px;
+  color: var(--orange);
+}
+.dark {
+  position: relative;
+  left: -7px;
+  color: var(--gray-dark);
+}
+.added-color {
+  color: var(--pink)
 }

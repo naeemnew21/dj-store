@@ -9575,3 +9575,13 @@ a.text-dark:hover, a.text-dark:focus {
     transform: translateY(-15px);
   }
 }
+.suns {
+  position: relative;
+  left: -7px;
+  color: var(--gray-dark);
+}
+.dark {
+  position: relative;
+  left: -7px;
+  color: var(--gray-dark);
+}
