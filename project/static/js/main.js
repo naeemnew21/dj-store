@@ -98,8 +98,12 @@
     button.parent().parent().find('input').val(newVal);
   });
 
+  if(localStorage.getItem('theme')){
+    $('#color-switch').attr('href', localStorage.getItem('theme'))
+  }
   $('.switcher button').on('click', function(){
     let path = $(this).data('path');
+    localStorage.setItem('theme',path)
     $('#color-switch').attr('href', path);
   });
 

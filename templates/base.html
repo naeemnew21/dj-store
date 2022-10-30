@@ -39,12 +39,22 @@
     <div class="container-fluid">
       <div class="row bg-secondary py-2 px-xl-5">
         <div class="col-lg-6 d-none d-lg-block">
-          <div class="d-inline-flex align-items-center">
-            <a class="text-dark" href="">{% trans 'FAQs'%}</a>
-            <span class="text-muted px-2">|</span>
-            <a class="text-dark" href="">{% trans 'Help'%}</a>
-            <span class="text-muted px-2">|</span>
-            <a class="text-dark" href="">{% trans 'Support'%}</a>
+          <div class="d-inline-flex align-items-center mt-2">
+            <a class="text-dark px-2" href="">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="text-dark px-2" href="">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a class="text-dark px-2" href="">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a class="text-dark px-2" href="">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a class="text-dark pl-2" href="">
+              <i class="fab fa-youtube"></i>
+            </a>
           </div>
         </div>
         <div class="col-lg-6 text-center text-lg-right">
@@ -63,31 +73,74 @@
                     {% endfor %}
                 </select>
                 <input type="submit" value="Go">
+                {% comment %} <li class="i18n-dropdown dropdown nav-item mr-2">
+                  <a
+                    class="nav-link d-flex align-items-center dropdown-toggle dropdown-language"
+                    id="dropdown-flag"
+                    href="javascript:;"
+                    data-toggle="dropdown"
+                    ><img
+                      class="langimg selected-flag"
+                      src="../../../app-assets/img/flags/us.png"
+                      alt="flag"
+                    /><span class="selected-language d-md-flex d-none"
+                      >English</span
+                    ></a
+                  >
+                  <div
+                    class="dropdown-menu dropdown-menu-right text-left"
+                    aria-labelledby="dropdown-flag"
+                  >
+                    <a
+                      class="dropdown-item"
+                      href="javascript:;"
+                      data-language="en"
+                      ><img
+                        class="langimg mr-2"
+                        src="../../../app-assets/img/flags/us.png"
+                        alt="flag"
+                      /><span class="font-small-3">English</span></a
+                    ><a
+                      class="dropdown-item"
+                      href="javascript:;"
+                      data-language="es"
+                      ><img
+                        class="langimg mr-2"
+                        src="../../../app-assets/img/flags/es.png"
+                        alt="flag"
+                      /><span class="font-small-3">Spanish</span></a
+                    ><a
+                      class="dropdown-item"
+                      href="javascript:;"
+                      data-language="pt"
+                      ><img
+                        class="langimg mr-2"
+                        src="../../../app-assets/img/flags/pt.png"
+                        alt="flag"
+                      /><span class="font-small-3">Portuguese</span></a
+                    ><a
+                      class="dropdown-item"
+                      href="javascript:;"
+                      data-language="de"
+                      ><img
+                        class="langimg mr-2"
+                        src="../../../app-assets/img/flags/de.png"
+                        alt="flag"
+                      /><span class="font-small-3">German</span></a
+                    >
+                  </div>
+                </li> {% endcomment %}
             </form>
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Themes
               </button>
               <div class="dropdown-menu switcher" aria-labelledby="dropdownMenu2">
-                <button  data-path="{%static 'css/style.css'%}" class="dropdown-item" type="button">Light</button>
-                <button data-path="{%static 'css/style-dark.css'%}" class="dropdown-item" type="button">Dark</button>
+                <button  data-path="{%static 'css/style.css'%}" class="dropdown-item" type="button"><i class="fab fa-facebook-f"></i> Light</button>
+                <button data-path="{%static 'css/style-dark.css'%}" class="dropdown-item" type="button">Dark <i class="fa fa-facebook"></i></button>
               </div>
             </div>
-            <a class="text-dark px-2" href="">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a class="text-dark px-2" href="">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a class="text-dark px-2" href="">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a class="text-dark px-2" href="">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a class="text-dark pl-2" href="">
-              <i class="fab fa-youtube"></i>
-            </a>
+            
           </div>
         </div>
       </div>

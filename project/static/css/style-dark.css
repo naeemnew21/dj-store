@@ -9463,7 +9463,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .navbar-light .navbar-nav .nav-link {
   padding: 20px 10px;
-  color: var(--primary);
+  color: var(--secondary);
   outline: none;
 }
 

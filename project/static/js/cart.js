@@ -24,6 +24,7 @@ function add_to_cart(element)
     xhttp.send(JSON.stringify(data));
     element.classList.add('d-none')
     added.classList.add('d-block')
+  
 }
 
 
