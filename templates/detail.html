@@ -400,22 +400,14 @@
                 <a href="{% url 'product:detail' item.slug %}" class="btn btn-sm text-dark p-0"
                   ><i class="fas fa-eye text-primary mr-1"></i>{% trans 'View Detail'%}</a
                 >
-<<<<<<< HEAD
-                <a class="btn btn-sm text-dark p-0" 
-                  onclick="add_to_cart(this)" 
-                  id="{{product.id}}"
-                  name="add"
-                >
-                  <i class="fas fa-shopping-cart text-primary mr-1"></i>{% trans 'Add To Cart'%}</a>
-=======
-
+                
                 {% if item in cart_items %}
                     <a class="btn btn-sm text-dark p-0 d-none" 
                         onclick="add_to_cart(this)" 
                         id="{{item.id}}"
                         name="add"
                     >
-                    <i class="fas fa-shopping-cart text-primary mr-1"></i>{% trans 'Add To Cart'%}
+                    <i class="fas fa-shopping-cart text-primary mr-"></i>{% trans 'Add To Cart'%}
                     </a>
 
                     <a class="btn btn-sm text-dark p-0 d-none d-block added-color"  
@@ -437,11 +429,10 @@
                         id="added-{{item.id}}"
                         name="added"
                     >
-                    <i class="fas fa-shopping-cart text-primary mr-1"></i>Added to cart
+                    <i class="fas fa-shopping-cart text-primary mr-1 d-none"></i>Added to cart
                     </a>
                 {% endif %}
 
->>>>>>> a33d6dac37f4902553beb532ada8fc75f5f4b21f
               </div>
             </div>
           {% endfor %}
