@@ -13,6 +13,6 @@ urlpatterns = [
     path('profile', views.EditProfileView.as_view() , name = 'profile'),
     path("password_reset/", views.password_reset_request, name="password_reset"),
     
-    path('theme', views.change_theme , name = 'theme'),
+    # path('theme', views.change_theme , name = 'theme'),
 ]
 
