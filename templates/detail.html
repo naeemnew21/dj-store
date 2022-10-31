@@ -138,33 +138,55 @@
               {% endfor %}
             </form>
           </div>
-          <div class="d-flex align-items-center mb-4 pt-2">
-            <div class="input-group quantity mr-3" style="width: 130px">
-              <div class="input-group-btn">
-                <button class="btn btn-primary btn-minus">
-                  <i class="fa fa-minus"></i>
-                </button>
-              </div>
-              <input
-                type="text"
-                class="form-control bg-secondary text-center" 
-                id="product_quantity_cart" 
-                value="1"
-              />
-              <div class="input-group-btn">
-                <button class="btn btn-primary btn-plus">
-                  <i class="fa fa-plus"></i>
-                </button>
-              </div>
+
+          {% if product in cart_items %}
+            <div class="d-flex align-items-center mb-4 pt-2">
+              <button class="btn btn-primary px-3 d-block added-color"
+                    id="{{product.id}}"
+              >
+                <i class="fa fa-shopping-cart mr-1"></i> {% trans 'Added To Cart'%}
+              </button>
             </div>
-            <button class="btn btn-primary px-3"
-                  onclick="add_quant_to_cart(this)" 
-                  id="{{product.id}}"
-                  name="add" 
-            >
-              <i class="fa fa-shopping-cart mr-1"></i> {% trans 'Add To Cart'%}
-            </button>
-          </div>
+          {% else %}
+            <div class="d-flex align-items-center mb-4 pt-2">
+              <div class="input-group quantity mr-3" style="width: 130px">
+                <div class="input-group-btn">
+                  <button class="btn btn-primary btn-minus" id="btn-minus">
+                    <i class="fa fa-minus"></i>
+                  </button>
+                </div>
+                <input
+                  type="text"
+                  class="form-control bg-secondary text-center" 
+                  id="product_quantity_cart" 
+                  value="1"
+                />
+                <div class="input-group-btn">
+                  <button class="btn btn-primary btn-plus" id="btn-plus">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <button class="btn btn-primary px-3"
+                    onclick="add_quant_to_cart(this)" 
+                    id="{{product.id}}"
+                    name="add" 
+              >
+                <i class="fa fa-shopping-cart mr-1"></i> {% trans 'Add To Cart'%}
+              </button>
+
+              <button class="btn btn-primary px-3 d-none"
+                    id="added-{{product.id}}"
+              >
+                <i class="fa fa-shopping-cart mr-1"></i> {% trans 'Added To Cart'%}
+              </button>
+
+            </div>
+          {% endif %}
+          
+
+          
+
           <div class="d-flex pt-2">
             <p class="text-dark font-weight-medium mb-0 mr-2">{% trans 'Share on:'%}</p>
             <div class="d-inline-flex">
@@ -378,12 +400,48 @@
                 <a href="{% url 'product:detail' item.slug %}" class="btn btn-sm text-dark p-0"
                   ><i class="fas fa-eye text-primary mr-1"></i>{% trans 'View Detail'%}</a
                 >
+<<<<<<< HEAD
                 <a class="btn btn-sm text-dark p-0" 
                   onclick="add_to_cart(this)" 
                   id="{{product.id}}"
                   name="add"
                 >
                   <i class="fas fa-shopping-cart text-primary mr-1"></i>{% trans 'Add To Cart'%}</a>
+=======
+
+                {% if item in cart_items %}
+                    <a class="btn btn-sm text-dark p-0 d-none" 
+                        onclick="add_to_cart(this)" 
+                        id="{{item.id}}"
+                        name="add"
+                    >
+                    <i class="fas fa-shopping-cart text-primary mr-1"></i>{% trans 'Add To Cart'%}
+                    </a>
+
+                    <a class="btn btn-sm text-dark p-0 d-none d-block added-color"  
+                        id="added-{{item.id}}"
+                        name="added"
+                    >
+                    <i class="fas fa-shopping-cart text-primary mr-1"></i>Added to cart
+                    </a>
+                {% else %}
+                    <a class="btn btn-sm text-dark p-0" 
+                        onclick="add_to_cart(this)" 
+                        id="{{item.id}}"
+                        name="add"
+                    >
+                    <i class="fas fa-shopping-cart text-primary mr-1"></i>{% trans 'Add To Cart'%}
+                    </a>
+
+                    <a class="btn btn-sm text-dark p-0 d-none"  
+                        id="added-{{item.id}}"
+                        name="added"
+                    >
+                    <i class="fas fa-shopping-cart text-primary mr-1"></i>Added to cart
+                    </a>
+                {% endif %}
+
+>>>>>>> a33d6dac37f4902553beb532ada8fc75f5f4b21f
               </div>
             </div>
           {% endfor %}

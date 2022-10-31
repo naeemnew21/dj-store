@@ -8,11 +8,16 @@ from .serializers import OrderSerializer
 from project.settings import CART_SESSION_ID_KEY
 
 
+<<<<<<< HEAD
+=======
+charge = 5
+
+>>>>>>> a33d6dac37f4902553beb532ada8fc75f5f4b21f
 
 def cart_items(request):
     user = request.user
     user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
-    charge = 60
+    global charge
     if user.is_authenticated:
         orders = Order.objects.filter(user = user, confirmed = False)
         total = sum([order.get_price for order in orders])
@@ -30,7 +35,7 @@ def cart_items(request):
 def cart_context(request):
     user = request.user
     user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
-    charge = 60
+    global charge
     if user.is_authenticated:
         orders = Order.objects.filter(user = user, confirmed = False)
         total = sum([item.quantity for item in orders])

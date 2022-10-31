@@ -26,6 +26,7 @@ from django.contrib import messages
 
 
 
+
 def pend_staff(user):
     return user.is_authenticated and user.seller
      
@@ -43,9 +44,16 @@ class Registeration(CreateView):
     template_name = 'register.html'
     success_url = reverse_lazy('product:index')
     
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            if request.user.seller:
+                return redirect('user:pending') 
+            return redirect("product:index")
+        return super().get(request, *args, **kwargs)
+
     def form_valid(self, form):
         # first save form
-        super().form_valid(form)
+        valid = super().form_valid(form)
     
         # then login
         email    = form.cleaned_data.get('email')
@@ -57,7 +65,8 @@ class Registeration(CreateView):
         if user.seller:
             return redirect('user:pending')
         
-        return HttpResponseRedirect(self.get_success_url())
+        return valid
+        #return HttpResponseRedirect(self.get_success_url())
     
     
 
@@ -162,4 +171,20 @@ def password_reset_request(request):
             messages.error(request, 'An invalid email has been entered.')
     password_reset_form = PasswordResetForm()
     return render(request, "reset/password_reset.html", {"password_reset_form":password_reset_form})
+
+
+
+
+from project.settings import THEME_STYLE
+
+def theme_context(request):
+    theme = request.COOKIES.get(THEME_STYLE, None)
+    
+    if theme:
+        return {THEME_STYLE: theme}
+    else:
+        return {THEME_STYLE: 'light'}
+
+
+
 
