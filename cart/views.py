@@ -6,12 +6,13 @@ from .models import Order, NonUserOrder
 from .forms import CheckOutCreateForm
 
 
+charge = 5
 
 
 def cart_items(request):
     user = request.user
     user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
-    charge = 60
+    global charge
     if user.is_authenticated:
         orders = Order.objects.filter(user = user, confirmed = False)
         confirmed = Order.objects.filter(user = user, confirmed = True)
@@ -57,7 +58,7 @@ def checkout(request):
                 i.product.quantity -= i.quantity
                 i.product.selled += i.quantity
                 i.product.save()
-                
+
             return redirect('cart:cart') 
         else:
             context['form'] = form
@@ -65,7 +66,7 @@ def checkout(request):
         form = CheckOutCreateForm()
         context['form'] = form
 
-    charge = 60
+    global charge
     orders = Order.objects.filter(user = user, confirmed = False)
     total = sum([order.get_price for order in orders])
     context.update({'orderscount':len(orders), 'orders':orders, 'total': total, 'totch':total+charge})

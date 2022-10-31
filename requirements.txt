@@ -3,11 +3,13 @@ cachetools==5.2.0
 certifi==2022.6.15
 cffi==1.15.1
 charset-normalizer==2.1.0
+checkout-sdk==3.0.6
 cryptography==37.0.4
 defusedxml==0.7.1
 Deprecated==1.2.13
 dj-database-url==1.0.0
 Django==3.2.9
+django-appconf==1.0.5
 django-cors-headers==3.13.0
 django-crispy-forms==1.14.0
 django-filter==22.1

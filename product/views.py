@@ -6,9 +6,29 @@ from .models import Product, Comment
 from .forms import ProductCreateForm
 from django.urls import reverse_lazy
 from .utils import page_clean_url, sort_clean_url, recreate_url, get_search, get_back_filter_params, get_front_filter_params 
+from project.settings import CART_SESSION_ID_KEY
+from django.db.models.query import EmptyQuerySet
+from cart.models import Order, NonUserOrder
 
 
 SORT_BY = {'date':'-created_at', 'pricelow':'price', 'pricehigh':'-price'}
+
+
+def cart_products(request):
+    user = request.user
+    user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
+    if user.is_authenticated:
+        orders = Order.objects.filter(user = user, confirmed = False)
+        prods = [i.product for i in orders]
+        return prods
+
+    if user_cart_id == None:
+        return []
+    
+    orders = NonUserOrder.objects.filter(user_cart_id = user_cart_id)
+    prods = [i.product for i in orders]
+    return prods
+
 
 
 def index(request):
@@ -17,8 +37,9 @@ def index(request):
 
     just_arrived   = Product.objects.filter(approved=True).order_by('-created_at')[:8]
     trendy = Product.objects.filter(approved=True).order_by('-created_at')[8:16]
+    cart_items   = cart_products(request)
     # high rates - recommended
-    context = {'just_arrived':just_arrived, 'trendy':trendy}
+    context = {'just_arrived':just_arrived, 'trendy':trendy, 'cart_items':cart_items}
     return render(request, 'index.html', context=context)
 
 
@@ -52,6 +73,9 @@ class CategoryView(ListView):
         context['colors'] = front[1]
         context['sizes']  = front[2]
         context['gender'] = front[3]
+
+        cart_items   = cart_products(self.request)
+        context['cart_items'] = cart_items
 
         return context
     
@@ -137,6 +161,8 @@ class ProductDetailView(DetailView):
         context['comments']     = Comment.objects.filter(product = self.get_object())
         context['comments_num'] = len(context['comments'])
         context['popular']      = Product.objects.order_by('created_at')[:8]
+        cart_items   = cart_products(self.request)
+        context['cart_items'] = cart_items
         
         return context
 

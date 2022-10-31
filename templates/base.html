@@ -31,7 +31,7 @@
     <link href="{%static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{%static 'css/style.css'%}" id="color-switch" rel="stylesheet" />
+    <link href="{%static 'css/style.css'%}" id="color-switch"  rel="stylesheet" />
   </head>
 
   <body>
@@ -60,7 +60,7 @@
         <div class="col-lg-6 text-center text-lg-right">
           <div class="d-inline-flex align-items-center">
             <form action="{% url 'set_language' %}" method="post">
-                {% csrf_token %}
+               {% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}">
                 <select name="language">
                     {% get_current_language as LANGUAGE_CODE %}
@@ -73,73 +73,19 @@
                     {% endfor %}
                 </select>
                 <input type="submit" value="Go">
-                {% comment %} <li class="i18n-dropdown dropdown nav-item mr-2">
-                  <a
-                    class="nav-link d-flex align-items-center dropdown-toggle dropdown-language"
-                    id="dropdown-flag"
-                    href="javascript:;"
-                    data-toggle="dropdown"
-                    ><img
-                      class="langimg selected-flag"
-                      src="../../../app-assets/img/flags/us.png"
-                      alt="flag"
-                    /><span class="selected-language d-md-flex d-none"
-                      >English</span
-                    ></a
-                  >
-                  <div
-                    class="dropdown-menu dropdown-menu-right text-left"
-                    aria-labelledby="dropdown-flag"
-                  >
-                    <a
-                      class="dropdown-item"
-                      href="javascript:;"
-                      data-language="en"
-                      ><img
-                        class="langimg mr-2"
-                        src="../../../app-assets/img/flags/us.png"
-                        alt="flag"
-                      /><span class="font-small-3">English</span></a
-                    ><a
-                      class="dropdown-item"
-                      href="javascript:;"
-                      data-language="es"
-                      ><img
-                        class="langimg mr-2"
-                        src="../../../app-assets/img/flags/es.png"
-                        alt="flag"
-                      /><span class="font-small-3">Spanish</span></a
-                    ><a
-                      class="dropdown-item"
-                      href="javascript:;"
-                      data-language="pt"
-                      ><img
-                        class="langimg mr-2"
-                        src="../../../app-assets/img/flags/pt.png"
-                        alt="flag"
-                      /><span class="font-small-3">Portuguese</span></a
-                    ><a
-                      class="dropdown-item"
-                      href="javascript:;"
-                      data-language="de"
-                      ><img
-                        class="langimg mr-2"
-                        src="../../../app-assets/img/flags/de.png"
-                        alt="flag"
-                      /><span class="font-small-3">German</span></a
-                    >
-                  </div>
-                </li> {% endcomment %}
             </form>
+
+            
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Themes
               </button>
               <div class="dropdown-menu switcher" aria-labelledby="dropdownMenu2">
-                <button  data-path="{%static 'css/style.css'%}" class="dropdown-item" type="button"><i class="fas fa-sun suns"></i>Light</button>
-                <button data-path="{%static 'css/style-dark.css'%}" class="dropdown-item" type="button"><i class="fas fa-moon dark"></i>Dark</button>
+                <button  name="light" class="dropdown-item" type="button"><i class="fas fa-sun suns"></i>Light</button>
+                <button  name="dark" class="dropdown-item" type="button"><i class="fas fa-moon dark"></i>Dark</button>
               </div>
             </div>
+            
           </div>
         </div>
       </div>
@@ -245,10 +191,10 @@
               </div>
               <div class="navbar-nav ml-auto py-0">
                 {% if request.user.is_authenticated %}
+                    <div class="nav-item dropdown">
                       <a
-                        class="nav-link dropdown-toggle user-dropdown d-flex align-items-end"
-                        id="dropdownBasic2"
-                        href="{% static 'javascript:;' %}"
+                        class="nav-link dropdown-toggle"
+                        href="#"
                         data-toggle="dropdown"
                       >
                         <img
@@ -259,9 +205,9 @@
                           width="35"
                         />
                       </a>
+
                       <div
-                        class="dropdown-menu text-left dropdown-menu-right m-0 pb-0"
-                        aria-labelledby="dropdownBasic2"
+                        class="dropdown-menu rounded-0 m-0"
                       >
                         <a class="dropdown-item" href="{% url 'user:profile'%}">
                           <div class="d-flex align-items-center">

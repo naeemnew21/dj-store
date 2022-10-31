@@ -1,6 +1,11 @@
+
+
+
+
+
 function add_to_cart(element)
 {
-  let added = document.getElementById(`added-${element.id}`)
+    let added = document.getElementById('added-'+ element.id)
     let data = {};
     data['product']  = element.id;
     data['action']   = element.name;
@@ -18,11 +23,13 @@ function add_to_cart(element)
       {
         response = JSON.parse(this.responseText)
         document.getElementById("my_cart").innerHTML = response.my_cart;
+
+        element.classList.add('d-none');
+        added.classList.add('d-block');
+        added.classList.add('added-color')
       }
     }
     xhttp.send(JSON.stringify(data));
-    element.classList.add('d-none')
-    added.classList.add('d-block added-color')
 }
 
 
@@ -58,6 +65,10 @@ function add_to_cart_cart_page(element)
 
 function add_quant_to_cart(element)
 {
+    let added = document.getElementById('added-'+ element.id)
+    let plus = document.getElementById('btn-plus')
+    let minus = document.getElementById('btn-minus')
+
     let data = {};
     data['product']  = element.id;
     data['action']   = element.name;
@@ -76,6 +87,13 @@ function add_quant_to_cart(element)
       {
         response = JSON.parse(this.responseText)
         document.getElementById("my_cart").innerHTML = response.my_cart;
+
+        element.classList.add('d-none');
+        plus.classList.add('d-none');
+        minus.classList.add('d-none');
+        added.classList.add('d-block');
+        added.classList.add('added-color')
+
       }
     }
     
