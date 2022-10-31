@@ -8,8 +8,11 @@ from .serializers import OrderSerializer
 from project.settings import CART_SESSION_ID_KEY
 
 
+<<<<<<< HEAD
+=======
 charge = 5
 
+>>>>>>> a33d6dac37f4902553beb532ada8fc75f5f4b21f
 
 def cart_items(request):
     user = request.user
@@ -91,7 +94,6 @@ class CartApi(GenericAPIView):
         
         if user_cart_id == None:
             return Response(status=status.HTTP_400_BAD_REQUEST)
-        
         
         order, created = NonUserOrder.objects.get_or_create(user_cart_id=user_cart_id, product=product)
         if action == 'add':

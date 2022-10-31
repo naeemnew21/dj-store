@@ -146,13 +146,13 @@ sup {
 }
 
 a {
-  color: var(--primary);
+  color: var(--pink);
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: var(--blue);
+  color: var(--primary);
   text-decoration: underline;
 }
 
@@ -2371,15 +2371,15 @@ fieldset:disabled a.btn {
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #03a9f4;
-  border-color: #03a9f4;
-  box-shadow: 0 0 0 0.2rem rgba(5, 112, 242, 0.555)
+  background-color: var(--pink);
+  border-color: var(--pink);
+  box-shadow: 0 0 0 0.2rem rgb(168 68 85);
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
   color: #212529;
-  background-color: #0092d3;
-  border-color: #0092d3;
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
@@ -3194,7 +3194,7 @@ input[type="button"].btn-block {
   clear: both;
   font-weight: 400;
   color: #212529;
-  text-align: inherit;
+  text-align: center;
   white-space: nowrap;
   background-color: transparent;
   border: 0;
@@ -6241,7 +6241,7 @@ button.bg-dark:focus {
 }
 
 .border-light {
-  border-color: #ffffff59 !important;
+  border-color: var(--border) !important;
 }
 
 .border-dark {
@@ -9582,14 +9582,21 @@ a.text-dark:hover, a.text-dark:focus {
 }
 .suns {
   position: relative;
-  left: -7px;
+  left: -18px;
   color: var(--orange);
 }
 .dark {
   position: relative;
-  left: -7px;
+  left: -18px;
   color: var(--gray-dark);
 }
 .added-color {
-  color: var(--pink)
+  color: var(--pink) !important;
+  cursor: default !important;
+}
+.name {
+  color: var(--pink) !important;
+}
+.ipay {
+  color: var(--pink) !important;
 }

@@ -30,6 +30,12 @@ function add_to_cart(element)
       }
     }
     xhttp.send(JSON.stringify(data));
+<<<<<<< HEAD
+    element.classList.add('d-none')
+    added.classList.add('d-block')
+    added.classList.add('added-color')
+=======
+>>>>>>> a33d6dac37f4902553beb532ada8fc75f5f4b21f
 }
 
 

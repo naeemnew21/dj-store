@@ -54,7 +54,7 @@ def checkout(request):
                 checkout.orders.add(i)
                 i.confirmed = True
                 i.save()
-                # edit selled quantity
+                # Edit selled quantity
                 i.product.quantity -= i.quantity
                 i.product.selled += i.quantity
                 i.product.save()

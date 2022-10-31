@@ -77,6 +77,15 @@
             
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                languages
+              </button>
+              <div class="dropdown-menu switcher" aria-labelledby="dropdownMenu2">
+                <button  data-path="" class="dropdown-item" type="button">English</button>
+                <button data-path="" class="dropdown-item" type="button">Arabic</button>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Themes
               </button>
               <div class="dropdown-menu switcher" aria-labelledby="dropdownMenu2">
@@ -295,9 +304,6 @@
                 >
                 <a class="text-dark mb-2" href=""
                   ><i class="fa fa-angle-right mr-2"></i>{% trans 'Support'%}</a>
-                <a class="text-dark mb-2" href=""
-                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Pricing'%}</a
-                >
                 <a class="text-dark" href=""
                   ><i class="fa fa-angle-right mr-2"></i>{% trans 'Privacy'%}</a
                 >
@@ -337,14 +343,13 @@
       </div>
       <div class="row border-top border-light mx-xl-5 py-4">
         <div class="col-md-6 px-xl-0">
-
           <p class="mb-md-0 text-center text-md-left text-dark">
             &copy;
             <a class="text-dark font-weight-semi-bold" href="#"
-              >{% trans 'i Pay'%}</a
+              ><span class='ipay'>i Pay</span></a
             >. {% trans 'All Rights Reserved. Designed by'%}
             <a class="text-dark font-weight-semi-bold" href=""
-              >Mohamed Ibrahim</a
+              ><span class='name'>Mohamed Ibrahim</span></a
             >
           </p>
         </div>
