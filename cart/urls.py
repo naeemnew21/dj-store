@@ -14,6 +14,5 @@ urlpatterns = [
     path('cart-api', api.CartApi.as_view(), name = 'cart_api'),
     path('del-order/<int:pk>', api.OrderDeleteApi.as_view(), name = 'del-order'),
     
-    
 ]
 

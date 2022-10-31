@@ -9577,11 +9577,15 @@ a.text-dark:hover, a.text-dark:focus {
 }
 .suns {
   position: relative;
-  left: -7px;
+  left: -18px;
   color: var(--gray-dark);
 }
 .dark {
   position: relative;
-  left: -7px;
+  left: -18px;
   color: var(--gray-dark);
+}
+.added-color {
+  color: var(--pink) !important;
+  cursor: default !important;
 }

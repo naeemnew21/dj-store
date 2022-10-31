@@ -22,7 +22,8 @@ function add_to_cart(element)
     }
     xhttp.send(JSON.stringify(data));
     element.classList.add('d-none')
-    added.classList.add('d-block added-color')
+    added.classList.add('d-block')
+    added.classList.add('added-color')
 }
 
 

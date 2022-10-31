@@ -12,13 +12,7 @@ class OrderSerializer(serializers.ModelSerializer):
         fields = ('product', 'quantity', 'action')
 
 
-
-
-
-
-
 class OrderDelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
         fields = ('product',)
-

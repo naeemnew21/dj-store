@@ -9,8 +9,6 @@ from project.settings import CART_SESSION_ID_KEY
 
 
 
-
-
 def cart_items(request):
     user = request.user
     user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
@@ -91,7 +89,6 @@ class CartApi(GenericAPIView):
         
         if user_cart_id == None:
             return Response(status=status.HTTP_400_BAD_REQUEST)
-        
         
         order, created = NonUserOrder.objects.get_or_create(user_cart_id=user_cart_id, product=product)
         if action == 'add':
