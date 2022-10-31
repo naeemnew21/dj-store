@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt, csrf_protect, requires_csr
 from .utils import get_username
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
-from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import user_passes_test, login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import SignUpForm, UserForm
 from .models import MyUser
@@ -20,8 +20,8 @@ from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
 from django.http import HttpResponse
 from django.contrib import messages
-
-
+from project.settings import CART_SESSION_ID_KEY
+from cart.models import Order, NonUserOrder
 
 
 
@@ -174,17 +174,27 @@ def password_reset_request(request):
 
 
 
+@login_required
+def move_to_cart(request):
+    user=request.user
+    user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
+    if user_cart_id == None:
+            return redirect('cart:cart')
+    old_orders = NonUserOrder.objects.filter(user_cart_id = user_cart_id)
+    for unknown in old_orders:
+        order, created = Order.objects.get_or_create(user=user, product=unknown.product, confirmed = False)
+        if order.quantity + unknown.quantity <= order.product.quantity:
+            order.quantity += unknown.quantity
+            order.save()
+    for record in old_orders:
+        record.delete()
+    return redirect('cart:cart')
 
-from project.settings import THEME_STYLE
 
-def theme_context(request):
-    theme = request.COOKIES.get(THEME_STYLE, None)
+def check_cart_context(request):
+    user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
+    if user_cart_id == None:
+        return {'cart_alert': 0}
+    orders = NonUserOrder.objects.filter(user_cart_id = user_cart_id)
+    return {'cart_alert': orders.count()}
     
-    if theme:
-        return {THEME_STYLE: theme}
-    else:
-        return {THEME_STYLE: 'light'}
-
-
-
-

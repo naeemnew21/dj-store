@@ -65,7 +65,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'cart.middleware.SetCartSessionKeyMiddleware', # cart for unregistered users
-    'user.middleware.SetThemeSessionKeyMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -85,7 +84,7 @@ TEMPLATES = [
                 'django.template.context_processors.i18n', # translation
                 'django.contrib.messages.context_processors.messages',
                 'cart.views.cart_context',
-                'user.views.theme_context',
+                'user.views.check_cart_context',
             ],
         },
     },
@@ -179,7 +178,6 @@ AUTH_USER_MODEL = 'user.MyUser'
 CORS_ORIGIN_ALLOW_ALL=True
 
 CART_SESSION_ID_KEY = 'user_cart_id'
-THEME_STYLE = "theme"
 
 
 LOGIN_URL= '/login'
