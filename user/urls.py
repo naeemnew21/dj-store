@@ -12,7 +12,6 @@ urlpatterns = [
     path('sign-up', views.Registeration.as_view() , name = 'sign-up'),
     path('profile', views.EditProfileView.as_view() , name = 'profile'),
     path("password_reset/", views.password_reset_request, name="password_reset"),
-    
-    path('theme', views.change_theme , name = 'theme'),
+    path('move-to-cart', views.move_to_cart , name = 'move_to_cart'),
 ]
 
