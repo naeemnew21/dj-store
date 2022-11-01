@@ -2421,9 +2421,9 @@ fieldset:disabled a.btn {
 
 .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-secondary.dropdown-toggle {
-  color: var(--gray-dark);
-  background-color: var(--secondary);
-  border-color: var(--primary);
+  color: var(--dark);
+  background-color: var(--pink);
+  border-color: var(--pink);
 }
 
 
@@ -3192,7 +3192,7 @@ input[type="button"].btn-block {
   width: 100%;
   padding: 0.25rem 1.5rem;
   clear: both;
-  font-weight: 400;
+  font-weight: 600;
   color: #212529;
   text-align: center;
   white-space: nowrap;
@@ -3634,7 +3634,7 @@ input[type="button"].btn-block {
   color: #c2c2c2;
   vertical-align: middle;
   background: var(--dark);
-  border: 1px solid #edf1ff82;
+  border: 1px solid #edf1ff22;
   border-radius: 0;
   appearance: none;
 }
@@ -9603,9 +9603,10 @@ a.text-dark:hover, a.text-dark:focus {
 .languages {
   position: relative;
   left: -4px;
-  background-color: var(--white);
+  background-color: var(--primary);
   font-size: 16px;
   border: none;
+  font-weight: 600;
   border-radius: 7px;
   color: var(--dark);
 }
@@ -9616,10 +9617,11 @@ a.text-dark:hover, a.text-dark:focus {
 .themes {
   position: relative;
   left: 7px;
-  background-color: var(--white);
+  background-color: var(--primary);
   font-size: 16px;
   border: none;
   border-radius: 7px;
+  font-weight: 600;
   color: var(--dark);
 }
 .themes:hover {
