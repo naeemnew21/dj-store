@@ -59,29 +59,26 @@
         </div>
         <div class="col-lg-6 text-center text-lg-right">
           <div class="d-inline-flex align-items-center">
-            {% comment %} <form action="{% url 'set_language' %}" method="post">
-              {% csrf_token %}
-                <input name="next" type="hidden" value="{{ redirect_to }}">
-                {% comment %} <select onchange="this.form.submit()" name="language">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    {% for language in languages %}
-                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                            {{ language.name_local }} ({{ language.code }}) 
-                        {% comment %} </option>
-                    {% endfor %} {% endcomment %}
-                {% comment %} </select> {% endcomment %}
-            {% comment %} </form> {% endcomment %}
-
             
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle languages" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                languages
+              <button class="btn btn-secondary dropdown-toggle languages" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {% get_current_language as LANGUAGE_CODE %}
+                languages({{LANGUAGE_CODE}})
               </button>
-              <div class="dropdown-menu switcher" aria-labelledby="dropdownMenu2">
-                <button  data-path="" class="dropdown-item" type="button">English</button>
-                <button data-path="" class="dropdown-item" type="button">Arabic</button>
+              <div class="dropdown-menu switcher" aria-labelledby="dropdownMenu1">
+                <form id="lang-en" action="{% url 'set_language' %}" method="post">
+                  {% csrf_token %}
+                  <input name="next" type="hidden" value="{{ redirect_to }}">
+                  <input name="language" type="hidden" value="en">
+                  <a href="#" class="dropdown-item" onclick="document.getElementById('lang-en').submit()">English</a>
+                </form>
+                <form id="lang-ar" action="{% url 'set_language' %}" method="post">
+                  {% csrf_token %}
+                  <input name="next" type="hidden" value="{{ redirect_to }}">
+                  <input name="language" type="hidden" value="ar">
+                  <a href="#" class="dropdown-item" onclick="document.getElementById('lang-ar').submit()">Arabic</a>
+                </form>
+              
               </div>
             </div>
             <div class="dropdown">
