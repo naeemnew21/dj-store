@@ -59,24 +59,24 @@
         </div>
         <div class="col-lg-6 text-center text-lg-right">
           <div class="d-inline-flex align-items-center">
-            <form action="{% url 'set_language' %}" method="post">
-               {% csrf_token %}
+            {% comment %} <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}">
-                <select onchange="this.form.submit()" name="language">
+                {% comment %} <select onchange="this.form.submit()" name="language">
                     {% get_current_language as LANGUAGE_CODE %}
                     {% get_available_languages as LANGUAGES %}
                     {% get_language_info_list for LANGUAGES as languages %}
                     {% for language in languages %}
                         <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                            {% comment %} {{ language.name_local }} {% endcomment %} ({{ language.code }}) 
-                        </option>
-                    {% endfor %}
-                </select>
-            </form>
+                            {{ language.name_local }} ({{ language.code }}) 
+                        {% comment %} </option>
+                    {% endfor %} {% endcomment %}
+                {% comment %} </select> {% endcomment %}
+            {% comment %} </form> {% endcomment %}
 
             
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-secondary dropdown-toggle languages" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 languages
               </button>
               <div class="dropdown-menu switcher" aria-labelledby="dropdownMenu2">
@@ -85,7 +85,7 @@
               </div>
             </div>
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-secondary dropdown-toggle themes" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Themes
               </button>
               <div class="dropdown-menu switcher" aria-labelledby="dropdownMenu2">
@@ -215,7 +215,7 @@
                       </a>
 
                       <div
-                        class="dropdown-menu rounded-0 m-0"
+                        class="dropdown-menu rounded-0 m-0 avatar"
                       >
                         <a class="dropdown-item" href="{% url 'user:profile'%}">
                           <div class="d-flex align-items-center">

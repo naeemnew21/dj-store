@@ -9505,12 +9505,12 @@ a.text-dark:hover, a.text-dark:focus {
   display: inline-block;
   letter-spacing: 1px;
   font-weight: bold;
-  color: #1C1C1C;
+  color: var(--white);
 }
 
 .section-title span {
   position: relative;
-  background: #ffffff;
+  background: var(--dark);
   z-index: 1;
 }
 
@@ -9599,4 +9599,34 @@ a.text-dark:hover, a.text-dark:focus {
 }
 .ipay {
   color: var(--pink) !important;
+}
+.languages {
+  position: relative;
+  left: -4px;
+  background-color: var(--white);
+  font-size: 16px;
+  border: none;
+  border-radius: 7px;
+  color: var(--dark);
+}
+.languages:hover {
+  background-color: var(--pink);
+  color: var(--dark);
+}
+.themes {
+  position: relative;
+  left: 7px;
+  background-color: var(--white);
+  font-size: 16px;
+  border: none;
+  border-radius: 7px;
+  color: var(--dark);
+}
+.themes:hover {
+  background-color: var(--pink);
+  color: var(--dark);
+}
+.avatar {
+  position: absolute;
+  left: -43px;
 }
