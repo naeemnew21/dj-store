@@ -1,4 +1,3 @@
-
 from rest_framework.generics import CreateAPIView, DestroyAPIView
 from rest_framework.permissions import BasePermission
 from .serializers import ProductSerializer
@@ -12,14 +11,10 @@ class IsStaff(BasePermission):
             return True
         return False
     
-    
-    
-    
+
 class ProductCrreateApi(CreateAPIView):
     serializer_class   = ProductSerializer
     permission_classes = [IsStaff]
-
-
 
 
 class ProductDeleteApi(DestroyAPIView):
@@ -27,8 +22,10 @@ class ProductDeleteApi(DestroyAPIView):
     permission_classes = [IsStaff]
     
     def get_queryset(self):
-        user     = self.request.user
+        user = self.request.user
         if user.is_superuser:
             return Product.objects.all()
         return Product.objects.filter(created_by = user)
         
+
+# https://codepen.io/greenmoon1396/pen/ExRaxjZ

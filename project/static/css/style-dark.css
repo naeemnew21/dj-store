@@ -9634,3 +9634,18 @@ a.text-dark:hover, a.text-dark:focus {
   position: absolute;
   left: -43px;
 }
+.ed-user {
+  position: relative;
+  left: -8px;
+  top: -2px;
+  color: #508dff;;
+}
+.logout {
+  position: relative;
+  left: -7px;
+  color: #ff0018;
+}
+.lg-out {
+  left: 10px;
+  position: relative;
+}
