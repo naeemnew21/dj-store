@@ -59,7 +59,6 @@ class CartApi(GenericAPIView):
         if user_cart_id == None:
             return EmptyQuerySet
         return NonUserOrder.objects.filter(user_cart_id = user_cart_id)
-    
     def post(self, request, *args, **kwargs):
         user = request.user
         user_cart_id = self.request.COOKIES.get('user_cart_id')

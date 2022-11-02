@@ -12,7 +12,7 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #0482e6;
+  --primary: #60a2d6;
   --secondary: #EDF1FF;
   --success: #28a745;
   --info: #17a2b8;
@@ -2357,15 +2357,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #212529;
-  background-color: #0092d3;
-  border-color: #0092d3;
+  color: var(--white);
+  background-color: var(--dark);
+  border-color: var(--dark);
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #03a9f4;
-  border-color: #03a9f4;
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -3190,9 +3190,9 @@ input[type="button"].btn-block {
   width: 100%;
   padding: 0.25rem 1.5rem;
   clear: both;
-  font-weight: 400;
+  font-weight: 600;
   color: #212529;
-  text-align: inherit;
+  text-align: center;
   white-space: nowrap;
   background-color: transparent;
   border: 0;
@@ -4030,6 +4030,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  font-weight: 600;
 }
 
 .navbar-nav .nav-link {
@@ -4052,6 +4053,7 @@ input[type="button"].btn-block {
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
+  font-weight: 600;
 }
 
 .navbar-toggler {
@@ -6087,17 +6089,17 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #0092d3 !important;
+  background-color: var(--primary) !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #03a9f4 !important;
+  background-color: #4aacf9 !important;
 }
 
 .bg-secondary {
-  background-color: #EDF1FF !important;
+  background-color: #EEE !important;
 }
 
 a.bg-secondary:hover, a.bg-secondary:focus,
@@ -6607,6 +6609,7 @@ button.bg-dark:focus {
 
 .align-items-center {
   align-items: center !important;
+  font-weight: 600;
 }
 
 .align-items-baseline {
@@ -9257,7 +9260,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #0092d3 !important;
+  color: var(--primary) !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -9577,15 +9580,53 @@ a.text-dark:hover, a.text-dark:focus {
 }
 .suns {
   position: relative;
-  left: -18px;
-  color: var(--gray-dark);
+  left: -15px;
+  color: var(--orange);
 }
 .dark {
   position: relative;
-  left: -18px;
+  left: -15px;
   color: var(--gray-dark);
 }
 .added-color {
-  color: var(--pink) !important;
+  color: #9e9e9e !important;
   cursor: default !important;
+}
+.name {
+  color: var(--dark) !important;
+}
+.ipay {
+  color: var(--dark) !important;
+}
+.languages {
+  position: relative;
+  left: -4px;
+  background-color: var(--dark);
+  font-size: 16px;
+  border: none;
+  font-weight: 600;
+  border-radius: 7px;
+  color: var(--white);
+}
+.languages:hover {
+  background-color: var(--primary);
+  color: var(--dark);
+}
+.themes {
+  position: relative;
+  left: 7px;
+  background-color: var(--dark);
+  font-size: 16px;
+  border: none;
+  border-radius: 7px;
+  font-weight: 600;
+  color: var(--white);
+}
+.themes:hover {
+  background-color: var(--primary);
+  color: var(--dark);
+}
+.avatar {
+  position: absolute;
+  left: -43px;
 }

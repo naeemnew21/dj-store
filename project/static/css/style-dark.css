@@ -4032,6 +4032,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  font-weight: 600;
 }
 
 .navbar-nav .nav-link {
@@ -4054,6 +4055,7 @@ input[type="button"].btn-block {
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
+  font-weight: 600;
 }
 
 .navbar-toggler {
