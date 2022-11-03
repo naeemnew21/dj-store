@@ -9646,7 +9646,7 @@ a.text-dark:hover, a.text-dark:focus {
   position: relative;
 }
 ::-webkit-scrollbar-track {
-  background-color: var(--gray);
+  background-color: #6c757d96;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #eee;

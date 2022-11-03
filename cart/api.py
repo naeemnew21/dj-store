@@ -49,7 +49,7 @@ def cart_context(request):
 
 
 class CartApi(GenericAPIView):
-    serializer_class   = OrderSerializer
+    serializer_class = OrderSerializer
     
     def get_queryset(self):
         user  = self.request.user
@@ -98,7 +98,7 @@ class CartApi(GenericAPIView):
             order.quantity -= quantity
         order.save()
         if order.quantity <= 0 :
-            order.delete()   
+            order.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
         context = cart_context(self.request)
         context['order_price'] = order.get_price

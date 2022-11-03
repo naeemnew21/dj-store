@@ -7,7 +7,4 @@
     if (e.target.files[0]) previewImg.classList.remove('d-none');
     previewImg.src = URL.createObjectURL(e.target.files[0]);
   });
-  console.log(button)
 })(window);
-
-
