@@ -242,7 +242,7 @@ msgid "Swimwear"
 msgstr "ملابس سباحة"
 
 #: .\templates\base.html:163
-msgid "Sleepwear"
+msgid "Homewear"
 msgstr "ملابس نوم"
 
 #: .\templates\base.html:164
@@ -250,8 +250,8 @@ msgid "Sportswear"
 msgstr "ملابس رياضه"
 
 #: .\templates\base.html:165
-msgid "Jumpsuits"
-msgstr "حللا"
+msgid "Jumpsuit"
+msgstr "بدلة"
 
 #: .\templates\base.html:166
 msgid "Blazers"
@@ -377,9 +377,6 @@ msgstr "عربة التسوق الخاصة بي"
 
 #: .\templates\cart.html:74 .\templates\cart.html:144
 <<<<<<< HEAD
-=======
-#| msgid "price"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Price"
 msgstr "السعر"
 
