@@ -1,11 +1,9 @@
-/*================================================================================
-	Item Name: Apex - Angular 4 Bootstrap Admin Template
-	Version: 1.0
-	Author: PIXINVENT
-	Author URL: http://www.themeforest.net/user/pixinvent
-================================================================================
-
-NOTE:
-------
-PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
-WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+.setting {
+	margin-top: -60px !important;
+	margin-bottom: 13px;
+}
+@media (min-width: 576px) {
+	.setting {
+		margin-top: -10px;
+	}
+}

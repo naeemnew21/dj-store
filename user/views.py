@@ -9,7 +9,6 @@ from django.contrib.auth.decorators import user_passes_test, login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import SignUpForm, UserForm
 from .models import MyUser
-
 from django.contrib.auth.forms import PasswordResetForm
 from django.db.models.query_utils import Q
 from django.utils.http import urlsafe_base64_encode

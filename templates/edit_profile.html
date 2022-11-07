@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html class="loading" lang="en">
 <!-- BEGIN : Head-->
@@ -8,39 +9,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <meta name="description" content="i pay admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, i pay admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
+    <meta name="author" content="IPAY">
     <title>Account Settings</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/img/ico/favicon.ico">
-    <link rel="shortcut icon" type="image/png" href="../../../app-assets/img/ico/favicon-32.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{%static 'app-assets/img/ico/favicon.ico'%}">
+    <link rel="shortcut icon" type="image/png" href="{%static 'app-assets/img/ico/favicon-32.png'%}">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
     <!-- font icons-->
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/fonts/feather/style.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/fonts/simple-line-icons/style.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/fonts/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/perfect-scrollbar.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/prism.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/switchery.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/pickadate/pickadate.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/fonts/feather/style.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/fonts/simple-line-icons/style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/fonts/font-awesome/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/vendors/css/perfect-scrollbar.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/vendors/css/prism.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/vendors/css/switchery.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/vendors/css/pickadate/pickadate.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/vendors/css/select2.min.css'%}">
     <!-- END VENDOR CSS-->
     <!-- BEGIN I PAY CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/colors.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/components.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/layout-dark.css">
-    <link rel="stylesheet" href="../../../app-assets/css/plugins/switchery.css">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/bootstrap.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/bootstrap-extended.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/colors.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/components.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/themes/layout-dark.css'%}">
+    <link rel="stylesheet" href="{%static 'app-assets/css/plugins/switchery.css'%}">
     <!-- END I PAY CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/horizontal-menu.css">
-    <link rel="stylesheet" href="../../../app-assets/css/plugins/form-validation.css">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/core/menu/horizontal-menu.css'%}">
+    <link rel="stylesheet" href="{%static 'app-assets/css/plugins/form-validation.css'%}">
     <!-- END Page Level CSS-->
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{%static 'assets/css/style.css'%}">
     <!-- END: Custom CSS-->
 </head>
 <!-- END : Head-->
@@ -48,7 +49,6 @@
 <!-- BEGIN : Body-->
 
 <body class="horizontal-layout horizontal-menu horizontal-menu-padding 2-columns  navbar-sticky layout-dark" data-open="hover" data-menu="horizontal-menu" data-col="2-columns">
-
     <nav class="navbar navbar-expand-lg navbar-light header-navbar navbar-fixed">
         <div class="container-fluid navbar-wrapper">
             <div class="navbar-header d-flex">
@@ -69,7 +69,7 @@
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <div class="logo"><a class="logo-text" href="index.html">
-                                        <div class="logo-img"><img class="logo-img" alt="i pay logo" src="../../../app-assets/img/logo.png"></div><span class="text">I PAY</span>
+                                        <div class="logo-img"><img class="logo-img" alt="i pay logo" src="{%static 'app-assets/img/logo.png'%}"></div><span class="text">I PAY</span>
                                     </a></div>
                             </li>
                         </ul>
@@ -79,8 +79,8 @@
             <div class="navbar-container">
                 <div class="collapse navbar-collapse d-block" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="i18n-dropdown dropdown nav-item mr-2"><a class="nav-link d-flex align-items-center dropdown-toggle dropdown-language" id="dropdown-flag" href="javascript:;" data-toggle="dropdown"><img class="langimg selected-flag" src="../../../app-assets/img/flags/us.png" alt="flag"><span class="selected-language d-md-flex d-none">English</span></a>
-                            <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="javascript:;" data-language="en"><img class="langimg mr-2" src="../../../app-assets/img/flags/us.png" alt="flag"><span class="font-small-3">English</span></a><a class="dropdown-item" href="javascript:;" data-language="es"><img class="langimg mr-2" src="../../../app-assets/img/flags/es.png" alt="flag"><span class="font-small-3">Spanish</span></a><a class="dropdown-item" href="javascript:;" data-language="pt"><img class="langimg mr-2" src="../../../app-assets/img/flags/pt.png" alt="flag"><span class="font-small-3">Portuguese</span></a><a class="dropdown-item" href="javascript:;" data-language="de"><img class="langimg mr-2" src="../../../app-assets/img/flags/de.png" alt="flag"><span class="font-small-3">German</span></a></div>
+                        <li class="i18n-dropdown dropdown nav-item mr-2"><a class="nav-link d-flex align-items-center dropdown-toggle dropdown-language" id="dropdown-flag" href="javascript:;" data-toggle="dropdown"><img class="langimg selected-flag" src="{%static 'app-assets/img/flags/us.png'%}" alt="flag"><span class="selected-language d-md-flex d-none">English</span></a>
+                            <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="javascript:;" data-language="en"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/us.png'%}" alt="flag"><span class="font-small-3">English</span></a><a class="dropdown-item" href="javascript:;" data-language="es"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/es.png'%}" alt="flag"><span class="font-small-3">Spanish</span></a><a class="dropdown-item" href="javascript:;" data-language="pt"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/pt.png'%}" alt="flag"><span class="font-small-3">Portuguese</span></a><a class="dropdown-item" href="javascript:;" data-language="de"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/de.png'%}" alt="flag"><span class="font-small-3">German</span></a></div>
                         </li>
                         <li class="dropdown nav-item"><a class="nav-link dropdown-toggle dropdown-notification p-0 mt-2" id="dropdownBasic1" href="javascript:;" data-toggle="dropdown"><i class="ft-bell font-medium-3"></i><span class="notification badge badge-pill badge-danger">4</span></a>
                             <ul class="notification-dropdown dropdown-menu dropdown-menu-media dropdown-menu-right m-0 overflow-hidden">
@@ -92,7 +92,7 @@
                                 <li class="scrollable-container"><a class="d-flex justify-content-between" href="javascript:void(0)">
                                         <div class="media d-flex align-items-center">
                                             <div class="media-left">
-                                                <div class="mr-3"><img class="avatar" src="../../../app-assets/img/portrait/small/avatar-s-20.png" alt="avatar" height="45" width="45"></div>
+                                                <div class="mr-3"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-20.png'%}" alt="avatar" height="45" width="45"></div>
                                             </div>
                                             <div class="media-body">
                                                 <h6 class="m-0"><span>Kate Young</span><small class="grey lighten-1 font-italic float-right">5 mins ago</small></h6><small class="noti-text">Commented on your photo</small>
@@ -102,7 +102,7 @@
                                     </a><a class="d-flex justify-content-between" href="javascript:void(0)">
                                         <div class="media d-flex align-items-center">
                                             <div class="media-left">
-                                                <div class="mr-3"><img class="avatar" src="../../../app-assets/img/portrait/small/avatar-s-11.png" alt="avatar" height="45" width="45"></div>
+                                                <div class="mr-3"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-11.png'%}" alt="avatar" height="45" width="45"></div>
                                             </div>
                                             <div class="media-body">
                                                 <h6 class="m-0"><span>Andrew Watts</span><small class="grey lighten-1 font-italic float-right">49 mins ago</small></h6><small class="noti-text">Liked your album: UI/UX Inspo</small>
@@ -111,7 +111,7 @@
                                     </a><a class="d-flex justify-content-between read-notification" href="javascript:void(0)">
                                         <div class="media d-flex align-items-center py-0 pr-0">
                                             <div class="media-left">
-                                                <div class="mr-3"><img src="../../../app-assets/img/icons/sketch-mac-icon.png" alt="avatar" height="45" width="45"></div>
+                                                <div class="mr-3"><img src="{%static 'app-assets/img/icons/sketch-mac-icon.png'%}" alt="avatar" height="45" width="45"></div>
                                             </div>
                                             <div class="media-body">
                                                 <h6 class="m-0">Update</h6><small class="noti-text">MyBook v2.0.7</small>
@@ -164,7 +164,7 @@
                                     </div><a class="d-flex justify-content-between read-notification" href="javascript:void(0)">
                                         <div class="media d-flex align-items-center">
                                             <div class="media-left">
-                                                <div class="mr-3"><img class="avatar" src="../../../app-assets/img/portrait/small/avatar-s-6.png" alt="avatar" height="45" width="45"></div>
+                                                <div class="mr-3"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-6.png'%}" alt="avatar" height="45" width="45"></div>
                                             </div>
                                             <div class="media-body">
                                                 <h6 class="m-0"><span>Anna Lee</span><small class="grey lighten-1 font-italic float-right">27 hrs ago</small></h6><small class="noti-text">Commented on your photo</small>
@@ -186,7 +186,7 @@
                                     </div><a class="d-flex justify-content-between read-notification" href="javascript:void(0)">
                                         <div class="media d-flex align-items-center">
                                             <div class="media-left">
-                                                <div class="mr-3"><img class="avatar" src="../../../app-assets/img/portrait/small/avatar-s-7.png" alt="avatar" height="45" width="45"></div>
+                                                <div class="mr-3"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-7.png'%}" alt="avatar" height="45" width="45"></div>
                                             </div>
                                             <div class="media-body">
                                                 <h6 class="m-0"><span>Oliver Wright</span><small class="grey lighten-1 font-italic float-right">2 days ago</small></h6><small class="noti-text">Liked your album: UI/UX Inspo</small>
@@ -200,7 +200,7 @@
                             </ul>
                         </li>
                         <li class="dropdown nav-item mr-1"><a class="nav-link dropdown-toggle user-dropdown d-flex align-items-end" id="dropdownBasic2" href="javascript:;" data-toggle="dropdown">
-                                <div class="user d-md-flex d-none mr-2"><span class="text-right">John Doe</span><span class="text-right text-muted font-small-3">Available</span></div><img class="avatar" src="../../../app-assets/img/portrait/small/avatar-s-1.png" alt="avatar" height="35" width="35">
+                                <div class="user d-md-flex d-none mr-2"><span class="text-right">John Doe</span><span class="text-right text-muted font-small-3">Available</span></div><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-1.png'%}" alt="avatar" height="35" width="35">
                             </a>
                             <div class="dropdown-menu text-left dropdown-menu-right m-0 pb-0" aria-labelledby="dropdownBasic2"><a class="dropdown-item" href="app-chat.html">
                                     <div class="d-flex align-items-center"><i class="ft-message-square mr-2"></i><span>Chat</span></div>
@@ -224,280 +224,13 @@
 
     <!-- ////////////////////////////////////////////////////////////////////////////-->
     <div class="wrapper">
-
-
-        <div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-fixed navbar-dark navbar-shadow menu-border navbar-brand-center" role="navigation" data-menu="menu-wrapper">
-            <!-- Horizontal menu content-->
-            <div class="navbar-container main-menu-content center-layout" data-menu="menu-container">
-                <!-- include ../../../includes/mixins-->
-                <ul class="navigation-main nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="javascript:;" data-toggle="dropdown"><i class="ft-home"></i><span data-i18n="Dashboard">Dashboard</span></a>
-                        <ul class="dropdown-menu">
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="dashboard1.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Dashboard 1">Dashboard 1</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="dashboard2.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Dashboard 2">Dashboard 2</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="javascript:;" data-toggle="dropdown"><i class="ft-box"></i><span data-i18n="Apps">Apps</span></a>
-                        <ul class="dropdown-menu">
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="app-email.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Email">Email</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="app-chat.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Chat">Chat</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="app-taskboard.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Task Board">Task Board</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="app-calendar.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Calendar">Calendar</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="javascript:;" data-toggle="dropdown"><i class="ft-aperture"></i><span data-i18n="UI Kit">UI Kit</span></a>
-                        <ul class="dropdown-menu">
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="grids.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Grid">Grid</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="typography.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Typography">Typography</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="syntax-highlighter.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Syntax Highlighter">Syntax Highlighter</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="helper-classes.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Helper Classes">Helper Classes</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="text-utilities.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Text Utilities">Text Utilities</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="color-palette.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Color Palette">Color Palette</span></a>
-                            </li>
-                            <li class="has-sub dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Icons">Icons</span></a>
-                                <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="icons-feather.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Feather Icon">Feather Icon</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="icons-font-awesome.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Font Awesome Icon">Font Awesome Icon</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="icons-simple-line.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Simple Line Icon">Simple Line Icon</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="javascript:;" data-toggle="dropdown"><i class="ft-briefcase"></i><span data-i18n="Components">Components</span></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Cards">Cards</span></a>
-                                <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="cards-basic.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Basic Cards">Basic Cards</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="cards-advanced.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Advanced Cards">Advanced Cards</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Bootstrap">Bootstrap</span></a>
-                                <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-buttons.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Buttons">Buttons</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-alerts.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Alerts">Alerts</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-badges.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Badges">Badges</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-dropdowns.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Dropdowns">Dropdowns</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-media-objects.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Media Objects">Media Objects</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-pagination.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Pagination">Pagination</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-progress.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Progress Bars">Progress Bars</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-modals.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Modals">Modals</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-collapse.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Collapse">Collapse</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-lists.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="List">List</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-carousel.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Carousel">Carousel</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-popover.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Popover">Popover</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-tabs.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Tabs">Tabs</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-tooltip.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Tooltip">Tooltip</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-spinner.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Spinner">Spinner</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="components-toast.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Toast">Toast</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Extra">Extra</span></a>
-                                <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="ex-component-sweet-alerts.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Sweet Alerts">Sweet Alerts</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="ex-component-toastr.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Toastr">Toastr</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="ex-component-nouislider.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="NoUI Slider">NoUI Slider</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="ex-component-upload.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="File Uploader">File Uploader</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="ex-component-dragndrop.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Drag &amp; Drop">Drag &amp; Drop</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="ex-component-tour.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Tour">Tour</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="ex-component-media-player.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Media player">Media player</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="ex-component-treeview.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="TreeView">TreeView</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="ex-component-swiper.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Swiper">Swiper</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="ex-component-miscellaneous.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Miscellaneous">Miscellaneous</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="ex-component-avatar.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Avatar">Avatar</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="ex-component-image-cropper.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Image Cropper">Image Cropper</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="javascript:;" data-toggle="dropdown"><i class="ft-edit"></i><span data-i18n="Forms">Forms</span></a>
-                        <ul class="dropdown-menu">
-                            <li class="has-sub dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Elements">Elements</span></a>
-                                <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="form-inputs.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Inputs">Inputs</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="form-input-groups.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Input Groups">Input Groups</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="form-radio.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Radio">Radio</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="form-checkbox.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Checkbox">Checkbox</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="form-switch.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Switch">Switch</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="form-select.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Select">Select</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="form-editor.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Editor">Editor</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="form-input-tags.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Input Tag">Input Tag</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="form-datetimepicker.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Datepicker">Datepicker</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="form-layout.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Layouts">Layouts</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="form-validation.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Validation">Validation</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="form-wizard.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Wizard">Wizard</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="javascript:;" data-toggle="dropdown"><i class="ft-grid"></i><span data-i18n="Tables">Tables</span></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Bootstrap Tables">Bootstrap Tables</span></a>
-                                <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="table-basic.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Basic">Basic</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="table-extended.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Extended">Extended</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="DataTables">DataTables</span></a>
-                                <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="dt-basic-initialization.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Basic Initialization">Basic Initialization</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="dt-advanced-initialization.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Advanced Initialization">Advanced Initialization</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="dt-data-sources.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Data Sources">Data Sources</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="dt-api.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="API">API</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="javascript:;" data-toggle="dropdown"><i class="ft-bar-chart-2"></i><span data-i18n="Charts &amp; Maps">Charts &amp; Maps</span></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Charts">Charts</span></a>
-                                <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="charts-apex.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="i pay Charts">i pay Charts</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="charts-chartjs.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="ChartJs">ChartJs</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="charts-chartist.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Chartist">Chartist</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Maps">Maps</span></a>
-                                <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="map-leaflet.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Leaflet Maps">Leaflet Maps</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="javascript:;" data-toggle="dropdown"><i class="ft-file-text"></i><span data-i18n="Pages">Pages</span></a>
-                        <ul class="dropdown-menu">
-                            <li class="has-sub dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Authentication">Authentication</span></a>
-                                <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="auth-forgot-password.html" data-toggle="dropdown" target="_blank"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Forgot Password">Forgot Password</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="auth-login.html" data-toggle="dropdown" target="_blank"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Login">Login</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="auth-register.html" data-toggle="dropdown" target="_blank"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Register">Register</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="auth-lock-screen.html" data-toggle="dropdown" target="_blank"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Lock Screen">Lock Screen</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="timeline-horizontal.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Horizontal Timeline">Horizontal Timeline</span></a>
-                            </li>
-                            <li class="has-sub dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Vertical Timeline">Vertical Timeline</span></a>
-                                <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="timeline-vertical-center.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Center">Center</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="timeline-vertical-left.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Left">Left</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="timeline-vertical-right.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Right">Right</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="has-sub dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Users">Users</span></a>
-                                <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="page-users-list.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="List">List</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="page-users-view.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="View">View</span></a>
-                                    </li>
-                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="page-users-edit.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Edit">Edit</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="active" data-menu=""><a class="dropdown-item d-flex align-items-center" href="page-account-settings.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Account Settings">Account Settings</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="page-user-profile.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="User Profile">User Profile</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="page-invoice.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Invoice">Invoice</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="page-error.html" data-toggle="dropdown" target="_blank"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Error">Error</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="page-coming-soon.html" data-toggle="dropdown" target="_blank"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Coming Soon">Coming Soon</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="page-maintenance.html" data-toggle="dropdown" target="_blank"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Maintenance">Maintenance</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="page-gallery.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Gallery">Gallery</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="page-search.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Search">Search</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="page-faq.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="FAQ">FAQ</span></a>
-                            </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="page-knowledge-base.html" data-toggle="dropdown"><i class="ft-arrow-right submenu-icon"></i><span data-i18n="Knowledge Base">Knowledge Base</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
         <div class="main-panel">
             <!-- BEGIN : Main Content-->
             <div class="main-content">
                 <div class="content-overlay"></div>
                 <div class="content-wrapper">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-12 setting">
                             <div class="content-header">Account Settings</div>
                             <p class="content-sub-header mb-1">Configure account settings to your needs.</p>
                         </div>
@@ -554,7 +287,7 @@
                                             <!-- General Tab -->
                                             <div class="tab-pane active" id="general" role="tabpanel" aria-labelledby="general-tab">
                                                 <div class="media">
-                                                    <img src="../../../app-assets/img/portrait/small/avatar-s-8.png" alt="profile-img" class="rounded mr-3" height="64" width="64">
+                                                    <img src="{%static 'app-assets/img/portrait/small/avatar-s-8.png'%}" alt="profile-img" class="rounded mr-3" height="64" width="64">
                                                     <div class="media-body">
                                                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-start px-0 mb-sm-2">
                                                             <label class="btn btn-sm bg-light-primary mb-sm-0" for="select-files">Upload Photo</label>
@@ -667,13 +400,7 @@
                                                             <label for="languages">Languages</label>
                                                             <select id="languages" class="select2 form-control" multiple aria-hidden="true">
                                                                 <option value="English" selected>English</option>
-                                                                <option value="Spanish">Spanish</option>
-                                                                <option value="French">French</option>
-                                                                <option value="Russian">Russian</option>
-                                                                <option value="German">German</option>
-                                                                <option value="Hindi">Hindi</option>
                                                                 <option value="Arabic">Arabic</option>
-                                                                <option value="Sanskrit">Sanskrit</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-12 form-group">
@@ -844,7 +571,7 @@
 
             <!-- BEGIN : Footer-->
             <footer class="footer undefined undefined">
-                <p class="clearfix text-muted m-0"><span>Copyright &copy; 2020 &nbsp;</span><a href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink" target="_blank">PIXINVENT</a><span class="d-none d-sm-inline-block">, All rights reserved.</span></p>
+                <p class="clearfix text-muted m-0"><span>Copyright &copy; 2022 &nbsp;</span><a href="" id="pixinventLink" target="_blank">IPAY</a><span class="d-none d-sm-inline-block">, All rights reserved.</span></p>
             </footer>
             <!-- End : Footer-->
             <!-- Scroll to top button -->
@@ -883,7 +610,7 @@
                                             </div>
                                         </li>
                                         <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="../../../app-assets/img/portrait/small/avatar-s-15.png" alt="avatar" width="40"></span></div>
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-15.png'%}" alt="avatar" width="40"></span></div>
                                             <div class="activity-list-text">
                                                 <h6 class="mb-1"><span>Reminder!</span><span class="float-right grey font-italic font-small-2">52 min ago</span></h6>
                                                 <p class="mt-0 mb-2 font-small-3">Your meeting is scheduled with Mr. Derrick Walters at 16:00.</p>
@@ -893,12 +620,12 @@
                                             </div>
                                         </li>
                                         <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="../../../app-assets/img/portrait/small/avatar-s-16.png" alt="avatar" width="40"></span></div>
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-16.png'%}" alt="avatar" width="40"></span></div>
                                             <div class="activity-list-text">
                                                 <h6 class="mb-1"><span>Recieved a File</span><span class="float-right grey font-italic font-small-2">4 hours ago</span></h6>
                                                 <p class="mt-0 mb-2 font-small-3">Christina Rogers sent you a file for the next conference.</p>
                                                 <div class="notification-note">
-                                                    <div class="p-1 pl-2"><img src="../../../app-assets/img/icons/sketch-mac-icon.png" alt="icon" width="20"><span class="text-bold-500 ml-2">Diamond.sketch</span></div>
+                                                    <div class="p-1 pl-2"><img src="{%static 'app-assets/img/icons/sketch-mac-icon.png'%}" alt="icon" width="20"><span class="text-bold-500 ml-2">Diamond.sketch</span></div>
                                                 </div>
                                             </div>
                                         </li>
@@ -926,12 +653,12 @@
                                     <ul class="timeline">
                                         <li class="timeline-line mt-4"></li>
                                         <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="../../../app-assets/img/portrait/small/avatar-s-26.png" alt="avatar" width="40"></span></div>
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-26.png'%}" alt="avatar" width="40"></span></div>
                                             <div class="activity-list-text">
                                                 <h6 class="mb-1"><span>Gmail</span><span class="float-right grey font-italic font-small-2">Just now</span></h6>
                                                 <p class="mt-0 mb-2 font-small-3">Victoria Hampton sent you a mail and has a file attachment with it.</p>
                                                 <div class="notification-note">
-                                                    <div class="p-1 pl-2"><img src="../../../app-assets/img/icons/pdf.png" alt="pdf icon" width="20"><span class="text-bold-500 ml-2">Register.pdf</span></div>
+                                                    <div class="p-1 pl-2"><img src="{%static 'app-assets/img/icons/pdf.png'%}" alt="pdf icon" width="20"><span class="text-bold-500 ml-2">Register.pdf</span></div>
                                                 </div>
                                             </div>
                                         </li>
@@ -946,7 +673,7 @@
                                             </div>
                                         </li>
                                         <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="../../../app-assets/img/portrait/small/avatar-s-23.png" alt="avatar" width="40"></span></div>
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-23.png'%}" alt="avatar" width="40"></span></div>
                                             <div class="activity-list-text">
                                                 <h6 class="mb-1"><span>CNN</span><span class="float-right grey font-italic font-small-2">16 hours ago</span></h6>
                                                 <p class="mt-0 mb-2 font-small-3">U.S. investigating report says email account linked to CIA Director was hacked.</p>
@@ -1069,31 +796,31 @@
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
     <!-- BEGIN VENDOR JS-->
-    <script src="../../../app-assets/vendors/js/vendors.min.js"></script>
-    <script src="../../../app-assets/vendors/js/switchery.min.js"></script>
+    <script src="{%static 'app-assets/vendors/js/vendors.min.js'%}"></script>
+    <script src="{%static 'app-assets/vendors/js/switchery.min.js'%}"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
-    <script src="../../../app-assets/vendors/js/pickadate/picker.js"></script>
-    <script src="../../../app-assets/vendors/js/pickadate/picker.date.js"></script>
-    <script src="../../../app-assets/vendors/js/pickadate/picker.time.js"></script>
-    <script src="../../../app-assets/vendors/js/pickadate/legacy.js"></script>
-    <script src="../../../app-assets/vendors/js/select2.full.min.js"></script>
-    <script src="../../../app-assets/vendors/js/jqBootstrapValidation.js"></script>
+    <script src="{%static 'app-assets/vendors/js/pickadate/picker.js'%}"></script>
+    <script src="{%static 'app-assets/vendors/js/pickadate/picker.date.js'%}"></script>
+    <script src="{%static 'app-assets/vendors/js/pickadate/picker.time.js'%}"></script>
+    <script src="{%static 'app-assets/vendors/js/pickadate/legacy.js'%}"></script>
+    <script src="{%static 'app-assets/vendors/js/select2.full.min.js'%}"></script>
+    <script src="{%static 'app-assets/vendors/js/jqBootstrapValidation.js'%}"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN I PAY JS-->
-    <script src="../../../app-assets/js/core/app-menu.js"></script>
-    <script src="../../../app-assets/js/core/app.js"></script>
-    <script src="../../../app-assets/js/notification-sidebar.js"></script>
-    <script src="../../../app-assets/js/customizer.js"></script>
-    <script src="../../../app-assets/js/scroll-top.js"></script>
+    <script src="{%static 'app-assets/js/core/app-menu.js'%}"></script>
+    <script src="{%static 'app-assets/js/core/app.js'%}"></script>
+    <script src="{%static 'app-assets/js/notification-sidebar.js'%}"></script>
+    <script src="{%static 'app-assets/js/customizer.js'%}"></script>
+    <script src="{%static 'app-assets/js/scroll-top.js'%}"></script>
     <!-- END I PAY JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src="../../../app-assets/js/datetime-picker.js"></script>
-    <script src="../../../app-assets/js/select2.js"></script>
-    <script src="../../../app-assets/js/form-validation.js"></script>
+    <script src="{%static 'app-assets/js/datetime-picker.js'%}"></script>
+    <script src="{%static 'app-assets/js/select2.js'%}"></script>
+    <script src="{%static 'app-assets/js/form-validation.js'%}"></script>
     <!-- END PAGE LEVEL JS-->
     <!-- BEGIN: Custom CSS-->
-    <script src="../../../assets/js/scripts.js"></script>
+    <script src="{%static 'assets/js/scripts.js'%}"></script>
     <!-- END: Custom CSS-->
 </body>
 <!-- END : Body-->
