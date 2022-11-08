@@ -82,125 +82,9 @@
                         <li class="i18n-dropdown dropdown nav-item mr-2"><a class="nav-link d-flex align-items-center dropdown-toggle dropdown-language" id="dropdown-flag" href="javascript:;" data-toggle="dropdown"><img class="langimg selected-flag" src="{%static 'app-assets/img/flags/us.png'%}" alt="flag"><span class="selected-language d-md-flex d-none">English</span></a>
                             <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="javascript:;" data-language="en"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/us.png'%}" alt="flag"><span class="font-small-3">English</span></a><a class="dropdown-item" href="javascript:;" data-language="es"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/es.png'%}" alt="flag"><span class="font-small-3">Spanish</span></a><a class="dropdown-item" href="javascript:;" data-language="pt"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/pt.png'%}" alt="flag"><span class="font-small-3">Portuguese</span></a><a class="dropdown-item" href="javascript:;" data-language="de"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/de.png'%}" alt="flag"><span class="font-small-3">German</span></a></div>
                         </li>
-                        <li class="dropdown nav-item"><a class="nav-link dropdown-toggle dropdown-notification p-0 mt-2" id="dropdownBasic1" href="javascript:;" data-toggle="dropdown"><i class="ft-bell font-medium-3"></i><span class="notification badge badge-pill badge-danger">4</span></a>
-                            <ul class="notification-dropdown dropdown-menu dropdown-menu-media dropdown-menu-right m-0 overflow-hidden">
-                                <li class="dropdown-menu-header">
-                                    <div class="dropdown-header d-flex justify-content-between m-0 px-3 py-2 white bg-primary">
-                                        <div class="d-flex"><i class="ft-bell font-medium-3 d-flex align-items-center mr-2"></i><span class="noti-title">7 New Notification</span></div><span class="text-bold-400 cursor-pointer">Mark all as read</span>
-                                    </div>
-                                </li>
-                                <li class="scrollable-container"><a class="d-flex justify-content-between" href="javascript:void(0)">
-                                        <div class="media d-flex align-items-center">
-                                            <div class="media-left">
-                                                <div class="mr-3"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-20.png'%}" alt="avatar" height="45" width="45"></div>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="m-0"><span>Kate Young</span><small class="grey lighten-1 font-italic float-right">5 mins ago</small></h6><small class="noti-text">Commented on your photo</small>
-                                                <h6 class="noti-text font-small-3 m-0">Great Shot John! Really enjoying the composition on this piece.</h6>
-                                            </div>
-                                        </div>
-                                    </a><a class="d-flex justify-content-between" href="javascript:void(0)">
-                                        <div class="media d-flex align-items-center">
-                                            <div class="media-left">
-                                                <div class="mr-3"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-11.png'%}" alt="avatar" height="45" width="45"></div>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="m-0"><span>Andrew Watts</span><small class="grey lighten-1 font-italic float-right">49 mins ago</small></h6><small class="noti-text">Liked your album: UI/UX Inspo</small>
-                                            </div>
-                                        </div>
-                                    </a><a class="d-flex justify-content-between read-notification" href="javascript:void(0)">
-                                        <div class="media d-flex align-items-center py-0 pr-0">
-                                            <div class="media-left">
-                                                <div class="mr-3"><img src="{%static 'app-assets/img/icons/sketch-mac-icon.png'%}" alt="avatar" height="45" width="45"></div>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="m-0">Update</h6><small class="noti-text">MyBook v2.0.7</small>
-                                            </div>
-                                            <div class="media-right">
-                                                <div class="border-left">
-                                                    <div class="px-4 py-2 border-bottom">
-                                                        <h6 class="m-0 text-bold-600">Update</h6>
-                                                    </div>
-                                                    <div class="px-4 py-2 text-center">
-                                                        <h6 class="m-0">Close</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a><a class="d-flex justify-content-between read-notification" href="javascript:void(0)">
-                                        <div class="media d-flex align-items-center">
-                                            <div class="media-left">
-                                                <div class="avatar bg-primary bg-lighten-3 mr-3 p-1"><span class="avatar-content font-medium-2">LD</span></div>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="m-0"><span>Registration done</span><small class="grey lighten-1 font-italic float-right">6 hrs ago</small></h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="cursor-pointer">
-                                        <div class="media d-flex align-items-center justify-content-between">
-                                            <div class="media-left">
-                                                <div class="media-body">
-                                                    <h6 class="m-0">New Offers</h6>
-                                                </div>
-                                            </div>
-                                            <div class="media-right">
-                                                <div class="custom-control custom-switch">
-                                                    <input class="switchery" type="checkbox" checked id="notificationSwtich" data-size="sm">
-                                                    <label for="notificationSwtich"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between cursor-pointer read-notification">
-                                        <div class="media d-flex align-items-center">
-                                            <div class="media-left">
-                                                <div class="avatar bg-danger bg-lighten-4 mr-3 p-1"><span class="avatar-content font-medium-2"><i class="ft-heart text-danger"></i></span></div>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="m-0"><span>Application approved</span><small class="grey lighten-1 font-italic float-right">18 hrs ago</small></h6>
-                                            </div>
-                                        </div>
-                                    </div><a class="d-flex justify-content-between read-notification" href="javascript:void(0)">
-                                        <div class="media d-flex align-items-center">
-                                            <div class="media-left">
-                                                <div class="mr-3"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-6.png'%}" alt="avatar" height="45" width="45"></div>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="m-0"><span>Anna Lee</span><small class="grey lighten-1 font-italic float-right">27 hrs ago</small></h6><small class="noti-text">Commented on your photo</small>
-                                                <h6 class="noti-text font-small-3 text-bold-500 m-0">Woah!Loving these colors! Keep it up</h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="d-flex justify-content-between cursor-pointer read-notification">
-                                        <div class="media d-flex align-items-center">
-                                            <div class="media-left">
-                                                <div class="avatar bg-info bg-lighten-4 mr-3 p-1">
-                                                    <div class="avatar-content font-medium-2"><i class="ft-align-left text-info"></i></div>
-                                                </div>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="m-0"><span>Report generated</span><small class="grey lighten-1 font-italic float-right">35 hrs ago</small></h6>
-                                            </div>
-                                        </div>
-                                    </div><a class="d-flex justify-content-between read-notification" href="javascript:void(0)">
-                                        <div class="media d-flex align-items-center">
-                                            <div class="media-left">
-                                                <div class="mr-3"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-7.png'%}" alt="avatar" height="45" width="45"></div>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="m-0"><span>Oliver Wright</span><small class="grey lighten-1 font-italic float-right">2 days ago</small></h6><small class="noti-text">Liked your album: UI/UX Inspo</small>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="dropdown-menu-footer">
-                                    <div class="noti-footer text-center cursor-pointer primary border-top text-bold-400 py-1">Read All Notifications</div>
-                                </li>
-                            </ul>
-                        </li>
+                        
                         <li class="dropdown nav-item mr-1"><a class="nav-link dropdown-toggle user-dropdown d-flex align-items-end" id="dropdownBasic2" href="javascript:;" data-toggle="dropdown">
-                                <div class="user d-md-flex d-none mr-2"><span class="text-right">John Doe</span><span class="text-right text-muted font-small-3">Available</span></div><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-1.png'%}" alt="avatar" height="35" width="35">
+                                <div class="user d-md-flex d-none mr-2"><span class="text-right">{{request.user.get_name}}</span><span class="text-right text-muted font-small-3">Available</span></div><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-1.png'%}" alt="avatar" height="35" width="35">
                             </a>
                             <div class="dropdown-menu text-left dropdown-menu-right m-0 pb-0" aria-labelledby="dropdownBasic2"><a class="dropdown-item" href="app-chat.html">
                                     <div class="d-flex align-items-center"><i class="ft-message-square mr-2"></i><span>Chat</span></div>
@@ -214,7 +98,6 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="nav-item d-none d-lg-block mr-2 mt-1"><a class="nav-link notification-sidebar-toggle" href="javascript:;"><i class="ft-align-right font-medium-3"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -286,38 +169,47 @@
                                         <div class="tab-content">
                                             <!-- General Tab -->
                                             <div class="tab-pane active" id="general" role="tabpanel" aria-labelledby="general-tab">
-                                                <div class="media">
-                                                    <img src="{%static 'app-assets/img/portrait/small/avatar-s-8.png'%}" alt="profile-img" class="rounded mr-3" height="64" width="64">
-                                                    <div class="media-body">
-                                                        <div class="col-12 d-flex flex-sm-row flex-column justify-content-start px-0 mb-sm-2">
-                                                            <label class="btn btn-sm bg-light-primary mb-sm-0" for="select-files">Upload Photo</label>
-                                                            <input type="file" id="select-files" hidden>
-                                                            <button class="btn btn-sm bg-light-secondary ml-sm-2">Reset</button>
+                                            
+                                                <form method="POST"  role="form" enctype="multipart/form-data">
+                                                    {% csrf_token %}
+                                                    <div class="media">
+                                                        <img src="{{request.user.avatar.url}}" id="avatar_view" alt="profile-img" class="rounded mr-3" height="64" width="64">
+                                                        <div class="media-body">
+                                                            <div class="col-12 d-flex flex-sm-row flex-column justify-content-start px-0 mb-sm-2">
+                                                                <label class="btn btn-sm bg-light-primary mb-sm-0" for="avatar_id">Upload Photo</label>
+                                                                <input type="file" name="avatar" id="avatar_id" onchange="loadFile(event)" hidden>
+                                                            </div>
+                                                            <p class="text-muted mb-0 mt-1 mt-sm-0">
+                                                                <small>Allowed JPG or PNG. Max size of 800kB</small>
+                                                                <small>{{form.avatar.errors}}</small>
+                                                                <small>{{form.phone.errors}}</small>
+                                                                
+                                                            </p>
                                                         </div>
-                                                        <p class="text-muted mb-0 mt-1 mt-sm-0">
-                                                            <small>Allowed JPG, GIF or PNG. Max size of 800kB</small>
-                                                        </p>
                                                     </div>
-                                                </div>
-                                                <hr class="mt-1 mt-sm-2">
-                                                <form novalidate>
+                                                    <hr class="mt-1 mt-sm-2">
+
+
                                                     <div class="row">
                                                         <div class="col-12 form-group">
-                                                            <label for="username">Username</label>
+                                                            <label for="username">First Name</label>
                                                             <div class="controls">
-                                                                <input type="text" id="username" class="form-control" placeholder="Username" value="hermione007" required>
+                                                                <input type="text" id="username" class="form-control" placeholder="First Name" value="{{request.user.first_name}}" name="first_name" required>
+                                                                <p class="help-block text-danger">{{form.first_name.errors}}</p>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="name">Name</label>
+                                                            <label for="name">Last name</label>
                                                             <div class="controls">
-                                                                <input type="text" id="name" class="form-control" placeholder="Name" value="Hermione Granger" required>
+                                                                <input type="text" id="name" class="form-control" placeholder="Name" value="{{request.user.last_name}}" name="last_name" required>
+                                                                <p class="help-block text-danger">{{form.last_name.errors}}</p>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="email">E-mail</label>
                                                             <div class="controls">
-                                                                <input type="text" id="email" class="form-control" placeholder="E-mail" value="granger007@hogward.com" required>
+                                                                <input type="text" id="email" class="form-control" placeholder="E-mail" value="{{request.user.email}}" name="email" required>
+                                                                <p class="help-block text-danger">{{form.email.errors}}</p>
                                                             </div>
                                                         </div>
                                                         <div class="col-12">
@@ -330,9 +222,9 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="company">Company</label>
+                                                            <label for="phone">Phone</label>
                                                             <div class="controls">
-                                                                <input type="text" id="company" class="form-control" placeholder="Company Name" aria-invalid="false" required>
+                                                                <input id="phone" name="phone" type="number" class="form-control" required placeholder="01x xxxx xxxx" value="{{request.user.phone}}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
@@ -345,101 +237,107 @@
 
                                             <!-- Change Password Tab -->
                                             <div class="tab-pane" id="change-password" role="tabpanel" aria-labelledby="change-password-tab">
-                                                <form novalidate>
+                                              
+                                                <form method="post" action="{%url 'password_change'%}">
+                                                  
+                                                    {% csrf_token %}
                                                     <div class="form-group">
                                                         <label for="old-password">Old Password</label>
                                                         <div class="controls">
-                                                            <input type="password" id="old-password" class="form-control" placeholder="Old Password" required>
+                                                            <input type="password" id="old-password" name="old_password" class="form-control" placeholder="Old Password" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="new-password">New Password</label>
                                                         <div class="controls">
-                                                            <input type="password" id="new-password" class="form-control" placeholder="New Password" required>
+                                                            <input type="password" id="new-password" name="new_password1" class="form-control" placeholder="New Password" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="retype-new-password">Retype New Password</label>
                                                         <div class="controls">
-                                                            <input type="password" id="retype-new-password" class="form-control" placeholder="New Password" required>
+                                                            <input type="password" id="retype-new-password" name="new_password2" class="form-control" placeholder="New Password" required>
                                                         </div>
                                                     </div>
                                                     <div class="d-flex flex-sm-row flex-column justify-content-end">
                                                         <button type="submit" class="btn btn-primary mr-sm-2 mb-1">Save Changes</button>
-                                                        <button type="reset" class="btn btn-secondary mb-1">Cancel</button>
                                                     </div>
+                                                    {% if form.errors %}
+                                                        {% for field in form %}
+
+                                                                {% if field.errors %}
+                                                                {{field.name}}
+                                                                {% endif %}
+
+                                                                {% for error in field.errors %}
+                                                                    <p style="color: red">{{ error }}</p>
+                                                                {% endfor %}
+
+                                                            {% endfor %}
+                                                    {% endif %}
                                                 </form>
                                             </div>
 
                                             <!-- Info Tab -->
                                             <div class="tab-pane" id="info" role="tabpanel" aria-labelledby="info-tab">
-                                                <form novalidate>
+                                                <form method="POST" action="{%url 'user:profileinfo'%}">
+                                                    {% csrf_token %}
                                                     <div class="row">
                                                         <div class="col-12 form-group">
                                                             <label for="bio">Bio</label>
-                                                            <textarea id="bio" class="form-control" placeholder="Your Bio data here..." rows="3"></textarea>
+                                                            <textarea id="bio" name="bio" class="form-control" placeholder="Your Bio data here..." rows="3">{{request.user.userprofile.bio}}</textarea>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="bdate">Birth Date</label>
                                                             <div class="controls">
-                                                                <input id="bdate" type="text" class="form-control pickadate" required placeholder="Birth date">
+                                                                <input id="bdate" name="birth_date" type="date" class="form-control pickadate"  placeholder="Birth date" value="{{request.user.userprofile.birth_date|date:'Y-m-d'}}"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="country">Country</label>
                                                             <div class="controls">
-                                                                <select id="country" class="form-control" required>
+                                                                <select id="country" name="country" class="form-control">
                                                                     <option value="">Select Country</option>
-                                                                    <option value="USA">USA</option>
-                                                                    <option value="UK">UK</option>
-                                                                    <option value="New York">New York</option>
+                                                                    {% if request.user.userprofile.country == 'Cairo'%}
+                                                                        <option value="Cairo" selected>Cairo</option>
+                                                                        <option value="Alex">Alex</option>
+                                                                    {% elif request.user.userprofile.country == 'Alex'%}
+                                                                        <option value="Cairo" >Cairo</option>
+                                                                        <option value="Alex" selected>Alex</option>
+                                                                    {% else %}
+                                                                        <option value="Cairo">Cairo</option>
+                                                                        <option value="Alex">Alex</option>
+                                                                    {% endif %}
+                                                                    
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="languages">Languages</label>
-                                                            <select id="languages" class="select2 form-control" multiple aria-hidden="true">
-                                                                <option value="English" selected>English</option>
-                                                                <option value="Arabic">Arabic</option>
+                                                            <select id="languages" name="langs" class="select2 form-control" multiple aria-hidden="true">
+                                                                {% for  language in langs %}
+                                                                    <option value="{{language.id}}" {% if language in request.user.userprofile.langs.all %} selected {% endif %} >{{language.get_language_display}}</option>
+                                                                {% endfor %}
                                                             </select>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="phone">Phone</label>
+                                                            <label for="company">Company</label>
                                                             <div class="controls">
-                                                                <input id="phone" type="text" class="form-control" required placeholder="Phone number" value="(+656) 254 2568">
+                                                                <input type="text" name="company" id="company" class="form-control" placeholder="Company Name" aria-invalid="false" value="{{request.user.userprofile.company}}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="website">Website</label>
-                                                            <input id="website" type="text" class="form-control" placeholder="Website Address">
+                                                            {% if  request.user.userprofile.company_url == None%}
+                                                                <input id="website" name="company_url" type="text" class="form-control" placeholder="Website Address">
+                                                            {% else %}
+                                                                <input id="website" name="company_url" type="text" class="form-control" placeholder="Website Address" value="{{request.user.userprofile.company_url}}">
+                                                            {% endif %}
+                                                            
                                                         </div>
-                                                        <div class="col-12 form-group">
-                                                            <label for="music">Favourite Music</label>
-                                                            <select id="music" class="select2 form-control" multiple aria-hidden="true">
-                                                                <option value="Rock">Rock</option>
-                                                                <option value="Jazz" selected>Jazz</option>
-                                                                <option value="Disco">Disco</option>
-                                                                <option value="Pop">Pop</option>
-                                                                <option value="Techno">Techno</option>
-                                                                <option value="Folk">Folk</option>
-                                                                <option value="Hip Hop" selected>Hip Hop</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-12 form-group">
-                                                            <label for="movies">Favourite Movies</label>
-                                                            <select id="movies" class="select2 form-control" multiple aria-hidden="true">
-                                                                <option value="Avatar">Avatar</option>
-                                                                <option value="The Dark Knight" selected>The Dark Knight</option>
-                                                                <option value="Harry Potter">Harry Potter</option>
-                                                                <option value="Iron Man">Iron Man</option>
-                                                                <option value="Spider Man">Spider Man</option>
-                                                                <option value="Perl Harbour" selected>Perl Harbour</option>
-                                                                <option value="Airplane!">Airplane!</option>
-                                                            </select>
-                                                        </div>
+                                                        
                                                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
                                                             <button type="submit" class="btn btn-primary mr-sm-2 mb-1">Save Changes</button>
-                                                            <button type="reset" class="btn btn-secondary mb-1">Cancel</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -447,35 +345,59 @@
 
                                             <!-- Social Links Tab -->
                                             <div class="tab-pane" id="social-links" role="tabpanel" aria-labelledby="social-links-tab">
-                                                <form novalidate>
+
+                                                <form method="POST" action="{%url 'user:profilelinks'%}">
+                                                    {% csrf_token %}
+
                                                     <div class="row">
                                                         <div class="col-12 form-group">
                                                             <label for="twitter">Twitter</label>
-                                                            <input id="twitter" type="text" class="form-control" placeholder="Add link" value="https://www.twitter.com">
+                                                            {% if  request.user.userprofile.twitter_url == None%}
+                                                                <input id="twitter" type="text" name="twitter_url" class="form-control" placeholder="Add link">
+                                                            {% else %}
+                                                                <input id="twitter" type="text" name="twitter_url" class="form-control" placeholder="Add link" value="{{request.user.userprofile.twitter_url}}">
+                                                            {% endif %}
+                                                            <p>{{form.twitter_url.errors}}</p>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="facebook">Facebook</label>
-                                                            <input id="facebook" type="text" class="form-control" placeholder="Add link">
+                                                            {% if  request.user.userprofile.facebook_url == None%}
+                                                                <input id="facebook" type="text" name="facebook_url" class="form-control" placeholder="Add link">
+                                                            {% else %}
+                                                                <input id="facebook" type="text" name="facebook_url" class="form-control" placeholder="Add link" value="{{request.user.userprofile.facebook_url}}">
+                                                            {% endif %}
+                                                            <p>{{form.facebook_url.errors}}</p>
                                                         </div>
-                                                        <div class="col-12 form-group">
-                                                            <label for="google+">Google+</label>
-                                                            <input id="google+" type="text" class="form-control" placeholder="Add link">
-                                                        </div>
+                                                        
                                                         <div class="col-12 form-group">
                                                             <label for="linkedin">Linkedin</label>
-                                                            <input id="linkedin" type="text" class="form-control" placeholder="Add link" value="https://www.linkedin.com">
+                                                            {% if  request.user.userprofile.linkedin_url == None%}
+                                                                <input id="linkedin" type="text" name="linkedin_url" class="form-control" placeholder="Add link">
+                                                            {% else %}
+                                                                <input id="linkedin" type="text" name="linkedin_url" class="form-control" placeholder="Add link" value="{{request.user.userprofile.linkedin_url}}">
+                                                            {% endif %}
+                                                            <p>{{form.linkedin_url.errors}}</p>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="instagram">Instagram</label>
-                                                            <input id="instagram" type="text" class="form-control" placeholder="Add link">
+                                                            {% if  request.user.userprofile.instagram_url == None%}
+                                                                <input id="instagram" type="text" name="instagram_url" class="form-control" placeholder="Add link">
+                                                            {% else %}
+                                                                <input id="instagram" type="text" name="instagram_url" class="form-control" placeholder="Add link" value="{{request.user.userprofile.instagram_url}}">
+                                                            {% endif %}
+                                                            <p>{{form.instagram_url.errors}}</p>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="quora">Quora</label>
-                                                            <input id="quora" type="text" class="form-control" placeholder="Add link">
+                                                            {% if  request.user.userprofile.quora_url == None%}
+                                                                <input id="quora" type="text" name="quora_url" class="form-control" placeholder="Add link">
+                                                            {% else %}
+                                                                <input id="quora" type="text" name="quora_url" class="form-control" placeholder="Add link" value="{{request.user.userprofile.quora_url}}">
+                                                            {% endif %}
+                                                            <p>{{form.quora_url.errors}}</p>
                                                         </div>
                                                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
-                                                            <button type="button" class="btn btn-primary mr-sm-2 mb-1">Save Changes</button>
-                                                            <button type="button" class="btn btn-secondary mb-1">Cancel</button>
+                                                            <button type="submit" class="btn btn-primary mr-sm-2 mb-1">Save Changes</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -581,218 +503,6 @@
     </div>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
-    <!-- START Notification Sidebar-->
-    <aside class="notification-sidebar d-none d-sm-none d-md-block" id="notification-sidebar"><a class="notification-sidebar-close"><i class="ft-x font-medium-3 grey darken-1"></i></a>
-        <div class="side-nav notification-sidebar-content">
-            <div class="row">
-                <div class="col-12 notification-nav-tabs">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item"><a class="nav-link active" id="base-tab1" data-toggle="tab" aria-controls="activity-tab" href="#activity-tab" aria-expanded="true">Activity</a></li>
-                        <li class="nav-item"><a class="nav-link" id="base-tab2" data-toggle="tab" aria-controls="settings-tab" href="#settings-tab" aria-expanded="false">Settings</a></li>
-                    </ul>
-                </div>
-                <div class="col-12 notification-tab-content">
-                    <div class="tab-content">
-                        <div class="row tab-pane active" id="activity-tab" role="tabpanel" aria-expanded="true" aria-labelledby="base-tab1">
-                            <div class="col-12" id="activity">
-                                <h5 class="my-2 text-bold-500">System Logs</h5>
-                                <div class="timeline-left timeline-wrapper mb-3" id="timeline-1">
-                                    <ul class="timeline">
-                                        <li class="timeline-line mt-4"></li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><i class="ft-download primary"></i></span></div>
-                                            <div class="activity-list-text">
-                                                <h6 class="mb-1"><span>New Update Available</span><span class="float-right grey font-italic font-small-2">1 min ago</span></h6>
-                                                <p class="mt-0 mb-2 font-small-3">Android Pie 9.0.0_r52v availabe (658MB).</p>
-                                                <div class="notification-note">
-                                                    <div class="p-1 pl-2"><span class="text-bold-500">Download Now!</span></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-15.png'%}" alt="avatar" width="40"></span></div>
-                                            <div class="activity-list-text">
-                                                <h6 class="mb-1"><span>Reminder!</span><span class="float-right grey font-italic font-small-2">52 min ago</span></h6>
-                                                <p class="mt-0 mb-2 font-small-3">Your meeting is scheduled with Mr. Derrick Walters at 16:00.</p>
-                                                <div class="notification-note">
-                                                    <div class="p-1 pl-2"><span class="text-bold-500">Snooze</span></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-16.png'%}" alt="avatar" width="40"></span></div>
-                                            <div class="activity-list-text">
-                                                <h6 class="mb-1"><span>Recieved a File</span><span class="float-right grey font-italic font-small-2">4 hours ago</span></h6>
-                                                <p class="mt-0 mb-2 font-small-3">Christina Rogers sent you a file for the next conference.</p>
-                                                <div class="notification-note">
-                                                    <div class="p-1 pl-2"><img src="{%static 'app-assets/img/icons/sketch-mac-icon.png'%}" alt="icon" width="20"><span class="text-bold-500 ml-2">Diamond.sketch</span></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><i class="ft-mic primary"></i></span></div>
-                                            <div class="activity-list-text">
-                                                <h6 class="mb-1"><span>Voice Message</span><span class="float-right grey font-italic font-small-2">10 hours ago</span></h6>
-                                                <p class="mt-0 mb-2 font-small-3">Natalya Parker sent you a voice message.</p>
-                                                <div class="notification-note">
-                                                    <div class="p-1 pl-2"><span class="text-bold-500">Listen</span></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><i class="ft-cloud-drizzle primary"></i></span></div>
-                                            <div class="activity-list-text">
-                                                <h6 class="mb-1"><span>Weather Update</span><span class="float-right grey font-italic font-small-2">Yesterday</span></h6>
-                                                <p class="mt-0 mb-2 font-small-3">Hi John! It is a rainy day with 16&deg;C.</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <h5 class="my-2 text-bold-500">Applications Logs</h5>
-                                <div class="timeline-left timeline-wrapper" id="timeline-2">
-                                    <ul class="timeline">
-                                        <li class="timeline-line mt-4"></li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-26.png'%}" alt="avatar" width="40"></span></div>
-                                            <div class="activity-list-text">
-                                                <h6 class="mb-1"><span>Gmail</span><span class="float-right grey font-italic font-small-2">Just now</span></h6>
-                                                <p class="mt-0 mb-2 font-small-3">Victoria Hampton sent you a mail and has a file attachment with it.</p>
-                                                <div class="notification-note">
-                                                    <div class="p-1 pl-2"><img src="{%static 'app-assets/img/icons/pdf.png'%}" alt="pdf icon" width="20"><span class="text-bold-500 ml-2">Register.pdf</span></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><i class="ft-droplet primary"></i></span></div>
-                                            <div class="activity-list-text">
-                                                <h6 class="mb-1"><span>MakeMyTrip</span><span class="float-right grey font-italic font-small-2">7 hours ago</span></h6>
-                                                <p class="mt-0 mb-2 font-small-3">Your next flight for San Francisco will be on 24th March.</p>
-                                                <div class="notification-note">
-                                                    <div class="p-1 pl-2"><span class="text-bold-500">Important</span></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="{%static 'app-assets/img/portrait/small/avatar-s-23.png'%}" alt="avatar" width="40"></span></div>
-                                            <div class="activity-list-text">
-                                                <h6 class="mb-1"><span>CNN</span><span class="float-right grey font-italic font-small-2">16 hours ago</span></h6>
-                                                <p class="mt-0 mb-2 font-small-3">U.S. investigating report says email account linked to CIA Director was hacked.</p>
-                                                <div class="notification-note">
-                                                    <div class="p-1 pl-2"><span class="text-bold-500">Read full article</span></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><i class="ft-map primary"></i></span></div>
-                                            <div class="activity-list-text">
-                                                <h6 class="mb-1"><span>Maps</span><span class="float-right grey font-italic font-small-2">Yesterday</span></h6>
-                                                <p class="mt-0 mb-2 font-small-3">You visited Walmart Supercenter in Chicago.</p>
-                                                <div class="notification-note">
-                                                    <div class="p-1 pl-2"><span class="text-bold-500">Write a Review!</span></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><i class="ft-package primary"></i></span></div>
-                                            <div class="activity-list-text">
-                                                <h6 class="mb-1"><span>Updates Available</span><span class="float-right grey font-italic font-small-2">2 days ago</span></h6>
-                                                <p class="mt-0 mb-2 font-small-3">19 app updates found.</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row tab-pane" id="settings-tab" aria-labelledby="base-tab2">
-                            <div class="col-12" id="settings">
-                                <h5 class="mt-2 mb-3">General Settings</h5>
-                                <ul class="list-unstyled mb-0 mx-2">
-                                    <li class="mb-3">
-                                        <div class="mb-1"><span class="text-bold-500">Notifications</span>
-                                            <div class="float-right">
-                                                <div class="custom-switch">
-                                                    <input class="custom-control-input" id="noti-s-switch-1" type="checkbox">
-                                                    <label class="custom-control-label" for="noti-s-switch-1"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="font-small-3 m-0">Use switches when looking for yes or no answers.</p>
-                                    </li>
-                                    <li class="mb-3">
-                                        <div class="mb-1"><span class="text-bold-500">Show recent activity</span>
-                                            <div class="float-right">
-                                                <div class="checkbox">
-                                                    <input id="noti-s-checkbox-1" type="checkbox" checked>
-                                                    <label for="noti-s-checkbox-1"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="font-small-3 m-0">The "for" attribute is necessary to bind checkbox with the input.</p>
-                                    </li>
-                                    <li class="mb-3">
-                                        <div class="mb-1"><span class="text-bold-500">Product Update</span>
-                                            <div class="float-right">
-                                                <div class="custom-switch">
-                                                    <input class="custom-control-input" id="noti-s-switch-4" type="checkbox" checked>
-                                                    <label class="custom-control-label" for="noti-s-switch-4"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="font-small-3 m-0">Message and mail me on weekly product updates.</p>
-                                    </li>
-                                    <li class="mb-3">
-                                        <div class="mb-1"><span class="text-bold-500">Email on Follow</span>
-                                            <div class="float-right">
-                                                <div class="custom-switch">
-                                                    <input class="custom-control-input" id="noti-s-switch-3" type="checkbox">
-                                                    <label class="custom-control-label" for="noti-s-switch-3"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="font-small-3 m-0">Mail me when someone follows me.</p>
-                                    </li>
-                                    <li class="mb-3">
-                                        <div class="mb-1"><span class="text-bold-500">Announcements</span>
-                                            <div class="float-right">
-                                                <div class="checkbox">
-                                                    <input id="noti-s-checkbox-2" type="checkbox" checked>
-                                                    <label for="noti-s-checkbox-2"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="font-small-3 m-0">Receive all the news and announcements from my clients.</p>
-                                    </li>
-                                    <li class="mb-3">
-                                        <div class="mb-1"><span class="text-bold-500">Date and Time</span>
-                                            <div class="float-right">
-                                                <div class="checkbox">
-                                                    <input id="noti-s-checkbox-3" type="checkbox">
-                                                    <label for="noti-s-checkbox-3"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="font-small-3 m-0">Show date and time on top of every page.</p>
-                                    </li>
-                                    <li>
-                                        <div class="mb-1"><span class="text-bold-500">Email on Comments</span>
-                                            <div class="float-right">
-                                                <div class="custom-switch">
-                                                    <input class="custom-control-input" id="noti-s-switch-2" type="checkbox" checked>
-                                                    <label class="custom-control-label" for="noti-s-switch-2"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="font-small-3 m-0">Mail me when someone comments on my article.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </aside>
-    <!-- END Notification Sidebar-->
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
     <!-- BEGIN VENDOR JS-->
@@ -822,6 +532,16 @@
     <!-- BEGIN: Custom CSS-->
     <script src="{%static 'assets/js/scripts.js'%}"></script>
     <!-- END: Custom CSS-->
+
+
+    <script type="text/javascript">
+        var loadFile = function(event) {
+          var image = document.getElementById('avatar_view');
+          image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+
+
 </body>
 <!-- END : Body-->
 

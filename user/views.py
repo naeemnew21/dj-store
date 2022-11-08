@@ -7,8 +7,8 @@ from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import SignUpForm, UserForm
-from .models import MyUser
+from .forms import SignUpForm, UserForm, UserProfileForm, SocialLinksForm
+from .models import MyUser, UserProfile, Languages
 from django.contrib.auth.forms import PasswordResetForm
 from django.db.models.query_utils import Q
 from django.utils.http import urlsafe_base64_encode
@@ -79,7 +79,36 @@ class EditProfileView(LoginRequiredMixin, UpdateView):
     def get_object(self, queryset=None):
         return self.request.user   
     
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['langs'] = Languages.objects.all()
+        return context
+    
 
+
+class EditUserProfileView(LoginRequiredMixin, UpdateView):
+    model = UserProfile
+    form_class = UserProfileForm
+    template_name = 'edit_profile.html'
+    success_url = reverse_lazy('user:profile')
+    login_url = reverse_lazy('user:login')
+    
+    def get_object(self, queryset=None):
+        userprofile, created = UserProfile.objects.get_or_create(user=self.request.user)
+        return userprofile
+
+
+class EditSocialLinksView(LoginRequiredMixin, UpdateView):
+    model = UserProfile
+    form_class = SocialLinksForm
+    template_name = 'edit_profile.html'
+    success_url = reverse_lazy('user:profile')
+    login_url = reverse_lazy('user:login')
+    
+    def get_object(self, queryset=None):
+        userprofile, created = UserProfile.objects.get_or_create(user=self.request.user)
+        return userprofile  
+    
     
     
 @requires_csrf_token

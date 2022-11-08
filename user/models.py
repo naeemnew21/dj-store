@@ -93,3 +93,39 @@ class MyUser(AbstractUser):
         return name
         
     
+
+
+COUNTRY =[
+    ('Alex','Alex'),
+    ('Cairo','Cairo'),
+    ]
+
+
+
+class Languages(models.Model):
+    language  = models.CharField(choices=settings.LANGUAGES , max_length=20, blank=True, null=True)
+    def __str__(self):
+        return self.language
+
+
+
+class UserProfile(models.Model):
+    user          = models.OneToOneField(MyUser, on_delete=models.CASCADE)
+    bio           = models.CharField(max_length=255, blank=True, null=True)
+    birth_date    = models.DateField(null=True, blank=True)
+    country       = models.CharField(choices=COUNTRY , max_length=20, blank=True, null=True)
+    langs         = models.ManyToManyField(Languages, blank=True)
+    company       = models.CharField(max_length=50, blank=True, null=True)
+    company_url   = models.URLField(blank=True, null=True)
+
+    twitter_url   = models.URLField(blank=True, null=True)
+    facebook_url  = models.URLField(blank=True, null=True)
+    linkedin_url  = models.URLField(blank=True, null=True)
+    instagram_url = models.URLField(blank=True, null=True)
+    quora_url     = models.URLField(blank=True, null=True)
+
+
+    
+    def __str__(self):
+        return self.user.email
+    

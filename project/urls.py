@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico'))),
@@ -32,6 +33,13 @@ urlpatterns += i18n_patterns(
     path('', include('user.urls', namespace = 'user')),
     path('', include('product.urls', namespace = 'product')),
     path('cart/', include('cart.urls', namespace = 'cart')),
+
+    path('password_change/',
+         auth_views.PasswordChangeView.as_view(template_name="edit_profile.html"),
+         name='password_change'),
+    path('password_change/done/',
+         auth_views.PasswordChangeDoneView.as_view(template_name="edit_profile.html"),
+         name='password_change_done'),
 )
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
