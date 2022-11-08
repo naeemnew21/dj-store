@@ -1,4 +1,3 @@
-/* Shadows (from mdl http://www.getmdl.io/) */
 html body.layout-dark:not(.layout-transparent) {
   background-color: #101010;
   color: #B2B1B5;
@@ -692,11 +691,11 @@ html body.layout-dark:not(.layout-transparent) .form-control:disabled, html body
 }
 
 html body.layout-dark.layout-transparent .form-control:focus {
-  border-color: #975AFF;
+  border-color: #8cb4ff;
 }
 
 html body.layout-dark:not(.layout-transparent) .form-control:focus {
-  border-color: #975AFF;
+  border-color: #8cb4ff;
 }
 
 html body.layout-dark.layout-transparent .form-control.tagging .type-zone {
@@ -1436,8 +1435,8 @@ body.layout-dark .dropdown-menu .arrow-right:after {
 }
 
 body.layout-dark .pagination .page-item.active .page-link {
-  background-color: #975AFF !important;
-  border-color: #975AFF !important;
+  background-color: #8cb4ff !important;
+  border-color: #8cb4ff !important;
 }
 
 body.layout-dark .modal-content .close {
@@ -1449,8 +1448,8 @@ body.layout-dark .list-group .list-group-item {
 }
 
 body.layout-dark .list-group .list-group-item.active {
-  background-color: #975AFF;
-  border-color: #975AFF !important;
+  background-color: #8cb4ff;
+  border-color: #8cb4ff !important;
 }
 
 body.layout-dark .nav-tabs .nav-item.dropdown.show a.nav-link.dropdown-toggle {
@@ -1506,7 +1505,7 @@ body.layout-dark .media-wrapper .plyr--audio .plyr__controls .plyr__time--curren
 }
 
 body.layout-dark .bootstraptreeview .colorful-treeview .list-group .list-group-item {
-  background-color: #975AFF;
+  background-color: #8cb4ff;
 }
 
 body.layout-dark .bootstraptreeview .colorful-treeview .list-group .list-group-item:hover {
@@ -1531,7 +1530,7 @@ body.layout-dark .context-menu-list .context-menu-item {
 }
 
 body.layout-dark .context-menu-list .context-menu-item.context-menu-hover {
-  background-color: #975AFF !important;
+  background-color: #8cb4ff !important;
   color: #fff;
 }
 
@@ -1667,4 +1666,28 @@ html body.layout-dark.layout-transparent.horizontal-layout div.navbar-horizontal
 html body.layout-dark.layout-transparent.horizontal-layout div.navbar-horizontal li.nav-item.show li.show {
   background-color: #101010 !important;
   color: #B2B1B5 !important;
+}
+.register {
+  background-color: #8cb4ff;
+  color: black !important;
+  border-color: white;
+  font-weight: bold;
+}
+.register:hover {
+  background-color: #ff6d91 !important;
+  border-color: #ff6d91 !important;
+}
+.b-login {
+  background-color: black !important;
+  color: #8cb4ff !important;
+  border-color: #8cb4ff;
+  font-weight: bold;
+}
+.b-login:hover {
+  background-color: #ff6d91 !important;
+  color: #000 !important;
+  border-color: #ff6d91 !important;
+}
+.f-password {
+  color: #8cb4ff !important;
 }

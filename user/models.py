@@ -124,7 +124,6 @@ class UserProfile(models.Model):
     instagram_url = models.URLField(blank=True, null=True)
     quora_url     = models.URLField(blank=True, null=True)
 
-
     
     def __str__(self):
         return self.user.email
