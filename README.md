@@ -1,0 +1,2 @@
+# dj-store
+django store
