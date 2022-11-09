@@ -13,5 +13,6 @@ urlpatterns = [
     path('profileinfo', views.EditUserProfileView.as_view() , name = 'profileinfo'),
     path('profilelinks', views.EditSocialLinksView.as_view() , name = 'profilelinks'),
     path("password_reset/", views.password_reset_request, name="password_reset"),
+    path("forget/", views.forget, name="forget_test"),
     path('move-to-cart', views.move_to_cart , name = 'move_to_cart'),
 ]

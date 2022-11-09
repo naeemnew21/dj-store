@@ -29,7 +29,9 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
+    # path('grappelli/', include('grappelli.urls')), # grappelli URLS
     path('admin/', admin.site.urls),
+    # path('baton/', include('baton.urls')),
     path('', include('user.urls', namespace = 'user')),
     path('', include('product.urls', namespace = 'product')),
     path('cart/', include('cart.urls', namespace = 'cart')),

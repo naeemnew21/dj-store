@@ -1,4 +1,3 @@
-/* Shadows (from mdl http://www.getmdl.io/) */
 .alert > * {
   color: inherit !important; }
 
@@ -755,7 +754,7 @@ h2.title {
   color: #F77E17 !important; }
 
 .text-primary {
-  color: #975AFF !important; }
+  color: #8cb4ff !important; }
 
 .text-danger {
   color: #F55252 !important; }
@@ -1174,7 +1173,7 @@ form label,
       transform: rotate(-45deg);
       height: 0.4rem;
       width: 0.8rem;
-      border-color: #975AFF;
+      border-color: #8cb4ff !important;
       border-radius: 0;
       border-width: 2px;
       top: 6px;

@@ -149,6 +149,9 @@ def logout_view(request):
 
 
 
+def forget(request):
+    return render(request, 'forgetpassword.html')
+
 
 def handle_404(request, exception):
     return render(request, 'error/404.html' , status=404 )
