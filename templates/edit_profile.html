@@ -1,4 +1,7 @@
 {% load static %}
+{% load i18n %}
+
+
 <!DOCTYPE html>
 <html class="loading" lang="en">
 <!-- BEGIN : Head-->
@@ -79,8 +82,38 @@
             <div class="navbar-container">
                 <div class="collapse navbar-collapse d-block" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="i18n-dropdown dropdown nav-item mr-2"><a class="nav-link d-flex align-items-center dropdown-toggle dropdown-language" id="dropdown-flag" href="javascript:;" data-toggle="dropdown"><img class="langimg selected-flag" src="{%static 'app-assets/img/flags/us.png'%}" alt="flag"><span class="selected-language d-md-flex d-none">English</span></a>
-                            <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="javascript:;" data-language="en"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/us.png'%}" alt="flag"><span class="font-small-3">English</span></a><a class="dropdown-item" href="javascript:;" data-language="es"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/es.png'%}" alt="flag"><span class="font-small-3">Spanish</span></a><a class="dropdown-item" href="javascript:;" data-language="pt"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/pt.png'%}" alt="flag"><span class="font-small-3">Portuguese</span></a><a class="dropdown-item" href="javascript:;" data-language="de"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/de.png'%}" alt="flag"><span class="font-small-3">German</span></a></div>
+                        
+                        <li class="i18n-dropdown dropdown nav-item mr-2">
+                            <a class="nav-link d-flex align-items-center dropdown-toggle dropdown-language" id="dropdown-flag" href="javascript:;" data-toggle="dropdown">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_language_info for LANGUAGE_CODE as lang %}
+                                {% if  LANGUAGE_CODE == 'en'%}
+                                    <img class="langimg selected-flag" src="{%static 'app-assets/img/flags/us.png'%}" alt="flag">
+                                {% else %}
+                                    <img class="langimg selected-flag" src="{%static 'app-assets/img/flags/eg.png'%}" alt="flag">
+                                {% endif %}
+                                <span class="selected-language d-md-flex d-none">
+                                    {{lang.name_local }}
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="dropdown-flag">
+                                <form id="lang-en" action="{% url 'set_language' %}" method="post">
+                                    {% csrf_token %}
+                                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                                    <input name="language" type="hidden" value="en">
+                                    <a class="dropdown-item" href="javascript:;" data-language="en" onclick="document.getElementById('lang-en').submit()"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/us.png'%}" alt="flag">
+                                        <span class="font-small-3">English</span>
+                                    </a>
+                                </form>
+                                <form id="lang-ar" action="{% url 'set_language' %}" method="post">
+                                    {% csrf_token %}
+                                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                                    <input name="language" type="hidden" value="ar">
+                                    <a class="dropdown-item" href="javascript:;" data-language="es" onclick="document.getElementById('lang-ar').submit()"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/eg.png'%}" alt="flag">
+                                        <span class="font-small-3">العربية</span>
+                                    </a>
+                                </form>
+                            </div>
                         </li>
                         
                         <li class="dropdown nav-item mr-1"><a class="nav-link dropdown-toggle user-dropdown d-flex align-items-end" id="dropdownBasic2" href="javascript:;" data-toggle="dropdown">
@@ -408,21 +441,14 @@
                                                 <form novalidate>
                                                     <div class="row">
                                                         <div class="col-12 my-2">
-                                                            <button type="button" class="btn btn-info">Connect to <strong>Twitter</strong></button>
+                                                            <button type="button" class="btn btn-info">Connect to <strong>Google</strong></button>
                                                         </div>
                                                         <div class="col-12 my-2">
                                                             <button type="button" class=" btn btn-sm btn-secondary float-right">edit</button>
-                                                            <h6>You are connected to facebook.</h6>
+                                                            <h6>You are connected to google.</h6>
                                                             <p>johndoe@gmail.com</p>
                                                         </div>
-                                                        <div class="col-12 my-2">
-                                                            <button type="button" class="btn btn-danger">Connect to <strong>Google</strong></button>
-                                                        </div>
-                                                        <div class="col-12 my-2">
-                                                            <button type="button" class=" btn btn-sm btn-secondary float-right">edit</button>
-                                                            <h6>You are connected to Instagram.</h6>
-                                                            <p>johndoe@gmail.com</p>
-                                                        </div>
+
                                                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
                                                             <button type="button" class="btn btn-primary mr-sm-2 mb-1">Save changes</button>
                                                             <button type="button" class="btn btn-secondary mb-1">Cancel</button>

@@ -40,14 +40,6 @@ INSTALLED_APPS = [
     
     'rest_framework',
     #'jazzmin',
-    # 'admin_volt.apps.AdminVoltConfig',
-    # 'admin_black.apps.AdminBlackConfig',
-    # 'creative',
-    # 'grappelli',
-    # 'material',
-    # 'bootstrap_admin',
-    # 'baton',
-    # 'simpleui',
     "semantic_admin",
 
     'corsheaders',
