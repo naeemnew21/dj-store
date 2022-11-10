@@ -91,11 +91,10 @@
     <link
     rel="stylesheet"
     type="text/css"
-    href="{%static 'app-assets/css/core/menu/horizontal-menu.css"
-    />
+    href="{%static 'app-assets/css/core/menu/horizontal-menu.css'%}">
     <link
     rel="stylesheet"
-    href="{%static 'app-assets/css/pages/authentication.css'%}"/>
+    href="{%static 'app-assets/css/pages/authentication.css'%}">
     <!-- END Page Level CSS-->
     <!-- BEGIN: Custom CSS-->
     <link
@@ -144,48 +143,55 @@
                         <div class="col-lg-6 col-md-12 px-4 py-3">
                             <h4 class="card-title mb-2">Create Account</h4>
                             <p>Fill the below form to create a new account.</p>
-                            <input
-                            type="text"
-                            class="form-control mb-2"
-                            placeholder="Name"
-                            />
-                            <input
-                            type="email"
-                            class="form-control mb-2"
-                            placeholder="Email"
-                            />
-                            <input
-                            type="password"
-                            class="form-control mb-2"
-                            placeholder="Password"
-                            />
-                            <input
-                            type="password"
-                            class="form-control mb-2"
-                            placeholder="Confirm Password"
-                            />
-                            <div
-                            class="checkbox auth-checkbox font-small-2 mb-3"
-                            >
-                            <input type="checkbox" id="auth-ligin" />
-                            <label for="auth-ligin"
-                                ><span
-                                >I accept the terms & conditions</span
-                                ></label
-                            >
-                            </div>
-                            <div
-                            class="d-flex justify-content-between flex-sm-row flex-column"
-                            >
-                            <a
-                                href="auth-login.html"
-                                class="btn bg-light-primary mb-2 mb-sm-0 b-login"
-                                >Back To Login</a
-                            >
-                            <a href="auth-login.html" class="btn btn-primary register"
-                                >Register</a
-                            >
-                            </div>
+
+                            <form   method="POST">
+                                {% csrf_token %}
+                                <input type="text"  name="first_name" class="form-control mb-2" placeholder="First name" />
+                                {{form.first_name.errors}}
+                                
+
+                                <input type="text"  name="last_name" class="form-control mb-2" placeholder="Last name" />
+                                {{form.last_name.errors}}
+
+                                <input type="email" name="email" class="form-control mb-2" placeholder="Email" />
+                                {{form.email.errors}}
+
+                                <input type="password" name="password1" class="form-control mb-2" placeholder="Password"/>
+                                {{form.password1.errors}}
+
+                                <input type="password" name="password2" class="form-control mb-2" placeholder="Confirm Password"/>
+                                {{form.password2.errors}}
+
+                                <input type="text"  name="phone" class="form-control mb-2" placeholder="Mobile Number (01x xxxx xxxx)" />
+                                {{form.phone.errors}}
+
+                                <div >
+                                    <label class="sell" for="seller">Choose account:</label>
+                                    <select name="seller" class="seller" id="seller" name="seller">
+                                        <option value="">User</option>
+                                        <option value="1">Seller</option>
+                                    </select>
+                                    {{form.seller.errors}}
+                                </div>
+
+                                <div class="checkbox auth-checkbox font-small-2 mb-3">
+                                    <input type="checkbox" id="auth-ligin" />
+                                    <label for="auth-ligin">
+                                        <span>I accept the terms & conditions</span>
+                                    </label>
+                                </div>
+
+                                <div class="d-flex justify-content-between flex-sm-row flex-column">
+                                    <a
+                                        href="/login"
+                                        class="btn bg-light-primary mb-2 mb-sm-0 b-login"
+                                        >Back To login
+                                    </a>
+                                    <button name="submit" type="submit" class="btn btn-primary register"
+                                        >Register
+                                    </button>
+                                </div>
+                            </form>   
                         </div>
                         </div>
                     </div>
