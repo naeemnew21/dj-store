@@ -538,9 +538,11 @@ nav.navbar.header-navbar {
       text-align: left;
       font-weight: 400; }
     .navbar .navbar-brand-center .navbar-header .logo .logo-img {
-      width: 30px;
+      width: 35px;
       display: inline-block;
-      max-height: 30px;
+      max-height: 36px;
+      margin-right: 15px;
+      background-color: var(--white);
       margin-right: 15px; }
   .navbar .navbar-nav {
     display: block;
@@ -676,7 +678,10 @@ nav.navbar.header-navbar {
   .navbar .navbar-brand-center .navbar-header {
     width: 30px !important; }
     .navbar .navbar-brand-center .navbar-header .logo .logo-img {
-      margin-right: 0; }
+      margin-right: 0;
+      background-color: var(--primary);
+    }
+      
     .navbar .navbar-brand-center .navbar-header .logo .logo-text .text {
       display: none; } }
 

@@ -575,134 +575,35 @@
                 </select>
                 <p class="help-block text-danger">{{form.category.errors}}</p>
               </div>
-              <div class="row">
-                <div class="col-md-6 form-group">
-
-                  <div class="custom-control custom-checkbox custom-control-inline" >
-                    <input
-                      name="size1"
-                      value="XS"
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="size1"
-                    />
-                    <label class="custom-control-label" for="size1">XS</label>
-                  </div>
-
-                  <div class="custom-control custom-checkbox custom-control-inline" >
-                    <input
-                      name="size2"
-                      value="S"
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="size2"
-                    />
-                    <label class="custom-control-label" for="size2">S</label>
-                  </div>
-
-                  <div class="custom-control custom-checkbox custom-control-inline" >
-                    <input
-                      name="size3"
-                      value="M"
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="size3"
-                    />
-                    <label class="custom-control-label" for="size3">M</label>
-                  </div>
-
-                  <div class="custom-control custom-checkbox custom-control-inline" >
-                    <input
-                      name="size4"
-                      value="L"
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="size4"
-                    />
-                    <label class="custom-control-label" for="size4">L</label>
-                  </div>
-
-                  <div class="custom-control custom-checkbox custom-control-inline" >
-                    <input
-                      name="size5"
-                      value="XL"
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="size5"
-                    />
-                    <label class="custom-control-label" for="size5">XL</label>
-                  </div>
-
-                  <div class="custom-control custom-checkbox custom-control-inline" >
-                    <input
-                      name="size6"
-                      value="XXL"
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="size6"
-                    />
-                    <label class="custom-control-label" for="size6">XXL</label>
-                  </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="category">Sizes</label>
                 </div>
-
-                <div class="col-md-6 form-group">
-
-                  <div class="custom-control custom-checkbox custom-control-inline" >
-                    <input
-                      name="color1"
-                      value="Black"
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="color1"
-                    />
-                    <label class="custom-control-label" for="color1">Black</label>
-                  </div>
-
-                  <div class="custom-control custom-checkbox custom-control-inline" >
-                    <input
-                      name="color2"
-                      value="White"
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="color2"
-                    />
-                    <label class="custom-control-label" for="color2">White</label>
-                  </div>
-
-                  <div class="custom-control custom-checkbox custom-control-inline" >
-                    <input
-                      name="color3"
-                      value="Red"
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="color3"
-                    />
-                    <label class="custom-control-label" for="color3">Red</label>
-                  </div>
-
-                  <div class="custom-control custom-checkbox custom-control-inline" >
-                    <input
-                      name="color4"
-                      value="Blue"
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="color4"
-                    />
-                    <label class="custom-control-label" for="color4">Blue</label>
-                  </div>
-
-                  <div class="custom-control custom-checkbox custom-control-inline" >
-                    <input
-                      name="color5"
-                      value="Green"
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="color5"
-                    />
-                    <label class="custom-control-label" for="color5">Green</label>
-                  </div>
-                </div>
+                <select class="custom-select" id="category" name="category">
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                  <option value="XXXL">XXXL</option>
+                </select>
+                <p class="help-block text-danger">{{form.category.errors}}</p>
               </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="category">Colors</label>
+                </div>
+                <select class="custom-select" id="category" name="category">
+                  <option value="Red">Red</option>
+                  <option value="Green">Green</option>
+                  <option value="Blue">Blue</option>
+                  <option value="Black">Black</option>
+                  <option value="White">White</option>
+                </select>
+                <p class="help-block text-danger">{{form.category.errors}}</p>
+              </div>
+
               
               <div class="control-group">
                 <input
