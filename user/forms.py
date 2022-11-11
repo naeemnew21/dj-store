@@ -6,10 +6,10 @@ from .models import MyUser, UserProfile
 
 
 class SignUpForm(UserCreationForm):
+    agree = forms.BooleanField(error_messages={"required":"you must agree terms and conditions"})
     class Meta:
         model = MyUser
-        fields = ('first_name', 'last_name', 'email', 'password1', 'password2', 'phone', 'seller')
-
+        fields = ('first_name', 'last_name', 'email', 'password1', 'password2', 'phone', 'seller','agree')
 
 
 

@@ -175,10 +175,11 @@
                                 </div>
 
                                 <div class="checkbox auth-checkbox font-small-2 mb-3">
-                                    <input type="checkbox" id="auth-ligin" />
+                                    <input type="checkbox" id="auth-ligin" name="agree"/>
                                     <label for="auth-ligin">
                                         <span>I accept the terms & conditions</span>
                                     </label>
+                                    {{form.agree.errors}}
                                 </div>
 
                                 <div class="d-flex justify-content-between flex-sm-row flex-column">
