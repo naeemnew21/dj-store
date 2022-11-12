@@ -15,4 +15,5 @@ urlpatterns = [
     path("password_reset/", views.password_reset_request, name="password_reset"),
     path("forget/", views.forget, name="forget_test"),
     path('move-to-cart', views.move_to_cart , name = 'move_to_cart'),
+
 ]

@@ -70,6 +70,8 @@
                                                         {% csrf_token %}
                                                         <h4 class="mb-2 card-title">Login</h4>
                                                         <p>Welcome back, please login to your account.</p>
+                                                        
+                                                        <h6 style="color:#ff0000;">{{error}}</h6>
 
                                                         <input type="text" class="form-control mb-3" name="username" placeholder="Email">
                                                         <input type="password" class="form-control mb-2" name="password" placeholder="Password">
@@ -81,7 +83,7 @@
                                                                     <label for="auth-ligin"><span>Remember Me</span></label>
                                                                 </div>
                                                             </div>
-                                                            <a href="auth-forgot-password.html" class="f-password">Forgot Password?</a>
+                                                            <a href="{%url 'user:password_reset'%}" class="f-password">Forgot Password?</a>
                                                         </div>
                                                         <div class="d-flex justify-content-between flex-sm-row flex-column">
                                                             <a href="/sign-up" class="btn bg-light-primary mb-2 mb-sm-0 b-login">Register</a>
