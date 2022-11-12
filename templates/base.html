@@ -70,9 +70,7 @@
         </div>
         <div class="col-lg-6 text-center text-lg-right">
           <div class="d-inline-flex align-items-center">
-            
-            <div class="dropdown">
-              {% comment %} 
+                          {% comment %} 
               <button class="btn btn-secondary dropdown-toggle languages" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {% get_current_language as LANGUAGE_CODE %}
                 languages({{LANGUAGE_CODE}})
@@ -91,7 +89,7 @@
                   <a href="#" class="dropdown-item" onclick="document.getElementById('lang-ar').submit()">Arabic</a>
                 </form>
               </div> {% endcomment %}
-
+            <div class="dropdown">
               <a class="nav-link d-flex align-items-center dropdown-toggle dropdown-language" id="dropdown-flag" href="javascript:;" data-toggle="dropdown">
                 {% get_current_language as LANGUAGE_CODE %}
                 {% get_language_info for LANGUAGE_CODE as lang %}

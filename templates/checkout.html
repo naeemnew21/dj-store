@@ -156,13 +156,13 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <div class="custom-control custom-radio">
+                <div class="custom-control custom-checkbox">
                   <input
-                    type="radio"
+                    type="checkbox"
                     class="custom-control-input"
                     name="payment"
                     id="on-deliver" 
-                    checked
+                    
                   />
                   <label class="custom-control-label" for="on-deliver"
                     >{% trans 'Pay on Delivery'%}</label
@@ -170,14 +170,11 @@
                 </div>
               </div>
             </div>
-
             <div id="smart-button-container">
               <div style="text-align: center;">
                 <div id="paypal-button-container"></div>
               </div>
             </div>
-
-
             {% if orderscount %}
               <div class="card-footer border-secondary bg-transparent">
                 <button
