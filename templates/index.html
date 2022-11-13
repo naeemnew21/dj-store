@@ -1,10 +1,8 @@
-
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
 
 
-            
 {% block navbar %}
           <nav
             class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0"
@@ -153,7 +151,7 @@
             <a href="{%url 'product:shop'%}?Male=on" class="cat-img position-relative overflow-hidden mb-3">
               <img class="img-fluid" src="{%static '/img/cat-1.jpg'%}" alt="" />
             </a>
-            <h5 class="font-weight-semi-bold m-0">{% trans 'Men dresses'%}</h5>
+            <h5 class="font-weight-semi-bold m-0">{% trans 'Man Fashion'%}</h5>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 pb-1">
@@ -177,7 +175,7 @@
             <a href="{%url 'product:shop'%}?Baby=on" class="cat-img position-relative overflow-hidden mb-3">
               <img class="img-fluid" src="{%static 'img/cat-3.jpg'%}" alt="" />
             </a>
-            <h5 class="font-weight-semi-bold m-0">{% trans 'Baby dresses'%}</h5>
+            <h5 class="font-weight-semi-bold m-0">{% trans 'Baby Clothes'%}</h5>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 pb-1">
@@ -324,8 +322,6 @@
                   <i class="fas fa-shopping-cart text-primary mr-1"></i>Added to cart
                 </a>
               {% endif %}
-
-
             </div>
           </div>
         </div>

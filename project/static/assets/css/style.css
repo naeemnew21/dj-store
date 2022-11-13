@@ -7,3 +7,15 @@
 		margin-top: -10px;
 	}
 }
+.seller {
+  width: 67px;
+  left: 13px;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 11px;
+  background-color: #8cb4ff;
+  border: none;
+  border-radius: 4px;
+  height: 23px;
+  text-align: center
+}

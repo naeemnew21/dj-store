@@ -1461,7 +1461,8 @@ body.layout-dark .nav-tabs.nav-right .nav-item a.nav-link, body.layout-dark .nav
 }
 
 body.layout-dark select option {
-  background-color: #1E1E1E;
+  background-color: white;
+  font-weight: 600;
 }
 
 body.layout-dark .select2.select2-container .select2-selection--multiple .select2-selection__rendered .select2-search__field {
