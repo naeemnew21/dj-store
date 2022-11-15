@@ -421,7 +421,7 @@
                                     class="badge badge-pill bg-light-success cursor-pointer"
                                     >Approved</span>
                                 {% else %}
-                                   <span
+                                  <span
                                     class="badge badge-pill bg-light-danger cursor-pointer"
                                     >Pending</span>
                                 {% endif %}
@@ -570,20 +570,6 @@
                 </select>
                 <p class="help-block text-danger">{{form.category.errors}}</p>
               </div>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="category">Colors</label>
-                </div>
-                <select class="custom-select" id="category" name="category">
-                  <option value="Red">Red</option>
-                  <option value="Green">Green</option>
-                  <option value="Blue">Blue</option>
-                  <option value="Black">Black</option>
-                  <option value="White">White</option>
-                  <option value="Other">Other</option>
-                </select>
-                <p class="help-block text-danger">{{form.category.errors}}</p>
-              </div>
               <div class="control-group">
                 <input
                   name="main_image"
@@ -671,6 +657,7 @@
     <script src="{% static 'app-assets/js/scroll-top.js'%}"></script>
     <!-- END i Pay JS-->
     <!-- BEGIN PAGE LEVEL JS-->
+    <script src="{%static 'app-assets/js/select2.js'%}"></script>
     <script src="{% static 'app-assets/js/dashboard1.js'%}"></script>
     <!-- END PAGE LEVEL JS-->
     <!-- BEGIN: Custom CSS-->

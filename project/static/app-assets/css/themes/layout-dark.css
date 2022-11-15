@@ -1461,7 +1461,7 @@ body.layout-dark .nav-tabs.nav-right .nav-item a.nav-link, body.layout-dark .nav
 }
 
 body.layout-dark select option {
-  background-color: white;
+  background-color: var(--dark);
   font-weight: 600;
 }
 
@@ -1669,7 +1669,7 @@ html body.layout-dark.layout-transparent.horizontal-layout div.navbar-horizontal
   color: #B2B1B5 !important;
 }
 .register {
-  background-color: #8cb4ff;
+  background-color: #8cb4ff !important;
   color: black !important;
   border-color: white;
   font-weight: bold;
