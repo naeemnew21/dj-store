@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
-from django.views.generic import ListView, DetailView, CreateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from django.db.models import Q
 from .models import Product, Comment
 from .forms import ProductCreateForm
@@ -238,6 +238,17 @@ class ProductCreateView(DashboardPermissionMixin, CreateView):
 class ProductDeleteView(DashboardPermissionMixin, DeleteView):
     model = Product
     template_name ='error/403.html'
+    success_url = reverse_lazy('product:dashboard')
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        return qs.filter(created_by=self.request.user)
+
+
+
+class ProductUpdateView(DashboardPermissionMixin, UpdateView):
+    form_class = ProductCreateForm
+    template_name = 'dashboard.html'
     success_url = reverse_lazy('product:dashboard')
 
     def get_queryset(self):

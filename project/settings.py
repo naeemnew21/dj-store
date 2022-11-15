@@ -195,6 +195,9 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 
 
+GOOGLE_CLIENT_ID = ""
+SOCIAL_SECRET = ""
+
 # JAZZMIN_SETTINGS = {
     
 #     "site_title": "E-Commerce",

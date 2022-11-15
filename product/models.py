@@ -76,6 +76,18 @@ class ProductImage(models.Model):
         verbose_name_plural = _('product images')
 
 
+class SizeModel(models.Model):
+    size  = models.CharField(choices=SIZE , max_length=20)
+    def __str__(self):
+        return self.size
+
+
+class ColorModel(models.Model):
+    color  = models.CharField(choices=COLOR , max_length=20)
+    def __str__(self):
+        return self.color
+
+
 
 class Product(models.Model):
     created_by   = models.ForeignKey(MyUser, on_delete=models.CASCADE, verbose_name=_('created by'))
@@ -85,17 +97,8 @@ class Product(models.Model):
     name         = models.CharField(max_length=100, verbose_name=_('name'))
     suitable     = models.CharField(choices=SEX, max_length= 20, blank=False, null=False, verbose_name=_('suitable'))
     
-    color1       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True, verbose_name=_('color 1'))
-    color2       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True, verbose_name=_('color 2'))
-    color3       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True, verbose_name=_('color 3'))
-    color4       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True, verbose_name=_('color 4'))
-    color5       = models.CharField(choices=COLOR, max_length= 20, blank=True, null=True, verbose_name=_('color 5'))
-    size1        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True, verbose_name=_('size 1'))
-    size2        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True, verbose_name=_('size 2'))
-    size3        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True, verbose_name=_('size 3'))
-    size4        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True, verbose_name=_('size 4'))
-    size5        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True, verbose_name=_('size 5'))
-    size6        = models.CharField(choices=SIZE, max_length= 20, blank=True, null=True, verbose_name=_('size 6'))
+    colors       = models.ManyToManyField(ColorModel, blank=True)
+    sizes        = models.ManyToManyField(SizeModel, blank=True)
     
     quantity     = models.PositiveIntegerField(default=0, verbose_name=_('quantity'))
     price        = models.DecimalField(max_digits=7, decimal_places=2, validators = [MinValueValidator(0.0)], verbose_name=_('price'))
@@ -130,17 +133,15 @@ class Product(models.Model):
     @property
     def get_colors(self):
         colors = set()
-        for color in [self.color1, self.color2, self.color3, self.color4,self.color5,]:
-            if color:
-             colors.add(color)
+        for record in self.colors.all():
+            colors.add(record.color)
         return colors
     
     @property
     def get_sizes(self):
         sizes = set()
-        for size in [self.size1, self.size2, self.size3, self.size4, self.size5, self.size6]:
-            if size:
-               sizes.add(size)
+        for record in self.sizes.all():
+            sizes.add(record.size)
         return sizes
     
     @property

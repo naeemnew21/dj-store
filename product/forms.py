@@ -10,14 +10,13 @@ class ProductCreateForm(forms.ModelForm):
                   'brand',
                   'name',
                   'suitable',
-                  'color1','color2','color3','color4','color5',
-                  'size1','size2','size3','size4','size5','size6',
+                  'colors',
+                  'sizes',
                   'quantity', 
                   'price',
                   'price_dis',
                   'main_image',
                   'details',
                    )
-
 
 

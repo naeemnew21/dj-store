@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ProductImage, Product, Comment
+from .models import ProductImage, Product, Comment, ColorModel, SizeModel
 from modeltranslation.admin import TranslationAdmin
 from django.utils.translation import gettext_lazy as _
 
@@ -54,4 +54,6 @@ class CommentAdmin(admin.ModelAdmin):
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductImage)
+admin.site.register(ColorModel)
+admin.site.register(SizeModel)
 admin.site.register(Comment, CommentAdmin)
