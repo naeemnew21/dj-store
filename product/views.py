@@ -32,6 +32,7 @@ def cart_products(request):
 
 
 def index(request):
+
     if request.user.is_authenticated and request.user.seller:
             return redirect('user:pending')
 

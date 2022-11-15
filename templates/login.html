@@ -96,7 +96,7 @@
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <h6 class="text-primary m-0 ">Or Login With</h6>
                                                         <div class="login-options">
-                                                            <a class="btn btn-sm btn-social-icon btn-google mr-1"><span class="fa fa-google"></span></a>
+                                                            <div id="buttonDiv"></div> 
                                                         </div>
                                                     </div>
                                                 </div>
@@ -133,6 +133,11 @@
     <!-- BEGIN: Custom CSS-->
     <script src="{%static 'assets/js/scripts.js'%}"></script>
     <!-- END: Custom CSS-->
+
+    <!-- google login-->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="{%static 'js/google.js'%}"></script>
+
 </body>
 <!-- END : Body-->
 

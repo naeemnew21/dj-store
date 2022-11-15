@@ -128,3 +128,17 @@ class UserProfile(models.Model):
     def __str__(self):
         return self.user.email
     
+
+
+
+class GoogleProfile(models.Model):
+    user          = models.OneToOneField(MyUser, on_delete=models.CASCADE)
+    google_id      = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    email         = models.EmailField(unique=True, blank=False, null=False, verbose_name=_('email address'))
+
+    full_name     = models.CharField(max_length=30, blank=False, null=False, verbose_name=_('full name'))
+    first_name    = models.CharField(max_length=30, blank=False, null=False, verbose_name=_('first name'))
+    last_name     = models.CharField(max_length=30, blank=False, null=False, verbose_name=_('last name'))
+
+    def __str__(self):
+        return str(self.user_id)

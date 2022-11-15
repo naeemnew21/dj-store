@@ -450,17 +450,17 @@
                                                 <form novalidate>
                                                     <div class="row">
                                                         <div class="col-12 my-2">
-                                                            <button type="button" class="btn btn-info">Connect to <strong>Google</strong></button>
+                                                            <button type="button" class="btn btn-info">Connect to <strong>Google</strong> <div id="buttonDiv"></div>  </button>
+                                                            
                                                         </div>
                                                         <div class="col-12 my-2">
-                                                            <button type="button" class=" btn btn-sm btn-secondary float-right">edit</button>
-                                                            <h6>You are connected to google.</h6>
-                                                            <p>johndoe@gmail.com</p>
-                                                        </div>
-
-                                                        <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
-                                                            <button type="button" class="btn btn-primary mr-sm-2 mb-1">Save changes</button>
-                                                            <button type="button" class="btn btn-secondary mb-1">Cancel</button>
+                                                            {% if request.user.googleprofile.email %}
+                                                                <h6>You are connected to google.</h6>
+                                                                <p>{{request.user.googleprofile.email}}</p>
+                                                            {% else %}
+                                                                <h6>You are not connected.</h6>
+                                                            {% endif %}
+                                                            
                                                         </div>
                                                     </div>
                                                 </form>
@@ -568,6 +568,9 @@
     <script src="{%static 'assets/js/scripts.js'%}"></script>
     <!-- END: Custom CSS-->
 
+    <!-- google login-->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="{%static 'js/google.js'%}"></script>
 
     <script type="text/javascript">
         var loadFile = function(event) {

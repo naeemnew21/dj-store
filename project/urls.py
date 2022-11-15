@@ -33,6 +33,7 @@ urlpatterns += i18n_patterns(
     path('', include('user.urls', namespace = 'user')),
     path('', include('product.urls', namespace = 'product')),
     path('cart/', include('cart.urls', namespace = 'cart')),
+    path('social/', include('social.urls', namespace = 'social')),
 
     path('password_change/',
          auth_views.PasswordChangeView.as_view(template_name="edit_profile.html"),

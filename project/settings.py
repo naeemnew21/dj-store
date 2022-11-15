@@ -198,6 +198,12 @@ EMAIL_PORT = 587
 GOOGLE_CLIENT_ID = ""
 SOCIAL_SECRET = ""
 
+# # google auth
+# SOCIAL_SECRET='@6p-h7#oy4unyb4+('
+# GOOGLE_CLIENT_ID="279543566018-llpc24mgfg7ood9f3c94sl0ee65t97jk.apps.googleusercontent.com"
+# GOOGLE_CLIENT_SECRET="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"
+
+
 # JAZZMIN_SETTINGS = {
     
 #     "site_title": "E-Commerce",

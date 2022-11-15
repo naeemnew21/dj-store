@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import MyUser, Languages, UserProfile
+from .models import MyUser, Languages, UserProfile, GoogleProfile
 from django.contrib.auth.models import Group
 
 admin.site.site_header = 'E-Commerce'
@@ -41,3 +41,4 @@ admin.site.register(MyUser, CustomUserAdmin)
 admin.site.unregister(Group)
 admin.site.register(Languages)
 admin.site.register(UserProfile)
+admin.site.register(GoogleProfile)

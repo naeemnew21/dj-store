@@ -1,9 +1,9 @@
 
 from django.contrib.auth import authenticate
-from user.models import MyUser
+from user.models import MyUser, GoogleProfile
 from project.settings import SOCIAL_SECRET
 import random
-from rest_framework.exceptions import AuthenticationFailed
+
 
 
 
@@ -20,23 +20,14 @@ def generate_username(name):
 
 
 def register_social_user(provider, user_id, email, name, first_name, last_name, avatar_url, email_verified):
-    filtered_user_by_email = MyUser.objects.filter(email=email)
+    filtered_user_by_email = GoogleProfile.objects.filter(email=email)
 
     if filtered_user_by_email.exists():
-
-        if provider == filtered_user_by_email[0].auth_provider:
-            user = MyUser.objects.get(email=email)
-            registered_user = authenticate(
-                username=user.username, password=SOCIAL_SECRET)
-
-            return {
-                'username': registered_user.username,
-                'email': registered_user.email,
-                'tokens': registered_user.tokens()}
-
-        else:
-            raise AuthenticationFailed(
-                detail='Please continue your login using ' + filtered_user_by_email[0].auth_provider)
+        user = filtered_user_by_email[0].user
+        return {
+            'username': user.username,
+            'email': user.email,
+            'tokens': user.tokens()}
 
     else:
         user = {
@@ -52,6 +43,14 @@ def register_social_user(provider, user_id, email, name, first_name, last_name, 
         user.auth_provider = provider
         user.save()
 
+        goprofile = GoogleProfile.objects.create(user=user)
+        goprofile.google_id = user_id
+        goprofile.email = email
+        goprofile.full_name = name
+        goprofile.first_name = first_name
+        goprofile.last_name = last_name
+        goprofile.save()
+
         new_user = authenticate(
             username=user.username, password=SOCIAL_SECRET)
         
@@ -60,3 +59,4 @@ def register_social_user(provider, user_id, email, name, first_name, last_name, 
             'username': new_user.username,
             'tokens': new_user.tokens()
         }
+
