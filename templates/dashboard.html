@@ -561,37 +561,42 @@
                 <p class="help-block text-danger">{{form.category.errors}}</p>
               </div>
 
-              <div class="row d-flex justify-content-center mt-100">
-                <div class="col-md-6"> <select id="choices-multiple-remove-button" placeholder="Select upto 5 tags" multiple>
-                        <option value="HTML">HTML</option>
-                        <option value="Jquery">Jquery</option>
-                        <option value="CSS">CSS</option>
-                        <option value="Bootstrap 3">Bootstrap 3</option>
-                        <option value="Bootstrap 4">Bootstrap 4</option>
-                        <option value="Java">Java</option>
-                        <option value="Javascript">Javascript</option>
-                        <option value="Angular">Angular</option>
-                        <option value="Python">Python</option>
-                        <option value="Hybris">Hybris</option>
-                        <option value="SQL">SQL</option>
-                        <option value="NOSQL">NOSQL</option>
-                        <option value="NodeJS">NodeJS</option>
-                    </select> </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="choices-multiple-remove-button">Colors</label>
+                </div>
+                <select class="custom-select" id="choices-multiple-remove-button" placeholder="Select upto 5 tags" multiple>
+                    <option value="HTML">Red</option>
+                    <option value="Jquery">Blue</option>
+                    <option value="CSS">Black</option>
+                    <option value="Bootstrap 3">Green</option>
+                    <option value="Bootstrap 4">Yellow</option>
+                    <option value="Java">Brown</option>
+                    <option value="Javascript">pink</option>
+                    <option value="Angular">violet</option>
+                    <option value="Python">Rose</option>
+                    <option value="Hybris">White</option>
+                    <option value="SQL">Sky</option>
+                </select> 
             </div>
 
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <label class="input-group-text" for="category">Sizes</label>
+                  <label class="input-group-text" for="choices-multiple-remove-button">Sizes</label>
                 </div>
-                <select class="custom-select" id="category" name="category" >
-                  <option value="XS">XS</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                  <option value="XXXL">XXXL</option>
-                </select>
+                <select class="custom-select" id="choices-multiple-remove-button" placeholder="Select upto 5 tags" multiple>
+                    <option value="HTML">Red</option>
+                    <option value="Jquery">Blue</option>
+                    <option value="CSS">Black</option>
+                    <option value="Bootstrap 3">Green</option>
+                    <option value="Bootstrap 4">Yellow</option>
+                    <option value="Java">Brown</option>
+                    <option value="Javascript">pink</option>
+                    <option value="Angular">violet</option>
+                    <option value="Python">Rose</option>
+                    <option value="Hybris">White</option>
+                    <option value="SQL">Sky</option>
+                </select> 
                 <p class="help-block text-danger">{{form.category.errors}}</p>
               </div>
               <div class="control-group">
