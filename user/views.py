@@ -136,6 +136,7 @@ def login_view(request):
                 return redirect('user:pending')
             return redirect("product:index")
         else :
+            # add google login note
             context['error'] = "Invalid Login" 
     return render(request, 'login.html' , context)
 
