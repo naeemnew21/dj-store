@@ -409,7 +409,6 @@
                           </thead>
                           <tbody>
                             {% for product in products %}
-
                             <tr>
                               <td>
                                 <img
@@ -449,7 +448,6 @@
                                 </form>
                               </td>
                             </tr>
-
                             {% endfor %}
                             
                           </tbody>
@@ -461,12 +459,9 @@
               </div>
             </div>
           </div>
-
           <div class="col-8" style="margin: 0 auto">
             <form method="POST" action="" name="sentMessage" id="contactForm" novalidate="novalidate" enctype="multipart/form-data">
-
               {% csrf_token %}
-
               <div class="control-group">
                 <input
                   name="name"
