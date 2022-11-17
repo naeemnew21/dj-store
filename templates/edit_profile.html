@@ -120,7 +120,7 @@
                             <a class="nav-link dropdown-toggle user-dropdown d-flex align-items-end" id="dropdownBasic2" href="javascript:;" data-toggle="dropdown">
                                 <div class="user d-md-flex d-none mr-2">
                                     <span class="text-right">{{request.user.get_name}}</span>
-                                    <span class="text-right text-muted font-small-3">Available</span>
+                                    <span class="text-right text-muted font-small-3">{% trans 'Available'%}</span>
                                 </div>
                                 <img class="avatar" src="{{request.user.avatar.url}}" alt="avatar" height="35" width="35">
                             </a>
@@ -128,14 +128,14 @@
                                 <a class="dropdown-item" href="{%url 'user:profile'%}">
                                     <div class="d-flex align-items-center">
                                         <i class="ft-edit mr-2"></i>
-                                        <span>Edit Profile</span>
+                                        <span>{% trans 'Edit Profile'%}</span>
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{%url 'user:logout'%}">
                                     <div class="d-flex align-items-center">
                                         <i class="ft-power mr-2"></i>
-                                        <span>Logout</span>
+                                        <span>{% trans 'Logout'%}</span>
                                     </div>
                                 </a>
                             </div>
@@ -156,8 +156,8 @@
                 <div class="content-wrapper">
                     <div class="row">
                         <div class="col-12 setting">
-                            <div class="content-header">Account Settings</div>
-                            <p class="content-sub-header mb-1">Configure account settings to your needs.</p>
+                            <div class="content-header">{% trans 'Account Settings'%}</div>
+                            <p class="content-sub-header mb-1">{% trans 'Configure account settings to your needs'%}.</p>
                         </div>
                     </div>
                     <!-- Account Settings starts -->
@@ -168,31 +168,31 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" id="general-tab" data-toggle="tab" href="#general" role="tab" aria-controls="general" aria-selected="true">
                                         <i class="ft-settings mr-1 align-middle"></i>
-                                        <span class="align-middle">General</span>
+                                        <span class="align-middle">{% trans 'General'%}</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="change-password-tab" data-toggle="tab" href="#change-password" role="tab" aria-controls="change-password" aria-selected="false">
                                         <i class="ft-lock mr-1 align-middle"></i>
-                                        <span class="align-middle">Change Password</span>
+                                        <span class="align-middle">{% trans 'Change Password'%}</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">
                                         <i class="ft-info mr-1 align-middle"></i>
-                                        <span class="align-middle">Info</span>
+                                        <span class="align-middle">{% trans 'Info'%}</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="social-links-tab" data-toggle="tab" href="#social-links" role="tab" aria-controls="social-links" aria-selected="false">
                                         <i class="ft-twitter mr-1 align-middle"></i>
-                                        <span class="align-middle">Social Links</span>
+                                        <span class="align-middle">{% trans 'Social Links'%}</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="connections-tab" data-toggle="tab" href="#connections" role="tab" aria-controls="connections" aria-selected="false">
                                         <i class="ft-link mr-1 align-middle"></i>
-                                        <span class="align-middle">Connections</span>
+                                        <span class="align-middle">{% trans 'Connections'%}</span>
                                     </a>
                                 </li>
                                 {% comment %} <li class="nav-item">
@@ -218,11 +218,11 @@
                                                         <img src="{{request.user.avatar.url}}" id="avatar_view" alt="profile-img" class="rounded mr-3" height="64" width="64">
                                                         <div class="media-body">
                                                             <div class="col-12 d-flex flex-sm-row flex-column justify-content-start px-0 mb-sm-2">
-                                                                <label class="btn btn-sm bg-light-primary mb-sm-0" for="avatar_id">Upload Photo</label>
+                                                                <label class="btn btn-sm bg-light-primary mb-sm-0" for="avatar_id">{% trans 'Upload Photo'%}</label>
                                                                 <input type="file" name="avatar" id="avatar_id" onchange="loadFile(event)" hidden>
                                                             </div>
                                                             <p class="text-muted mb-0 mt-1 mt-sm-0">
-                                                                <small>Allowed JPG or PNG. Max size of 800kB</small>
+                                                                <small>{% trans 'Allowed JPG or PNG. Max size of 800kB'%}</small>
                                                                 <small>{{form.avatar.errors}}</small>
                                                                 <small>{{form.phone.errors}}</small>
                                                                 
@@ -230,25 +230,23 @@
                                                         </div>
                                                     </div>
                                                     <hr class="mt-1 mt-sm-2">
-
-
                                                     <div class="row">
                                                         <div class="col-12 form-group">
-                                                            <label for="username">First Name</label>
+                                                            <label for="username">{% trans 'First Name'%}</label>
                                                             <div class="controls">
                                                                 <input type="text" id="username" class="form-control" placeholder="First Name" value="{{request.user.first_name}}" name="first_name" required>
                                                                 <p class="help-block text-danger">{{form.first_name.errors}}</p>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="name">Last name</label>
+                                                            <label for="name">{% trans 'Last name'%}</label>
                                                             <div class="controls">
                                                                 <input type="text" id="name" class="form-control" placeholder="Name" value="{{request.user.last_name}}" name="last_name" required>
                                                                 <p class="help-block text-danger">{{form.last_name.errors}}</p>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="email">E-mail</label>
+                                                            <label for="email">{% trans 'E-mail'%}</label>
                                                             <div class="controls">
                                                                 <input type="text" id="email" class="form-control" placeholder="E-mail" value="{{request.user.email}}" name="email" required>
                                                                 <p class="help-block text-danger">{{form.email.errors}}</p>
@@ -259,24 +257,23 @@
                                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                                     <span aria-hidden="true"><i class="ft-x font-medium-2 text-bold-700"></i></span>
                                                                 </button>
-                                                                <p class="mb-0">Your email is not confirmed. Please check your inbox.</p>
-                                                                <a href="javascript:;" class="alert-link">Resend confirmation</a>
+                                                                <p class="mb-0">{% trans 'Your email is not confirmed. Please check your inbox'%}.</p>
+                                                                <a href="javascript:;" class="alert-link">{% trans 'Resend confirmation'%}</a>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="phone">Phone</label>
+                                                            <label for="phone">{% trans 'Phone'%}</label>
                                                             <div class="controls">
                                                                 <input id="phone" name="phone" type="number" class="form-control" required placeholder="01x xxxx xxxx" value="{{request.user.phone}}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
-                                                            <button type="submit" class="btn btn-primary mr-sm-2 mb-1">Save Changes</button>
-                                                            <button type="reset" class="btn btn-secondary mb-1">Cancel</button>
+                                                            <button type="submit" class="btn btn-primary mr-sm-2 mb-1">{% trans 'Save Changes'%}</button>
+                                                            <button type="reset" class="btn btn-secondary mb-1">{% trans 'Cancel'%}</button>
                                                         </div>
                                                     </div>
                                                 </form>
                                             </div>
-
                                             <!-- Change Password Tab -->
                                             <div class="tab-pane" id="change-password" role="tabpanel" aria-labelledby="change-password-tab">
                                             
@@ -284,62 +281,58 @@
                                                 
                                                     {% csrf_token %}
                                                     <div class="form-group">
-                                                        <label for="old-password">Old Password</label>
+                                                        <label for="old-password">{% trans 'Old Password'%}</label>
                                                         <div class="controls">
                                                             <input type="password" id="old-password" name="old_password" class="form-control" placeholder="Old Password" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="new-password">New Password</label>
+                                                        <label for="new-password">{% trans 'New Password'%}</label>
                                                         <div class="controls">
                                                             <input type="password" id="new-password" name="new_password1" class="form-control" placeholder="New Password" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="retype-new-password">Retype New Password</label>
+                                                        <label for="retype-new-password">{% trans 'Retype New Password'%}</label>
                                                         <div class="controls">
                                                             <input type="password" id="retype-new-password" name="new_password2" class="form-control" placeholder="New Password" required>
                                                         </div>
                                                     </div>
                                                     <div class="d-flex flex-sm-row flex-column justify-content-end">
-                                                        <button type="submit" class="btn btn-primary mr-sm-2 mb-1">Save Changes</button>
+                                                        <button type="submit" class="btn btn-primary mr-sm-2 mb-1">{% trans 'Save Changes'%}</button>
                                                     </div>
                                                     {% if form.errors %}
                                                         {% for field in form %}
-
                                                                 {% if field.errors %}
                                                                 {{field.name}}
                                                                 {% endif %}
-
                                                                 {% for error in field.errors %}
                                                                     <p style="color: red">{{ error }}</p>
                                                                 {% endfor %}
-
                                                             {% endfor %}
                                                     {% endif %}
                                                 </form>
                                             </div>
-
                                             <!-- Info Tab -->
                                             <div class="tab-pane" id="info" role="tabpanel" aria-labelledby="info-tab">
                                                 <form method="POST" action="{%url 'user:profileinfo'%}">
                                                     {% csrf_token %}
                                                     <div class="row">
                                                         <div class="col-12 form-group">
-                                                            <label for="bio">Bio</label>
+                                                            <label for="bio">{% trans 'Bio'%}</label>
                                                             <textarea id="bio" name="bio" class="form-control" placeholder="Your Bio data here..." rows="3">{{request.user.userprofile.bio}}</textarea>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="bdate">Birth Date</label>
+                                                            <label for="bdate">{% trans 'Birth Date'%}</label>
                                                             <div class="controls">
                                                                 <input id="bdate" name="birth_date" type="date" class="form-control pickadate"  placeholder="Birth date" value="{{request.user.userprofile.birth_date|date:'Y-m-d'}}"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="country">Country</label>
+                                                            <label for="country">{% trans 'Country'%}</label>
                                                             <div class="controls">
                                                                 <select id="country" name="country" class="form-control">
-                                                                    <option value="">Select Country</option>
+                                                                    <option value="">{% trans 'Select Country'%}</option>
                                                                     {% if request.user.userprofile.country == 'Cairo'%}
                                                                         <option value="Cairo" selected>Cairo</option>
                                                                         <option value="Alex">Alex</option>
@@ -363,13 +356,13 @@
                                                             </select>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="company">Company</label>
+                                                            <label for="company">{% trans 'Company'%}</label>
                                                             <div class="controls">
                                                                 <input type="text" name="company" id="company" class="form-control" placeholder="Company Name" aria-invalid="false" value="{{request.user.userprofile.company}}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="website">Website</label>
+                                                            <label for="website">{% trans 'Website'%}</label>
                                                             {% if  request.user.userprofile.company_url == None%}
                                                                 <input id="website" name="company_url" type="text" class="form-control" placeholder="Website Address">
                                                             {% else %}
@@ -379,21 +372,18 @@
                                                         </div>
                                                         
                                                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
-                                                            <button type="submit" class="btn btn-primary mr-sm-2 mb-1">Save Changes</button>
+                                                            <button type="submit" class="btn btn-primary mr-sm-2 mb-1">{% trans 'Save Changes'%}</button>
                                                         </div>
                                                     </div>
                                                 </form>
                                             </div>
-
                                             <!-- Social Links Tab -->
                                             <div class="tab-pane" id="social-links" role="tabpanel" aria-labelledby="social-links-tab">
-
                                                 <form method="POST" action="{%url 'user:profilelinks'%}">
                                                     {% csrf_token %}
-
                                                     <div class="row">
                                                         <div class="col-12 form-group">
-                                                            <label for="twitter">Twitter</label>
+                                                            <label for="twitter">{% trans 'Twitter'%}</label>
                                                             {% if  request.user.userprofile.twitter_url == None%}
                                                                 <input id="twitter" type="text" name="twitter_url" class="form-control" placeholder="Add link">
                                                             {% else %}
@@ -402,7 +392,7 @@
                                                             <p>{{form.twitter_url.errors}}</p>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="facebook">Facebook</label>
+                                                            <label for="facebook">{% trans 'Facebook'%}</label>
                                                             {% if  request.user.userprofile.facebook_url == None%}
                                                                 <input id="facebook" type="text" name="facebook_url" class="form-control" placeholder="Add link">
                                                             {% else %}
@@ -412,7 +402,7 @@
                                                         </div>
                                                         
                                                         <div class="col-12 form-group">
-                                                            <label for="linkedin">Linkedin</label>
+                                                            <label for="linkedin">{% trans 'Linkedin'%}</label>
                                                             {% if  request.user.userprofile.linkedin_url == None%}
                                                                 <input id="linkedin" type="text" name="linkedin_url" class="form-control" placeholder="Add link">
                                                             {% else %}
@@ -421,7 +411,7 @@
                                                             <p>{{form.linkedin_url.errors}}</p>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="instagram">Instagram</label>
+                                                            <label for="instagram">{% trans 'Instagram'%}</label>
                                                             {% if  request.user.userprofile.instagram_url == None%}
                                                                 <input id="instagram" type="text" name="instagram_url" class="form-control" placeholder="Add link">
                                                             {% else %}
@@ -439,26 +429,25 @@
                                                             <p>{{form.quora_url.errors}}</p>
                                                         </div>
                                                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
-                                                            <button type="submit" class="btn btn-primary mr-sm-2 mb-1">Save Changes</button>
+                                                            <button type="submit" class="btn btn-primary mr-sm-2 mb-1">{% trans 'Save Changes'%}</button>
                                                         </div>
                                                     </div>
                                                 </form>
                                             </div>
-
                                             <!-- Connections Tab -->
                                             <div class="tab-pane" id="connections" role="tabpanel" aria-labelledby="connections-tab">
                                                 <form novalidate>
                                                     <div class="row">
                                                         <div class="col-12 my-2">
-                                                            <button type="button" class="btn btn-info">Connect to <strong>Google</strong> <div id="buttonDiv"></div>  </button>
+                                                            <button type="button" class="btn btn-info">{% trans 'Connect to'%} <strong>{% trans 'Google'%}</strong> <div id="buttonDiv"></div>  </button>
                                                             
                                                         </div>
                                                         <div class="col-12 my-2">
                                                             {% if request.user.googleprofile.email %}
-                                                                <h6>You are connected to google.</h6>
+                                                                <h6>{% trans 'You are connected to google'%}.</h6>
                                                                 <p>{{request.user.googleprofile.email}}</p>
                                                             {% else %}
-                                                                <h6>You are not connected.</h6>
+                                                                <h6>{% trans 'You are not connected'%}.</h6>
                                                             {% endif %}
                                                             
                                                         </div>
@@ -484,11 +473,9 @@
             <!-- End : Footer-->
             <!-- Scroll to top button -->
             <button class="btn btn-primary scroll-top" type="button"><i class="ft-arrow-up"></i></button>
-
         </div>
     </div>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
-
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
     <!-- BEGIN VENDOR JS-->
@@ -518,7 +505,6 @@
     <!-- BEGIN: Custom CSS-->
     <script src="{%static 'assets/js/scripts.js'%}"></script>
     <!-- END: Custom CSS-->
-
     <!-- google login-->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="{%static 'js/google.js'%}"></script>
