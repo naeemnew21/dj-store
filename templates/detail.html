@@ -124,7 +124,7 @@
           <div class="d-flex mb-4">
             <p class="text-dark font-weight-medium mb-0 mr-3">{% trans 'Colors:'%}</p>
             <form>
-              {% for color in product.get_colors %}
+              {% for color in product.colors.all %}
               
               <div class="custom-control custom-radio custom-control-inline">
                 <input

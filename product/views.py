@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from django.db.models import Q
-from .models import Product, Comment
+from .models import Product, Comment, ColorModel, SizeModel
 from .forms import ProductCreateForm
 from django.urls import reverse_lazy
 from .utils import page_clean_url, sort_clean_url, recreate_url, get_search, get_back_filter_params, get_front_filter_params 
@@ -232,6 +232,8 @@ class ProductCreateView(DashboardPermissionMixin, CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['products'] = Product.objects.filter(created_by = self.request.user)
+        context['colors']   = ColorModel.objects.all()
+        context['sizes']   = SizeModel.objects.all()
         return context
 
 

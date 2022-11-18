@@ -561,17 +561,9 @@
                   <label class="input-group-text" for="choices-multiple-remove-button">Colors</label>
                 </div>
                 <select class="custom-select" id="choices-multiple-remove-button" placeholder="All Colors" multiple>
-                    <option value="Red">Red</option>
-                    <option value="Blue">Blue</option>
-                    <option value="Black">Black</option>
-                    <option value="Green">Green</option>
-                    <option value="Yellow">Yellow</option>
-                    <option value="Brown">Brown</option>
-                    <option value="pink">pink</option>
-                    <option value="violet">violet</option>
-                    <option value="Rose">Rose</option>
-                    <option value="White">White</option>
-                    <option value="Sky">Sky</option>
+                    {% for color in colors %}
+                      <option value="{{color.id}}">{{color}}</option>
+                    {% endfor %}
                 </select> 
             </div>
               <div class="input-group mb-3">
@@ -579,13 +571,9 @@
                   <label class="input-group-text" for="choices-multiple-remove-button">Sizes</label>
                 </div>
                 <select class="custom-select" id="choices-multiple-remove-button" placeholder="All Sizes" multiple>
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                    <option value="XXXL">XXXL</option>
+                    {% for size in sizes %}
+                      <option value="{{size.id}}">{{size}}</option>
+                    {% endfor %}
                 </select> 
                 <p class="help-block text-danger">{{form.category.errors}}</p>
               </div>

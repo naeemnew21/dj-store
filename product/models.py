@@ -36,7 +36,12 @@ COLOR =[
     ('White','White'),
     ('Red','Red'),
     ('Blue','Blue'),
-    ('Green','Green')
+    ('Green','Green'),
+    ('Yellow','Yellow'),
+    ('Orange','Orange'),
+    ('Brown','Brown'),
+    ('Pink','Pink'),
+    ('Rose','Rose')
     ]
 
 
