@@ -447,6 +447,37 @@
                                   </button>
                                 </form>
                               </td>
+                              {% comment %} <tr > <!--------Staff Edit form------------------------>
+                                <td colspan="12" style="padding:0 !important">
+                                  <div class=" collapse" id="staff1" >
+                                    <form class="row g-3" autocomplete="off" method="post">
+                                      <div class="col-sm-12 col-md-6 col-lg-4  d-flex flex-column">
+                                        <label for="user-name" class="col-form-label">Name</label>
+                                        <input type="text" class="form-control" id="user-name">
+                                      </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-4 d-flex flex-column">
+                                            <label class="col-form-label"> Role</label>
+                                            <input class="form-control" type="text" id="DrugNo">
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-4 d-flex  flex-column">
+                                            <label class="col-form-label">Title</label>
+                                            <input class="form-control" type="text" id="DrugName">
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-4 d-flex  flex-column">
+                                            <label class="col-form-label"> Active days</label>
+                                            <input class="form-control" type="text"  id="NoUnits">
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-4 d-flex  flex-column">
+                                            <label class="col-form-label">Finance</label>
+                                            <input class="form-control" type="text" id="NoTimes">
+                                        </div>
+                                        <div  class="form-action-buttons">
+                                            <input type="submit" class="btn btn-primary rounded-pill fw-bold text-white w-100 mb-2" value="Save changes">
+                                        </div>
+                                    </form>
+                                  </div>
+                                </td>
+                              </tr> {% endcomment %}
                             </tr>
                             {% endfor %}
                             
