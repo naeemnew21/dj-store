@@ -250,10 +250,13 @@ class ProductDeleteView(DashboardPermissionMixin, DeleteView):
 
 
 class ProductUpdateView(DashboardPermissionMixin, UpdateView):
+    model = Product
     form_class = ProductCreateForm
     template_name = 'dashboard.html'
     success_url = reverse_lazy('product:dashboard')
 
     def get_queryset(self):
         qs = super().get_queryset()
+        if self.request.user.is_superuser:
+            return qs
         return qs.filter(created_by=self.request.user)
