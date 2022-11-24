@@ -180,6 +180,7 @@
       .hide-row {
         display: none;
       }
+      
     </style>
 
 
@@ -616,28 +617,8 @@
                 </select>
                 <p class="help-block text-danger">{{form.category.errors}}</p>
               </div>
-
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="choices-multiple-remove-button">Colors</label>
-                </div>
-                <select class="custom-select" id="choices-multiple-remove-button" placeholder="All Colors" multiple>
-                    {% for color in colors %}
-                      <option value="{{color.id}}">{{color}}</option>
-                    {% endfor %}
-                </select> 
-            </div>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="choices-multiple-remove-button">Sizes</label>
-                </div>
-                <select class="custom-select" id="choices-multiple-remove-button" placeholder="All Sizes" multiple>
-                    {% for size in sizes %}
-                      <option value="{{size.id}}">{{size}}</option>
-                    {% endfor %}
-                </select> 
-                <p class="help-block text-danger">{{form.category.errors}}</p>
-              </div>
+              <h2>Colors</h2>
+              <input type="text" id="tag-input1">
               <div class="control-group">
                 <input
                   name="main_image"
@@ -660,7 +641,6 @@
                 />
                 <p class="help-block text-danger"></p>
               </div>
-
               <div class="control-group">
                 <textarea
                   name="details"
@@ -727,31 +707,22 @@
     <!-- BEGIN PAGE LEVEL JS-->
     <script src="{%static 'app-assets/js/select2.js'%}"></script>
     <script src="{% static 'app-assets/js/dashboard1.js'%}"></script>
+    <script src="{%static 'app-assets/js/page-users.js'%}"></script>
+    <script src="{%static 'app-assets/js/datetime-picker.js'%}"></script>
+    <script src="{%static 'app-assets/js/select2.js'%}"></script>
+    <script src="{%static 'app-assets/js/form-validation.js'%}"></script>
     <!-- END PAGE LEVEL JS-->
+    <script src="{% static 'app-assets/vendors/js/select2.full.min.js'%}"></script>
+    <script src="{% static 'app-assets/vendors/js/jqBootstrapValidation.js'%}"></script>
+    <script src="{% static 'app-assets/vendors/js/pickadate/picker.js'%}"></script>
+    <script src="{% static 'app-assets/vendors/js/pickadate/picker.date.js'%}"></script>
+    <script src="{% static 'app-assets/vendors/js/pickadate/picker.time.js'%}"></script>
+    <script src="{% static 'app-assets/vendors/js/pickadate/legacy.js'%}"></script>
     <!-- BEGIN: Custom CSS-->
     <script src="{% static 'assets/js/scripts.js'%}"></script>
     <!-- END: Custom CSS-->
 
     <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
-
-    <script>
-    $(document).ready(function(){
-    
-      var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
-         removeItemButton: true,
-         maxItemCount:5,
-         searchResultLimit:5,
-         renderChoiceLimit:5
-       }); 
-  });
-
-
-  const toggleRow = (element) => {
-    element.getElementsByClassName('expanded-row-content')[0].classList.toggle('hide-row');
-    console.log(event);
-  }
-
-</script>
 
   </body>
   <!-- END : Body-->
