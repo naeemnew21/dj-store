@@ -143,6 +143,13 @@ class Product(models.Model):
         return colors
     
     @property
+    def get_colors_ids(self):
+        colors = []
+        for record in self.colors.all():
+            colors.append(record.id)
+        return colors
+
+    @property
     def get_sizes(self):
         sizes = set()
         for record in self.sizes.all():
