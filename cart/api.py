@@ -8,7 +8,7 @@ from .serializers import OrderSerializer
 from project.settings import CART_SESSION_ID_KEY
 
 
-charge = 5
+charge = 60
 
 def cart_items(request):
     user = request.user

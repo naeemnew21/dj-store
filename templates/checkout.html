@@ -164,9 +164,9 @@
                     id="on-deliver" 
                     
                   />
-                  <label class="custom-control-label" for="on-deliver"
+                  {% comment %} <label class="custom-control-label" for="on-deliver"
                     >{% trans 'Pay on Delivery'%}</label
-                  >
+                  > {% endcomment %}
                 </div>
               </div>
             </div>
@@ -181,7 +181,7 @@
                   class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3"
                   type="submit" form="checkoutform" value="Submit"
                 >
-                {% trans 'Place Order'%}
+                {% trans 'Pay on Delivery'%}
                 </button>
               </div>
             {% endif %}

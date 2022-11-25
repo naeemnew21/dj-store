@@ -155,7 +155,14 @@ class Product(models.Model):
         for record in self.sizes.all():
             sizes.add(record.size)
         return sizes
-    
+
+    @property
+    def get_sizes_ids(self):
+        sizes = []
+        for record in self.sizes.all():
+            sizes.append(record.id)
+        return sizes
+
     @property
     def get_rate(self):
         qs = Comment.objects.filter(product = self)
@@ -183,3 +190,31 @@ class Comment(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+
+
+class Statics(models.Model):
+    all_products = models.PositiveIntegerField(default=0)
+
+    price100 = models.PositiveIntegerField(default=0)
+    price200 = models.PositiveIntegerField(default=0)
+    price300 = models.PositiveIntegerField(default=0)
+    price400 = models.PositiveIntegerField(default=0)
+    price500 = models.PositiveIntegerField(default=0)
+
+    black = models.PositiveIntegerField(default=0)
+    white = models.PositiveIntegerField(default=0)
+    red   = models.PositiveIntegerField(default=0)
+    blue  = models.PositiveIntegerField(default=0)
+    green = models.PositiveIntegerField(default=0)
+
+    xs  = models.PositiveIntegerField(default=0)
+    s   = models.PositiveIntegerField(default=0)
+    m   = models.PositiveIntegerField(default=0)
+    l   = models.PositiveIntegerField(default=0)
+    xl  = models.PositiveIntegerField(default=0)
+    xxl = models.PositiveIntegerField(default=0)
+
+    male   = models.PositiveIntegerField(default=0)
+    female = models.PositiveIntegerField(default=0)
+    baby   = models.PositiveIntegerField(default=0)

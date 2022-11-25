@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     
     'rest_framework',
-    #'jazzmin',
-    "semantic_admin",
+    'jazzmin',
+    # "semantic_admin",
 
     'corsheaders',
     'crispy_forms',
@@ -204,10 +204,11 @@ SOCIAL_SECRET = ""
 # GOOGLE_CLIENT_SECRET="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"
 
 
-# JAZZMIN_SETTINGS = {
+JAZZMIN_SETTINGS = {
     
-#     "site_title": "E-Commerce",
-# }
+    "site_title": "I-Pay",
+    "site_logo": "img/logo.png",
+}
 
 
 
