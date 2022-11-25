@@ -128,7 +128,14 @@
     />
     <!-- END: Custom CSS-->
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+
+    <!-- multi select-->
+    <link href="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.css" rel="stylesheet">
+
+    
+
+
+    <!-- END: multi select-->
 
 
   </head>
@@ -577,12 +584,11 @@
                   <label class="input-group-text" for="choices-multiple-colors">Colors</label>
                 </div>
                 
-                <select class="custom-select" id="choices-multiple-colors" placeholder="All Colors" multiple name="colors">
+                <select class="custom-select" id="choices-multiple-colors" placeholder="All Colors" multiple="multiple" name="colors">
                     {% for color in colors %}
                       <option value={{color.id}}>{{color}}</option>
                     {% endfor %}
                 </select> 
-
               </div>
 
 
@@ -590,7 +596,7 @@
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="choices-multiple-sizes">Sizes</label>
                 </div>
-                <select class="custom-select" id="choices-multiple-sizes" placeholder="All Sizes" multiple name="sizes">
+                <select class="custom-select" id="choices-multiple-sizes" placeholder="All Sizes" multiple="multiple" name="sizes">
                     {% for size in sizes %}
                       <option value={{size.id}}>{{size}}</option>
                     {% endfor %}
@@ -652,6 +658,7 @@
             </form>
           </div>
         </div>
+        
         <!-- END : End Main Content-->
         <!-- BEGIN : Footer-->
         <footer class="footer undefined undefined">
@@ -709,28 +716,22 @@
     <script src="{% static 'assets/js/scripts.js'%}"></script>
     <!-- END: Custom CSS-->
 
-    <!-- multiple choices-->
-    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
 
     <script>
-
-    {% comment %} $(document).ready(function(){
+      var $selectColor = $('#choices-multiple-colors')
+      var $selectSize = $('#choices-multiple-sizes')
     
-      var multipleColorButton = new Choices('#choices-multiple-colors', {
-         removeItemButton: true,
-         maxItemCount:5,
-         searchResultLimit:5,
-         renderChoiceLimit:5
-       }); 
+      $(function() {
+        $selectColor.multipleSelect()
+        $selectSize.multipleSelect()
+    
+      })
+    </script>
 
-       var multipleSizeButton = new Choices('#choices-multiple-sizes', {
-        removeItemButton: true,
-        maxItemCount:5,
-        searchResultLimit:5,
-        renderChoiceLimit:5
-      }); 
-    });  {% endcomment %}
 
+    <script>
 
     function post_url(element){
       slug = element.id;
@@ -773,11 +774,11 @@
       //choices-multiple-colors
       const $col = document.querySelector('#choices-multiple-colors');
       $col.value = -1;
-      $('#choices-multiple-colors').val(colors);
+      $selectColor.multipleSelect('setSelects', colors)
 
       const $siz = document.querySelector('#choices-multiple-sizes');
       $siz.value = -1;
-      $('#choices-multiple-sizes').val(sizes);
+      $selectSize.multipleSelect('setSelects', sizes)
 
       window.scrollTo(0,document.body.scrollHeight);
 
