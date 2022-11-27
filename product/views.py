@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from django.db.models import Q
-from .models import Product, Comment, ColorModel, SizeModel
+from .models import Product, Comment, ColorModel, SizeModel, Statics
 from .forms import ProductCreateForm
 from django.urls import reverse_lazy
 from .utils import page_clean_url, sort_clean_url, recreate_url, get_search, get_back_filter_params, get_front_filter_params 
@@ -77,6 +77,7 @@ class CategoryView(ListView):
 
         cart_items   = cart_products(self.request)
         context['cart_items'] = cart_items
+        context['statics'], created = Statics.objects.get_or_create(id = 0)
 
         return context
     
@@ -123,26 +124,17 @@ class CategoryView(ListView):
             object_list = object_list.filter(price__range = price)
 
         if color:
-            object_list = object_list.filter(Q(color1__in = color) | 
-                                             Q(color2__in = color) |
-                                             Q(color3__in = color) |
-                                             Q(color4__in = color) |
-                                             Q(color5__in = color) 
-                                             )
+            # for i in color:
+            object_list = object_list.filter(colors__color__in = color)
 
         if size:
-            object_list = object_list.filter(Q(size1__in = size) |
-                                             Q(size2__in = size) |
-                                             Q(size3__in = size) |
-                                             Q(size4__in = size) |
-                                             Q(size5__in = size) |
-                                             Q(size6__in = size)
-                                             )
+            # for i in size:
+            object_list = object_list.filter(sizes__size__in = size)
 
         if gender:
             object_list = object_list.filter(suitable__in = gender)
 
-        return object_list
+        return list(set(object_list))
 
 
 
@@ -234,6 +226,21 @@ class ProductCreateView(DashboardPermissionMixin, CreateView):
         context['products'] = Product.objects.filter(created_by = self.request.user)
         context['colors']   = ColorModel.objects.all()
         context['sizes']   = SizeModel.objects.all()
+        selled = 0
+        price  = 0
+        good = 0
+        pending = 0
+        for i in context['products']:
+            selled += i.selled
+            price += i.selled * i.price
+            if i.selled > 0:
+                good += 1
+            if not(i.approved):
+                pending += 1
+        context['total_selled']   = selled
+        context['total_price']   = price
+        context['total_good']   = good
+        context['total_pending']   = pending
         return context
 
 
@@ -254,6 +261,7 @@ class ProductUpdateView(DashboardPermissionMixin, UpdateView):
     form_class = ProductCreateForm
     template_name = 'dashboard.html'
     success_url = reverse_lazy('product:dashboard')
+
 
     def get_queryset(self):
         qs = super().get_queryset()

@@ -6,7 +6,7 @@ from .models import Order, NonUserOrder
 from .forms import CheckOutCreateForm
 
 
-charge = 5
+charge = 60
 
 
 def cart_items(request):

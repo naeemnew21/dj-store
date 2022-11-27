@@ -3,7 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 from .models import MyUser, Languages, UserProfile, GoogleProfile
 from django.contrib.auth.models import Group
 
-admin.site.site_header = 'E-Commerce'
+admin.site.site_header = 'I-Pay'
 
 
 class CustomUserAdmin(UserAdmin):

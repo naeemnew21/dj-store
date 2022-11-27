@@ -56,42 +56,42 @@
                             {% if price == '0' %} checked {% endif %}
                             />
                             <label class="custom-control-label" for="price-all">{% trans 'All Price'%}</label>
-                            <span class="badge border font-weight-normal">1000</span>
+                            <span class="badge border font-weight-normal">{{statics.all_products}}</span>
                         </div>
                         <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
                             <input type="radio" class="custom-control-input" id="price-1" name="price" value="1" 
                             {% if price == '1' %} checked {% endif %}
                             />
                             <label class="custom-control-label" for="price-1">$0 - $100</label>
-                            <span class="badge border font-weight-normal">150</span>
+                            <span class="badge border font-weight-normal">{{statics.price100}}</span>
                         </div>
                         <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
                             <input type="radio" class="custom-control-input" id="price-2" name="price" value="2" 
                             {% if price == '2' %} checked {% endif %}
                             />
                             <label class="custom-control-label" for="price-2">$100 - $200</label>
-                            <span class="badge border font-weight-normal">295</span>
+                            <span class="badge border font-weight-normal">{{statics.price200}}</span>
                         </div>
                         <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
                             <input type="radio" class="custom-control-input" id="price-3" name="price" value="3" 
                             {% if price == '3' %} checked {% endif %}
                             />
                             <label class="custom-control-label" for="price-3">$200 - $300</label>
-                            <span class="badge border font-weight-normal">246</span>
+                            <span class="badge border font-weight-normal">{{statics.price300}}</span>
                         </div>
                         <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
                             <input type="radio" class="custom-control-input" id="price-4" name="price" value="4" 
                             {% if price == '4' %} checked {% endif %}
                             />
                             <label class="custom-control-label" for="price-4">$300 - $400</label>
-                            <span class="badge border font-weight-normal">145</span>
+                            <span class="badge border font-weight-normal">{{statics.price400}}</span>
                         </div>
                         <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
                             <input type="radio" class="custom-control-input" id="price-5" name="price" value="5" 
                             {% if price == '5' %} checked {% endif %}
                             />
                             <label class="custom-control-label" for="price-5">$400 - $500</label>
-                            <span class="badge border font-weight-normal">168</span>
+                            <span class="badge border font-weight-normal">{{statics.price500}}</span>
                         </div>
                         <!-- Price End --> 
                         <hr>
@@ -101,37 +101,37 @@
                             <input type="checkbox" class="custom-control-input" id="color-all" name="All_Color" 
                             {{colors.All_Color}}>
                             <label class="custom-control-label" for="color-all">{% trans 'All Color'%}</label>
-                            <span class="badge border font-weight-normal">1000</span>
+                            <span class="badge border font-weight-normal">{{statics.all_products}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="color-1" name="Black" 
                             {{colors.Black}}>
                             <label class="custom-control-label" for="color-1">{% trans 'Black'%}</label>
-                            <span class="badge border font-weight-normal">150</span>
+                            <span class="badge border font-weight-normal">{{statics.black}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="color-2" name="White" 
                             {{colors.White}}>
                             <label class="custom-control-label" for="color-2">{% trans 'White'%}</label>
-                            <span class="badge border font-weight-normal">295</span>
+                            <span class="badge border font-weight-normal">{{statics.white}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="color-3" name="Red"
                             {{colors.Red}}>
                             <label class="custom-control-label" for="color-3">{% trans 'Red'%}</label>
-                            <span class="badge border font-weight-normal">246</span>
+                            <span class="badge border font-weight-normal">{{statics.red}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="color-4" name="Blue"
                             {{colors.Blue}}>
                             <label class="custom-control-label" for="color-4">{% trans 'Blue'%}</label>
-                            <span class="badge border font-weight-normal">145</span>
+                            <span class="badge border font-weight-normal">{{statics.blue}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
                             <input type="checkbox" class="custom-control-input" id="color-5" name="Green"
                             {{colors.Green}}>
                             <label class="custom-control-label" for="color-5">{% trans 'Green'%}</label>
-                            <span class="badge border font-weight-normal">168</span>
+                            <span class="badge border font-weight-normal">{{statics.green}}</span>
                         </div>
                         <!-- Color End --> 
                         <hr>
@@ -141,43 +141,43 @@
                             <input type="checkbox" class="custom-control-input" id="size-all" name="All_Size" 
                             {{sizes.All_Size}}>
                             <label class="custom-control-label" for="size-all">{% trans 'All Size'%}</label>
-                            <span class="badge border font-weight-normal">1000</span>
+                            <span class="badge border font-weight-normal">{{statics.all_products}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="size-1" name="XS" 
                             {{sizes.XS}}>
                             <label class="custom-control-label" for="size-1">XS</label>
-                            <span class="badge border font-weight-normal">150</span>
+                            <span class="badge border font-weight-normal">{{statics.xs}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="size-2" name="S" 
                             {{sizes.S}}>
                             <label class="custom-control-label" for="size-2">S</label>
-                            <span class="badge border font-weight-normal">295</span>
+                            <span class="badge border font-weight-normal">{{statics.s}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="size-3" name="M" 
                             {{sizes.M}}>
                             <label class="custom-control-label" for="size-3">M</label>
-                            <span class="badge border font-weight-normal">246</span>
+                            <span class="badge border font-weight-normal">{{statics.m}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="size-4" name="L" 
                             {{sizes.L}}>
                             <label class="custom-control-label" for="size-4">L</label>
-                            <span class="badge border font-weight-normal">145</span>
+                            <span class="badge border font-weight-normal">{{statics.l}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="size-5" name="XL" 
                             {{sizes.XL}}>
                             <label class="custom-control-label" for="size-5">XL</label>
-                            <span class="badge border font-weight-normal">168</span>
+                            <span class="badge border font-weight-normal">{{statics.xl}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
                             <input type="checkbox" class="custom-control-input" id="size-6" name="XXL" 
                             {{sizes.XXL}}>
                             <label class="custom-control-label" for="size-6">XXL</label>
-                            <span class="badge border font-weight-normal">168</span>
+                            <span class="badge border font-weight-normal">{{statics.xxl}}</span>
                         </div>
                         <!-- Size End --> 
                         <hr>
@@ -187,25 +187,25 @@
                             <input type="checkbox" class="custom-control-input" id="gender-all" name="All_Gender" 
                             {{gender.All_Gender}}>
                             <label class="custom-control-label" for="gender-all">{% trans 'All Gender'%}</label>
-                            <span class="badge border font-weight-normal">1000</span>
+                            <span class="badge border font-weight-normal">{{statics.all_products}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="male-1" name="Male" 
                             {{gender.Male}}>
                             <label class="custom-control-label" for="male-1">{% trans 'Male'%}</label>
-                            <span class="badge border font-weight-normal">150</span>
+                            <span class="badge border font-weight-normal">{{statics.male}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="female-2" name="Female" 
                             {{gender.Female}}>
                             <label class="custom-control-label" for="female-2">{% trans 'Female'%}</label>
-                            <span class="badge border font-weight-normal">295</span>
+                            <span class="badge border font-weight-normal">{{statics.female}}</span>
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="baby-3" name="Baby" 
                             {{gender.Baby}}>
                             <label class="custom-control-label" for="baby-3">{% trans 'Baby'%}</label>
-                            <span class="badge border font-weight-normal">246</span>
+                            <span class="badge border font-weight-normal">{{statics.baby}}</span>
                         </div>
                         <!-- Gender End --> 
                         <hr>

@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     
     'rest_framework',
-    #'jazzmin',
-    "semantic_admin",
+    'jazzmin',
+    # "semantic_admin",
 
     'corsheaders',
     'crispy_forms',
@@ -101,11 +101,17 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ipay',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
+# 'ENGINE': 'django.db.backends.sqlite3',
+# 'NAME': BASE_DIR / 'db.sqlite3',
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -204,10 +210,11 @@ SOCIAL_SECRET = ""
 # GOOGLE_CLIENT_SECRET="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"
 
 
-# JAZZMIN_SETTINGS = {
+JAZZMIN_SETTINGS = {
     
-#     "site_title": "E-Commerce",
-# }
+    "site_title": "I-Pay",
+    "site_logo": "img/logo.png",
+}
 
 
 

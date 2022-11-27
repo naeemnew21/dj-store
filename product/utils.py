@@ -1,4 +1,5 @@
 import re
+from .models import ColorModel, SizeModel
 
 def _clean_url(url):
     if '?' not in url:
@@ -43,6 +44,7 @@ def get_back_filter_params(kwargs):
     for i in COLORS:
         value = kwargs.get(i, '')
         if i == 'All_Color' and value:
+            colors = []
             break
         if value:
             colors.append(i)
@@ -51,6 +53,7 @@ def get_back_filter_params(kwargs):
     for i in SIZES:
         value = kwargs.get(i, '')
         if i == 'All_Size' and value:
+            sizes = []
             break
         if value:
             sizes.append(i)
@@ -65,6 +68,37 @@ def get_back_filter_params(kwargs):
 
     return price, colors, sizes, gender
 
+
+
+# def get_back_filter_params(kwargs):
+#     price = kwargs.get('price', '')
+#     price = PRICE.get(price, [])
+
+#     colors = []
+#     for i in COLORS:
+#         value = kwargs.get(i, '')
+#         if i == 'All_Color' and value:
+#             break
+#         if value:
+#             colors.append(i)
+    
+#     sizes = []
+#     for i in SIZES:
+#         value = kwargs.get(i, '')
+#         if i == 'All_Size' and value:
+#             break
+#         if value:
+#             sizes.append(i)
+    
+#     gender = []
+#     for i in GENDER:
+#         value = kwargs.get(i, '')
+#         if i == 'All_Gender' and value:
+#             break
+#         if value:
+#             gender.append(i)
+
+#     return price, colors, sizes, gender
 
 
 

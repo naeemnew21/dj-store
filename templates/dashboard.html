@@ -128,6 +128,7 @@
     />
     <!-- END: Custom CSS-->
 
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
   
     <style>
@@ -183,6 +184,16 @@
     </style>
 
 
+    <!-- multi select-->
+    <link href="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.css" rel="stylesheet">
+
+    
+
+
+    <!-- END: multi select-->
+
+
+
   </head>
   <!-- END : Head-->
 
@@ -194,7 +205,6 @@
     data-menu="horizontal-menu"
     data-col="2-columns"
   >
-
 
   <nav class="navbar navbar-expand-lg navbar-light header-navbar navbar-fixed">
     <div class="container-fluid navbar-wrapper">
@@ -215,7 +225,7 @@
                 <div class="navbar-header">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <div class="logo"><a class="logo-text" href="index.html">
+                            <div class="logo"><a class="logo-text" href="#">
                                     <div class="logo-img"><img class="logo-img" alt="i pay logo" src="{%static 'app-assets/img/iii.png'%}"></div><span class="text">I PAY</span>
                                 </a></div>
                         </li>
@@ -310,8 +320,8 @@
                     <div class="card-body py-0">
                       <div class="media pb-1">
                         <div class="media-body white text-left">
-                          <h3 class="font-large-1 white mb-0">$2,156</h3>
-                          <span>Total Tax</span>
+                          <h3 class="font-large-1 white mb-0">{{total_pending}}</h3>
+                          <span>Pending Products</span>
                         </div>
                         <div class="media-right white text-right">
                           <i class="ft-activity font-large-1"></i>
@@ -332,8 +342,8 @@
                     <div class="card-body py-0">
                       <div class="media pb-1">
                         <div class="media-body white text-left">
-                          <h3 class="font-large-1 white mb-0">$15,678</h3>
-                          <span>Total Cost</span>
+                          <h3 class="font-large-1 white mb-0">{{total_good}}</h3>
+                          <span>Total Products Active</span>
                         </div>
                         <div class="media-right white text-right">
                           <i class="ft-percent font-large-1"></i>
@@ -353,7 +363,7 @@
                     <div class="card-body py-0">
                       <div class="media pb-1">
                         <div class="media-body white text-left">
-                          <h3 class="font-large-1 white mb-0">$45,668</h3>
+                          <h3 class="font-large-1 white mb-0">{{total_selled}} Unit/s</h3>
                           <span>Total Sales</span>
                         </div>
                         <div class="media-right white text-right">
@@ -374,8 +384,8 @@
                     <div class="card-body py-0">
                       <div class="media pb-1">
                         <div class="media-body white text-left">
-                          <h3 class="font-large-1 white mb-0">$32,454</h3>
-                          <span>Total Earning</span>
+                          <h3 class="font-large-1 white mb-0">${{total_price}}</h3>
+                          <span>Total Revenue</span>
                         </div>
                         <div class="media-right white text-right">
                           <i class="ft-credit-card font-large-1"></i>
@@ -473,7 +483,7 @@
                             data-gender="{{product.suitable}}" 
                             data-category="{{product.category}}" 
                             data-colors="{{product.get_colors_ids}}" 
-                            data-sizes="{{product.sizes.all}}" 
+                            data-sizes="{{product.get_sizes_ids}}" 
                             data-image="{{product.main_image.url}}" 
                             data-details="{{product.details}}" 
 
@@ -622,25 +632,28 @@
                 </select>
                 <p class="help-block text-danger">{{form.category.errors}}</p>
               </div>
-              <h2>Colors</h2>
-              <input type="text" id="tag-input1">
+              {% comment %} <h2>Colors</h2> {% endcomment %}
+              {% comment %} <input type="text" id="tag-input1"> {% endcomment %}
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="choices-multiple-colors">Colors</label>
                 </div>
-                <select class="custom-select" id="choices-multiple-colors" placeholder="All Colors" multiple name="colors">
+                
+                <select class="custom-select" id="choices-multiple-colors" placeholder="All Colors" multiple="multiple" name="colors">
                     {% for color in colors %}
                       <option value={{color.id}}>{{color}}</option>
                     {% endfor %}
                 </select> 
-            </div>
+              </div>
+
+
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="choices-multiple-sizes">Sizes</label>
                 </div>
-                <select class="custom-select" id="choices-multiple-sizes" placeholder="All Sizes" multiple name="sizes">
+                <select class="custom-select" id="choices-multiple-sizes" placeholder="All Sizes" multiple="multiple" name="sizes">
                     {% for size in sizes %}
-                      <option value="{{size.id}}">{{size}}</option>
+                      <option value={{size.id}}>{{size}}</option>
                     {% endfor %}
                 </select> 
                 <p class="help-block text-danger">{{form.category.errors}}</p>
@@ -687,10 +700,20 @@
                 >
                   Send
                 </button>
+
+                <button
+                  class="btn btn-primary py-2 px-4"
+                  type="button"
+                  id="clear-data"
+                  onclick="clear_url()"
+                >
+                  clear
+                </button>
               </div>
             </form>
           </div>
         </div>
+        
         <!-- END : End Main Content-->
         <!-- BEGIN : Footer-->
         <footer class="footer undefined undefined">
@@ -748,72 +771,98 @@
     <script src="{% static 'assets/js/scripts.js'%}"></script>
     <!-- END: Custom CSS-->
 
-    <!-- multiple choices-->
-    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
 
     <script>
-    $(document).ready(function(){
+      var $selectColor = $('#choices-multiple-colors')
+      var $selectSize = $('#choices-multiple-sizes')
     
-      var multipleCancelButton = new Choices('#choices-multiple-colors', {
-         removeItemButton: true,
-         maxItemCount:5,
-         searchResultLimit:5,
-         renderChoiceLimit:5
-       }); 
-
-       var multipleCancelButton = new Choices('#choices-multiple-sizes', {
-        removeItemButton: true,
-        maxItemCount:5,
-        searchResultLimit:5,
-        renderChoiceLimit:5
-      }); 
-  });
-
-
-  function post_url(element){
-    slug = element.id;
-    document.getElementById("postProduct").action = "update-product/"+slug ;
-    data = document.getElementById("row-"+slug)
-    name      = $(data).data("name")
-    brand     = $(data).data("brand")
-    price     = $(data).data("price")
-    old_price = $(data).data("oldprice")
-    quant     = $(data).data("quantity")
-    gender    = $(data).data("gender")
-    cat       = $(data).data("category")
-    colors    = $(data).data("colors")
-    sizes     = $(data).data("sizes")
-    image     = $(data).data("image")
-    details   = $(data).data("details")
-
-    console.log("name: ",name)
-    console.log("brand: ",brand)
-    console.log("price: ",price)
-    console.log("old_price: ",old_price)
-    console.log("quant: ",quant)
-    console.log("gender: ",gender)
-    console.log("cat: ",cat)
-    console.log("colors: ",colors)
-    console.log("sizes: ",sizes)
-    console.log("image: ",image)
-    console.log("details: ",details)
-
-    document.getElementById("product_name").value = name ;
-    document.getElementById("brand_name").value = brand ;
-    document.getElementById("price").value = price ;
-    document.getElementById("price_dis").value = old_price ;
-    document.getElementById("count").value = quant ;
-    document.getElementById("gender").value = gender ;
-    document.getElementById("category").value = cat ;
-    document.getElementById("description").value = details ;
-
+      $(function() {
+        $selectColor.multipleSelect()
+        $selectSize.multipleSelect()
     
+      })
+    </script>
 
-  }
 
+    <script>
+
+    function post_url(element){
+      slug = element.id;
+      document.getElementById("postProduct").action = "update-product/"+slug ;
+      data = document.getElementById("row-"+slug);
+      name      = $(data).data("name");
+      brand     = $(data).data("brand");
+      price     = $(data).data("price");
+      old_price = $(data).data("oldprice");
+      quant     = $(data).data("quantity");
+      gender    = $(data).data("gender");
+      cat       = $(data).data("category");
+      colors    = $(data).data("colors");
+      sizes     = $(data).data("sizes");
+      image     = $(data).data("image");
+      details   = $(data).data("details");
+
+      //console.log("name: ",name)
+      //console.log("brand: ",brand)
+      //console.log("price: ",price)
+      //console.log("old_price: ",old_price)
+      //console.log("quant: ",quant)
+      //console.log("gender: ",gender)
+      //console.log("cat: ",cat)
+      //console.log("colors: ",colors)
+      //console.log("sizes: ",sizes)
+      //console.log("image: ",image)
+      //console.log("details: ",details)
+
+      document.getElementById("product_name").value = name ;
+      document.getElementById("brand_name").value = brand ;
+      document.getElementById("price").value = price ;
+      document.getElementById("price_dis").value = old_price ;
+      document.getElementById("count").value = quant ;
+      document.getElementById("gender").value = gender ;
+      document.getElementById("category").value = cat ;
+      document.getElementById("description").value = details ;
+
+      
+      //choices-multiple-colors
+      const $col = document.querySelector('#choices-multiple-colors');
+      $col.value = -1;
+      $selectColor.multipleSelect('setSelects', colors)
+
+      const $siz = document.querySelector('#choices-multiple-sizes');
+      $siz.value = -1;
+      $selectSize.multipleSelect('setSelects', sizes)
+
+      window.scrollTo(0,document.body.scrollHeight);
+
+    };
+
+
+    function clear_url(){
+
+      document.getElementById("postProduct").action = '' ;
+      document.getElementById("product_name").value = '' ;
+      document.getElementById("brand_name").value = '' ;
+      document.getElementById("price").value = '' ;
+      document.getElementById("price_dis").value = '' ;
+      document.getElementById("count").value = '' ;
+      document.getElementById("gender").value = -1;
+      document.getElementById("category").value = -1 ;
+      document.getElementById("description").value = '' ;
+
+      
+      //choices-multiple-colors
+      const $col = document.querySelector('#choices-multiple-colors');
+      $col.value = -1;
+
+      const $siz = document.querySelector('#choices-multiple-sizes');
+      $siz.value = -1;
+
+    };
 </script>
 
->>>>>>> cc7bde8a866ab174a4dec4eb68987a2f9adca6e0
   </body>
   <!-- END : Body-->
 </html>
