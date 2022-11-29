@@ -129,18 +129,14 @@
     <!-- END: Custom CSS-->
 
 
+
     <!-- multi select-->
     <link href="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.css" rel="stylesheet">
 
-    <style>
-      select {
-        width: 100%;
-      }
-    </style>
+  
 
 
     <!-- END: multi select-->
-
 
   </head>
   <!-- END : Head-->
@@ -153,8 +149,6 @@
     data-menu="horizontal-menu"
     data-col="2-columns"
   >
-
-
   <nav class="navbar navbar-expand-lg navbar-light header-navbar navbar-fixed">
     <div class="container-fluid navbar-wrapper">
         <div class="navbar-header d-flex">
@@ -227,8 +221,13 @@
                                 <div class="d-flex align-items-center"><i class="ft-edit mr-2"></i><span>Edit Profile</span></div>
                             </a>
                             
-                            <div class="dropdown-divider"></div><a class="dropdown-item" href="{%url 'user:logout'%}">
-                                <div class="d-flex align-items-center"><i class="ft-power mr-2"></i><span>Logout</span></div>
+                            <div class="dropdown-divider"></div>
+
+                            <a class="dropdown-item" href="{%url 'user:logout'%}">
+                                <div class="d-flex align-items-center">
+                                  <i class="ft-power mr-2"></i>
+                                  <span>Logout</span>
+                                </div>
                             </a>
                         </div>
                     </li>
@@ -253,7 +252,6 @@
           <!-- include includes/mixins-->
         </div>
       </div>
-
       <div class="main-panel">
         <!-- BEGIN : Main Content-->
         <div class="main-content">
@@ -268,7 +266,7 @@
                       <div class="media pb-1">
                         <div class="media-body white text-left">
                           <h3 class="font-large-1 white mb-0">{{total_pending}}</h3>
-                          <span>Pending Products</span>
+                          <span>{%trans 'Pending Products'%}</span>
                         </div>
                         <div class="media-right white text-right">
                           <i class="ft-activity font-large-1"></i>
@@ -290,7 +288,7 @@
                       <div class="media pb-1">
                         <div class="media-body white text-left">
                           <h3 class="font-large-1 white mb-0">{{total_good}}</h3>
-                          <span>Total Products Active</span>
+                          <span>{%trans 'Total Products Active'%}</span>
                         </div>
                         <div class="media-right white text-right">
                           <i class="ft-percent font-large-1"></i>
@@ -310,8 +308,8 @@
                     <div class="card-body py-0">
                       <div class="media pb-1">
                         <div class="media-body white text-left">
-                          <h3 class="font-large-1 white mb-0">{{total_selled}} Unit/s</h3>
-                          <span>Total Sales</span>
+                          <h3 class="font-large-1 white mb-0">{{total_selled}} {%trans 'Unit/s'%}</h3>
+                          <span>{%trans 'Total Sales'%}</span>
                         </div>
                         <div class="media-right white text-right">
                           <i class="ft-trending-up font-large-1"></i>
@@ -332,7 +330,7 @@
                       <div class="media pb-1">
                         <div class="media-body white text-left">
                           <h3 class="font-large-1 white mb-0">${{total_price}}</h3>
-                          <span>Total Revenue</span>
+                          <span>{%trans 'Total Revenue'%}</span>
                         </div>
                         <div class="media-right white text-right">
                           <i class="ft-credit-card font-large-1"></i>
@@ -348,14 +346,12 @@
               </div>
             </div>
             <!--Statistics cards Ends-->
-
-
             <!--Line with Area Chart 1 Starts-->
             <div class="row">
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title">PRODUCTS SALES</h4>
+                    <h4 class="card-title">{%trans 'PRODUCTS SALES'%}</h4>
                   </div>
                   <div class="card-content">
                     <div class="card-body">
@@ -364,12 +360,12 @@
                           class="gradient-purple-bliss d-inline-block rounded-circle mr-1"
                           style="width: 15px; height: 15px"
                         ></span>
-                        Sales
+                        {%trans 'Sales'%}
                         <span
                           class="gradient-mint d-inline-block rounded-circle mr-1 ml-2"
                           style="width: 15px; height: 15px"
                         ></span>
-                        Visits
+                        {%trans 'Visits'%}
                       </div>
                       <div id="line-area" class="height-350 lineArea"></div>
                     </div>
@@ -378,17 +374,16 @@
               </div>
             </div>
             <!--Line with Area Chart 1 Ends-->
-
             <div class="row match-height">
               <div class="col-xl-4 col-lg-12 col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title">Statistics</h4>
+                    <h4 class="card-title">{%trans 'Statistics'%}</h4>
                   </div>
                   <div class="card-content">
                     <div class="card-body">
                       <p class="font-medium-2 text-center my-2">
-                        Last 6 Months Sales
+                        {%trans 'Last 6 Months Sales'%}
                       </p>
                       <div
                         id="Stack-bar-chart"
@@ -401,7 +396,7 @@
               <div class="col-xl-8 col-lg-12 col-12">
                 <div class="card shopping-cart">
                   <div class="card-header pb-2">
-                    <h4 class="card-title mb-1">Shopping Cart</h4>
+                    <h4 class="card-title mb-1">{%trans 'Shopping Cart'%}</h4>
                   </div>
                   <div class="card-content">
                     <div class="card-body p-0">
@@ -409,13 +404,13 @@
                         <table class="table text-center m-0">
                           <thead>
                             <tr>
-                              <th>Image</th>
-                              <th>Product</th>
-                              <th>Count</th>
-                              <th>Status</th>
-                              <th>Price</th>
-                              <th>Delete</th>
-                              <th>Edit</th>
+                              <th>{%trans 'Image'%}</th>
+                              <th>{%trans 'Product'%}</th>
+                              <th>{%trans 'Count'%}</th>
+                              <th>{%trans 'Status'%}</th>
+                              <th>{%trans 'Price'%}</th>
+                              <th>{%trans 'Delete'%}</th>
+                              <th>{%trans 'Edit'%}</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -433,7 +428,6 @@
                             data-sizes="{{product.get_sizes_ids}}" 
                             data-image="{{product.main_image.url}}" 
                             data-details="{{product.details}}" 
-
                             >
                               <td>
                                 <img
@@ -448,11 +442,11 @@
                                 {% if product.approved %}
                                     <span
                                     class="badge badge-pill bg-light-success cursor-pointer"
-                                    >Approved</span>
+                                    >{%trans 'Approved'%}</span>
                                 {% else %}
                                   <span
                                     class="badge badge-pill bg-light-danger cursor-pointer"
-                                    >Pending</span>
+                                    >{%trans 'Pending'%}</span>
                                 {% endif %}
                               </td>
                               <td>{{product.price}}</td>
@@ -464,7 +458,6 @@
                                   </button>
                                 </form>
                               </td>
-
                               <td>
                                   <button class="btn btn-primary py-2 px-4" onclick="post_url(this)" type="button" id="{{product.slug}}" >
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
@@ -494,7 +487,7 @@
                   id="product_name"
                   placeholder="Product Name"
                   required="required"
-                  data-validation-required-message="Please enter the Product Name"
+                  data-validation-required-message="{%trans 'Please enter the Product Name'%}"
                 />
                 <p class="help-block text-danger">{{form.name.errors}}</p>
                 
@@ -507,7 +500,7 @@
                   id="brand_name"
                   placeholder="Brand Name"
                   required="required"
-                  data-validation-required-message="Please enter the Product Name"
+                  data-validation-required-message="{%trans 'Please enter the Product Name'%}"
                 />
                 <p class="help-block text-danger">{{form.brand.errors}}</p>
               </div>
@@ -520,7 +513,7 @@
                     id="price"
                     placeholder="Product price"
                     required="required"
-                    data-validation-required-message="Please enter product price"
+                    data-validation-required-message="{%trans 'Please enter product price'%}"
                   />
                   <p class="help-block text-danger">{{form.price.errors}}</p>
                 </div>
@@ -532,7 +525,7 @@
                     id="price_dis"
                     placeholder="Old Product price"
                     required="required"
-                    data-validation-required-message="Please enter Old product price"
+                    data-validation-required-message="{%trans 'Please enter Old product price'%}"
                   />
                   <p class="help-block text-danger">{{form.price_dis.errors}}</p>
                 </div>
@@ -544,60 +537,57 @@
                     id="count"
                     placeholder="Product count"
                     required="required"
-                    data-validation-required-message="Please enter product count"
+                    data-validation-required-message="{%trans 'Please enter product count'%}"
                   />
                   <p class="help-block text-danger">{{form.quantity.errors}}</p>
                 </div>
               </div>
-
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <label class="input-group-text" for="gender">Gender</label>
+                  <label class="input-group-text" for="gender">{%trans 'Gender'%}</label>
                 </div>
                 <select class="custom-select" id="gender" name="suitable">
-                  <option value="All-Gender" selected>All</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Baby">Baby</option>
+                  <option value="All-Gender" selected>{%trans 'All'%}</option>
+                  <option value="Male">{%trans 'Male'%}</option>
+                  <option value="Female">{%trans 'Female'%}</option>
+                  <option value="Baby">{%trans 'Baby'%}</option>
                 </select>
                 <p class="help-block text-danger">{{form.suitable.errors}}</p>
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <label class="input-group-text" for="category">Category</label>
+                  <label class="input-group-text" for="category">{%trans 'Category'%}</label>
                 </div>
                 <select class="custom-select" id="category" name="category">
-                  <option value="Shirts" selected>Shirts</option>
-                  <option value="Jeans">Jeans</option>
-                  <option value="Swimwear">Swimwear</option>
-                  <option value="Sleepwear">Sleepwear</option>
-                  <option value="Sportswear">Sportswear</option>
-                  <option value="Jumpsuits">Jumpsuits</option>
-                  <option value="Blazers">Blazers</option>
-                  <option value="Jackets">Jackets</option>
-                  <option value="Shoes">Shoes</option>
+                  <option value="Shirts" selected>{%trans 'Shirts'%}</option>
+                  <option value="Jeans">{%trans 'Jeans'%}</option>
+                  <option value="Swimwear">{%trans 'Swimwear'%}</option>
+                  <option value="Sleepwear">{%trans 'Sleepwear'%}</option>
+                  <option value="Sportswear">{%trans 'Sportswear'%}</option>
+                  <option value="Jumpsuits">{%trans 'Jumpsuits'%}</option>
+                  <option value="Blazers">{%trans 'Blazers'%}</option>
+                  <option value="Jackets">{%trans 'Jackets'%}</option>
+                  <option value="Shoes">{%trans 'Shoes'%}</option>
                 </select>
                 <p class="help-block text-danger">{{form.category.errors}}</p>
               </div>
-              {% comment %} <h2>Colors</h2> {% endcomment %}
-              {% comment %} <input type="text" id="tag-input1"> {% endcomment %}
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <label class="input-group-text" for="choices-multiple-colors">Colors</label>
+                  <label class="input-group-text" for="choices-multiple-colors">{%trans 'Colors'%}</label>
                 </div>
                 
                 <select  class="form-control form-control-lg" id="choices-multiple-colors" placeholder="All Colors" multiple="multiple" name="colors">
+
                     {% for color in colors %}
                       <option value={{color.id}}>{{color}}</option>
                     {% endfor %}
                 </select> 
               </div>
-
-
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <label class="input-group-text" for="choices-multiple-sizes">Sizes</label>
+                  <label class="input-group-text" for="choices-multiple-sizes">{%trans 'Sizes'%}</label>
                 </div>
+
                 <select  class="form-control" id="choices-multiple-sizes" placeholder="All Sizes" multiple="multiple" name="sizes">
                     {% for size in sizes %}
                       <option value={{size.id}}>{{size}}</option>
@@ -613,7 +603,7 @@
                   id="file-uploader"
                   placeholder="file-uploader"
                   required="required"
-                  data-validation-required-message="Please upload photo"
+                  data-validation-required-message="{%trans 'Please upload photo'%}"
                 />
                 <p class="help-block text-danger">{{form.main_image.errors}}</p>
                 <img
@@ -635,7 +625,7 @@
                   id="description"
                   placeholder="Description..."
                   required="required"
-                  data-validation-required-message="Please enter description"
+                  data-validation-required-message="{%trans 'Please enter description'%}"
                 ></textarea>
                 <p class="help-block text-danger"></p>
               </div>
@@ -645,16 +635,15 @@
                   type="submit"
                   id="send-data"
                 >
-                  Send
+                {%trans 'Send'%}
                 </button>
-
                 <button
                   class="btn btn-primary py-2 px-4"
                   type="button"
                   id="clear-data"
                   onclick="clear_url()"
                 >
-                  clear
+                {%trans 'clear'%}
                 </button>
               </div>
             </form>
@@ -718,8 +707,11 @@
     <script src="{% static 'assets/js/scripts.js'%}"></script>
     <!-- END: Custom CSS-->
 
+
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-    <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
+    {% comment %} <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script> {% endcomment %}
+    <script src="{% static 'assets/js/multiple-select.min.js'%}"></script>
+
 
     <script>
       var $selectColor = $('#choices-multiple-colors')
@@ -737,82 +729,82 @@
 
     <script>
 
-    function post_url(element){
-      slug = element.id;
-      document.getElementById("postProduct").action = "update-product/"+slug ;
-      data = document.getElementById("row-"+slug);
-      name      = $(data).data("name");
-      brand     = $(data).data("brand");
-      price     = $(data).data("price");
-      old_price = $(data).data("oldprice");
-      quant     = $(data).data("quantity");
-      gender    = $(data).data("gender");
-      cat       = $(data).data("category");
-      colors    = $(data).data("colors");
-      sizes     = $(data).data("sizes");
-      image     = $(data).data("image");
-      details   = $(data).data("details");
+        function post_url(element){
+          slug = element.id;
+          document.getElementById("postProduct").action = "update-product/"+slug ;
+          data = document.getElementById("row-"+slug);
+          name      = $(data).data("name");
+          brand     = $(data).data("brand");
+          price     = $(data).data("price");
+          old_price = $(data).data("oldprice");
+          quant     = $(data).data("quantity");
+          gender    = $(data).data("gender");
+          cat       = $(data).data("category");
+          colors    = $(data).data("colors");
+          sizes     = $(data).data("sizes");
+          image     = $(data).data("image");
+          details   = $(data).data("details");
 
-      //console.log("name: ",name)
-      //console.log("brand: ",brand)
-      //console.log("price: ",price)
-      //console.log("old_price: ",old_price)
-      //console.log("quant: ",quant)
-      //console.log("gender: ",gender)
-      //console.log("cat: ",cat)
-      //console.log("colors: ",colors)
-      //console.log("sizes: ",sizes)
-      //console.log("image: ",image)
-      //console.log("details: ",details)
+          //console.log("name: ",name)
+          //console.log("brand: ",brand)
+          //console.log("price: ",price)
+          //console.log("old_price: ",old_price)
+          //console.log("quant: ",quant)
+          //console.log("gender: ",gender)
+          //console.log("cat: ",cat)
+          //console.log("colors: ",colors)
+          //console.log("sizes: ",sizes)
+          //console.log("image: ",image)
+          //console.log("details: ",details)
 
-      document.getElementById("product_name").value = name ;
-      document.getElementById("brand_name").value = brand ;
-      document.getElementById("price").value = price ;
-      document.getElementById("price_dis").value = old_price ;
-      document.getElementById("count").value = quant ;
-      document.getElementById("gender").value = gender ;
-      document.getElementById("category").value = cat ;
-      document.getElementById("description").value = details ;
+          document.getElementById("product_name").value = name ;
+          document.getElementById("brand_name").value = brand ;
+          document.getElementById("price").value = price ;
+          document.getElementById("price_dis").value = old_price ;
+          document.getElementById("count").value = quant ;
+          document.getElementById("gender").value = gender ;
+          document.getElementById("category").value = cat ;
+          document.getElementById("description").value = details ;
 
-      
-      //choices-multiple-colors
-      const $col = document.querySelector('#choices-multiple-colors');
-      $col.value = -1;
-      $selectColor.multipleSelect('setSelects', colors)
+          
+          //choices-multiple-colors
+          const $col = document.querySelector('#choices-multiple-colors');
+          $col.value = -1;
+          $selectColor.multipleSelect('setSelects', colors)
 
-      const $siz = document.querySelector('#choices-multiple-sizes');
-      $siz.value = -1;
-      $selectSize.multipleSelect('setSelects', sizes)
+          const $siz = document.querySelector('#choices-multiple-sizes');
+          $siz.value = -1;
+          $selectSize.multipleSelect('setSelects', sizes)
 
-      window.scrollTo(0,document.body.scrollHeight);
+          window.scrollTo(0,document.body.scrollHeight);
 
-    };
+        };
 
 
-    function clear_url(){
+        function clear_url(){
 
-      document.getElementById("postProduct").action = '' ;
-      document.getElementById("product_name").value = '' ;
-      document.getElementById("brand_name").value = '' ;
-      document.getElementById("price").value = '' ;
-      document.getElementById("price_dis").value = '' ;
-      document.getElementById("count").value = '' ;
-      document.getElementById("gender").value = -1;
-      document.getElementById("category").value = -1 ;
-      document.getElementById("description").value = '' ;
+          document.getElementById("postProduct").action = '' ;
+          document.getElementById("product_name").value = '' ;
+          document.getElementById("brand_name").value = '' ;
+          document.getElementById("price").value = '' ;
+          document.getElementById("price_dis").value = '' ;
+          document.getElementById("count").value = '' ;
+          document.getElementById("gender").value = -1;
+          document.getElementById("category").value = -1 ;
+          document.getElementById("description").value = '' ;
 
-      
-      //choices-multiple-colors
-      const $col = document.querySelector('#choices-multiple-colors');
-      $col.value = -1;
-      $selectColor.multipleSelect('setSelects', [])
+          
+          //choices-multiple-colors
+          const $col = document.querySelector('#choices-multiple-colors');
+          $col.value = -1;
+          $selectColor.multipleSelect('setSelects', [])
 
-      const $siz = document.querySelector('#choices-multiple-sizes');
-      $siz.value = -1;
-      $selectSize.multipleSelect('setSelects', [])
+          const $siz = document.querySelector('#choices-multiple-sizes');
+          $siz.value = -1;
+          $selectSize.multipleSelect('setSelects', [])
 
-    };
-</script>
+        };
+    </script>
 
   </body>
   <!-- END : Body-->
