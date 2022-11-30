@@ -128,7 +128,6 @@
     />
     <!-- END: Custom CSS-->
 
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
   
     <style>
@@ -179,12 +178,9 @@
       }
       
     </style>
-
     <!-- multi select-->
     <link href="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.css" rel="stylesheet">
-    
     <!-- END: multi select-->
-
   </head>
   <!-- END : Head-->
 
@@ -263,15 +259,18 @@
                     <li class="dropdown nav-item mr-1"><a class="nav-link dropdown-toggle user-dropdown d-flex align-items-end" id="dropdownBasic2" href="javascript:;" data-toggle="dropdown">
                             <div class="user d-md-flex d-none mr-2"><span class="text-right">{{request.user.get_name}}</span><span class="text-right text-muted font-small-3">Available</span></div><img class="avatar" src="{{request.user.avatar.url}}" alt="avatar" height="35" width="35">
                         </a>
-                        <div class="dropdown-menu text-left dropdown-menu-right m-0 pb-0" aria-labelledby="dropdownBasic2"><a class="dropdown-item" href="app-chat.html">
-                                <div class="d-flex align-items-center"><i class="ft-message-square mr-2"></i><span>Chat</span></div>
-                            </a><a class="dropdown-item" href="page-user-profile.html">
-                                <div class="d-flex align-items-center"><i class="ft-edit mr-2"></i><span>{%trans 'Edit Profile'%}</span></div>
-                            </a><a class="dropdown-item" href="app-email.html">
-                                <div class="d-flex align-items-center"><i class="ft-mail mr-2"></i><span>My Inbox</span></div>
+                        <div class="dropdown-menu text-left dropdown-menu-right m-0 pb-0" aria-labelledby="dropdownBasic2">
+                            <a class="dropdown-item" href="{%url 'user:profile'%}">
+                                <div class="d-flex align-items-center"><i class="ft-edit mr-2"></i><span>Edit Profile</span></div>
                             </a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item" href="auth-login.html">
-                                <div class="d-flex align-items-center"><i class="ft-power mr-2"></i><span>{%trans 'Logout'%}</span></div>
+                            
+                            <div class="dropdown-divider"></div>
+
+                            <a class="dropdown-item" href="{%url 'user:logout'%}">
+                                <div class="d-flex align-items-center">
+                                  <i class="ft-power mr-2"></i>
+                                  <span>Logout</span>
+                                </div>
                             </a>
                         </div>
                     </li>
@@ -620,7 +619,8 @@
                   <label class="input-group-text" for="choices-multiple-colors">{%trans 'Colors'%}</label>
                 </div>
                 
-                <select class="custom-select" id="choices-multiple-colors" placeholder="{%trans 'All Colors'%}" multiple="multiple" name="colors">
+                <select  class="form-control form-control-lg" id="choices-multiple-colors" placeholder="All Colors" multiple="multiple" name="colors">
+
                     {% for color in colors %}
                       <option value={{color.id}}>{{color}}</option>
                     {% endfor %}
@@ -630,7 +630,8 @@
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="choices-multiple-sizes">{%trans 'Sizes'%}</label>
                 </div>
-                <select class="custom-select" id="choices-multiple-sizes" placeholder="{%trans 'All Sizes'%}" multiple="multiple" name="sizes">
+
+                <select  class="form-control" id="choices-multiple-sizes" placeholder="All Sizes" multiple="multiple" name="sizes">
                     {% for size in sizes %}
                       <option value={{size.id}}>{{size}}</option>
                     {% endfor %}
@@ -755,8 +756,105 @@
     <script src="{% static 'assets/js/scripts.js'%}"></script>
     <!-- END: Custom CSS-->
 
+
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-    <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
+    {% comment %} <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script> {% endcomment %}
+    <script src="{% static 'assets/js/multiple-select.min.js'%}"></script>
+
+
+    <script>
+      var $selectColor = $('#choices-multiple-colors')
+      var $selectSize = $('#choices-multiple-sizes')
+    
+      $(function() {
+        $selectColor.multipleSelect({
+          filter: true,
+        })
+        $selectSize.multipleSelect()
+    
+      })
+    </script>
+
+
+    <script>
+
+        function post_url(element){
+          slug = element.id;
+          document.getElementById("postProduct").action = "update-product/"+slug ;
+          data = document.getElementById("row-"+slug);
+          name      = $(data).data("name");
+          brand     = $(data).data("brand");
+          price     = $(data).data("price");
+          old_price = $(data).data("oldprice");
+          quant     = $(data).data("quantity");
+          gender    = $(data).data("gender");
+          cat       = $(data).data("category");
+          colors    = $(data).data("colors");
+          sizes     = $(data).data("sizes");
+          image     = $(data).data("image");
+          details   = $(data).data("details");
+
+          //console.log("name: ",name)
+          //console.log("brand: ",brand)
+          //console.log("price: ",price)
+          //console.log("old_price: ",old_price)
+          //console.log("quant: ",quant)
+          //console.log("gender: ",gender)
+          //console.log("cat: ",cat)
+          //console.log("colors: ",colors)
+          //console.log("sizes: ",sizes)
+          //console.log("image: ",image)
+          //console.log("details: ",details)
+
+          document.getElementById("product_name").value = name ;
+          document.getElementById("brand_name").value = brand ;
+          document.getElementById("price").value = price ;
+          document.getElementById("price_dis").value = old_price ;
+          document.getElementById("count").value = quant ;
+          document.getElementById("gender").value = gender ;
+          document.getElementById("category").value = cat ;
+          document.getElementById("description").value = details ;
+
+          
+          //choices-multiple-colors
+          const $col = document.querySelector('#choices-multiple-colors');
+          $col.value = -1;
+          $selectColor.multipleSelect('setSelects', colors)
+
+          const $siz = document.querySelector('#choices-multiple-sizes');
+          $siz.value = -1;
+          $selectSize.multipleSelect('setSelects', sizes)
+
+          window.scrollTo(0,document.body.scrollHeight);
+
+        };
+
+
+        function clear_url(){
+
+          document.getElementById("postProduct").action = '' ;
+          document.getElementById("product_name").value = '' ;
+          document.getElementById("brand_name").value = '' ;
+          document.getElementById("price").value = '' ;
+          document.getElementById("price_dis").value = '' ;
+          document.getElementById("count").value = '' ;
+          document.getElementById("gender").value = -1;
+          document.getElementById("category").value = -1 ;
+          document.getElementById("description").value = '' ;
+
+          
+          //choices-multiple-colors
+          const $col = document.querySelector('#choices-multiple-colors');
+          $col.value = -1;
+          $selectColor.multipleSelect('setSelects', [])
+
+          const $siz = document.querySelector('#choices-multiple-sizes');
+          $siz.value = -1;
+          $selectSize.multipleSelect('setSelects', [])
+
+        };
+    </script>
+
   </body>
   <!-- END : Body-->
 </html>
