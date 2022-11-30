@@ -15,14 +15,14 @@ class CustomUserAdmin(UserAdmin):
     search_fields   = ('email', 'phone',)
     list_filter     = ('is_superuser', 'date_joined', 'seller', 'is_staff')
     readonly_fields =('date_joined', 'last_login', 'username', 'auth_provider')
-     
+    
     fieldsets = (
         (None, 
             {'fields': ('first_name', 'last_name','username', 'auth_provider', 'email', 'password', 'phone', 'avatar', 'avatar_url', 'address')}
         ),
         ('Permissions',
             {'fields': ('is_active', 'is_staff', 'is_superuser', 'is_verified', 'seller')}
-         ),
+        ),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
     
@@ -30,7 +30,7 @@ class CustomUserAdmin(UserAdmin):
             'classes': ('wide',),
             'fields': ('first_name', 'last_name', 'auth_provider', 'email', 'password1', 'password2', 'phone', 'username', 'is_superuser', 'is_verified','address', 'avatar')}
         ),
-                     )
+                    )
     
 
 
