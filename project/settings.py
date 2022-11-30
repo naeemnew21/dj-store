@@ -104,7 +104,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ipay',
         'USER': 'postgres',
-        'PASSWORD': 'admin',
+        'PASSWORD': 'Ageba123',
         'HOST': 'localhost',
         'PORT': '5432',
     }

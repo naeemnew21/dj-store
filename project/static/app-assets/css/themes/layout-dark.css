@@ -673,6 +673,7 @@ html body.layout-dark.layout-transparent .form-control {
 html body.layout-dark:not(.layout-transparent) .form-control {
   border-color: #474748;
   color: #B2B1B5;
+  padding: 0;
 }
 
 html body.layout-dark.layout-transparent .form-control::placeholder {
