@@ -1,8 +1,9 @@
+
 let myVar;
 
 
 function loaderFunction() {
-  myVar = setTimeout(showPage, 3000);
+  myVar = setTimeout(showPage, 2000);
 }
 
 function showPage() {

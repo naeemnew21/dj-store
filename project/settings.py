@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
-import django_heroku
+import environ
+# import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -96,6 +97,12 @@ TEMPLATE_STRING_IF_INVALID = 'Invalid variable'
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+
+
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -104,7 +111,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ipay',
         'USER': 'postgres',
-        'PASSWORD': 'Ageba123',
+        'PASSWORD': env('DB_PASS'),
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -218,4 +225,8 @@ JAZZMIN_SETTINGS = {
 
 
 
-django_heroku.settings(locals())
+
+
+
+
+# django_heroku.settings(locals())
