@@ -1,0 +1,80 @@
+
+  .box {
+    width: 50vh;
+    margin: 0;
+    text-align: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    position: absolute;
+    transition: 0.3s color, 0.3s border, 0.3s transform, 0.3s opacity;
+
+    Top : 50%;
+    Left : 50%;
+    Transform : translate(-50%,-50%);
+  }
+  .box:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 0;
+    padding: 0;
+    border-width: 3px;
+    line-height: 200px;
+    opacity: 1;
+    z-index: 2;
+  }
+  .box:hover [class*=loader-] {
+    font-size: 70px;
+    line-height: 200px;
+  }
+  
+
+  
+  .loader-18 {
+    position: relative;
+  }
+  .loader-18:before, .loader-18:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    border: 0.1em solid transparent;
+    border-bottom-color: currentcolor;
+    top: 0;
+    left: 0;
+    -webkit-animation: 1s loader-18 linear infinite;
+            animation: 1s loader-18 linear infinite;
+  }
+  .loader-18:before {
+    width: 1em;
+    height: 1em;
+  }
+  .loader-18:after {
+    width: 0.8em;
+    height: 0.8em;
+    top: 0.1em;
+    left: 0.1em;
+    animation-direction: reverse;
+  }
+  
+  @-webkit-keyframes loader-18 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes loader-18 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  

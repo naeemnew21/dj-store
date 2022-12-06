@@ -172,6 +172,23 @@ def handle_400(request, exception=None):
 
 
 
+def faqs(request):
+    return render(request,'quick-links/faqs.html')
+
+def help(request):
+    return render(request,'quick-links/help.html')
+
+def privacy(request):
+    return render(request,'quick-links/privacy.html')
+
+def support(request):
+    return render(request,'quick-links/support.html')
+
+def terms(request):
+    return render(request,'quick-links/terms.html')
+
+
+
 
 
 def password_reset_request(request):

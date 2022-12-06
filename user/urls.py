@@ -16,4 +16,11 @@ urlpatterns = [
     path("forget/", views.forget, name="forget_test"),
     path('move-to-cart', views.move_to_cart , name = 'move_to_cart'),
 
+
+    path('faqs', views.faqs , name = 'faqs'),
+    path('help', views.help , name = 'help'),
+    path('privacy', views.privacy , name = 'privacy'),
+    path('support', views.support , name = 'support'),
+    path('terms', views.terms , name = 'terms'),
+
 ]
