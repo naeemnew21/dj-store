@@ -218,12 +218,8 @@ msgid "Support"
 msgstr "الدعم"
 
 #: .\templates\base.html:150
-<<<<<<< HEAD
-=======
-#| msgid "category"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Categories"
-msgstr "الفئة"
+msgstr "الفئات"
 
 #: .\templates\base.html:159
 msgid "Dresses"
@@ -376,15 +372,10 @@ msgid "My Cart"
 msgstr "عربة التسوق الخاصة بي"
 
 #: .\templates\cart.html:74 .\templates\cart.html:144
-<<<<<<< HEAD
 msgid "Price"
 msgstr "السعر"
 
 #: .\templates\cart.html:75 .\templates\cart.html:145
-<<<<<<< HEAD
-=======
-#| msgid "quantity"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Quantity"
 msgstr "العدد"
 
@@ -398,18 +389,10 @@ msgid "Remove"
 msgstr "حذف"
 
 #: .\templates\cart.html:138
-<<<<<<< HEAD
-=======
-#| msgid "confirmed"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Confirmed"
 msgstr "تم تأكيد"
 
 #: .\templates\cart.html:147
-<<<<<<< HEAD
-=======
-#| msgid "track"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Track"
 msgstr "مسار"
 
@@ -447,26 +430,14 @@ msgid "Mobile No"
 msgstr "رقم الموبايل"
 
 #: .\templates\checkout.html:78
-<<<<<<< HEAD
-=======
-#| msgid "address 1"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Address Line 1"
 msgstr "عنوان 1"
 
 #: .\templates\checkout.html:89
-<<<<<<< HEAD
-=======
-#| msgid "address 2"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Address Line 2"
 msgstr "عنوان 2"
 
 #: .\templates\checkout.html:100
-<<<<<<< HEAD
-=======
-#| msgid "country"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Country"
 msgstr "البلد"
 
@@ -544,10 +515,6 @@ msgid "Share on:"
 msgstr "شارك عبر"
 
 #: .\templates\detail.html:196
-<<<<<<< HEAD
-=======
-#| msgid "description"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Description"
 msgstr "الوصف"
 
@@ -556,10 +523,6 @@ msgid "Information"
 msgstr "معلومة"
 
 #: .\templates\detail.html:207
-<<<<<<< HEAD
-=======
-#| msgid "description"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Product Description"
 msgstr "الوصف"
 
@@ -612,29 +575,16 @@ msgstr "قم بتحميل صورة مختلفة"
 msgid "Personal info"
 msgstr "معلومات شخصية"
 
-<<<<<<< HEAD
-#: .\templates\edit_profile.html:35 .\templates\register.html:27
-msgid "First name"
-msgstr "الاسم الاول"
 
-#: .\templates\edit_profile.html:42 .\templates\register.html:35
-=======
 #: .\templates\edit_profile.html:35 .\templates\register.html:26
-#| msgid "first name"
 msgid "First name"
 msgstr "الاسم الاول"
 
 #: .\templates\edit_profile.html:42 .\templates\register.html:34
-#| msgid "last name"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Last name"
 msgstr "الاسم الاخير"
 
 #: .\templates\edit_profile.html:49
-<<<<<<< HEAD
-=======
-#| msgid "phone"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Phone"
 msgstr "التلفون"
 
@@ -648,11 +598,6 @@ msgid "Update"
 msgstr "تعديل"
 
 #: .\templates\index.html:50 .\templates\index.html:68
-<<<<<<< HEAD
-#, fuzzy, python-format
-#| msgid "10%% Off Your First Order"
-=======
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "10%% Off Your First Order"
 msgstr " 10% خصم علي اول طلب"
 
@@ -670,10 +615,6 @@ msgid "Fashionable Dress"
 msgstr "فستان عصري"
 
 #: .\templates\index.html:110
-<<<<<<< HEAD
-=======
-#| msgid "Product"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Quality Product"
 msgstr "منتج"
 
@@ -682,10 +623,6 @@ msgid "14-Day Return"
 msgstr "14 يوم العودة"
 
 #: .\templates\index.html:137
-<<<<<<< HEAD
-=======
-#| msgid "Support"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "24/7 Support"
 msgstr "24/7 الدعم"
 
@@ -698,10 +635,6 @@ msgid "Women dresses"
 msgstr "فساتين النساء"
 
 #: .\templates\index.html:179
-<<<<<<< HEAD
-=======
-#| msgid "address"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Baby dresses"
 msgstr "فستان الاطفال"
 
@@ -714,7 +647,6 @@ msgid "Bags"
 msgstr "الشنط"
 
 #: .\templates\index.html:232 .\templates\index.html:248
-#, python-format
 msgid "20%% off the all order"
 msgstr "خصم 20٪ على كل الطلبات"
 
@@ -727,10 +659,6 @@ msgid "Winter Collection"
 msgstr "مجموعة الشتاء"
 
 #: .\templates\index.html:265
-<<<<<<< HEAD
-=======
-#| msgid "Products"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Trandy Products"
 msgstr "المنتجات العصرية"
 
@@ -751,9 +679,7 @@ msgid "Please choose a email"
 msgstr "الرجاء اختيار بريد إلكتروني"
 
 #: .\templates\login.html:38 .\templates\register.html:53
-#, fuzzy
-#| msgid "Confrim Password"
-msgid "Password"
+msgid "Confrim Password"
 msgstr "تأكيد كلمة المرور"
 
 #: .\templates\login.html:40
@@ -788,12 +714,8 @@ msgstr "اختر الحساب"
 msgid "User"
 msgstr "مستخدم"
 
-<<<<<<< HEAD
-#: .\templates\register.html:78
-=======
+
 #: .\templates\register.html:77
-#| msgid "seller"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Seller"
 msgstr "بائع"
 
@@ -802,11 +724,7 @@ msgid "Filter by price"
 msgstr "تصفية حسب السعر"
 
 #: .\templates\shop.html:58
-<<<<<<< HEAD
-=======
-#| msgid "price"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
-msgid "All Price"
+msgid "price"
 msgstr "السعر"
 
 #: .\templates\shop.html:99
@@ -838,10 +756,6 @@ msgid "Green"
 msgstr "اخضر"
 
 #: .\templates\shop.html:139
-<<<<<<< HEAD
-=======
-#| msgid "Filter by price"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Filter by size"
 msgstr "تصفية حسب السعر"
 
@@ -850,16 +764,12 @@ msgid "All Size"
 msgstr "كل المقاسات"
 
 #: .\templates\shop.html:185
-<<<<<<< HEAD
-=======
-#| msgid "Filter by price"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Filter by gender"
 msgstr "تصفية حسب السعر"
 
 #: .\templates\shop.html:189
 msgid "All Gender"
-msgstr "كل الجنس"
+msgstr "كل الفئات"
 
 #: .\templates\shop.html:195
 msgid "Male"
@@ -886,18 +796,10 @@ msgid "Latest"
 msgstr "الاخير"
 
 #: .\templates\shop.html:245
-<<<<<<< HEAD
-=======
-#| msgid "price"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Price Low"
 msgstr "السعر المنخفض"
 
 #: .\templates\shop.html:246
-<<<<<<< HEAD
-=======
-#| msgid "price"
->>>>>>> c65f014eeb45167f3b2600b2cfbd327e03004820
 msgid "Price High"
 msgstr "السعر المرتفع"
 
