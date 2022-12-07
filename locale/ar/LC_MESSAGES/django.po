@@ -156,9 +156,6 @@ msgstr "مقاس 5"
 msgid "size 6"
 msgstr "مقاس 6"
 
-#: .\product\models.py:101
-msgid "price"
-msgstr "السعر"
 
 #: .\product\models.py:102
 msgid "price before discount"
@@ -320,9 +317,6 @@ msgstr "الدفع"
 msgid "Contact Us"
 msgstr "اتصل بنا"
 
-#: .\templates\base.html:303
-msgid "Terms"
-msgstr ""
 
 #: .\templates\base.html:311
 msgid "Pricing"
@@ -698,10 +692,6 @@ msgstr "مستخدم جديد"
 msgid "Pending"
 msgstr "قيد الانتظار"
 
-#: .\templates\register.html:61
-msgid "Confrim Password"
-msgstr "تأكيد كلمة المرور"
-
 #: .\templates\register.html:69
 msgid "Mobile"
 msgstr "الهاتف"
@@ -723,9 +713,6 @@ msgstr "بائع"
 msgid "Filter by price"
 msgstr "تصفية حسب السعر"
 
-#: .\templates\shop.html:58
-msgid "price"
-msgstr "السعر"
 
 #: .\templates\shop.html:99
 msgid "Filter by color"
