@@ -1,0 +1,592 @@
+{% load static %}
+{% load i18n %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>FAQs</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="i pay online store" name="keywords" />
+    <meta content="HTML Templates" name="description" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="120x120" href="{%static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{%static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{%static 'img/favicon-16x16.png' %}">
+    <link rel="manifest" href="{%static 'img/site.webmanifest' %}">
+    <link rel="mask-icon" href="{%static 'img/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="{%static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{%static 'css/style.css'%}" id="color-switch"  rel="stylesheet" />
+    <link href="{%static 'css/loder.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/new-loader.css'%}" rel="stylesheet" />
+  </head>
+
+  <body onload="loaderFunction()">
+
+    <style>
+      .accordion_one .panel-group {
+    
+        border: 1px solid #f1f1f1;
+        margin-top:100px;
+        
+        
+    }
+    
+    a:link {
+        text-decoration: none
+    }
+    
+    .accordion_one .panel {
+        background-color: transparent;
+        box-shadow: none;
+        border-bottom: 0px solid transparent;
+        border-radius: 0;
+        margin: 0;
+    }
+    
+    .accordion_one .panel-default {
+        border: 0;
+    }
+    
+    .accordion-wrap .panel-heading {
+        padding: 0px;
+        border-radius: 0px;
+    }
+    
+    h4 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+    .accordion_one .panel .panel-heading a.collapsed {
+        color: #999999;
+        display: block;
+        padding: 12px 30px;
+        border-top: 0px;
+    }
+    
+    .accordion_one .panel .panel-heading a {
+        display: block;
+        padding: 12px 30px;
+        background: #fff;
+        color: #313131;
+        border-bottom: 1px solid #f1f1f1;
+    }
+    
+    .accordion-wrap .panel .panel-heading a {
+        font-size: 14px;
+    }
+    
+    .accordion_one .panel-group .panel-heading+.panel-collapse>.panel-body {
+        border-top: 0;
+        padding-top: 0;
+        padding: 25px 30px 30px 35px;
+        background: #fff;
+        color: #999999;
+    }
+    
+    .img-accordion {
+        width: 81px;
+        float: left;
+        margin-right: 15px;
+        display: block;
+    }
+    
+    .accordion_one .panel .panel-heading a.collapsed:after {
+        content: "\2b";
+        color: #999999;
+        background: #f1f1f1;
+    }
+    
+    .accordion_one .panel .panel-heading a:after, .accordion_one .panel .panel-heading a.collapsed:after {
+        font-family: 'FontAwesome';
+        font-size: 15px;
+        width: 36px;
+       
+        line-height: 48px;
+        text-align: center;
+        background: #F1F1F1;
+        float: left;
+        margin-left: -31px;
+        margin-top: -12px;
+        margin-right: 15px;
+    }
+    .accordion_one .panel .panel-heading a:after {
+        content: "\2212";
+    }
+    
+    .accordion_one .panel .panel-heading a:after, .accordion_one .panel .panel-heading a.collapsed:after {
+        font-family: 'FontAwesome';
+        font-size: 15px;
+        width: 36px;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        background: #F1F1F1;
+        float: left;
+        margin-left: -31px;
+        margin-top: -12px;
+        margin-right: 15px;
+    }
+    
+    
+    </style>
+
+
+    <!-- loader -->
+    
+    
+      <div class="box" id="loader18">
+        <div class="loader-18"></div>
+      </div> 
+      <div style="display:none;" id="myDiv" class="animate-bottom">
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+      <div class="row bg-secondary py-2 px-xl-5">
+        <div class="col-lg-6 d-none d-lg-block">
+          <div class="d-inline-flex align-items-center mt-2">
+            <a class="text-dark px-2" href="">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="text-dark px-2" href="">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a class="text-dark px-2" href="">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a class="text-dark px-2" href="">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a class="text-dark pl-2" href="">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center text-lg-right">
+          <div class="d-inline-flex align-items-center">
+            
+            <div class="dropdown">
+              <a class="nav-link d-flex align-items-center dropdown-toggle dropdown-language" id="dropdown-flag" href="javascript:;" data-toggle="dropdown">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_language_info for LANGUAGE_CODE as lang %}
+                {% if  LANGUAGE_CODE == 'en'%}
+                    <img class="langimg selected-flag" src="{%static 'app-assets/img/flags/us.png'%}" alt="flag">
+                {% else %}
+                    <img class="langimg selected-flag" src="{%static 'app-assets/img/flags/eg.png'%}" alt="flag">
+                {% endif %}
+                <span class="selected-language d-md-flex d-none">
+                  &emsp;{{lang.name_local }}&ensp;
+                </span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="dropdown-flag">
+                  <form id="lang-en" action="{% url 'set_language' %}" method="post">
+                      {% csrf_token %}
+                      <input name="next" type="hidden" value="{{ redirect_to }}">
+                      <input name="language" type="hidden" value="en">
+                      <a class="dropdown-item" href="javascript:;" data-language="en" onclick="document.getElementById('lang-en').submit()"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/us.png'%}" alt="flag">
+                          <span class="font-small-3">English</span>
+                      </a>
+                  </form>
+                  <form id="lang-ar" action="{% url 'set_language' %}" method="post">
+                      {% csrf_token %}
+                      <input name="next" type="hidden" value="{{ redirect_to }}">
+                      <input name="language" type="hidden" value="ar">
+                      <a class="dropdown-item" href="javascript:;" data-language="es" onclick="document.getElementById('lang-ar').submit()"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/eg.png'%}" alt="flag">
+                          <span class="font-small-3">&emsp;العربية&ensp;</span>
+                      </a>
+                  </form>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle themes" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Themes
+              </button>
+              <div class="dropdown-menu switcher" aria-labelledby="dropdownMenu2">
+                <button  data-path="{%static 'css/style.css'%}" class="dropdown-item" type="button"><i class="fas fa-sun suns"></i>Light</button>
+                <button  data-path="{%static 'css/style-dark.css'%}" class="dropdown-item" type="button"><i class="fas fa-moon dark"></i>Dark</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center py-3 px-xl-5">
+        <div class="col-lg-3 d-none d-lg-block">
+          <a href="{%url 'product:index'%}" class="text-decoration-none">
+            <h1 class="m-0 display-5 font-weight-semi-bold">
+              <span class="text-primary font-weight-bold border px-3 mr-1"
+                >i</span
+              >Pay
+            </h1>
+          </a>
+        </div>
+        <div class="col-lg-6 col-6 text-left">
+          <form action="{% url 'product:shop' %}" method="GET">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search for products"
+                name = "Search"
+              />
+              <div class="input-group-append">
+                <span class="input-group-text bg-transparent text-primary">
+                  <i class="fa fa-search"></i>
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-3 col-6 text-right">
+          <a href="{%url 'cart:cart'%}" class="btn border">
+            <i class="fas fa-shopping-cart text-primary"></i>
+            <span class="badge" id="my_cart">{{my_cart}}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <div class="container-fluid">
+      <div class="row border-top px-xl-5">
+        <div class="col-lg-3 d-none d-lg-block">
+          <a
+            class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100"
+            data-toggle="collapse"
+            href="#navbar-vertical"
+            style="height: 65px; margin-top: -1px; padding: 0 30px"
+          >
+            <h6 class="m-0">{% trans 'Categories'%}</h6>
+            <i class="fa fa-angle-down text-dark"></i>
+          </a>
+          
+          {% block navbar %}
+          
+          {% endblock navbar %}
+            <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
+              <a href="{% url 'product:shop' %}?Category=Dresses" class="nav-item nav-link">{% trans 'Dresses'%}</a>
+              <a href="{% url 'product:shop' %}?Category=T-Shirt" class="nav-item nav-link">{% trans 'Shirts'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Jeans" class="nav-item nav-link">{% trans 'Jeans'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Swimwear" class="nav-item nav-link">{% trans 'Swimwear'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Sleepwear" class="nav-item nav-link">{% trans 'Sleepwear'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Sportswear" class="nav-item nav-link">{% trans 'Sportswear'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Jumpsuits" class="nav-item nav-link">{% trans 'Jumpsuit'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Blazers" class="nav-item nav-link">{% trans 'Blazers'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Jackets" class="nav-item nav-link">{% trans 'Jackets'%}</a>
+              <a href="{% url 'product:shop' %}?Category=Shoes" class="nav-item nav-link">{% trans 'Shoes'%}</a>
+            </div>
+          </nav>
+        </div>
+        <div class="col-lg-9">
+          <nav
+            class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0"
+          >
+            <a href="{%url 'product:index'%}" class="text-decoration-none d-block d-lg-none">
+              <h1 class="m-0 display-5 font-weight-semi-bold">
+                <span class="text-primary font-weight-bold border px-3 mr-1"
+                  >i</span
+                >Pay
+              </h1>
+            </a>
+            <button
+              type="button"
+              class="navbar-toggler"
+              data-toggle="collapse"
+              data-target="#navbarCollapse"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse justify-content-between"
+              id="navbarCollapse"
+            >
+              <div class="navbar-nav mr-auto py-0">
+                
+                
+                {% block titles %}
+                
+                
+                {% endblock titles %}
+              </div>
+              <div class="navbar-nav ml-auto py-0">
+                {% if request.user.is_authenticated %}
+                    <div class="nav-item dropdown">
+                      <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        data-toggle="dropdown"
+                      >
+                        <img
+                          class="rounded-circle me-2"
+                          src="{{request.user.avatar.url}}"
+                          alt=""
+                          height="35"
+                          width="35"
+                        />
+                      </a>
+                      <div
+                        class="dropdown-menu rounded-0 m-0 avatar"
+                      >
+                        <a class="dropdown-item" href="{% url 'user:profile'%}">
+                          <div class="d-flex align-items-center">
+                            <i class="fas fa-user-edit ed-user"></i><span>{% trans 'Edit Profile'%}</span>
+                          </div> 
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'user:logout' %}">
+                          <div class="d-flex align-items-center">
+                            <i class="fas fa-sign-out-alt logout"></i><span class='lg-out'>{% trans 'Logout'%}</span>
+                          </div>
+                        </a>
+                      </div>
+                {% else %}
+                      <a href="{%url 'user:login'%}" class="nav-item nav-link">{% trans 'Login'%}</a>
+                      <a href="{%url 'user:sign-up'%}" class="nav-item nav-link">{% trans 'Register'%}</a>
+                {% endif %}
+                
+              </div>
+            </div>
+          </nav>
+    <!-- Navbar End -->
+    <div class="col-sm-6 accordion_one">
+      <div class="panel-group" id="accordionFourLeft">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion_oneLeft" href="#collapseFiveLeftone" aria-expanded="false" class="collapsed">
+          Why Font Awesome used
+        </a>
+      </h4>
+              </div>
+              <div id="collapseFiveLeftone" class="panel-collapse collapse" aria-expanded="false" role="tablist" style="height: 0px;">
+                  <div class="panel-body">
+                      <div class="img-accordion">
+                          <img src="https://img.icons8.com/color/81/000000/person-female.png" alt="">
+                      </div>
+                      <div class="text-accordion">
+                          <p>
+                              Why Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome used
+                          </p>
+                      </div>
+                  </div>
+                  <!-- end of panel-body -->
+              </div>
+          </div>
+          <!-- /.panel-default -->
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion_oneLeft" href="#collapseFiveLeftTwo" aria-expanded="false">
+          Why Font Awesome used and  its benefits
+        </a>
+      </h4>
+              </div>
+              <div id="collapseFiveLeftTwo" class="panel-collapse collapse" aria-expanded="false" role="tablist" style="height: 0px;">
+                  <div class="panel-body">
+                      <div class="img-accordion">
+                          <img src="https://img.icons8.com/color/81/000000/person-female.png" alt="">
+                      </div>
+                      <div class="text-accordion">
+                          <p>
+                              Why Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome usedWhy Font Awesome used
+                          </p>
+                      </div>
+                  </div>
+                  <!-- end of panel-body -->
+              </div>
+          </div>
+          <!-- /.panel-default -->
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion_oneLeft" href="#collapseFiveLeftThree" aria-expanded="false">
+          Why Font Awesome used for its own 
+        </a>
+      </h4>
+              </div>
+              <div id="collapseFiveLeftThree" class="panel-collapse collapse" aria-expanded="false" role="tablist">
+                  <div class="panel-body">
+                      <div class="img-accordion">
+                          <img src="https://img.icons8.com/color/81/000000/person-female.png" alt="">
+                      </div>
+                      <div class="text-accordion">
+                          <p>
+                            Why Font Awesome used for its own Why Font Awesome used for its own Why Font Awesome used for its own Why Font Awesome used for its own Why Font Awesome used for its own Why Font Awesome used for its own Why Font Awesome used for its own
+                          </p>
+                      </div>
+                  </div>
+                  <!-- end of panel-body -->
+              </div>
+          </div>
+          <!-- /.panel-default -->
+      </div>
+      <!--end of /.panel-group-->
+  </div>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+      <div class="row px-xl-5 pt-5">
+        <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+          <a href="" class="text-decoration-none">
+            <h1 class="mb-4 display-5 font-weight-semi-bold">
+              <span
+                class="text-primary font-weight-bold border border-white px-3 mr-1"
+                >i</span
+              >Pay
+            </h1>
+          </a>
+          <p>
+            {% trans "Youth who choose casually, rejecting stereotypes and wanting to feel comfortable in their clothes..Our SHop satisfies this needs."%}
+          </p>
+          <p class="mb-2">
+            <i class="fa fa-envelope text-primary mr-3"></i
+            >mohamed.ibraahiim4321@gmail.com
+          </p>
+          <p class="mb-0">
+            <i class="fa fa-phone-alt text-primary mr-3"></i>+012 764 23252
+          </p>
+        </div>
+        <div class="col-lg-8 col-md-12">
+          <div class="row">
+            <div class="col-md-4 mb-5">
+              <h5 class="font-weight-bold text-dark mb-4">{% trans 'Quick Links'%}</h5>
+              <div class="d-flex flex-column justify-content-start">
+                <a class="text-dark mb-2" href="{%url 'product:index'%}"
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Home'%}</a
+                >
+                <a class="text-dark mb-2" href="{%url 'product:shop'%}"
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Our Shop'%}</a
+                >
+                <a class="text-dark mb-2" href="{%url 'cart:cart'%}"
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Shopping Cart'%}</a
+                >
+                <a class="text-dark mb-2" href="{%url 'cart:checkout'%}"
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Checkout'%}</a
+                >
+                <a class="text-dark" href="{%url 'cart:contact'%}"
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Contact Us'%}</a
+                >
+              </div>
+            </div>
+            <div class="col-md-4 mb-5">
+              <h5 class="font-weight-bold text-dark mb-4">{% trans 'Quick Links'%}</h5>
+              <div class="d-flex flex-column justify-content-start">
+                <a class="text-dark mb-2" href="{%url 'user:faqs'%}"
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'FAQs'%}
+                  </a
+                >
+                <a class="text-dark mb-2" href="{%url 'user:terms'%}"
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Terms'%}</a
+                >
+                <a class="text-dark mb-2" href="{%url 'user:faqs'%}"
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Help'%}</a
+                >
+                <a class="text-dark mb-2" href="{%url 'user:support'%}"
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Support'%}</a>
+                <a class="text-dark" href="{%url 'user:privacy'%}"
+                  ><i class="fa fa-angle-right mr-2"></i>{% trans 'Privacy'%}</a
+                >
+              </div>
+            </div>
+            <div class="col-md-4 mb-5">
+              <h5 class="font-weight-bold text-dark mb-4">{% trans 'Newsletter'%}</h5>
+              <form action="">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control border-0 py-4"
+                    placeholder="Your Name"
+                    required="required"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control border-0 py-4"
+                    placeholder="Your Email"
+                    required="required"
+                  />
+                </div>
+                <div>
+                  <button
+                    class="btn btn-primary btn-block border-0 py-3"
+                    type="submit"
+                  >
+                  {% trans 'Subscribe Now'%}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row border-top border-light mx-xl-5 py-4">
+        <div class="col-md-6 px-xl-0">
+          <p class="mb-md-0 text-center text-md-left text-dark">
+            &copy;
+            <a class="text-dark font-weight-semi-bold" href="#"
+              ><span class='ipay'>i Pay</span></a
+            >. {% trans 'All Rights Reserved. Designed by'%}
+            <a class="text-dark font-weight-semi-bold" href=""
+              ><span class='name'>Mohamed Ibrahim</span></a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"
+      ><i class="fa fa-angle-double-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{%static 'lib/easing/easing.min.js'%}"></script>
+    <script src="{%static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{%static 'mail/jqBootstrapValidation.min.js'%}"></script>
+    <script src="{%static 'mail/contact.js'%}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{%static 'js/new-loader.js'%}"></script>
+    <script src="{%static 'js/main.js'%}"></script>
+    <script src="{%static 'js/cart.js'%}"></script>
+    {% if  request.user.is_authenticated %}
+        {% if cart_alert %}
+          <script>
+                if (confirm("your old cart has {{cart_alert}} products to move them press ok")) {
+                  window.location.href = "{%url 'user:move_to_cart'%}";
+              }
+          </script>
+        {% endif %}
+    {% endif %}
+  </div>
+  <!-- end of content after loader -->
+  </body>
+</html>
