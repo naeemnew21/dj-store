@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 16:22+0200\n"
+"POT-Creation-Date: 2022-12-08 01:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,262 +19,215 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: .\cart\models.py:21 .\cart\models.py:71 .\product\models.py:163
+#: .\cart\models.py:21 .\cart\models.py:62 .\product\models.py:183
 msgid "user"
 msgstr "مستخدم"
 
-#: .\cart\models.py:22 .\cart\models.py:54 .\product\models.py:164
+#: .\cart\models.py:22 .\cart\models.py:45 .\product\models.py:184
 msgid "product"
 msgstr "منتج"
 
-#: .\cart\models.py:23 .\cart\models.py:55 .\product\models.py:100
+#: .\cart\models.py:23 .\cart\models.py:46 .\product\models.py:108
 msgid "quantity"
 msgstr "العدد"
 
-#: .\cart\models.py:25
+#: .\cart\models.py:24
 msgid "confirmed"
 msgstr "تم تأكيد"
 
-#: .\cart\models.py:26
+#: .\cart\models.py:25
 msgid "confirmed at"
 msgstr "أكد في"
 
-#: .\cart\models.py:27 .\cart\models.py:83 .\product\models.py:82
-#: .\product\models.py:169
+#: .\cart\models.py:26 .\cart\models.py:74 .\product\models.py:99
+#: .\product\models.py:189
 msgid "created at"
 msgstr "أنشئت في"
 
-#: .\cart\models.py:29
+#: .\cart\models.py:28
 msgid "track"
 msgstr "مسار"
 
-#: .\cart\models.py:53
+#: .\cart\models.py:44
 msgid "user cart id"
 msgstr "معرف عربة المستخدم"
 
-#: .\cart\models.py:72
+#: .\cart\models.py:63
 msgid "orders"
 msgstr "الطلبات"
 
-#: .\cart\models.py:75 .\user\models.py:58
+#: .\cart\models.py:66 .\user\models.py:58
 msgid "phone"
 msgstr "التلفون"
 
-#: .\cart\models.py:77
+#: .\cart\models.py:68
 msgid "country"
 msgstr "البلد"
 
-#: .\cart\models.py:78
+#: .\cart\models.py:69
 msgid "city"
 msgstr "المدينه"
 
-#: .\cart\models.py:79
+#: .\cart\models.py:70
 msgid "address 1"
 msgstr "عنوان 1"
 
-#: .\cart\models.py:80
+#: .\cart\models.py:71
 msgid "address 2"
 msgstr "عنوان 2"
 
-#: .\cart\models.py:82
+#: .\cart\models.py:73
 msgid "active"
 msgstr "متاح"
 
-#: .\product\models.py:68 .\product\models.py:110
+#: .\product\models.py:73 .\product\models.py:118
 msgid "image"
 msgstr "صورة"
 
-#: .\product\models.py:75
+#: .\product\models.py:80
 msgid "product image"
 msgstr "صورة منتج"
 
-#: .\product\models.py:76
+#: .\product\models.py:81
 msgid "product images"
 msgstr "صور منتجات"
 
-#: .\product\models.py:81
+#: .\product\models.py:98
 msgid "created by"
 msgstr "انشأ من قبل"
 
-#: .\product\models.py:83
+#: .\product\models.py:100
 msgid "category"
 msgstr "الفئة"
 
-#: .\product\models.py:84
+#: .\product\models.py:101
 msgid "brand"
 msgstr "ماركة"
 
-#: .\product\models.py:85
+#: .\product\models.py:102
 msgid "name"
 msgstr "الاسم"
 
-#: .\product\models.py:86
+#: .\product\models.py:103
 msgid "suitable"
 msgstr "متكافئ"
 
-#: .\product\models.py:88
-msgid "color 1"
-msgstr "اللون 1"
+#: .\product\models.py:109
+#, fuzzy
+#| msgid "Price"
+msgid "price"
+msgstr "السعر"
 
-#: .\product\models.py:89
-msgid "color 2"
-msgstr "اللون 2"
-
-#: .\product\models.py:90
-msgid "color 3"
-msgstr "اللون 3"
-
-#: .\product\models.py:91
-msgid "color 4"
-msgstr "اللون 4"
-
-#: .\product\models.py:92
-msgid "color 5"
-msgstr "اللون 5"
-
-#: .\product\models.py:93
-msgid "size 1"
-msgstr "مقاس 1"
-
-#: .\product\models.py:94
-msgid "size 2"
-msgstr "مقاس 2"
-
-#: .\product\models.py:95
-msgid "size 3"
-msgstr "مقاس 3"
-
-#: .\product\models.py:96
-msgid "size 4"
-msgstr "مقاس 4"
-
-#: .\product\models.py:97
-msgid "size 5"
-msgstr "مقاس 5"
-
-#: .\product\models.py:98
-msgid "size 6"
-msgstr "مقاس 6"
-
-
-#: .\product\models.py:102
+#: .\product\models.py:110
 msgid "price before discount"
 msgstr "السعر قبل الخصم"
 
-#: .\product\models.py:108
+#: .\product\models.py:116
 msgid "main image"
 msgstr "الصوره الرئيسه"
 
-#: .\product\models.py:111
+#: .\product\models.py:119
 msgid "description"
 msgstr "الوصف"
 
-#: .\product\models.py:112
+#: .\product\models.py:120
 msgid "details"
 msgstr "التفاصيل"
 
-#: .\product\models.py:114
+#: .\product\models.py:122
 msgid "slug"
 msgstr "سلج"
 
-#: .\product\models.py:117
+#: .\product\models.py:125
 msgid "selled"
 msgstr "بيعت"
 
-#: .\product\models.py:118
+#: .\product\models.py:126
 msgid "approved"
 msgstr "وافق"
 
-#: .\product\models.py:122
+#: .\product\models.py:130 .\templates\dashboard.html:451
 msgid "Product"
 msgstr "منتج"
 
-#: .\product\models.py:123 .\templates\cart.html:73 .\templates\cart.html:143
+#: .\product\models.py:131 .\templates\cart.html:71 .\templates\cart.html:141
 #: .\templates\checkout.html:129
 msgid "Products"
 msgstr "منتجات"
 
-#: .\product\models.py:165
+#: .\product\models.py:185
 msgid "comment"
 msgstr "كومنت"
 
-#: .\product\models.py:168
+#: .\product\models.py:188
 msgid "rate"
 msgstr "معدل"
 
-#: .\templates\base.html:44 .\templates\base.html:299
-msgid "FAQs"
-msgstr "سوال و جواب"
-
-#: .\templates\base.html:46 .\templates\base.html:306
-msgid "Help"
-msgstr "المساعده"
-
-#: .\templates\base.html:48 .\templates\base.html:309
-msgid "Support"
-msgstr "الدعم"
-
-#: .\templates\base.html:150
+#: .\templates\base.html:173
 msgid "Categories"
 msgstr "الفئات"
 
-#: .\templates\base.html:159
+#: .\templates\base.html:181
 msgid "Dresses"
 msgstr "فساتين"
 
-#: .\templates\base.html:160
+#: .\templates\base.html:182 .\templates\dashboard.html:605
 msgid "Shirts"
 msgstr "قمصان"
 
-#: .\templates\base.html:161
+#: .\templates\base.html:183 .\templates\dashboard.html:606
 msgid "Jeans"
 msgstr "جينز"
 
-#: .\templates\base.html:162
+#: .\templates\base.html:184 .\templates\dashboard.html:607
 msgid "Swimwear"
 msgstr "ملابس سباحة"
 
-#: .\templates\base.html:163
-msgid "Homewear"
+#: .\templates\base.html:185 .\templates\dashboard.html:608
+#, fuzzy
+#| msgid "Sportswear"
+msgid "Sleepwear"
 msgstr "ملابس نوم"
 
-#: .\templates\base.html:164
+#: .\templates\base.html:186 .\templates\dashboard.html:609
 msgid "Sportswear"
 msgstr "ملابس رياضه"
 
-#: .\templates\base.html:165
+#: .\templates\base.html:187
 msgid "Jumpsuit"
 msgstr "بدلة"
 
-#: .\templates\base.html:166
+#: .\templates\base.html:188 .\templates\dashboard.html:611
 msgid "Blazers"
 msgstr "بليزر"
 
-#: .\templates\base.html:167
+#: .\templates\base.html:189 .\templates\dashboard.html:612
 msgid "Jackets"
 msgstr "جاكيتات"
 
-#: .\templates\base.html:168 .\templates\index.html:215
+#: .\templates\base.html:190 .\templates\dashboard.html:613
+#: .\templates\index.html:214
 msgid "Shoes"
 msgstr "أحذية"
 
-#: .\templates\base.html:225 .\templates\edit_profile.html:15
+#: .\templates\base.html:246 .\templates\edit_profile.html:131
 msgid "Edit Profile"
 msgstr "تعديل الملف الشخصي"
 
-#: .\templates\base.html:231 .\templates\pending.html:29
+#: .\templates\base.html:252 .\templates\edit_profile.html:138
+#: .\templates\pending.html:29
 msgid "Logout"
 msgstr "تسجيل خروج"
 
-#: .\templates\base.html:236 .\templates\login.html:20
+#: .\templates\base.html:257
 msgid "Login"
 msgstr "تسجيل الدخول"
 
-#: .\templates\base.html:237 .\templates\register.html:20
+#: .\templates\base.html:258
 msgid "Register"
 msgstr "يسجل"
 
-#: .\templates\base.html:263
+#: .\templates\base.html:281
 msgid ""
 "Youth who choose casually, rejecting stereotypes and wanting to feel "
 "comfortable in their clothes..Our SHop satisfies this needs."
@@ -282,136 +235,177 @@ msgstr ""
 "الشباب الذين يختارون عرضا ، ويرفضون الصور النمطية ويريدون الشعور مريحة في "
 "ملابسهم .. متجرنا يلبي هذه الاحتياجات"
 
-#: .\templates\base.html:276 .\templates\base.html:296
+#: .\templates\base.html:294 .\templates\base.html:314
 msgid "Quick Links"
 msgstr "روابط سريعة"
 
-#: .\templates\base.html:279 .\templates\cart.html:19 .\templates\cart.html:53
+#: .\templates\base.html:297 .\templates\cart.html:19 .\templates\cart.html:51
 #: .\templates\checkout.html:16 .\templates\checkout.html:48
 #: .\templates\contact.html:19 .\templates\contact.html:52
 #: .\templates\detail.html:17 .\templates\detail.html:48
-#: .\templates\index.html:19 .\templates\shop.html:15 .\templates\shop.html:38
+#: .\templates\index.html:17 .\templates\quick-links\faqs.html:22
+#: .\templates\reset\forgetpassword.html:17
+#: .\templates\reset\password_reset.html:21
+#: .\templates\reset\password_reset_complete.html:21
+#: .\templates\reset\password_reset_confirm.html:21
+#: .\templates\reset\password_reset_done.html:21 .\templates\shop.html:15
+#: .\templates\shop.html:38
 msgid "Home"
 msgstr "المنزل"
 
-#: .\templates\base.html:282 .\templates\shop.html:36
+#: .\templates\base.html:300 .\templates\shop.html:36
 msgid "Our Shop"
 msgstr "محلنا"
 
-#: .\templates\base.html:285 .\templates\cart.html:29 .\templates\cart.html:51
-#: .\templates\cart.html:55 .\templates\checkout.html:26
-#: .\templates\contact.html:29 .\templates\detail.html:27
-#: .\templates\index.html:29 .\templates\shop.html:20
+#: .\templates\base.html:303 .\templates\cart.html:29 .\templates\cart.html:49
+#: .\templates\cart.html:53 .\templates\checkout.html:26
+#: .\templates\contact.html:29 .\templates\dashboard.html:442
+#: .\templates\detail.html:27 .\templates\index.html:27
+#: .\templates\quick-links\faqs.html:32
+#: .\templates\reset\forgetpassword.html:27
+#: .\templates\reset\password_reset.html:31
+#: .\templates\reset\password_reset_complete.html:31
+#: .\templates\reset\password_reset_confirm.html:31
+#: .\templates\reset\password_reset_done.html:31 .\templates\shop.html:20
 msgid "Shopping Cart"
 msgstr "عربة التسوق"
 
-#: .\templates\base.html:288 .\templates\cart.html:30
+#: .\templates\base.html:306 .\templates\cart.html:30
 #: .\templates\checkout.html:27 .\templates\checkout.html:46
 #: .\templates\checkout.html:50 .\templates\contact.html:30
-#: .\templates\detail.html:28 .\templates\index.html:30
-#: .\templates\shop.html:21
+#: .\templates\detail.html:28 .\templates\index.html:28
+#: .\templates\quick-links\faqs.html:33
+#: .\templates\reset\forgetpassword.html:28
+#: .\templates\reset\password_reset.html:32
+#: .\templates\reset\password_reset_complete.html:32
+#: .\templates\reset\password_reset_confirm.html:32
+#: .\templates\reset\password_reset_done.html:32 .\templates\shop.html:21
 msgid "Checkout"
 msgstr "الدفع"
 
-#: .\templates\base.html:291 .\templates\contact.html:50
+#: .\templates\base.html:309 .\templates\contact.html:50
 msgid "Contact Us"
 msgstr "اتصل بنا"
 
+#: .\templates\base.html:317 .\templates\quick-links\faqs.html:162
+msgid "FAQs"
+msgstr "سوال و جواب"
 
-#: .\templates\base.html:311
-msgid "Pricing"
-msgstr "التسعير"
+#: .\templates\base.html:321
+msgid "Terms"
+msgstr "شروط"
 
-#: .\templates\base.html:314
+#: .\templates\base.html:324
+msgid "Help"
+msgstr "المساعده"
+
+#: .\templates\base.html:327
+msgid "Support"
+msgstr "الدعم"
+
+#: .\templates\base.html:329
 msgid "Privacy"
 msgstr "خصوصية"
 
-#: .\templates\base.html:319
+#: .\templates\base.html:334
 msgid "Newsletter"
 msgstr "النشرة الإخبارية"
 
-#: .\templates\base.html:342
+#: .\templates\base.html:357
 msgid "Subscribe Now"
 msgstr "إشترك الآن"
 
-#: .\templates\base.html:356
-msgid "Your Site Name"
-msgstr "اسم موقعك"
-
-#: .\templates\base.html:357
+#: .\templates\base.html:371
 msgid "All Rights Reserved. Designed by"
 msgstr "كل الحقوق محفوظة. صمم بواسطة"
 
 #: .\templates\cart.html:20 .\templates\checkout.html:17
 #: .\templates\contact.html:20 .\templates\detail.html:18
-#: .\templates\index.html:20 .\templates\shop.html:16 .\templates\shop.html:40
+#: .\templates\index.html:18 .\templates\quick-links\faqs.html:23
+#: .\templates\reset\forgetpassword.html:18
+#: .\templates\reset\password_reset.html:22
+#: .\templates\reset\password_reset_complete.html:22
+#: .\templates\reset\password_reset_confirm.html:22
+#: .\templates\reset\password_reset_done.html:22 .\templates\shop.html:16
+#: .\templates\shop.html:40
 msgid "Shop"
 msgstr "تسوق"
 
 #: .\templates\cart.html:26 .\templates\checkout.html:23
 #: .\templates\contact.html:26 .\templates\detail.html:24
-#: .\templates\index.html:26 .\templates\shop.html:18
+#: .\templates\index.html:24 .\templates\quick-links\faqs.html:29
+#: .\templates\reset\forgetpassword.html:24
+#: .\templates\reset\password_reset.html:28
+#: .\templates\reset\password_reset_complete.html:28
+#: .\templates\reset\password_reset_confirm.html:28
+#: .\templates\reset\password_reset_done.html:28 .\templates\shop.html:18
 msgid "Pages"
 msgstr "الصحفات"
 
 #: .\templates\cart.html:33 .\templates\checkout.html:30
 #: .\templates\contact.html:34 .\templates\contact.html:54
-#: .\templates\detail.html:31 .\templates\index.html:33
-#: .\templates\shop.html:24
+#: .\templates\detail.html:31 .\templates\index.html:31
+#: .\templates\quick-links\faqs.html:36
+#: .\templates\reset\forgetpassword.html:31
+#: .\templates\reset\password_reset.html:35
+#: .\templates\reset\password_reset_complete.html:35
+#: .\templates\reset\password_reset_confirm.html:35
+#: .\templates\reset\password_reset_done.html:35 .\templates\shop.html:24
 msgid "Contact"
 msgstr "اتصال"
 
-#: .\templates\cart.html:68
+#: .\templates\cart.html:66
 msgid "My Cart"
 msgstr "عربة التسوق الخاصة بي"
 
-#: .\templates\cart.html:74 .\templates\cart.html:144
+#: .\templates\cart.html:72 .\templates\cart.html:142
+#: .\templates\dashboard.html:454
 msgid "Price"
 msgstr "السعر"
 
-#: .\templates\cart.html:75 .\templates\cart.html:145
+#: .\templates\cart.html:73 .\templates\cart.html:143
 msgid "Quantity"
 msgstr "العدد"
 
-#: .\templates\cart.html:76 .\templates\cart.html:146 .\templates\cart.html:196
+#: .\templates\cart.html:74 .\templates\cart.html:144 .\templates\cart.html:194
 #: .\templates\checkout.html:148
 msgid "Total"
 msgstr "المجموع"
 
-#: .\templates\cart.html:77
+#: .\templates\cart.html:75
 msgid "Remove"
 msgstr "حذف"
 
-#: .\templates\cart.html:138
+#: .\templates\cart.html:136
 msgid "Confirmed"
 msgstr "تم تأكيد"
 
-#: .\templates\cart.html:147
+#: .\templates\cart.html:145
 msgid "Track"
 msgstr "مسار"
 
-#: .\templates\cart.html:176
+#: .\templates\cart.html:174
 msgid "Apply Coupon"
 msgstr "تطبيق القسيمة"
 
-#: .\templates\cart.html:182
+#: .\templates\cart.html:180
 msgid "Cart Summary"
 msgstr "ملخص العربة"
 
-#: .\templates\cart.html:186 .\templates\checkout.html:138
+#: .\templates\cart.html:184 .\templates\checkout.html:138
 msgid "Subtotal"
 msgstr "المجموع الفرعي"
 
-#: .\templates\cart.html:190 .\templates\checkout.html:142
-#: .\templates\index.html:119
+#: .\templates\cart.html:188 .\templates\checkout.html:142
+#: .\templates\index.html:118
 msgid "Shipping"
 msgstr "شحن"
 
-#: .\templates\cart.html:191
+#: .\templates\cart.html:189
 msgid "60"
 msgstr "60"
 
-#: .\templates\cart.html:207
+#: .\templates\cart.html:205
 msgid "Proceed To Checkout"
 msgstr "باشرالخروج من الفندق"
 
@@ -431,7 +425,7 @@ msgstr "عنوان 1"
 msgid "Address Line 2"
 msgstr "عنوان 2"
 
-#: .\templates\checkout.html:100
+#: .\templates\checkout.html:100 .\templates\edit_profile.html:333
 msgid "Country"
 msgstr "البلد"
 
@@ -459,13 +453,9 @@ msgstr "الطلب الكلي"
 msgid "Payment"
 msgstr "الدفع"
 
-#: .\templates\checkout.html:168
+#: .\templates\checkout.html:185
 msgid "Pay on Delivery"
 msgstr "الدفع عند التوصيل"
-
-#: .\templates\checkout.html:179
-msgid "Place Order"
-msgstr "مكان الامر"
 
 #: .\templates\contact.html:63
 msgid "Contact For Any Queries"
@@ -479,15 +469,175 @@ msgstr "ارسل رساله"
 msgid "Get In Touch"
 msgstr "ابقى على تواصل"
 
-#: .\templates\contact.html:139
+#: .\templates\contact.html:137
 msgid "Store"
 msgstr "متجر"
+
+#: .\templates\dashboard.html:312
+#, fuzzy
+#| msgid "Trandy Products"
+msgid "Pending Products"
+msgstr "المنتجات العصرية"
+
+#: .\templates\dashboard.html:334
+#, fuzzy
+#| msgid "Trandy Products"
+msgid "Total Products Active"
+msgstr "إجمالي المنتجات النشطة"
+
+#: .\templates\dashboard.html:354
+msgid "Unit/s"
+msgstr "وحدة"
+
+#: .\templates\dashboard.html:355
+#, fuzzy
+#| msgid "Total"
+msgid "Total Sales"
+msgstr "المجموع"
+
+#: .\templates\dashboard.html:376
+msgid "Total Revenue"
+msgstr "إجمالي الإيرادات"
+
+#: .\templates\dashboard.html:397
+msgid "PRODUCTS SALES"
+msgstr "مبيعات المنتجات"
+
+#: .\templates\dashboard.html:406
+msgid "Sales"
+msgstr "مبيعات"
+
+#: .\templates\dashboard.html:411
+msgid "Visits"
+msgstr "الزيارات"
+
+#: .\templates\dashboard.html:424
+msgid "Statistics"
+msgstr "إحصائيات"
+
+#: .\templates\dashboard.html:429
+msgid "Last 6 Months Sales"
+msgstr "آخر 6 أشهر من المبيعات"
+
+#: .\templates\dashboard.html:450
+#, fuzzy
+#| msgid "image"
+msgid "Image"
+msgstr "صورة"
+
+#: .\templates\dashboard.html:452
+#, fuzzy
+#| msgid "Country"
+msgid "Count"
+msgstr "البلد"
+
+#: .\templates\dashboard.html:453
+msgid "Status"
+msgstr "الحالة"
+
+#: .\templates\dashboard.html:455
+msgid "Delete"
+msgstr "حذف"
+
+#: .\templates\dashboard.html:456
+msgid "Edit"
+msgstr "تعديل"
+
+#: .\templates\dashboard.html:488
+#, fuzzy
+#| msgid "approved"
+msgid "Approved"
+msgstr "وافق"
+
+#: .\templates\dashboard.html:492 .\templates\pending.html:20
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#: .\templates\dashboard.html:533 .\templates\dashboard.html:546
+msgid "Please enter the Product Name"
+msgstr "الرجاء إدخال اسم المنتج"
+
+#: .\templates\dashboard.html:559
+msgid "Please enter product price"
+msgstr "الرجاء إدخال سعر المنتج"
+
+#: .\templates\dashboard.html:571
+msgid "Please enter Old product price"
+msgstr "الرجاء إدخال سعر المنتج القديم"
+
+#: .\templates\dashboard.html:583
+msgid "Please enter product count"
+msgstr "الرجاء إدخال عدد المنتجات"
+
+#: .\templates\dashboard.html:590
+#, fuzzy
+#| msgid "All Gender"
+msgid "Gender"
+msgstr "كل الفئات"
+
+#: .\templates\dashboard.html:593
+msgid "All"
+msgstr "كل"
+
+#: .\templates\dashboard.html:594 .\templates\shop.html:195
+msgid "Male"
+msgstr "رجال"
+
+#: .\templates\dashboard.html:595 .\templates\shop.html:201
+msgid "Female"
+msgstr "نساء"
+
+#: .\templates\dashboard.html:596 .\templates\shop.html:207
+msgid "Baby"
+msgstr "اطفال"
+
+#: .\templates\dashboard.html:602
+#, fuzzy
+#| msgid "category"
+msgid "Category"
+msgstr "الفئة"
+
+#: .\templates\dashboard.html:610
+#, fuzzy
+#| msgid "Jumpsuit"
+msgid "Jumpsuits"
+msgstr "بدلة"
+
+#: .\templates\dashboard.html:619
+#, fuzzy
+#| msgid "Colors:"
+msgid "Colors"
+msgstr "الالوان"
+
+#: .\templates\dashboard.html:631
+#, fuzzy
+#| msgid "Sizes:"
+msgid "Sizes"
+msgstr "المقاسات"
+
+#: .\templates\dashboard.html:650
+msgid "Please upload photo"
+msgstr "الرجاء تحميل الصورة"
+
+#: .\templates\dashboard.html:672
+#, fuzzy
+#| msgid "description"
+msgid "Please enter description"
+msgstr "الوصف"
+
+#: .\templates\dashboard.html:682
+msgid "Send"
+msgstr "ارسال"
+
+#: .\templates\dashboard.html:690
+msgid "clear"
+msgstr "حذف"
 
 #: .\templates\detail.html:46 .\templates\detail.html:50
 msgid "Shop Detail"
 msgstr "متجر التفاصيل"
 
-#: .\templates\detail.html:100 .\templates\detail.html:202
+#: .\templates\detail.html:100 .\templates\detail.html:224
 msgid "Reviews"
 msgstr "المراجعات"
 
@@ -499,220 +649,325 @@ msgstr "المقاسات"
 msgid "Colors:"
 msgstr "الالوان"
 
-#: .\templates\detail.html:165 .\templates\index.html:299
-#: .\templates\index.html:379 .\templates\shop.html:271
+#: .\templates\detail.html:147 .\templates\detail.html:181
+#, fuzzy
+#| msgid "Add To Cart"
+msgid "Added To Cart"
+msgstr "أضف إلى السلة"
+
+#: .\templates\detail.html:175 .\templates\detail.html:410
+#: .\templates\detail.html:425 .\templates\index.html:300
+#: .\templates\index.html:315 .\templates\index.html:397
+#: .\templates\index.html:411 .\templates\shop.html:274
+#: .\templates\shop.html:289
 msgid "Add To Cart"
 msgstr "أضف إلى السلة"
 
-#: .\templates\detail.html:169
+#: .\templates\detail.html:191
 msgid "Share on:"
 msgstr "شارك عبر"
 
-#: .\templates\detail.html:196
+#: .\templates\detail.html:218
 msgid "Description"
 msgstr "الوصف"
 
-#: .\templates\detail.html:199
+#: .\templates\detail.html:221
 msgid "Information"
 msgstr "معلومة"
 
-#: .\templates\detail.html:207
+#: .\templates\detail.html:229
 msgid "Product Description"
 msgstr "الوصف"
 
-#: .\templates\detail.html:213
+#: .\templates\detail.html:235
 msgid "Additional Information"
 msgstr "معلومات إضافية"
 
-#: .\templates\detail.html:307
+#: .\templates\detail.html:329
 msgid "Leave a review"
 msgstr "ترك التعليق"
 
-#: .\templates\detail.html:315
+#: .\templates\detail.html:337
 msgid "5 stars"
 msgstr "5 نجمه"
 
-#: .\templates\detail.html:316
+#: .\templates\detail.html:338
 msgid "4 stars"
 msgstr "4 نجمه"
 
-#: .\templates\detail.html:317
+#: .\templates\detail.html:339
 msgid "3 stars"
 msgstr "3 نجمه"
 
-#: .\templates\detail.html:318
+#: .\templates\detail.html:340
 msgid "2 stars"
 msgstr "2 نجمه"
 
-#: .\templates\detail.html:319
+#: .\templates\detail.html:341
 msgid "1 star"
 msgstr "1 نجمه"
 
-#: .\templates\detail.html:323
+#: .\templates\detail.html:345
 msgid "Your Review *"
 msgstr "مراجعتك"
 
-#: .\templates\detail.html:352
+#: .\templates\detail.html:374
 msgid "You May Also Like"
 msgstr "ربما يعجبك أيضا"
 
-#: .\templates\detail.html:379 .\templates\index.html:292
-#: .\templates\index.html:372
+#: .\templates\detail.html:401 .\templates\index.html:291
+#: .\templates\index.html:389
 msgid "View Detail"
 msgstr "عرض التفاصيل"
 
-#: .\templates\edit_profile.html:24
-msgid "Upload a different photo"
+#: .\templates\edit_profile.html:123
+msgid "Available"
+msgstr "متاح"
+
+#: .\templates\edit_profile.html:159
+msgid "Account Settings"
+msgstr "إعدادت الحساب"
+
+#: .\templates\edit_profile.html:160
+msgid "Configure account settings to your needs"
+msgstr "تكوين إعدادات الحساب لاحتياجاتك"
+
+#: .\templates\edit_profile.html:171
+msgid "General"
+msgstr "عام"
+
+#: .\templates\edit_profile.html:177
+#, fuzzy
+#| msgid "Confrim Password"
+msgid "Change Password"
+msgstr "تأكيد كلمة المرور"
+
+#: .\templates\edit_profile.html:183
+msgid "Info"
+msgstr "معلومات"
+
+#: .\templates\edit_profile.html:189
+#, fuzzy
+#| msgid "Quick Links"
+msgid "Social Links"
+msgstr "روابط سريعة"
+
+#: .\templates\edit_profile.html:195
+msgid "Connections"
+msgstr "Connections"
+
+#: .\templates\edit_profile.html:222
+#, fuzzy
+#| msgid "Upload a different photo"
+msgid "Upload Photo"
 msgstr "قم بتحميل صورة مختلفة"
 
-#: .\templates\edit_profile.html:33
-msgid "Personal info"
-msgstr "معلومات شخصية"
+#: .\templates\edit_profile.html:226
+msgid "Allowed JPG or PNG. Max size of 800kB"
+msgstr "مسموح بتنسيق JPG أو PNG. أقصى حجم 800 كيلو بايت"
 
-
-#: .\templates\edit_profile.html:35 .\templates\register.html:26
-msgid "First name"
+#: .\templates\edit_profile.html:236
+#, fuzzy
+#| msgid "First name"
+msgid "First Name"
 msgstr "الاسم الاول"
 
-#: .\templates\edit_profile.html:42 .\templates\register.html:34
+#: .\templates\edit_profile.html:243
 msgid "Last name"
 msgstr "الاسم الاخير"
 
-#: .\templates\edit_profile.html:49
+#: .\templates\edit_profile.html:250
+#, fuzzy
+#| msgid "Email"
+msgid "E-mail"
+msgstr "البريد الالكتروني"
+
+#: .\templates\edit_profile.html:261
+msgid "Your email is not confirmed. Please check your inbox"
+msgstr "لم يتم تأكيد بريدك الإلكتروني. يرجى التحقق من البريد الوارد الخاص بك"
+
+#: .\templates\edit_profile.html:262
+#, fuzzy
+#| msgid "Information"
+msgid "Resend confirmation"
+msgstr "أعد إرسال التأكيد"
+
+#: .\templates\edit_profile.html:266
 msgid "Phone"
 msgstr "التلفون"
 
-#: .\templates\edit_profile.html:56 .\templates\login.html:29
-#: .\templates\register.html:44
-msgid "Email"
-msgstr "البريد الالكتروني"
+#: .\templates\edit_profile.html:272 .\templates\edit_profile.html:303
+#: .\templates\edit_profile.html:376 .\templates\edit_profile.html:433
+msgid "Save Changes"
+msgstr "حفظ التغييرات"
 
-#: .\templates\edit_profile.html:66
-msgid "Update"
-msgstr "تعديل"
+#: .\templates\edit_profile.html:273
+msgid "Cancel"
+msgstr "الغاء"
 
-#: .\templates\index.html:50 .\templates\index.html:68
+#: .\templates\edit_profile.html:285
+#, fuzzy
+#| msgid "Confrim Password"
+msgid "Old Password"
+msgstr "تأكيد كلمة المرور"
+
+#: .\templates\edit_profile.html:291
+#, fuzzy
+#| msgid "Confrim Password"
+msgid "New Password"
+msgstr "تأكيد كلمة المرور"
+
+#: .\templates\edit_profile.html:297
+msgid "Retype New Password"
+msgstr "أعد كتابة كلمة السر الجديدة"
+
+#: .\templates\edit_profile.html:323
+msgid "Bio"
+msgstr "الوصف"
+
+#: .\templates\edit_profile.html:327
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
+
+#: .\templates\edit_profile.html:336
+#, fuzzy
+#| msgid "Country"
+msgid "Select Country"
+msgstr "البلد"
+
+#: .\templates\edit_profile.html:360
+msgid "Company"
+msgstr "الشركه"
+
+#: .\templates\edit_profile.html:366
+msgid "Website"
+msgstr "الموقع"
+
+#: .\templates\edit_profile.html:387
+msgid "Twitter"
+msgstr "تويتر"
+
+#: .\templates\edit_profile.html:396
+msgid "Facebook"
+msgstr "فيس بوك"
+
+#: .\templates\edit_profile.html:406
+msgid "Linkedin"
+msgstr "ينكدين"
+
+#: .\templates\edit_profile.html:415
+msgid "Instagram"
+msgstr "انستجرام"
+
+#: .\templates\edit_profile.html:443
+msgid "Connect to"
+msgstr "اتصل بـ"
+
+#: .\templates\edit_profile.html:443
+msgid "Google"
+msgstr "جوجل"
+
+#: .\templates\edit_profile.html:448
+msgid "You are connected to google"
+msgstr "انت الان متصل مع جوجل"
+
+#: .\templates\edit_profile.html:451
+msgid "You are not connected"
+msgstr "انت غير متصل"
+
+#: .\templates\error\404.html:67
+msgid "404 - Page Not Found!"
+msgstr "الصفحة غير موجودة"
+
+#: .\templates\index.html:48 .\templates\index.html:66
+#, fuzzy, python-format
+#| msgid "10%% Off Your First Order"
 msgid "10%% Off Your First Order"
 msgstr " 10% خصم علي اول طلب"
 
-#: .\templates\index.html:53
+#: .\templates\index.html:51
 msgid "Reasonable Price"
 msgstr "سعر معقول"
 
-#: .\templates\index.html:55 .\templates\index.html:73
-#: .\templates\index.html:236 .\templates\index.html:252
+#: .\templates\index.html:53 .\templates\index.html:71
+#: .\templates\index.html:235 .\templates\index.html:251
 msgid "Shop Now"
 msgstr "تسوق الان"
 
-#: .\templates\index.html:71
+#: .\templates\index.html:69
 msgid "Fashionable Dress"
 msgstr "فستان عصري"
 
-#: .\templates\index.html:110
+#: .\templates\index.html:109
 msgid "Quality Product"
 msgstr "منتج"
 
-#: .\templates\index.html:128
+#: .\templates\index.html:127
 msgid "14-Day Return"
 msgstr "14 يوم العودة"
 
-#: .\templates\index.html:137
+#: .\templates\index.html:136
 msgid "24/7 Support"
 msgstr "24/7 الدعم"
 
-#: .\templates\index.html:155
-msgid "Men dresses"
-msgstr "فساتين الرجال"
+#: .\templates\index.html:154
+msgid "Man Fashion"
+msgstr "أزياء الرجل"
 
-#: .\templates\index.html:167
-msgid "Women dresses"
-msgstr "فساتين النساء"
+#: .\templates\index.html:166
+msgid "Women Fashion"
+msgstr "ازياء النساء"
 
-#: .\templates\index.html:179
-msgid "Baby dresses"
-msgstr "فستان الاطفال"
+#: .\templates\index.html:178
+msgid "Baby Clothes"
+msgstr "ملابس اطفال"
 
-#: .\templates\index.html:191
+#: .\templates\index.html:190
 msgid "Accerssories"
 msgstr "مُكَمِّلات"
 
-#: .\templates\index.html:203
+#: .\templates\index.html:202
 msgid "Bags"
 msgstr "الشنط"
 
-#: .\templates\index.html:232 .\templates\index.html:248
+#: .\templates\index.html:231 .\templates\index.html:247
+#, python-format
 msgid "20%% off the all order"
 msgstr "خصم 20٪ على كل الطلبات"
 
-#: .\templates\index.html:234
+#: .\templates\index.html:233
 msgid "Spring Collection"
 msgstr "مجموعة الربيع"
 
-#: .\templates\index.html:250
+#: .\templates\index.html:249
 msgid "Winter Collection"
 msgstr "مجموعة الشتاء"
 
-#: .\templates\index.html:265
+#: .\templates\index.html:264
 msgid "Trandy Products"
 msgstr "المنتجات العصرية"
 
-#: .\templates\index.html:316
+#: .\templates\index.html:338
 msgid "Stay Updated"
 msgstr "ابق على اطلاع"
 
-#: .\templates\index.html:331
+#: .\templates\index.html:352
 msgid "Subscribe"
 msgstr "الإشتراك"
 
-#: .\templates\index.html:344
+#: .\templates\index.html:364
 msgid "Just Arrived"
 msgstr "وصل للتو"
-
-#: .\templates\login.html:31
-msgid "Please choose a email"
-msgstr "الرجاء اختيار بريد إلكتروني"
-
-#: .\templates\login.html:38 .\templates\register.html:53
-msgid "Confrim Password"
-msgstr "تأكيد كلمة المرور"
-
-#: .\templates\login.html:40
-msgid "Please provide a valid Password"
-msgstr "الرجاء إدخال كلمة مرور صالحة"
-
-#: .\templates\login.html:49 .\templates\register.html:93
-msgid "Submit"
-msgstr "ادخال"
-
-#: .\templates\login.html:59
-msgid "register new"
-msgstr "مستخدم جديد"
-
-#: .\templates\pending.html:20
-msgid "Pending"
-msgstr "قيد الانتظار"
-
-#: .\templates\register.html:69
-msgid "Mobile"
-msgstr "الهاتف"
-
-#: .\templates\register.html:75
-msgid "Choose account"
-msgstr "اختر الحساب"
-
-#: .\templates\register.html:77
-msgid "User"
-msgstr "مستخدم"
-
-
-#: .\templates\register.html:77
-msgid "Seller"
-msgstr "بائع"
 
 #: .\templates\shop.html:51
 msgid "Filter by price"
 msgstr "تصفية حسب السعر"
 
+#: .\templates\shop.html:58
+#, fuzzy
+#| msgid "Price"
+msgid "All Price"
+msgstr "السعر"
 
 #: .\templates\shop.html:99
 msgid "Filter by color"
@@ -758,18 +1013,6 @@ msgstr "تصفية حسب السعر"
 msgid "All Gender"
 msgstr "كل الفئات"
 
-#: .\templates\shop.html:195
-msgid "Male"
-msgstr "رجال"
-
-#: .\templates\shop.html:201
-msgid "Female"
-msgstr "نساء"
-
-#: .\templates\shop.html:207
-msgid "Baby"
-msgstr "اطفال"
-
 #: .\templates\shop.html:215
 msgid "Apply Filters"
 msgstr "تطبيق البحث"
@@ -790,11 +1033,11 @@ msgstr "السعر المنخفض"
 msgid "Price High"
 msgstr "السعر المرتفع"
 
-#: .\templates\shop.html:284
+#: .\templates\shop.html:311
 msgid "Previous"
 msgstr "سابق"
 
-#: .\templates\shop.html:304 .\templates\shop.html:311
+#: .\templates\shop.html:331 .\templates\shop.html:338
 msgid "Next"
 msgstr "التالي"
 
@@ -802,15 +1045,15 @@ msgstr "التالي"
 msgid "empty name is not valid name"
 msgstr "الاسم الفارغ ليس اسمًا صالحًا"
 
-#: .\user\models.py:56
+#: .\user\models.py:56 .\user\models.py:137
 msgid "email address"
 msgstr "البريد الاكتروني"
 
-#: .\user\models.py:59
+#: .\user\models.py:59 .\user\models.py:140
 msgid "first name"
 msgstr "الاسم الاول"
 
-#: .\user\models.py:60
+#: .\user\models.py:60 .\user\models.py:141
 msgid "last name"
 msgstr "الاسم الاخير"
 
@@ -838,5 +1081,92 @@ msgstr "مزود المصادقة"
 msgid "seller"
 msgstr "بائع"
 
-#~ msgid "Terms"
-#~ msgstr "شروط"
+#: .\user\models.py:139
+#, fuzzy
+#| msgid "last name"
+msgid "full name"
+msgstr "الاسم الاخير"
+
+#~ msgid "color 1"
+#~ msgstr "اللون 1"
+
+#~ msgid "color 2"
+#~ msgstr "اللون 2"
+
+#~ msgid "color 3"
+#~ msgstr "اللون 3"
+
+#~ msgid "color 4"
+#~ msgstr "اللون 4"
+
+#~ msgid "color 5"
+#~ msgstr "اللون 5"
+
+#~ msgid "size 1"
+#~ msgstr "مقاس 1"
+
+#~ msgid "size 2"
+#~ msgstr "مقاس 2"
+
+#~ msgid "size 3"
+#~ msgstr "مقاس 3"
+
+#~ msgid "size 4"
+#~ msgstr "مقاس 4"
+
+#~ msgid "size 5"
+#~ msgstr "مقاس 5"
+
+#~ msgid "size 6"
+#~ msgstr "مقاس 6"
+
+#~ msgid "Homewear"
+#~ msgstr "ملابس نوم"
+
+#~ msgid "Pricing"
+#~ msgstr "التسعير"
+
+#~ msgid "Your Site Name"
+#~ msgstr "اسم موقعك"
+
+#~ msgid "Place Order"
+#~ msgstr "مكان الامر"
+
+#~ msgid "Personal info"
+#~ msgstr "معلومات شخصية"
+
+#~ msgid "Update"
+#~ msgstr "تعديل"
+
+#~ msgid "Men dresses"
+#~ msgstr "الرجال"
+
+#~ msgid "Women dresses"
+#~ msgstr "فساتين النساء"
+
+#~ msgid "Baby dresses"
+#~ msgstr "فستان الاطفال"
+
+#~ msgid "Please choose a email"
+#~ msgstr "الرجاء اختيار بريد إلكتروني"
+
+#~ msgid "Please provide a valid Password"
+#~ msgstr "الرجاء إدخال كلمة مرور صالحة"
+
+#~ msgid "Submit"
+#~ msgstr "ادخال"
+
+#~ msgid "register new"
+#~ msgstr "مستخدم جديد"
+
+#~ msgid "Mobile"
+#~ msgstr "الهاتف"
+
+#~ msgid "Choose account"
+#~ msgstr "اختر الحساب"
+
+#~ msgid "User"
+#~ msgstr "مستخدم"
+
+#~ msgid "Seller"
+#~ msgstr "بائع"

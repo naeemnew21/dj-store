@@ -605,7 +605,7 @@
                   <option value="Shirts" selected>{%trans 'Shirts'%}</option>
                   <option value="Jeans">{%trans 'Jeans'%}</option>
                   <option value="Swimwear">{%trans 'Swimwear'%}</option>
-                  <option value="Sleepwear">{%trans 'Sleepwear'%}</option>
+                  <option value="Accerssories">{%trans 'Accerssories'%}</option>
                   <option value="Sportswear">{%trans 'Sportswear'%}</option>
                   <option value="Jumpsuits">{%trans 'Jumpsuits'%}</option>
                   <option value="Blazers">{%trans 'Blazers'%}</option>
@@ -620,7 +620,6 @@
                 </div>
                 
                 <select  class="form-control form-control-lg" id="choices-multiple-colors" placeholder="All Colors" multiple="multiple" name="colors">
-
                     {% for color in colors %}
                       <option value={{color.id}}>{{color}}</option>
                     {% endfor %}
@@ -770,9 +769,7 @@
       })
     </script>
 
-
     <script>
-
         function post_url(element){
           slug = element.id;
           document.getElementById("postProduct").action = "update-product/"+slug ;
@@ -853,4 +850,3 @@
   </body>
   <!-- END : Body-->
 </html>
-{% comment %} https://codepen.io/vank0/pen/mrRwLg {% endcomment %}
