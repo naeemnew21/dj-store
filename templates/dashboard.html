@@ -239,7 +239,7 @@
                         <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="dropdown-flag">
                             <form id="lang-en" action="{% url 'set_language' %}" method="post">
                                 {% csrf_token %}
-                                <input name="next" type="hidden" value="{{ redirect_to }}">
+                                <input name="next" type="hidden" value="{{redirect_to}}">
                                 <input name="language" type="hidden" value="en">
                                 <a class="dropdown-item" href="javascript:;" data-language="en" onclick="document.getElementById('lang-en').submit()"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/us.png'%}" alt="flag">
                                     <span class="font-small-3">English</span>
@@ -247,7 +247,7 @@
                             </form>
                             <form id="lang-ar" action="{% url 'set_language' %}" method="post">
                                 {% csrf_token %}
-                                <input name="next" type="hidden" value="{{ redirect_to }}">
+                                <input name="next" type="hidden" value="{{redirect_to}}">
                                 <input name="language" type="hidden" value="ar">
                                 <a class="dropdown-item" href="javascript:;" data-language="es" onclick="document.getElementById('lang-ar').submit()"><img class="langimg mr-2" src="{%static 'app-assets/img/flags/eg.png'%}" alt="flag">
                                     <span class="font-small-3">العربية</span>

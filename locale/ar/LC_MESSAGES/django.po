@@ -113,8 +113,6 @@ msgid "suitable"
 msgstr "متكافئ"
 
 #: .\product\models.py:109
-#, fuzzy
-#| msgid "Price"
 msgid "price"
 msgstr "السعر"
 
@@ -184,8 +182,6 @@ msgid "Swimwear"
 msgstr "ملابس سباحة"
 
 #: .\templates\base.html:185 .\templates\dashboard.html:608
-#, fuzzy
-#| msgid "Sportswear"
 msgid "Sleepwear"
 msgstr "ملابس نوم"
 
@@ -474,14 +470,10 @@ msgid "Store"
 msgstr "متجر"
 
 #: .\templates\dashboard.html:312
-#, fuzzy
-#| msgid "Trandy Products"
 msgid "Pending Products"
-msgstr "المنتجات العصرية"
+msgstr "المنتجات المعلقة"
 
 #: .\templates\dashboard.html:334
-#, fuzzy
-#| msgid "Trandy Products"
 msgid "Total Products Active"
 msgstr "إجمالي المنتجات النشطة"
 
@@ -490,10 +482,8 @@ msgid "Unit/s"
 msgstr "وحدة"
 
 #: .\templates\dashboard.html:355
-#, fuzzy
-#| msgid "Total"
 msgid "Total Sales"
-msgstr "المجموع"
+msgstr "اجمالى المبيعات"
 
 #: .\templates\dashboard.html:376
 msgid "Total Revenue"
@@ -520,16 +510,12 @@ msgid "Last 6 Months Sales"
 msgstr "آخر 6 أشهر من المبيعات"
 
 #: .\templates\dashboard.html:450
-#, fuzzy
-#| msgid "image"
 msgid "Image"
 msgstr "صورة"
 
 #: .\templates\dashboard.html:452
-#, fuzzy
-#| msgid "Country"
 msgid "Count"
-msgstr "البلد"
+msgstr "العدد"
 
 #: .\templates\dashboard.html:453
 msgid "Status"
@@ -544,8 +530,6 @@ msgid "Edit"
 msgstr "تعديل"
 
 #: .\templates\dashboard.html:488
-#, fuzzy
-#| msgid "approved"
 msgid "Approved"
 msgstr "وافق"
 
@@ -570,10 +554,8 @@ msgid "Please enter product count"
 msgstr "الرجاء إدخال عدد المنتجات"
 
 #: .\templates\dashboard.html:590
-#, fuzzy
-#| msgid "All Gender"
 msgid "Gender"
-msgstr "كل الفئات"
+msgstr "النوع"
 
 #: .\templates\dashboard.html:593
 msgid "All"
@@ -592,26 +574,18 @@ msgid "Baby"
 msgstr "اطفال"
 
 #: .\templates\dashboard.html:602
-#, fuzzy
-#| msgid "category"
 msgid "Category"
 msgstr "الفئة"
 
 #: .\templates\dashboard.html:610
-#, fuzzy
-#| msgid "Jumpsuit"
 msgid "Jumpsuits"
 msgstr "بدلة"
 
 #: .\templates\dashboard.html:619
-#, fuzzy
-#| msgid "Colors:"
 msgid "Colors"
 msgstr "الالوان"
 
 #: .\templates\dashboard.html:631
-#, fuzzy
-#| msgid "Sizes:"
 msgid "Sizes"
 msgstr "المقاسات"
 
@@ -620,8 +594,6 @@ msgid "Please upload photo"
 msgstr "الرجاء تحميل الصورة"
 
 #: .\templates\dashboard.html:672
-#, fuzzy
-#| msgid "description"
 msgid "Please enter description"
 msgstr "الوصف"
 
@@ -650,8 +622,6 @@ msgid "Colors:"
 msgstr "الالوان"
 
 #: .\templates\detail.html:147 .\templates\detail.html:181
-#, fuzzy
-#| msgid "Add To Cart"
 msgid "Added To Cart"
 msgstr "أضف إلى السلة"
 
@@ -737,38 +707,30 @@ msgid "General"
 msgstr "عام"
 
 #: .\templates\edit_profile.html:177
-#, fuzzy
-#| msgid "Confrim Password"
 msgid "Change Password"
-msgstr "تأكيد كلمة المرور"
+msgstr "تغيير كلمة المرور"
 
 #: .\templates\edit_profile.html:183
 msgid "Info"
 msgstr "معلومات"
 
 #: .\templates\edit_profile.html:189
-#, fuzzy
-#| msgid "Quick Links"
 msgid "Social Links"
-msgstr "روابط سريعة"
+msgstr "روابط تواصل"
 
 #: .\templates\edit_profile.html:195
 msgid "Connections"
 msgstr "Connections"
 
 #: .\templates\edit_profile.html:222
-#, fuzzy
-#| msgid "Upload a different photo"
 msgid "Upload Photo"
-msgstr "قم بتحميل صورة مختلفة"
+msgstr "تحميل صورة "
 
 #: .\templates\edit_profile.html:226
 msgid "Allowed JPG or PNG. Max size of 800kB"
 msgstr "مسموح بتنسيق JPG أو PNG. أقصى حجم 800 كيلو بايت"
 
 #: .\templates\edit_profile.html:236
-#, fuzzy
-#| msgid "First name"
 msgid "First Name"
 msgstr "الاسم الاول"
 
@@ -777,8 +739,6 @@ msgid "Last name"
 msgstr "الاسم الاخير"
 
 #: .\templates\edit_profile.html:250
-#, fuzzy
-#| msgid "Email"
 msgid "E-mail"
 msgstr "البريد الالكتروني"
 
@@ -787,8 +747,6 @@ msgid "Your email is not confirmed. Please check your inbox"
 msgstr "لم يتم تأكيد بريدك الإلكتروني. يرجى التحقق من البريد الوارد الخاص بك"
 
 #: .\templates\edit_profile.html:262
-#, fuzzy
-#| msgid "Information"
 msgid "Resend confirmation"
 msgstr "أعد إرسال التأكيد"
 
@@ -806,16 +764,12 @@ msgid "Cancel"
 msgstr "الغاء"
 
 #: .\templates\edit_profile.html:285
-#, fuzzy
-#| msgid "Confrim Password"
 msgid "Old Password"
-msgstr "تأكيد كلمة المرور"
+msgstr "كلمة المرور القديمة"
 
 #: .\templates\edit_profile.html:291
-#, fuzzy
-#| msgid "Confrim Password"
 msgid "New Password"
-msgstr "تأكيد كلمة المرور"
+msgstr "كلمة المرور الجديدة"
 
 #: .\templates\edit_profile.html:297
 msgid "Retype New Password"
@@ -830,8 +784,6 @@ msgid "Birth Date"
 msgstr "تاريخ الميلاد"
 
 #: .\templates\edit_profile.html:336
-#, fuzzy
-#| msgid "Country"
 msgid "Select Country"
 msgstr "البلد"
 
@@ -880,8 +832,6 @@ msgid "404 - Page Not Found!"
 msgstr "الصفحة غير موجودة"
 
 #: .\templates\index.html:48 .\templates\index.html:66
-#, fuzzy, python-format
-#| msgid "10%% Off Your First Order"
 msgid "10%% Off Your First Order"
 msgstr " 10% خصم علي اول طلب"
 
@@ -964,8 +914,6 @@ msgid "Filter by price"
 msgstr "تصفية حسب السعر"
 
 #: .\templates\shop.html:58
-#, fuzzy
-#| msgid "Price"
 msgid "All Price"
 msgstr "السعر"
 
@@ -1082,8 +1030,6 @@ msgid "seller"
 msgstr "بائع"
 
 #: .\user\models.py:139
-#, fuzzy
-#| msgid "last name"
 msgid "full name"
 msgstr "الاسم الاخير"
 
