@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-10 16:22+0200\n"
+"POT-Creation-Date: 2022-12-10 17:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -558,17 +558,38 @@ msgstr "وافق"
 msgid "Pending"
 msgstr "قيد الانتظار"
 
+#: .\templates\dashboard.html:523
+
+msgid "Product Name"
+msgstr "اسم المنتج"
+
 #: .\templates\dashboard.html:525 .\templates\dashboard.html:538
 msgid "Please enter the Product Name"
 msgstr "الرجاء إدخال اسم المنتج"
+
+#: .\templates\dashboard.html:536
+msgid "Brand Name"
+msgstr "اسم الماركه"
+
+#: .\templates\dashboard.html:549
+msgid "Product price"
+msgstr "سعر المنتج"
 
 #: .\templates\dashboard.html:551
 msgid "Please enter product price"
 msgstr "الرجاء إدخال سعر المنتج"
 
+#: .\templates\dashboard.html:561
+msgid "Old Product price"
+msgstr "سعر المنتج القديم"
+
 #: .\templates\dashboard.html:563
 msgid "Please enter Old product price"
 msgstr "الرجاء إدخال سعر المنتج القديم"
+
+#: .\templates\dashboard.html:573
+msgid "Product count"
+msgstr "عدد المنتج"
 
 #: .\templates\dashboard.html:575
 msgid "Please enter product count"
@@ -606,17 +627,33 @@ msgstr "بدلة"
 msgid "Colors"
 msgstr "الالوان"
 
+#: .\templates\dashboard.html:614
+msgid "All Colors"
+msgstr "كل الالوان"
+
 #: .\templates\dashboard.html:622
 msgid "Sizes"
 msgstr "المقاسات"
+
+#: .\templates\dashboard.html:625
+msgid "All Sizes"
+msgstr "كل المقاسات"
+
+#: .\templates\dashboard.html:639
+msgid "file-uploader"
+msgstr ""
 
 #: .\templates\dashboard.html:641
 msgid "Please upload photo"
 msgstr "الرجاء تحميل الصورة"
 
+#: .\templates\dashboard.html:661 .\templates\detail.html:218
+msgid "Description"
+msgstr "الوصف"
+
 #: .\templates\dashboard.html:663
 msgid "Please enter description"
-msgstr "الوصف"
+msgstr "الرجاء ادخال الوصف"
 
 #: .\templates\dashboard.html:673
 msgid "Send"
@@ -658,10 +695,6 @@ msgstr "أضف إلى السلة"
 msgid "Share on:"
 msgstr "شارك عبر"
 
-#: .\templates\detail.html:218
-msgid "Description"
-msgstr "الوصف"
-
 #: .\templates\detail.html:221
 msgid "Information"
 msgstr "معلومة"
@@ -699,7 +732,7 @@ msgid "1 star"
 msgstr "1 نجمه"
 
 #: .\templates\detail.html:345
-msgid "Your Review *"
+msgid "Your Review"
 msgstr "مراجعتك"
 
 #: .\templates\detail.html:374
@@ -741,7 +774,7 @@ msgstr "روابط تواصل"
 
 #: .\templates\edit_profile.html:199
 msgid "Connections"
-msgstr "Connections"
+msgstr "روابط"
 
 #: .\templates\edit_profile.html:226
 msgid "Upload Photo"
@@ -853,7 +886,7 @@ msgid "404 - Page Not Found!"
 msgstr "الصفحة غير موجودة"
 
 #: .\templates\index.html:48 .\templates\index.html:66
-msgid "10%% Off Your First Order"
+msgid "10% Off Your First Order"
 msgstr " 10% خصم علي اول طلب"
 
 #: .\templates\index.html:51
@@ -871,7 +904,7 @@ msgstr "فستان عصري"
 
 #: .\templates\index.html:109
 msgid "Quality Product"
-msgstr "منتج"
+msgstr "جودة المنتج"
 
 #: .\templates\index.html:127
 msgid "14-Day Return"
@@ -899,7 +932,7 @@ msgstr "الشنط"
 
 #: .\templates\index.html:231 .\templates\index.html:247
 #, python-format
-msgid "20%% off the all order"
+msgid "20% off the all order"
 msgstr "خصم 20٪ على كل الطلبات"
 
 #: .\templates\index.html:233
@@ -1087,7 +1120,7 @@ msgstr "الاسم الاخير"
 #~ msgstr "مقاس 6"
 
 #~ msgid "Homewear"
-#~ msgstr "ملابس نوم"
+#~ msgstr "ملابس البيت"
 
 #~ msgid "Pricing"
 #~ msgstr "التسعير"
