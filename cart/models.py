@@ -27,6 +27,11 @@ class Order(models.Model):
     
     track = models.CharField(default='Not-Charged', choices=TRACK, max_length= 20, blank=False, null=False, verbose_name=_('track'))
 
+    class Meta:
+        verbose_name = _("Order")
+        verbose_name_plural = _("Orders")
+
+
     def __str__(self):
         return str(self.id)
     
@@ -40,6 +45,8 @@ class Order(models.Model):
             self.track = 'On-way'
         super().save(*args, **kwargs)
 
+
+
 class NonUserOrder(models.Model):
     user_cart_id = models.CharField(max_length= 50, blank=True, null=True, verbose_name=_('user cart id'))
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name=_('product'))
@@ -47,6 +54,11 @@ class NonUserOrder(models.Model):
 
     def __str__(self):
         return str(self.id)
+    
+
+    class Meta:
+        verbose_name = _("NonUser Order")
+        verbose_name_plural = _("NonUser Orders")
 
 
     @property
@@ -75,3 +87,7 @@ class CheckOut(models.Model):
 
     def __str__(self):
         return str(self.id)
+    
+    class Meta:
+        verbose_name = _("CheckOut")
+        verbose_name_plural = _("CheckOuts")

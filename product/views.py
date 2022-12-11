@@ -9,7 +9,7 @@ from .utils import page_clean_url, sort_clean_url, recreate_url, get_search, get
 from project.settings import CART_SESSION_ID_KEY
 from django.db.models.query import EmptyQuerySet
 from cart.models import Order, NonUserOrder
-
+        
 
 SORT_BY = {'date':'-created_at', 'pricelow':'price', 'pricehigh':'-price'}
 
@@ -32,7 +32,6 @@ def cart_products(request):
 
 
 def index(request):
-
     if request.user.is_authenticated and request.user.seller:
             return redirect('user:pending')
 

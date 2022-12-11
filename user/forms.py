@@ -30,6 +30,6 @@ class UserProfileForm(forms.ModelForm):
 class SocialLinksForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ('twitter_url', 'facebook_url', 'linkedin_url', 'instagram_url', 'quora_url')
+        fields = ('twitter_url', 'facebook_url', 'linkedin_url', 'instagram_url', 'quora_url', 'youtube_url')
 
 

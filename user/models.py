@@ -54,7 +54,7 @@ AUTH_PROVIDERS = {'google': 'google', 'email': 'email'}
 
 class MyUser(AbstractUser):
     email         = models.EmailField(unique=True, blank=False, null=False, verbose_name=_('email address'))
-    phone_regex   = RegexValidator(regex="[0][1][0125][0-9][ ]?\d{3}[ ]?\d{4}", message="Phone number must be entered in the format: '01xx xxx xxxx'. Up to 11 digits allowed.")
+    phone_regex   = RegexValidator(regex="[0][1][0125][0-9][ ]?\d{3}[ ]?\d{4}", message=_("Phone number must be entered in the format: '01xx xxx xxxx'. Up to 11 digits allowed."))
     phone         = models.CharField(validators=[phone_regex], max_length=11, blank=False, null=False, verbose_name=_('phone')) # validators should be a list
     first_name    = models.CharField(validators=[validate_name], max_length=30, blank=False, null=False, verbose_name=_('first name'))
     last_name     = models.CharField(validators=[validate_name], max_length=30, blank=False, null=False, verbose_name=_('last name'))
@@ -72,6 +72,12 @@ class MyUser(AbstractUser):
     seller        = models.BooleanField(default=False, verbose_name=_('seller'))
 
     REQUIRED_FIELDS = ['email', 'first_name']
+
+
+    class Meta:
+        verbose_name = _("User")
+        verbose_name_plural = _("Users")
+
 
     def __str__(self):
         return self.email
@@ -103,37 +109,46 @@ COUNTRY =[
 
 
 class Languages(models.Model):
-    language  = models.CharField(choices=settings.LANGUAGES , max_length=20, blank=True, null=True)
+    language  = models.CharField(choices=settings.LANGUAGES , max_length=20, blank=True, null=True, verbose_name=_('language'))
     def __str__(self):
         return self.language
+    
+    class Meta:
+        verbose_name = _("Language")
+        verbose_name_plural = _("Languages")
 
 
 
 class UserProfile(models.Model):
     user          = models.OneToOneField(MyUser, on_delete=models.CASCADE)
-    bio           = models.CharField(max_length=255, blank=True, null=True)
-    birth_date    = models.DateField(null=True, blank=True)
-    country       = models.CharField(choices=COUNTRY , max_length=20, blank=True, null=True)
-    langs         = models.ManyToManyField(Languages, blank=True)
-    company       = models.CharField(max_length=50, blank=True, null=True)
-    company_url   = models.URLField(blank=True, null=True)
+    bio           = models.CharField(max_length=255, blank=True, null=True, verbose_name=_('bio'))
+    birth_date    = models.DateField(null=True, blank=True, verbose_name=_('birth date'))
+    country       = models.CharField(choices=COUNTRY , max_length=20, blank=True, null=True, verbose_name=_('country'))
+    langs         = models.ManyToManyField(Languages, blank=True, verbose_name=_('languages'))
+    company       = models.CharField(max_length=50, blank=True, null=True, verbose_name=_('company'))
+    company_url   = models.URLField(blank=True, null=True, verbose_name=_('company url'))
 
-    twitter_url   = models.URLField(blank=True, null=True)
-    facebook_url  = models.URLField(blank=True, null=True)
-    linkedin_url  = models.URLField(blank=True, null=True)
-    instagram_url = models.URLField(blank=True, null=True)
-    quora_url     = models.URLField(blank=True, null=True)
+    twitter_url   = models.URLField(blank=True, null=True, verbose_name=_('twitter url'))
+    facebook_url  = models.URLField(blank=True, null=True, verbose_name=_('facebook url'))
+    linkedin_url  = models.URLField(blank=True, null=True, verbose_name=_('linkedin url'))
+    instagram_url = models.URLField(blank=True, null=True, verbose_name=_('instagram url'))
+    quora_url     = models.URLField(blank=True, null=True, verbose_name=_('quora url'))
+    youtube_url   = models.URLField(blank=True, null=True, verbose_name=_('youtube url'))
 
     
     def __str__(self):
         return self.user.email
+    
+    class Meta:
+        verbose_name = _("UserProfile")
+        verbose_name_plural = _("UserProfiles")
     
 
 
 
 class GoogleProfile(models.Model):
     user          = models.OneToOneField(MyUser, on_delete=models.CASCADE)
-    google_id      = models.CharField(max_length=255, blank=False, null=False, unique=True)
+    google_id      = models.CharField(max_length=255, blank=False, null=False, unique=True, verbose_name=_('google id'))
     email         = models.EmailField(unique=True, blank=False, null=False, verbose_name=_('email address'))
 
     full_name     = models.CharField(max_length=30, blank=False, null=False, verbose_name=_('full name'))
@@ -142,3 +157,7 @@ class GoogleProfile(models.Model):
 
     def __str__(self):
         return str(self.user_id)
+    
+    class Meta:
+        verbose_name = _("GoogleProfile")
+        verbose_name_plural = _("GoogleProfiles")

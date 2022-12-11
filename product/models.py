@@ -102,8 +102,8 @@ class Product(models.Model):
     name         = models.CharField(max_length=100, verbose_name=_('name'))
     suitable     = models.CharField(choices=SEX, max_length= 20, blank=False, null=False, verbose_name=_('suitable'))
     
-    colors       = models.ManyToManyField(ColorModel, blank=True)
-    sizes        = models.ManyToManyField(SizeModel, blank=True)
+    colors       = models.ManyToManyField(ColorModel, blank=True, verbose_name=_('colors'))
+    sizes        = models.ManyToManyField(SizeModel, blank=True, verbose_name=_('sizes'))
     
     quantity     = models.PositiveIntegerField(default=0, verbose_name=_('quantity'))
     price        = models.DecimalField(max_digits=7, decimal_places=2, validators = [MinValueValidator(0.0)], verbose_name=_('price'))
@@ -190,6 +190,10 @@ class Comment(models.Model):
 
     def __str__(self):
         return str(self.id)
+    
+    class Meta:
+        verbose_name = _('Product')
+        verbose_name_plural = _('Products')
 
 
 
@@ -218,3 +222,10 @@ class Statics(models.Model):
     male   = models.PositiveIntegerField(default=0)
     female = models.PositiveIntegerField(default=0)
     baby   = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return str(self.id)
+
+    class Meta:
+        verbose_name = _('Statics')
+        verbose_name_plural = _('Statics')

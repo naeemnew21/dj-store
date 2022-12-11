@@ -1,0 +1,38 @@
+
+
+After downloading zip file from "https://github.com/naeemnew21/dj-store.git"
+extract the file -> say name "dj_store"
+
+1. install python form this link "https://www.python.org/downloads/"
+2. install python virtual environment "virtualenv"
+    - after install python open cmd and run this commands
+        -"pip install virtualenv"
+
+
+open cmd and go to the directory you like to create virtual environment
+"python -m venv env_folder" --> you can replace the env_folder with name you like
+    
+
+move the folder you extracted - "dj_store"-  into the env_folder
+then in cmd run commands:
+    1."cd dj_store"  --> go to the directory of dj_store folder
+    2."../Scripts/activate" --> activate the virtual environment
+    3."pip install -r requirements.txt" --> install all libraries required to run the project
+    4."python manage.py makemigrations" --> collect database changes
+    5."python manage.py migrate" --> apply database changes
+    6."python manage.py createsuperuser" --> create superuser for the site
+    7."python manage.py runserver" --> run the project
+
+then open the browser (firefox, chrome, edge..)
+the go to url: http://127.0.0.1:8000/
+
+all above steps are for first time to run the project
+but for later times we only do this:
+    in cmd run commands:
+    1."cd dj_store"  --> go to the directory of dj_store folder
+    2."../Scripts/activate" --> activate the virtual environment
+    7."python manage.py runserver" --> run the project
+
+then open the browser (firefox, chrome, edge..)
+the go to url: http://127.0.0.1:8000/
+
