@@ -249,15 +249,14 @@
                     </li>
                     
                     <li class="dropdown nav-item mr-1"><a class="nav-link dropdown-toggle user-dropdown d-flex align-items-end" id="dropdownBasic2" href="javascript:;" data-toggle="dropdown">
-                            <div class="user d-md-flex d-none mr-2"><span class="text-right">{{request.user.get_name}}</span><span class="text-right text-muted font-small-3">Available</span></div><img class="avatar" src="{{request.user.avatar.url}}" alt="avatar" height="35" width="35">
+                            <div class="user d-md-flex d-none mr-2"><span class="text-right">{{request.user.get_name}}</span><span class="text-right text-muted font-small-3">{% trans 'Available'%}</span></div><img class="avatar" src="{{request.user.avatar.url}}" alt="avatar" height="35" width="35">
                         </a>
                         <div class="dropdown-menu text-left dropdown-menu-right m-0 pb-0" aria-labelledby="dropdownBasic2">
                             <a class="dropdown-item" href="{%url 'user:profile'%}">
-                                <div class="d-flex align-items-center"><i class="ft-edit mr-2"></i><span>Edit Profile</span></div>
+                                <div class="d-flex align-items-center"><i class="ft-edit mr-2"></i><span>{% trans 'Edit Profile'%}</span></div>
                             </a>
                             
                             <div class="dropdown-divider"></div>
-
                             <a class="dropdown-item" href="{%url 'user:logout'%}">
                                 <div class="d-flex align-items-center">
                                   <i class="ft-power mr-2"></i>
@@ -520,7 +519,7 @@
                   type="text"
                   class="form-control"
                   id="product_name"
-                  placeholder="Product Name"
+                  placeholder="{% trans 'Product Name' %}"
                   required="required"
                   data-validation-required-message="{%trans 'Please enter the Product Name'%}"
                 />
@@ -533,7 +532,7 @@
                   type="text"
                   class="form-control"
                   id="brand_name"
-                  placeholder="Brand Name"
+                  placeholder="{% trans 'Brand Name'%}"
                   required="required"
                   data-validation-required-message="{%trans 'Please enter the Product Name'%}"
                 />
@@ -546,7 +545,7 @@
                     type="number"
                     class="form-control"
                     id="price"
-                    placeholder="Product price"
+                    placeholder="{% trans 'Product price'%}"
                     required="required"
                     data-validation-required-message="{%trans 'Please enter product price'%}"
                   />
@@ -558,7 +557,7 @@
                     type="number"
                     class="form-control"
                     id="price_dis"
-                    placeholder="Old Product price"
+                    placeholder="{% trans 'Old Product price'%}"
                     required="required"
                     data-validation-required-message="{%trans 'Please enter Old product price'%}"
                   />
@@ -570,7 +569,7 @@
                     type="number"
                     class="form-control"
                     id="count"
-                    placeholder="Product count"
+                    placeholder="{% trans 'Product count'%}"
                     required="required"
                     data-validation-required-message="{%trans 'Please enter product count'%}"
                   />
