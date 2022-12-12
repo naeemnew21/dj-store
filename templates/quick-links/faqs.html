@@ -3,35 +3,29 @@
 {% load i18n %}
 
 
-
-
-     
-         
-
 {% block navbar %}
-          <nav
+        <nav
             class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light"
             id="navbar-vertical"
             style="width: calc(100% - 30px); z-index: 1"
-          >
+        >
 {% endblock navbar %}
-
 
 
 {% block titles %}
                 <a href="{%url 'product:index'%}" class="nav-item nav-link">{% trans 'Home'%}</a>
                 <a href="{%url 'product:shop'%}" class="nav-item nav-link">{% trans 'Shop'%}</a>
                 <div class="nav-item dropdown">
-                  <a
+                <a
                     href="#"
                     class="nav-link dropdown-toggle"
                     data-toggle="dropdown"
                     >{% trans 'Pages'%}</a
-                  >
-                  <div class="dropdown-menu rounded-0 m-0">
+                >
+                <div class="dropdown-menu rounded-0 m-0">
                     <a href="{%url 'cart:cart'%}" class="dropdown-item">{% trans 'Shopping Cart'%}</a>
                     <a href="{% url 'cart:checkout' %}" class="dropdown-item">{% trans 'Checkout'%}</a>
-                  </div>
+                </div>
                 </div>
                 <a href="{% url 'cart:contact' %}" class="nav-item nav-link">{% trans 'Contact'%}</a>
 
@@ -43,17 +37,14 @@
 </div>
 </div>
 
-
 <style>
 .accordion_one .panel-group {
     border: 1px solid #f1f1f1;
     margin-top:100px;
 }
-
 a:link {
     text-decoration: none
 }
-
 .accordion_one .panel {
     background-color: transparent;
     box-shadow: none;
@@ -61,28 +52,23 @@ a:link {
     border-radius: 0;
     margin: 0;
 }
-
 .accordion_one .panel-default {
     border: 0;
 }
-
 .accordion-wrap .panel-heading {
     padding: 0px;
     border-radius: 0px;
 }
-
 h4 {
     font-size: 18px;
     line-height: 24px;
 }
-
 .accordion_one .panel .panel-heading a.collapsed {
     color: #999999;
     display: block;
     padding: 12px 30px;
     border-top: 0px;
 }
-
 .accordion_one .panel .panel-heading a {
     display: block;
     padding: 12px 30px;
@@ -90,11 +76,9 @@ h4 {
     color: #313131;
     border-bottom: 1px solid #f1f1f1;
 }
-
 .accordion-wrap .panel .panel-heading a {
     font-size: 14px;
 }
-
 .accordion_one .panel-group .panel-heading+.panel-collapse>.panel-body {
     border-top: 0;
     padding-top: 0;
@@ -102,14 +86,12 @@ h4 {
     background: #fff;
     color: #999999;
 }
-
 .img-accordion {
     width: 81px;
     float: left;
     margin-right: 15px;
     display: block;
 }
-
 .accordion_one .panel .panel-heading a.collapsed:after {
     content: "\2b";
     color: #999999;
@@ -117,7 +99,6 @@ h4 {
     position: relative;
     left: -45px;
 }
-
 .accordion_one .panel .panel-heading a:after, .accordion_one .panel .panel-heading a.collapsed:after {
     font-family: 'FontAwesome';
     font-size: 15px;
@@ -133,7 +114,6 @@ h4 {
 .accordion_one .panel .panel-heading a:after {
     content: "\2212";
 }
-
 .accordion_one .panel .panel-heading a:after, .accordion_one .panel .panel-heading a.collapsed:after {
     font-family: 'FontAwesome';
     font-size: 15px;
@@ -150,113 +130,101 @@ h4 {
 .col-sm-6.accordion_one {
     margin: auto;
 }
-
 </style>
-
     <!-- Page Header Start -->
     <div class="container-fluid bg-secondary mb-5">
-      <div
+    <div
         class="d-flex flex-column align-items-center justify-content-center"
         style="min-height: 300px"
-      >
+    >
         <h1 class="font-weight-semi-bold text-uppercase mb-3">{% trans 'FAQs'%}</h1>
-      </div>
+    </div>
     </div>
     <!-- Page Header End -->
-
     <!-- faqs Start -->
-    
     <div class="col-sm-6 accordion_one">
-      <div class="panel-group" id="accordionFourLeft">
-          <div class="panel panel-default">
-              <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#collapseFiveLeftone" href="#collapseFiveLeftone" aria-expanded="false" class="collapsed">
-                        Q: How can I order
-                    </a>
-                  </h4>
-              </div>
-              <div id="collapseFiveLeftone" class="panel-collapse collapse" aria-expanded="false" role="tablist" style="height: 0px;">
-                  <div class="panel-body">
-                      <div class="img-accordion">
-
-                          <img src="{% static 'img/logo.png' %}" alt="">
-
-                      </div>
-                      <div class="text-accordion">
-                          <p>
-                            A: You can order easily using our online platform. When you find a product you need, you can add it to cart, login and go through the ordering process. After the order is ready, you will receive order summary to your email. Order summary will also be stored to your account
-                          </p>
-                      </div>
-                  </div>
-                  <!-- end of panel-body -->
-              </div>
-          </div>
-          <!-- /.panel-default -->
-          <div class="panel panel-default">
-              <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#collapseFiveLeftTwo" href="#collapseFiveLeftTwo" aria-expanded="false">
-                        Q: Why should I buy online?
-                    </a>
-                  </h4>
-              </div>
-              <div id="collapseFiveLeftTwo" class="panel-collapse collapse" aria-expanded="false" role="tablist" style="height: 0px;">
-                  <div class="panel-body">
-                      <div class="img-accordion">
-
-                          <img src="{% static 'img/logo.png' %}" alt="">
-
-                      </div>
-                      <div class="text-accordion">
-                          <p>
-                            A: Speeding up the process. By ordering online you will you will get prices faster and you will be able to go through order confirmation and payment process much faster. This could save days of your time.
-                          </p>
-                      </div>
-                  </div>
-                  <!-- end of panel-body -->
-              </div>
-          </div>
-          <!-- /.panel-default -->
-          <div class="panel panel-default">
-              <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#collapseFiveLeftThree" href="#collapseFiveLeftThree" aria-expanded="false">
-                        Q: What information should I input when ordering? 
-                    </a>
-                  </h4>
-              </div>
-              <div id="collapseFiveLeftThree" class="panel-collapse collapse" aria-expanded="false" role="tablist">
-                  <div class="panel-body">
-                      <div class="img-accordion">
-
-                          <img src="{% static 'img/logo.png' %}" alt="">
-
-                      </div>
-                      <div class="text-accordion">
-                          <p>
-                            A: our online ordering system will ask for all the important information you should submit. If you have a VAT number, please remember to submit it. This will make sure the shipment is not delayed because of the lack of VAT number
-                          </p>
-                      </div>
-                  </div>
-                  <!-- end of panel-body -->
-              </div>
-          </div>
-          <!-- /.panel-default -->
+    <div class="panel-group" id="accordionFourLeft">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#collapseFiveLeftFour" href="#collapseFiveLeftFour" aria-expanded="false">
+                    <a data-toggle="collapse" data-parent="#collapseFiveLeftone" href="#collapseFiveLeftone" aria-expanded="false" class="collapsed">
+                        Q: How can I order
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFiveLeftone" class="panel-collapse collapse" aria-expanded="false" role="tablist" style="height: 0px;">
+                <div class="panel-body">
+                    <div class="img-accordion">
+                        <img src="{% static 'img/logo.png' %}" alt="">
+                    </div>
+                    <div class="text-accordion">
+                        <p>
+                            A: You can order easily using our online platform. When you find a product you need, you can add it to cart, login and go through the ordering process. After the order is ready, you will receive order summary to your email. Order summary will also be stored to your account
+                        </p>
+                    </div>
+                </div>
+                <!-- end of panel-body -->
+            </div>
+        </div>
+        <!-- /.panel-default -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#collapseFiveLeftTwo" href="#collapseFiveLeftTwo" aria-expanded="false">
+                        Q: Why should I buy online?
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFiveLeftTwo" class="panel-collapse collapse" aria-expanded="false" role="tablist" style="height: 0px;">
+                <div class="panel-body">
+                    <div class="img-accordion">
+                        <img src="{% static 'img/logo.png' %}" alt="">
+                    </div>
+                    <div class="text-accordion">
+                        <p>
+                            A: Speeding up the process. By ordering online you will you will get prices faster and you will be able to go through order confirmation and payment process much faster. This could save days of your time.
+                        </p>
+                    </div>
+                </div>
+                <!-- end of panel-body -->
+            </div>
+        </div>
+        <!-- /.panel-default -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#collapseFiveLeftThree" href="#collapseFiveLeftThree" aria-expanded="false">
+                        Q: What information should I input when ordering? 
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFiveLeftThree" class="panel-collapse collapse" aria-expanded="false" role="tablist">
+                <div class="panel-body">
+                    <div class="img-accordion">
+                        <img src="{% static 'img/logo.png' %}" alt="">
+                    </div>
+                    <div class="text-accordion">
+                        <p>
+                            A: our online ordering system will ask for all the important information you should submit. If you have a VAT number, please remember to submit it. This will make sure the shipment is not delayed because of the lack of VAT number
+                        </p>
+                    </div>
+                </div>
+                <!-- end of panel-body -->
+            </div>
+        </div>
+        <!-- /.panel-default -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#collapseFiveLeftFour" href="#collapseFiveLeftFour" aria-expanded="false">
                     Q: What payment methods can I use? 
-                  </a>
+                </a>
                 </h4>
             </div>
             <div id="collapseFiveLeftFour" class="panel-collapse collapse" aria-expanded="false" role="tablist">
                 <div class="panel-body">
                     <div class="img-accordion">
-
                         <img src="{% static 'img/logo.png' %}" alt="">
-
                     </div>
                     <div class="text-accordion">
                         <p>
@@ -271,17 +239,15 @@ h4 {
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#collapseFiveLeftFive" href="#collapseFiveLeftFive" aria-expanded="false">
+                <a class="collapsed" data-toggle="collapse" data-parent="#collapseFiveLeftFive" href="#collapseFiveLeftFive" aria-expanded="false">
                     Q: Can I cancel my order? 
-                  </a>
+                </a>
                 </h4>
             </div>
             <div id="collapseFiveLeftFive" class="panel-collapse collapse" aria-expanded="false" role="tablist">
                 <div class="panel-body">
                     <div class="img-accordion">
-
                         <img src="{% static 'img/logo.png' %}" alt="">
-
                     </div>
                     <div class="text-accordion">
                         <p>
@@ -296,17 +262,15 @@ h4 {
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#collapseFiveLeftSix" href="#collapseFiveLeftSix" aria-expanded="false">
+                <a class="collapsed" data-toggle="collapse" data-parent="#collapseFiveLeftSix" href="#collapseFiveLeftSix" aria-expanded="false">
                     Q: How to contact customer service? 
-                  </a>
+                </a>
                 </h4>
             </div>
             <div id="collapseFiveLeftSix" class="panel-collapse collapse" aria-expanded="false" role="tablist">
                 <div class="panel-body">
                     <div class="img-accordion">
-
                         <img src="{% static 'img/logo.png' %}" alt="">
-
                     </div>
                     <div class="text-accordion">
                         <p>
@@ -321,17 +285,15 @@ h4 {
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#collapseFiveLeftSiven" href="#collapseFiveLeftSiven" aria-expanded="false">
+                <a class="collapsed" data-toggle="collapse" data-parent="#collapseFiveLeftSiven" href="#collapseFiveLeftSiven" aria-expanded="false">
                     Q: How can I change delivery address? 
-                  </a>
+                </a>
                 </h4>
             </div>
             <div id="collapseFiveLeftSiven" class="panel-collapse collapse" aria-expanded="false" role="tablist">
                 <div class="panel-body">
                     <div class="img-accordion">
-
                         <img src="{% static 'img/logo.png' %}" alt="">
-
                     </div>
                     <div class="text-accordion">
                         <p>
@@ -342,9 +304,9 @@ h4 {
                 <!-- end of panel-body -->
             </div>
         </div>
-      </div>
-      <!--end of /.panel-group-->
-  </div>
+    </div>
+    <!--end of /.panel-group-->
+</div>
     
     <!-- faqs End -->
 
