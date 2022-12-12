@@ -610,7 +610,7 @@
                   <label class="input-group-text" for="choices-multiple-colors">{%trans 'Colors'%}</label>
                 </div>
                 
-                <select  class="form-control form-control-lg" id="choices-multiple-colors" placeholder="{% trans 'All Colors' %}" multiple="multiple" name="colors">
+                <select  class="form-control form-control-lg" id="choices-multiple-colors" placeholder="All Colors" multiple="multiple" name="colors">
                     {% for color in colors %}
                       <option value={{color.id}}>{{color}}</option>
                     {% endfor %}
@@ -621,7 +621,7 @@
                   <label class="input-group-text" for="choices-multiple-sizes">{%trans 'Sizes'%}</label>
                 </div>
 
-                <select  class="form-control" id="choices-multiple-sizes" placeholder="{% trans 'All Sizes' %}" multiple="multiple" name="sizes">
+                <select  class="form-control" id="choices-multiple-sizes" placeholder="All Sizes" multiple="multiple" name="sizes">
                     {% for size in sizes %}
                       <option value={{size.id}}>{{size}}</option>
                     {% endfor %}
@@ -635,7 +635,7 @@
                   type="file"
                   class=""
                   id="file-uploader"
-                  placeholder="{% trans 'file-uploader' %}"
+                  placeholder="file-uploader"
                   required="required"
                   data-validation-required-message="{%trans 'Please upload photo'%}"
                 />
@@ -657,7 +657,7 @@
                   class="form-control"
                   rows="6"
                   id="description"
-                  placeholder="{% trans 'Description'%}..."
+                  placeholder="Description..."
                   required="required"
                   data-validation-required-message="{%trans 'Please enter description'%}"
                 ></textarea>

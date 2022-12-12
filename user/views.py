@@ -247,3 +247,22 @@ def check_cart_context(request):
     orders = NonUserOrder.objects.filter(user_cart_id = user_cart_id)
     return {'cart_alert': orders.count()}
     
+
+
+
+def social_links_context(request):
+    qs = MyUser.objects.filter(is_superuser=True)
+    context = dict()
+    if qs.exists():
+        try:
+            su = qs[0].userprofile
+            context['facebook_link'] = su.facebook_url if su.facebook_url else ""
+            context['twitter_link'] = su.twitter_url if su.twitter_url else ""
+            context['linkedin_link'] = su.linkedin_url if su.linkedin_url else ""
+            context['instagram_link'] = su.instagram_url if su.instagram_url else ""
+            context['quora_link'] = su.quora_url if su.quora_url else ""
+            context['youtube_link'] = su.youtube_url if su.youtube_url else ""
+        except:
+            pass
+    return context
+    

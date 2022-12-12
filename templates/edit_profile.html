@@ -432,6 +432,15 @@
                                                             {% endif %}
                                                             <p>{{form.quora_url.errors}}</p>
                                                         </div>
+                                                        <div class="col-12 form-group">
+                                                            <label for="youtube">Youtube</label>
+                                                            {% if  request.user.userprofile.youtube_url == None%}
+                                                                <input id="youtube" type="text" name="youtube_url" class="form-control" placeholder="Add link">
+                                                            {% else %}
+                                                                <input id="youtube" type="text" name="youtube_url" class="form-control" placeholder="Add link" value="{{request.user.userprofile.youtube_url}}">
+                                                            {% endif %}
+                                                            <p>{{form.youtube_url.errors}}</p>
+                                                        </div>
                                                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
                                                             <button type="submit" class="btn btn-primary mr-sm-2 mb-1">{% trans 'Save Changes'%}</button>
                                                         </div>
