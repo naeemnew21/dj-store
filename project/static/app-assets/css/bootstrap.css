@@ -130,11 +130,11 @@ sup {
   top: -.5em; }
 
 a {
-  color: #975AFF;
+  color: wheat;
   text-decoration: none;
   background-color: transparent; }
   a:hover {
-    color: #8741ff;
+    color: #60a2d6;
     text-decoration: none; }
 
 a:not([href]) {
@@ -245,7 +245,7 @@ input[type="month"] {
   -webkit-appearance: listbox; }
 
 textarea {
-  overflow: auto;
+  overflow: hidden !important;
   resize: vertical; }
 
 fieldset {
@@ -1781,16 +1781,17 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #975AFF;
-  border-color: #975AFF; }
+  background-color: #60a2d6;
+  border-color: #60a2d6;
+}
   .btn-primary:hover {
     color: #fff;
-    background-color: #7f34ff;
-    border-color: #7727ff; }
+    background-color: #60a2d6;
+    border-color: #60a2d6; }
   .btn-primary:focus, .btn-primary.focus {
     color: #fff;
-    background-color: #7f34ff;
-    border-color: #7727ff;
+    background-color: #60a2d6;
+    border-color: #60a2d6;
     box-shadow: 0 0 0 0.2rem rgba(167, 115, 255, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
@@ -3026,8 +3027,8 @@ input[type="button"].btn-block {
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #975AFF; }
+  color: black;
+  background-color: #60a2d6; }
 
 .nav-fill .nav-item {
   flex: 1 1 auto;
