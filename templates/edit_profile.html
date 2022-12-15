@@ -238,21 +238,21 @@
                                                         <div class="col-12 form-group">
                                                             <label for="username">{% trans 'First Name'%}</label>
                                                             <div class="controls">
-                                                                <input type="text" id="username" class="form-control" placeholder="First Name" value="{{request.user.first_name}}" name="first_name" required>
+                                                                <input type="text" id="username" class="form-control" placeholder="{% trans 'First Name'%}" value="{{request.user.first_name}}" name="first_name" required>
                                                                 <p class="help-block text-danger">{{form.first_name.errors}}</p>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="name">{% trans 'Last name'%}</label>
                                                             <div class="controls">
-                                                                <input type="text" id="name" class="form-control" placeholder="Name" value="{{request.user.last_name}}" name="last_name" required>
+                                                                <input type="text" id="name" class="form-control" placeholder="{% trans 'Name'%}" value="{{request.user.last_name}}" name="last_name" required>
                                                                 <p class="help-block text-danger">{{form.last_name.errors}}</p>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="email">{% trans 'E-mail'%}</label>
                                                             <div class="controls">
-                                                                <input type="text" id="email" class="form-control" placeholder="E-mail" value="{{request.user.email}}" name="email" required>
+                                                                <input type="text" id="email" class="form-control" placeholder="{% trans 'E-mail'%}" value="{{request.user.email}}" name="email" required>
                                                                 <p class="help-block text-danger">{{form.email.errors}}</p>
                                                             </div>
                                                         </div>
@@ -268,7 +268,7 @@
                                                         <div class="col-12 form-group">
                                                             <label for="phone">{% trans 'Phone'%}</label>
                                                             <div class="controls">
-                                                                <input id="phone" name="phone" type="number" class="form-control" required placeholder="01x xxxx xxxx" value="{{request.user.phone}}">
+                                                                <input id="phone" name="{% trans 'phone'%}" type="number" class="form-control" required placeholder="01x xxxx xxxx" value="{{request.user.phone}}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
@@ -287,19 +287,19 @@
                                                     <div class="form-group">
                                                         <label for="old-password">{% trans 'Old Password'%}</label>
                                                         <div class="controls">
-                                                            <input type="password" id="old-password" name="old_password" class="form-control" placeholder="Old Password" required>
+                                                            <input type="password" id="old-password" name="old_password" class="form-control" placeholder="{% trans 'Old Password'%}" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="new-password">{% trans 'New Password'%}</label>
                                                         <div class="controls">
-                                                            <input type="password" id="new-password" name="new_password1" class="form-control" placeholder="New Password" required>
+                                                            <input type="password" id="new-password" name="new_password1" class="form-control" placeholder="{% trans 'New Password'%}" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="retype-new-password">{% trans 'Retype New Password'%}</label>
                                                         <div class="controls">
-                                                            <input type="password" id="retype-new-password" name="new_password2" class="form-control" placeholder="New Password" required>
+                                                            <input type="password" id="retype-new-password" name="new_password2" class="form-control" placeholder="{% trans 'New Password'%}" required>
                                                         </div>
                                                     </div>
                                                     <div class="d-flex flex-sm-row flex-column justify-content-end">
@@ -324,12 +324,12 @@
                                                     <div class="row">
                                                         <div class="col-12 form-group">
                                                             <label for="bio">{% trans 'Bio'%}</label>
-                                                            <textarea id="bio" name="bio" class="form-control" placeholder="Your Bio data here..." rows="3">{{request.user.userprofile.bio}}</textarea>
+                                                            <textarea id="bio" name="bio" class="form-control" placeholder="{% trans 'Your Bio data here'%}..." rows="3">{{request.user.userprofile.bio}}</textarea>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="bdate">{% trans 'Birth Date'%}</label>
                                                             <div class="controls">
-                                                                <input id="bdate" name="birth_date" type="date" class="form-control pickadate"  placeholder="Birth date" value="{{request.user.userprofile.birth_date|date:'Y-m-d'}}"/>
+                                                                <input id="bdate" name="birth_date" type="date" class="form-control pickadate"  placeholder="{% trans 'Birth date'%}" value="{{request.user.userprofile.birth_date|date:'Y-m-d'}}"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
@@ -362,15 +362,15 @@
                                                         <div class="col-12 form-group">
                                                             <label for="company">{% trans 'Company'%}</label>
                                                             <div class="controls">
-                                                                <input type="text" name="company" id="company" class="form-control" placeholder="Company Name" aria-invalid="false" value="{{request.user.userprofile.company}}">
+                                                                <input type="text" name="company" id="company" class="form-control" placeholder="{% trans 'Company Name'%}" aria-invalid="false" value="{{request.user.userprofile.company}}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="website">{% trans 'Website'%}</label>
                                                             {% if  request.user.userprofile.company_url == None%}
-                                                                <input id="website" name="company_url" type="text" class="form-control" placeholder="Website Address">
+                                                                <input id="website" name="company_url" type="text" class="form-control" placeholder="{% trans 'Website Address'%}">
                                                             {% else %}
-                                                                <input id="website" name="company_url" type="text" class="form-control" placeholder="Website Address" value="{{request.user.userprofile.company_url}}">
+                                                                <input id="website" name="company_url" type="text" class="form-control" placeholder="{% trans 'Website Address'%}" value="{{request.user.userprofile.company_url}}">
                                                             {% endif %}
                                                             
                                                         </div>
@@ -389,18 +389,18 @@
                                                         <div class="col-12 form-group">
                                                             <label for="twitter">{% trans 'Twitter'%}</label>
                                                             {% if  request.user.userprofile.twitter_url == None%}
-                                                                <input id="twitter" type="text" name="twitter_url" class="form-control" placeholder="Add link">
+                                                                <input id="twitter" type="text" name="twitter_url" class="form-control" placeholder="{% trans 'Add link'%}">
                                                             {% else %}
-                                                                <input id="twitter" type="text" name="twitter_url" class="form-control" placeholder="Add link" value="{{request.user.userprofile.twitter_url}}">
+                                                                <input id="twitter" type="text" name="twitter_url" class="form-control" placeholder="{% trans 'Add link'%}" value="{{request.user.userprofile.twitter_url}}">
                                                             {% endif %}
                                                             <p>{{form.twitter_url.errors}}</p>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="facebook">{% trans 'Facebook'%}</label>
                                                             {% if  request.user.userprofile.facebook_url == None%}
-                                                                <input id="facebook" type="text" name="facebook_url" class="form-control" placeholder="Add link">
+                                                                <input id="facebook" type="text" name="facebook_url" class="form-control" placeholder="{% trans 'Add link'%}">
                                                             {% else %}
-                                                                <input id="facebook" type="text" name="facebook_url" class="form-control" placeholder="Add link" value="{{request.user.userprofile.facebook_url}}">
+                                                                <input id="facebook" type="text" name="facebook_url" class="form-control" placeholder="{% trans 'Add link'%}" value="{{request.user.userprofile.facebook_url}}">
                                                             {% endif %}
                                                             <p>{{form.facebook_url.errors}}</p>
                                                         </div>
@@ -408,32 +408,32 @@
                                                         <div class="col-12 form-group">
                                                             <label for="linkedin">{% trans 'Linkedin'%}</label>
                                                             {% if  request.user.userprofile.linkedin_url == None%}
-                                                                <input id="linkedin" type="text" name="linkedin_url" class="form-control" placeholder="Add link">
+                                                                <input id="linkedin" type="text" name="linkedin_url" class="form-control" placeholder="{% trans 'Add link'%}">
                                                             {% else %}
-                                                                <input id="linkedin" type="text" name="linkedin_url" class="form-control" placeholder="Add link" value="{{request.user.userprofile.linkedin_url}}">
+                                                                <input id="linkedin" type="text" name="linkedin_url" class="form-control" placeholder="{% trans 'Add link'%}" value="{{request.user.userprofile.linkedin_url}}">
                                                             {% endif %}
                                                             <p>{{form.linkedin_url.errors}}</p>
                                                         </div>
                                                         <div class="col-12 form-group">
                                                             <label for="instagram">{% trans 'Instagram'%}</label>
                                                             {% if  request.user.userprofile.instagram_url == None%}
-                                                                <input id="instagram" type="text" name="instagram_url" class="form-control" placeholder="Add link">
+                                                                <input id="instagram" type="text" name="instagram_url" class="form-control" placeholder="{% trans 'Add link'%}">
                                                             {% else %}
-                                                                <input id="instagram" type="text" name="instagram_url" class="form-control" placeholder="Add link" value="{{request.user.userprofile.instagram_url}}">
+                                                                <input id="instagram" type="text" name="instagram_url" class="form-control" placeholder="{% trans 'Add link'%}" value="{{request.user.userprofile.instagram_url}}">
                                                             {% endif %}
                                                             <p>{{form.instagram_url.errors}}</p>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="quora">Quora</label>
+                                                            <label for="quora">{% trans 'Quora'%}</label>
                                                             {% if  request.user.userprofile.quora_url == None%}
-                                                                <input id="quora" type="text" name="quora_url" class="form-control" placeholder="Add link">
+                                                                <input id="quora" type="text" name="quora_url" class="form-control" placeholder="{% trans 'Add link'%}">
                                                             {% else %}
-                                                                <input id="quora" type="text" name="quora_url" class="form-control" placeholder="Add link" value="{{request.user.userprofile.quora_url}}">
+                                                                <input id="quora" type="text" name="quora_url" class="form-control" placeholder="{% trans 'Add link'%}" value="{{request.user.userprofile.quora_url}}">
                                                             {% endif %}
                                                             <p>{{form.quora_url.errors}}</p>
                                                         </div>
                                                         <div class="col-12 form-group">
-                                                            <label for="youtube">Youtube</label>
+                                                            <label for="youtube">{% trans 'Youtube'%}</label>
                                                             {% if  request.user.userprofile.youtube_url == None%}
                                                                 <input id="youtube" type="text" name="youtube_url" class="form-control" placeholder="Add link">
                                                             {% else %}
