@@ -82,13 +82,13 @@ class ProductImage(models.Model):
 
 
 class SizeModel(models.Model):
-    size  = models.CharField(choices=SIZE , max_length=20)
+    size  = models.CharField(max_length=20)
     def __str__(self):
         return self.size
 
 
 class ColorModel(models.Model):
-    color  = models.CharField(choices=COLOR , max_length=20)
+    color  = models.CharField(max_length=20)
     def __str__(self):
         return self.color
 

@@ -1,23 +1,20 @@
 from django.shortcuts import render, redirect
-from project.settings import CART_SESSION_ID_KEY
+from project.settings import CART_SESSION_ID_KEY, CHARGE_PRICE
 from django.db.models.query import EmptyQuerySet
 from django.contrib.auth.decorators import login_required
 from .models import Order, NonUserOrder
 from .forms import CheckOutCreateForm
 
 
-charge = 60
-
 
 def cart_items(request):
     user = request.user
     user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
-    global charge
     if user.is_authenticated:
         orders = Order.objects.filter(user = user, confirmed = False)
         confirmed = Order.objects.filter(user = user, confirmed = True)
         total = sum([order.get_price for order in orders])
-        context = {'confirmed':confirmed, 'orders':orders, 'total': total, 'totch':total+charge}
+        context = {'confirmed':confirmed, 'orders':orders, 'total': total, 'totch':total+CHARGE_PRICE}
         return render(request, 'cart.html' , context)
     
     if user_cart_id == None:
@@ -26,7 +23,7 @@ def cart_items(request):
     
     orders = NonUserOrder.objects.filter(user_cart_id = user_cart_id)
     total = sum([order.get_price for order in orders])
-    context = {'orders':orders, 'total': total, 'totch':total+charge}
+    context = {'orders':orders, 'total': total, 'totch':total+CHARGE_PRICE}
     return render(request, 'cart.html' , context)
 
 
@@ -66,10 +63,9 @@ def checkout(request):
         form = CheckOutCreateForm()
         context['form'] = form
 
-    global charge
     orders = Order.objects.filter(user = user, confirmed = False)
     total = sum([order.get_price for order in orders])
-    context.update({'orderscount':len(orders), 'orders':orders, 'total': total, 'totch':total+charge})
+    context.update({'orderscount':len(orders), 'orders':orders, 'total': total, 'totch':total+CHARGE_PRICE})
     return render(request, 'checkout.html' , context)
     
 
@@ -89,11 +85,11 @@ def cart_context(request):
     if user.is_authenticated:
         orders = Order.objects.filter(user = user, confirmed = False)
         total = sum([item.quantity for item in orders])
-        return {'my_cart':total}
+        return {'my_cart':total, 'charge_price':CHARGE_PRICE}
     
     if user_cart_id == None:
-        return {'my_cart':0}
+        return {'my_cart':0, 'charge_price':0}
     
     orders = NonUserOrder.objects.filter(user_cart_id = user_cart_id)
     total = sum([item.quantity for item in orders])
-    return {'my_cart':total}
+    return {'my_cart':total, 'charge_price':CHARGE_PRICE}

@@ -124,6 +124,13 @@
     <!-- multi select-->
     <link href="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.css" rel="stylesheet">
     <!-- END: multi select-->
+
+    <!-- charts-->
+    <!--[if lte IE 8]>
+            <script src="{% static 'js/excanvas.js' %}"></script>
+        <![endif]-->
+    <!-- END: charts-->
+
   </head>
   <!-- END : Head-->
 
@@ -331,6 +338,30 @@
               </div>
             </div>
             <!--Statistics cards Ends-->
+
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Some Line Charts loaded in Ajax!</h4>
+                  </div>
+
+                  <canvas id="myChart" width="500" height="100"></canvas>
+
+                  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+                  <script type="text/javascript" src="{% static 'js/Chart.min.js' %}"></script>
+                  <script type="text/javascript">
+                      $.get('{% url "product:line_chart_json" %}', function(data) {
+                          var ctx = $("#myChart").get(0).getContext("2d");
+                          new Chart(ctx, {
+                              type: 'line', data: data
+                          });
+                      });
+                  </script>
+                </div>
+              </div>
+            </div>
+
             <!--Line with Area Chart 1 Starts-->
             <div class="row">
               <div class="col-12">

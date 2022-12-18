@@ -12,10 +12,7 @@ class ProductAdmin(TranslationAdmin):
     list_editable = ('approved', )
     readonly_fields=('created_by', 'created_at', 'slug', 'selled', 'id')
 
-    search_fields   = ('name', 'description', 'details',
-                        'color1', 'color2', 'color3', 'color4', 'color5',
-                        'size1', 'size2', 'size3', 'size4', 'size5', 'size6',
-                        )
+    search_fields   = ('name', 'description', 'details')
     list_filter     = ('approved', 'category', 'suitable')
     group_fieldsets = True  
 

@@ -86,11 +86,12 @@
   $('.quantity button').on('click', function () {
     let button = $(this);
     let oldValue = button.parent().parent().find('input').val();
+    let newVal = parseFloat(oldValue)
     if (button.hasClass('btn-plus')) {
-      let newVal = parseFloat(oldValue) + 1;
+      newVal = parseFloat(oldValue) + 1;
     } else {
       if (oldValue > 0) {
-        let newVal = parseFloat(oldValue) - 1;
+        newVal = parseFloat(oldValue) - 1;
       } else {
         newVal = 0;
       }

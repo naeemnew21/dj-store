@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     
     'rest_framework',
+    'chartjs',
     'jazzmin',
     # "semantic_admin",
 
@@ -227,7 +228,7 @@ JAZZMIN_SETTINGS = {
 
 
 
-
+CHARGE_PRICE = 50
 
 
 # django_heroku.settings(locals())

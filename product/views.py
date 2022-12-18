@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
-from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, DeleteView, UpdateView
 from django.db.models import Q
 from .models import Product, Comment, ColorModel, SizeModel, Statics
 from .forms import ProductCreateForm
@@ -9,6 +9,7 @@ from .utils import page_clean_url, sort_clean_url, recreate_url, get_search, get
 from project.settings import CART_SESSION_ID_KEY
 from django.db.models.query import EmptyQuerySet
 from cart.models import Order, NonUserOrder
+from chartjs.views.lines import BaseLineChartView
         
 
 SORT_BY = {'date':'-created_at', 'pricelow':'price', 'pricehigh':'-price'}
@@ -243,7 +244,6 @@ class ProductCreateView(DashboardPermissionMixin, CreateView):
         return context
 
 
-
 class ProductDeleteView(DashboardPermissionMixin, DeleteView):
     model = Product
     template_name ='error/403.html'
@@ -267,3 +267,26 @@ class ProductUpdateView(DashboardPermissionMixin, UpdateView):
         if self.request.user.is_superuser:
             return qs
         return qs.filter(created_by=self.request.user)
+
+
+
+
+class LineChartJSONView(BaseLineChartView):
+    def get_labels(self):
+        """Return 7 labels for the x-axis."""
+        return ["January", "February", "March", "April", "May", "June", "July"]
+
+    def get_providers(self):
+        """Return names of datasets."""
+        return ["Central", "Eastside", "Westside"]
+
+    def get_data(self):
+        """Return 3 datasets to plot."""
+
+        return [[35, 44, 25, 11, 44, 16, 35],
+                [41, 40, 18, 3, 33, 48, 22],
+                [17, 21, 12, 3, 22, 13, 12]]
+
+
+line_chart = TemplateView.as_view(template_name='line_chart.html')
+line_chart_json = LineChartJSONView.as_view()

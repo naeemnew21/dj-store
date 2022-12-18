@@ -5,38 +5,35 @@ from rest_framework import status
 from .models import Order, NonUserOrder
 from product.models import Product
 from .serializers import OrderSerializer
-from project.settings import CART_SESSION_ID_KEY
+from project.settings import CART_SESSION_ID_KEY, CHARGE_PRICE
 
 
-charge = 60
 
 def cart_items(request):
     user = request.user
     user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
-    global charge
     if user.is_authenticated:
         orders = Order.objects.filter(user = user, confirmed = False)
         total = sum([order.get_price for order in orders])
-        context = {'orders':orders, 'total': total, 'totch':total+charge}
+        context = {'orders':orders, 'total': total, 'totch':total+CHARGE_PRICE}
 
     if user_cart_id == None:
         context = {'orders':EmptyQuerySet, 'total':0, 'totch':0}
     
     orders = NonUserOrder.objects.filter(user_cart_id = user_cart_id)
     total = sum([order.get_price for order in orders])
-    context = {'orders':orders, 'total': total, 'totch':total+charge}
+    context = {'orders':orders, 'total': total, 'totch':total+CHARGE_PRICE}
 
 
 
 def cart_context(request):
     user = request.user
     user_cart_id = request.COOKIES.get(CART_SESSION_ID_KEY)
-    global charge
     if user.is_authenticated:
         orders = Order.objects.filter(user = user, confirmed = False)
         total = sum([item.quantity for item in orders])
         total_price = sum([item.get_price for item in orders])
-        return {'my_cart':total, 'total':total_price, 'totch':total_price+charge}
+        return {'my_cart':total, 'total':total_price, 'totch':total_price+CHARGE_PRICE}
     
     if user_cart_id == None:
         return {'my_cart':0, 'total':0, 'totch':0}
@@ -44,7 +41,7 @@ def cart_context(request):
     orders = NonUserOrder.objects.filter(user_cart_id = user_cart_id)
     total = sum([item.quantity for item in orders])
     total_price = sum([item.get_price for item in orders])
-    return {'my_cart':total, 'total':total_price, 'totch':total_price+charge}
+    return {'my_cart':total, 'total':total_price, 'totch':total_price+CHARGE_PRICE}
 
 
 

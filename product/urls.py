@@ -15,6 +15,9 @@ urlpatterns = [
     path('delete-product/<str:slug>', views.ProductDeleteView.as_view(), name = 'delete-product'),
     path('update-product/<str:slug>', views.ProductUpdateView.as_view(), name = 'update-product'),
 
+    path('chart', views.line_chart, name='line_chart'),
+    path('chartJSON', views.line_chart_json, name='line_chart_json'),
+
     # path('add-product', api.ProductCrreateApi.as_view(), name = 'add-product'),
     # path('del-product/<int:pk>', api.ProductDeleteApi.as_view(), name = 'del-product'),
 ]
