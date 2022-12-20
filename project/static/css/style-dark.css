@@ -3220,7 +3220,7 @@ input[type="button"].btn-block {
 
 .dropdown-menu.show {
   display: block;
-  left: -66px !important;
+  left: -40px !important;
 }
 
 .dropdown-header {
@@ -9658,4 +9658,8 @@ a.text-dark:hover, a.text-dark:focus {
 }
 ::-webkit-scrollbar {
   width: 10px;
+}
+.allPrice {
+  width: 100%;
+  background-color: #8cb4ff;
 }

@@ -51,53 +51,25 @@
                     <h5 class="font-weight-semi-bold mb-4">{% trans 'Filter by price'%}</h5>
                     <form id="form-0">
                         <!-- Price Start -->
-                        <div class="custom-control custom-radio custom-control d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input" id="price-all" name="price" value="0" 
-                            {% if price == '0' %} checked {% endif %}
-                            />
-                            <label class="custom-control-label" for="price-all">{% trans 'All Price'%}</label>
-                            <span class="badge border font-weight-normal">{{statics.all_products}}</span>
-                        </div>
-                        <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input" id="price-1" name="price" value="1" 
-                            {% if price == '1' %} checked {% endif %}
-                            />
-                            <label class="custom-control-label" for="price-1">$0 - $100</label>
-                            <span class="badge border font-weight-normal">{{statics.price100}}</span>
-                        </div>
-                        <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input" id="price-2" name="price" value="2" 
-                            {% if price == '2' %} checked {% endif %}
-                            />
-                            <label class="custom-control-label" for="price-2">$100 - $200</label>
-                            <span class="badge border font-weight-normal">{{statics.price200}}</span>
-                        </div>
-                        <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input" id="price-3" name="price" value="3" 
-                            {% if price == '3' %} checked {% endif %}
-                            />
-                            <label class="custom-control-label" for="price-3">$200 - $300</label>
-                            <span class="badge border font-weight-normal">{{statics.price300}}</span>
-                        </div>
-                        <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input" id="price-4" name="price" value="4" 
-                            {% if price == '4' %} checked {% endif %}
-                            />
-                            <label class="custom-control-label" for="price-4">$300 - $400</label>
-                            <span class="badge border font-weight-normal">{{statics.price400}}</span>
-                        </div>
-                        <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input" id="price-5" name="price" value="5" 
-                            {% if price == '5' %} checked {% endif %}
-                            />
-                            <label class="custom-control-label" for="price-5">$400 - $500</label>
-                            <span class="badge border font-weight-normal">{{statics.price500}}</span>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle allPrice" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Price
+                            </button>
+                            <div class="dropdown-menu dropdown-price" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">All Price</a>
+                            <a class="dropdown-item" href="#">0 - 100</a>
+                            <a class="dropdown-item" href="#">200 - 300</a>
+                            <a class="dropdown-item" href="#">400 - 500</a>
+                            <a class="dropdown-item" href="#">600 - 700</a>
+                            <a class="dropdown-item" href="#">800 - 900</a>
+                            <a class="dropdown-item" href="#">1000+</a>
+                            </div>
                         </div>
                         <!-- Price End --> 
                         <hr>
                         <!-- Color Start -->
                         <h5 class="font-weight-semi-bold mb-4">{% trans 'Filter by color'%}</h5>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        {% comment %} <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="color-all" name="All_Color" 
                             {{colors.All_Color}}>
                             <label class="custom-control-label" for="color-all">{% trans 'All Color'%}</label>
@@ -132,12 +104,25 @@
                             {{colors.Green}}>
                             <label class="custom-control-label" for="color-5">{% trans 'Green'%}</label>
                             <span class="badge border font-weight-normal">{{statics.green}}</span>
+                        </div> {% endcomment %}
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle allPrice" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Colors
+                            </button>
+                            <div class="dropdown-menu dropdown-price" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">All Color</a>
+                            <a class="dropdown-item" href="#">Black</a>
+                            <a class="dropdown-item" href="#">Red</a>
+                            <a class="dropdown-item" href="#">Blue</a>
+                            <a class="dropdown-item" href="#">White</a>
+                            <a class="dropdown-item" href="#">Green</a>
+                            </div>
                         </div>
                         <!-- Color End --> 
                         <hr>
                         <!-- Size Start -->
                         <h5 class="font-weight-semi-bold mb-4">{% trans 'Filter by size'%}</h5>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        {% comment %} <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="size-all" name="All_Size" 
                             {{sizes.All_Size}}>
                             <label class="custom-control-label" for="size-all">{% trans 'All Size'%}</label>
@@ -178,12 +163,27 @@
                             {{sizes.XXL}}>
                             <label class="custom-control-label" for="size-6">XXL</label>
                             <span class="badge border font-weight-normal">{{statics.xxl}}</span>
+                        </div> {% endcomment %}
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle allPrice" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sizes
+                            </button>
+                            <div class="dropdown-menu dropdown-price" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">All Size</a>
+                            <a class="dropdown-item" href="#">XS</a>
+                            <a class="dropdown-item" href="#">S</a>
+                            <a class="dropdown-item" href="#">M</a>
+                            <a class="dropdown-item" href="#">L</a>
+                            <a class="dropdown-item" href="#">XL</a>
+                            <a class="dropdown-item" href="#">XXL</a>
+                            <a class="dropdown-item" href="#">XXXL</a>
+                            </div>
                         </div>
                         <!-- Size End --> 
                         <hr>
                         <!-- Gender Start -->
                         <h5 class="font-weight-semi-bold mb-4">{% trans 'Filter by gender'%}</h5>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        {% comment %} <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="gender-all" name="All_Gender" 
                             {{gender.All_Gender}}>
                             <label class="custom-control-label" for="gender-all">{% trans 'All Gender'%}</label>
@@ -206,6 +206,17 @@
                             {{gender.Baby}}>
                             <label class="custom-control-label" for="baby-3">{% trans 'Baby'%}</label>
                             <span class="badge border font-weight-normal">{{statics.baby}}</span>
+                        </div> {% endcomment %}
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle allPrice" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Gender
+                            </button>
+                            <div class="dropdown-menu dropdown-price" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">All Gender</a>
+                            <a class="dropdown-item" href="#">Man</a>
+                            <a class="dropdown-item" href="#">Wonman</a>
+                            <a class="dropdown-item" href="#">Baby</a>
+                            </div>
                         </div>
                         <!-- Gender End --> 
                         <hr>
